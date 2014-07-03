@@ -13,7 +13,8 @@
 </div>
 
 <script>
-    $(function() {
+    //$(function() {
+    window.onload = function() {
         var receiver = new cast.receiver.Receiver('3DF11AB0', ['urn:x-cast:com.uphouseworks.rentchecka']),
             channelHandler = new cast.receiver.ChannelHandler('urn:x-cast:com.uphouseworks.rentchecka'),
             $messages = $('.messages');
@@ -28,7 +29,7 @@
         function onMessage(event) {
             $messages.html(event.message.type);
         }
-    });
+    }
 </script>
 
 <h1 class = "title standardGreen">Rent Checka</h1>
