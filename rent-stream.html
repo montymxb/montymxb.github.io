@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="css/index.css">
+<html>
+<h3 class = "title">UPHW Chromecast Receiver App</h3>
+<h3>Need some more cowbell..</h3>
+<head>
+<script src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
+</head>
+<body>
+<video id="media"></video>
+<script>
+window.onload = function() {
+	mediaElement = document.getElementById('media');
+	mediaManager = new cast.receiver.MediaManager(mediaElement);
+	castReceiverManager = cast.receiver.CastReceiverManager.getInstance();
+	castReceiverManager.start();
+}
+</script>
+</body>
+</html>
