@@ -3,18 +3,37 @@
 <link rel="stylesheet" href="css/rent-display.css">
 <html>
 <head>
-<script src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
-<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<title>UPHW Rent Checka</title>
 </head>
 <body>
 
-<div class="messages standardGreen">
-    <h1>Waiting for Messages...</h1>
+<div class="standardGreen messages">
+    <h1>Waiting for Messages...v2</h1>
 </div>
-
-<script>
-    //$(function() {
+<!--
+<script src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js">
     window.onload = function() {
+      window.mediaElement = document.getElementById('messages');
+      window.mediaManager = new cast.receiver.MediaManager(window.mediaElement);
+      window.castReceiverManager = cast.receiver.CastReceiverManager.getInstance();
+      window.castReceiverManager.start();
+      
+      window.castReceiverManager.onSenderDisconnected = function(event) {
+		  	if(window.castReceiverManager.getSenders().length == 0 && event.reason == cast.receiver.system.DisconnectReason.REQUESTED_BY_SENDER) {
+			  	window.close();
+		  	}
+		}
+		
+		var customMessageBus = castReceiverManager.getCastMessageBus('urn:x-cast:com.uphouseworks.rentchecka');
+		customMessageBus.onMessage = function(event) {
+   			// Handle message
+		}
+    }
+</script>
+-->
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js">
+    $(function() {
         var receiver = new cast.receiver.Receiver('3DF11AB0', ['urn:x-cast:com.uphouseworks.rentchecka']),
             channelHandler = new cast.receiver.ChannelHandler('urn:x-cast:com.uphouseworks.rentchecka'),
             $messages = $('.messages');
@@ -29,8 +48,9 @@
         function onMessage(event) {
             $messages.html(event.message.type);
         }
-    }
+    });
 </script>
+
 
 <h1 class = "title standardGreen">Rent Checka</h1>
 
