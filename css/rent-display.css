@@ -9,6 +9,7 @@ html {
 
 body {
     margin: 5%;
+    margin-bottom: 0px;
     padding: 0;
 }
 
@@ -30,6 +31,11 @@ video {
 }
     
 .standardGreen {
+	background: #00CC66;
+}
+
+#subTitle {
+	box-shadow: 1px 1px 20px #909090;
 	background: #00CC66;
 }
 
@@ -63,5 +69,7 @@ video {
 	display: block;
 	margin: 3px;
 	float: none;
-	height: 70px;
+	height: 49px;
+	width: 90%;
+	font-size: 75%;
 }
