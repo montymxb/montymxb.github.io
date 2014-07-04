@@ -10,10 +10,6 @@
 </head>
 <body>
 
-<div class="standardGreen">
-    <h1 id="messages">loading data...</h1>
-</div>
-
 <script>
 		
     window.onload = function() {
@@ -29,7 +25,79 @@
 		
 		var customMessageBus = castReceiverManager.getCastMessageBus('urn:x-cast:uphouseworks.rentchecka');
 		customMessageBus.onMessage = function(event) {
-			document.getElementById("messages").innerHTML = event.data;
+			//document.getElementById("messages").innerHTML = event.data;
+			
+			function addContent(element, index, array) {
+				if (index < 4) {
+					var nameId = "";
+					var costId = "";
+					var inArray = element.split(":");
+					switch(index) {
+						case 0:
+						nameId = "util1";
+						costId = "util1+";
+						break;
+						
+						case 1:
+						nameId = "util2";
+						costId = "util2+";
+						break;
+						
+						case 2:
+						nameId = "util3";
+						costId = "util3+";
+						break;
+						
+						case 3:
+						nameId = "util4";
+						costId = "util4+";
+						break;
+					}
+					
+					document.getElementById(nameId).innerHTML = inArray[0];
+					document.getElementById(costId).innerHTML = inArray[1];
+				} else {
+					var nameId = "";
+					var cosId = "";
+					var inArray = element.split(":");
+					switch() {
+						case 4:
+						nameId = "user1";
+						costId = "user1+";
+						break;
+						
+						case 5:
+						nameId = "user2";
+						costId = "user2+";
+						break;
+						
+						case 6:
+						nameId = "user3";
+						costId = "user3+";
+						break;
+						
+						case 7:
+						nameId = "user4";
+						costId = "user4+";
+						break;
+						
+						case 8:
+						nameId = "user5";
+						costId = "user5+";
+						break;
+						
+						case 9:
+						nameId = "user6";
+						costId = "user6+";
+						break;
+					}
+					
+					document.getElementById(nameId).innerHTML = inArray[0];
+					document.getElementById(costId).innerHTML = inArray[1];
+				}
+			}
+			
+			var contentArray = event.data.split("&");
 		}
 		
 		castReceiverManager.start();
@@ -43,6 +111,7 @@
 
 <div style = "float: left; width: 45%;">
 
+<!-- -------------------------------------------------------- -->
 <!--  Utilities  -->
 <div id = "subTitle">
 <h1 style = "margin-left: 20px;">Utilities</h1>
@@ -50,29 +119,30 @@
 
 <!--Demo Util-->
 <div class = "utilBlue item">
-<h2 class = "itemLeft">Garbage</h2>
-<h2 class = "itemRight">$100</h2>
+<h2 id="util1" class = "itemLeft">Garbage</h2>
+<h2 id="util1+" class = "itemRight">$100</h2>
 </div>
 
 <div class = "utilBlue item">
-<h2 class = "itemLeft">Power</h2>
-<h2 class = "itemRight">$100</h2>
+<h2 id="util2" class = "itemLeft">Power</h2>
+<h2 id="util2+" class = "itemRight">$100</h2>
 </div>
 
 <div class = "utilBlue item">
-<h2 class = "itemLeft">Water</h2>
-<h2 class = "itemRight">$100</h2>
+<h2 id="util3" class = "itemLeft">Water</h2>
+<h2 id="util3+" class = "itemRight">$100</h2>
 </div>
 
 <div class = "utilBlue item">
-<h2 class = "itemLeft">Internet</h2>
-<h2 class = "itemRight">$100</h2>
+<h2 id="util4" class = "itemLeft">Internet</h2>
+<h2 id="util4+" class = "itemRight">$100</h2>
 </div>
 
 </div>
 
 <div style = "float: right; width: 45%;">
 
+<!-- -------------------------------------------------------- -->
 <!--  Rent  -->
 <div id = "subTitle">
 <h1 style = "margin-left: 20px;">Rent</h1>
@@ -80,33 +150,33 @@
 
 <!--Demo rent-->
 <div class = "tenantOrange item">
-<h2 class = "itemLeft">Ben</h2>
-<h2 class = "itemRight">$460</h2>
+<h2 id="user1" class = "itemLeft">Ben</h2>
+<h2 id="user1+" class = "itemRight">$460</h2>
 </div>
 
 <div class = "tenantOrange item">
-<h2 class = "itemLeft">Ben</h2>
-<h2 class = "itemRight">$460</h2>
+<h2 id="user2" class = "itemLeft">Ben</h2>
+<h2 id="user2+" class = "itemRight">$460</h2>
 </div>
 
 <div class = "tenantOrange item">
-<h2 class = "itemLeft">Ben</h2>
-<h2 class = "itemRight">$460</h2>
+<h2 id="user3" class = "itemLeft">Ben</h2>
+<h2 id="user3+" class = "itemRight">$460</h2>
 </div>
 
 <div class = "tenantOrange item">
-<h2 class = "itemLeft">Ben</h2>
-<h2 class = "itemRight">$460</h2>
+<h2 id="user4" class = "itemLeft">Ben</h2>
+<h2 id="user4+" class = "itemRight">$460</h2>
 </div>
 
 <div class = "tenantOrange item">
-<h2 class = "itemLeft">Ben</h2>
-<h2 class = "itemRight">$460</h2>
+<h2 id="user5" class = "itemLeft">Ben</h2>
+<h2 id="user5+" class = "itemRight">$460</h2>
 </div>
 
 <div class = "tenantOrange item">
-<h2 class = "itemLeft">Ben</h2>
-<h2 class = "itemRight">$460</h2>
+<h2 id="user6" class = "itemLeft">Ben</h2>
+<h2 id="user6+" class = "itemRight">$460</h2>
 </div>
 
 </div>
