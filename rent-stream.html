@@ -4,28 +4,8 @@
 <html>
 <head>
 <title>UPHW Rent Checka</title>
-<!--
-<script src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
-<script>
-    window.onload = function() {
-      window.mediaElement = document.getElementById('messages');
-      window.mediaManager = new cast.receiver.MediaManager(window.mediaElement);
-      window.castReceiverManager = cast.receiver.CastReceiverManager.getInstance();
-      window.castReceiverManager.start();
-      
-      window.castReceiverManager.onSenderDisconnected = function(event) {
-		  	if(window.castReceiverManager.getSenders().length == 0 && event.reason == cast.receiver.system.DisconnectReason.REQUESTED_BY_SENDER) {
-			  	window.close();
-		  	}
-		}
-		
-		var customMessageBus = castReceiverManager.getCastMessageBus('urn:x-cast:com.uphouseworks.rentchecka');
-		customMessageBus.onMessage = function(event) {
-   			// Handle message
-		}
-    }
-</script>
--->
+
+<script src="https://www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
 
 </head>
 <body>
@@ -33,6 +13,27 @@
 <div class="standardGreen messages">
     <h1>Waiting for Messages...v2</h1>
 </div>
+
+<script>
+    window.onload = function() {
+      //window.mediaElement = document.getElementById('messages');
+      //window.mediaManager = new cast.receiver.MediaManager(window.mediaElement);
+       castReceiverManager = cast.receiver.CastReceiverManager.getInstance();
+      
+      castReceiverManager.onSenderDisconnected = function(event) {
+		  	if(castReceiverManager.getSenders().length == 0 && event.reason == cast.receiver.system.DisconnectReason.REQUESTED_BY_SENDER) {
+			  	close();
+		  	}
+		}
+		
+		var customMessageBus = castReceiverManager.getCastMessageBus('urn:x-cast:com.uphouseworks.rentchecka');
+		customMessageBus.onMessage = function(event) {
+			console.log("A \nMESSAGE \nWAS\n RECEIVED");
+		}
+		
+		castReceiverManager.start();
+    }
+</script>
 
 <h1 class = "title standardGreen">Rent Checka</h1>
 
@@ -114,6 +115,7 @@
 
 </body>
 
+<!--
 <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 <script src="https://www.gstatic.com/cast/js/receiver/1.0/cast_receiver.js"></script>
 <script>
@@ -133,5 +135,6 @@
         }
     });
 </script>
+-->
 
 </html>
