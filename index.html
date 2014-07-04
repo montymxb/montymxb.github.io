@@ -1,17 +1,87 @@
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<!DOCTYPE html>
+<link rel="stylesheet" href="css/index.css">
 <html>
 <head>
-  <title>Example minimum receiver</title>
-  <script src="https://www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
+<title>montymxb's work shop</title>
+
 </head>
 <body>
-  <video id='media'/>
-  <script>
-    window.onload = function() {
-      window.mediaElement = document.getElementById('media');
-      window.mediaManager = new cast.receiver.MediaManager(window.mediaElement);
-      window.castReceiverManager = cast.receiver.CastReceiverManager.getInstance();
-      window.castReceiverManager.start();
-    }
-  </script>
+
+<div class = "lightBlue lightBlueBack" style = "height: 90%;">
+
+<h1 class = "white large">montymxb.github.io</h1>
+
+<div class = "lightBlue liftedBox centerBox medium" style="width: 80%; height: 100px;">
+Still not done
+</div>
+
+<div style = "margin-bottom: 100px;">
+
+<div class ="lightBlue liftedBox small leftBox centerText" style="width: 38%; height: 30px; margin: 20px; line-height: 30px;">
+just some links
+</div>
+
+<div class ="lightBlue liftedBox small rightBox centerText" style="width: 38%; height: 30px; margin: 20px; line-height: 30px;">
+and it's really blue
+</div>
+
+</div>
+
+<div class = "lightBlue liftedBox medium centerBox centerText" style="width: 70%; margin 20px; margin-bottom: 10%;">
+However please do check out my primary website
+<br>
+<div class ="liftedBox centerBox centerText blueShadow" style = "margin: 5px;">
+<a href="http://www.uphouseworks.com" class="link" style = "color: #A0A0A0;">Uphouseworks</a>
+</div>
+<br>
+As well as a few of my works and collaborations
+</div>
+
+<div style="margin-bottom: 200px;">
+<div id="item1" class = "lightBlue liftedBox small leftBox centerText" style = "width: 29%; margin-left: 5.5%; margin-right: 0.5%;">
+<a href = "http://www.uphouseworks.com/about_bit_shooter/AboutBitShooter" class = "link">Bit Shooter</a>
+</div>
+
+<div id="item2" class = "lightBlue liftedBox small leftBox centerText" style = "width: 29%; margin-left: 0.5%; margin-right: 0.5%;">
+<a href = "http://www.uphouseworks.com/about_azul/HangmanAzul" class = "link">Hangman Azul</a>
+</div>
+
+<div id="item3" class = "lightBlue liftedBox small leftBox centerText" style = "width: 29%; margin-left: 0.5%; margin-right: 0.5%;">
+<a href = "https://play.google.com/store/apps/details?id=com.jmstudios.corvallistransit&hl=en" class = "link">Corvallis Transit</a>
+</div>
+</div>
+
+
+<div class = "white centerText small">
+© Benjamin Wilson Friedman 2014
+</div>
+
+</div>
 </body>
+
+<script>
+
+var width = document.body.clientWidth;
+
+if(width < 482) {
+	document.getElementById("item1").style.fontSize = "90%";
+	document.getElementById("item2").style.fontSize = "90%";
+	document.getElementById("item3").style.fontSize = "90%";
+}
+
+window.onresize = function(event) {
+	var width = document.body.clientWidth;
+	if(width < 482) {
+		document.getElementById("item1").style.fontSize = "90%";
+		document.getElementById("item2").style.fontSize = "90%";
+		document.getElementById("item3").style.fontSize = "90%";
+	} else if(width >= 482) {
+		document.getElementById("item1").style.fontSize = "110%";
+		document.getElementById("item2").style.fontSize = "110%";
+		document.getElementById("item3").style.fontSize = "110%";
+	}
+};
+</script>
+
 </html>
