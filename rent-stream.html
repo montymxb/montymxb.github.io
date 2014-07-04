@@ -118,12 +118,11 @@
 <script src="https://www.gstatic.com/cast/js/receiver/1.0/cast_receiver.js"></script>
 <script>
     $(function() {
-        var receiver = new cast.receiver.Receiver('3DF11AB0', ['urn:x-cast:com.uphouseworks.rentchecka']),
-            channelHandler = new cast.receiver.ChannelHandler('urn:x-cast:com.uphouseworks.rentchecka'),
-            $messages = $('.messages');
+        var receiver = new cast.receiver.Receiver("3DF11AB0", ["urn:x-cast:uphouseworks.rentchecka"]),
+            channelHandler = new cast.receiver.ChannelHandler("urn:x-cast:uphouseworks.rentchecka"),
+            $messages = $(".messages");
 
-        channelHandler.addChannelFactory(
-            receiver.createChannelFactory('urn:x-cast:com.uphouseworks.rentchecka'));
+        channelHandler.addChannelFactory( receiver.createChannelFactory("urn:x-cast:uphouseworks.rentchecka"));
 
         receiver.start();
 
