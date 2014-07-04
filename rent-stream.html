@@ -26,8 +26,12 @@
 		var customMessageBus = castReceiverManager.getCastMessageBus('urn:x-cast:uphouseworks.rentchecka');
 		customMessageBus.onMessage = function(event) {
 			//document.getElementById("messages").innerHTML = event.data;
+			console.log("Message received");
 			
 			function addContent(element, index, array) {
+			
+				console.log("found "+ element);
+			
 				if (index < 4) {
 					var nameId = "";
 					var costId = "";
@@ -53,6 +57,8 @@
 						costId = "util4+";
 						break;
 					}
+					
+					console.log("adding "+inArray[0] +" & "+ inArray[1]);
 					
 					document.getElementById(nameId).innerHTML = inArray[0];
 					document.getElementById(costId).innerHTML = inArray[1];
@@ -92,12 +98,16 @@
 						break;
 					}
 					
+					console.log("adding "+inArray[0] +" & "+ inArray[1]);
+					
 					document.getElementById(nameId).innerHTML = inArray[0];
 					document.getElementById(costId).innerHTML = inArray[1];
 				}
 			}
 			
 			var contentArray = event.data.split("&");
+			
+			contentArray.forEach(addContent);
 		}
 		
 		castReceiverManager.start();
