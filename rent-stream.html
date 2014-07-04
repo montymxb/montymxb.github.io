@@ -29,7 +29,7 @@
 		
 		var customMessageBus = castReceiverManager.getCastMessageBus('urn:x-cast:uphouseworks.rentchecka');
 		customMessageBus.onMessage = function(event) {
-			document.getElementById("messages").innerHTML = "finished!";
+			document.getElementById("messages").innerHTML = event;
 		}
 		
 		castReceiverManager.start();
