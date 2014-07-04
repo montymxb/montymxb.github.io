@@ -4,15 +4,48 @@
 <html>
 <h3 class = "title">UPHW Chromecast Receiver App</h3>
 <h3>Need some more cowbell..INDEX</h3>
+
 <head>
-<script src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
+  <title>Example minimum receiver</title>
+  <!--<script src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>-->
 </head>
 <body>
-<video id="media"></video>
-<script>
-window.onload = function() {
-	
-}
-</script>
+	<div class="messages">
+        <h1>Waiting for Messages...</h1>
+    </div>
+  <video id='media'/>
+  <!--
+  <script>
+    window.onload = function() {
+      window.mediaElement = document.getElementById('media');
+      window.mediaManager = new cast.receiver.MediaManager(window.mediaElement);
+      window.castReceiverManager = cast.receiver.CastReceiverManager.getInstance();
+      window.castReceiverManager.start();
+    }
+  </script>
+  -->
 </body>
+
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="https://www.gstatic.com/cast/js/receiver/1.0/cast_receiver.js"></script>
+<script src="messageTypes.js"></script>
+<script>
+    $(function() {
+        var receiver = new cast.receiver.Receiver('3DF11AB0', ['urn:x-cast:com.uphouseworks.rentchecka']),
+            channelHandler = new cast.receiver.ChannelHandler('urn:x-cast:com.uphouseworks.rentchecka'),
+            $messages = $('.messages');
+
+        channelHandler.addChannelFactory(
+            receiver.createChannelFactory('urn:x-cast:com.uphouseworks.rentchecka'));
+
+        receiver.start();
+
+        channelHandler.addEventListener(cast.receiver.Channel.EventType.MESSAGE, onMessage.bind(this));
+
+        function onMessage(event) {
+            $messages.html(event.message.type);
+        }
+    });
+</script>
+
 </html>

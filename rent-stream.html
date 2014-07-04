@@ -4,14 +4,9 @@
 <html>
 <head>
 <title>UPHW Rent Checka</title>
-</head>
-<body>
-
-<div class="standardGreen messages">
-    <h1>Waiting for Messages...v2</h1>
-</div>
 <!--
-<script src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js">
+<script src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
+<script>
     window.onload = function() {
       window.mediaElement = document.getElementById('messages');
       window.mediaManager = new cast.receiver.MediaManager(window.mediaElement);
@@ -31,26 +26,13 @@
     }
 </script>
 -->
-<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-<script src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js">
-    $(function() {
-        var receiver = new cast.receiver.Receiver('3DF11AB0', ['urn:x-cast:com.uphouseworks.rentchecka']),
-            channelHandler = new cast.receiver.ChannelHandler('urn:x-cast:com.uphouseworks.rentchecka'),
-            $messages = $('.messages');
 
-        channelHandler.addChannelFactory(
-            receiver.createChannelFactory('urn:x-cast:com.uphouseworks.rentchecka'));
+</head>
+<body>
 
-        receiver.start();
-
-        channelHandler.addEventListener(cast.receiver.Channel.EventType.MESSAGE, onMessage.bind(this));
-
-        function onMessage(event) {
-            $messages.html(event.message.type);
-        }
-    });
-</script>
-
+<div class="standardGreen messages">
+    <h1>Waiting for Messages...v2</h1>
+</div>
 
 <h1 class = "title standardGreen">Rent Checka</h1>
 
@@ -131,4 +113,27 @@
 <h2 class="standardGreen" style="text-align:center; margin-bottom: 0px;">an uphouseworks creation</h6>
 
 </body>
+
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="https://www.gstatic.com/cast/js/receiver/1.0/cast_receiver.js"></script>
+<script src="messageTypes.js"></script>
+<script>
+    $(function() {
+        var receiver = new cast.receiver.Receiver('3DF11AB0', ['urn:x-cast:com.uphouseworks.rentchecka']),
+            channelHandler = new cast.receiver.ChannelHandler('urn:x-cast:com.uphouseworks.rentchecka'),
+            $messages = $('.messages');
+
+        channelHandler.addChannelFactory(
+            receiver.createChannelFactory('urn:x-cast:com.uphouseworks.rentchecka'));
+
+        receiver.start();
+
+        channelHandler.addEventListener(cast.receiver.Channel.EventType.MESSAGE, onMessage.bind(this));
+
+        function onMessage(event) {
+            $messages.html(event.message.type);
+        }
+    });
+</script>
+
 </html>
