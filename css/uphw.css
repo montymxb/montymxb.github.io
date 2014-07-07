@@ -7,7 +7,7 @@
 
 .title {
 	text-align: center;
-	font-size: 48px;
+	font-size: 60px;
 	margin: 20px;
 }
 
@@ -31,7 +31,7 @@ body {
 }
 
 .logoText {
-	margin-top: 25px;
+	margin-top: 35px;
 	vertical-align: middle;
 }
 
@@ -39,15 +39,17 @@ body {
 	margin-top: 25%;
 	width: 100%;
 	box-shadow: 1px 1px 20px #000000;
+	height: 110%;
 }
 
 .plainItem {
 	margin-top: 25%;
 	width: 100%;
+	height: 110%;
 }
 
 .footer {
-	margin-top: 25%;
+	background: #383838;
 	width: 100%;
 	height: 45px;
 }
@@ -81,6 +83,7 @@ body {
 .stdPara {
 	font-size: 18px;
 	margin: 50px;
+	margin-left: 25%;
 }
 
 .sideBar {
@@ -98,4 +101,25 @@ body {
 	height: 40px;
 	font-size: 25px;
 	margin-left: 40px;
+}
+
+.showcase {
+	height: 200px; 
+	width: 200px;
+	box-shadow: 1px 1px 10px #000000;
+	margin: 10px;
+}
+
+.page {
+	height: 110%;
+}
+
+.rightImage {
+	display: block;
+	margin-left: auto;
+	margin-right: 2%;
+}
+
+.fancyFont {
+	font-family: Papyrus;
 }

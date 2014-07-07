@@ -35,7 +35,7 @@
     			po.type = 'text/javascript'; 
     			po.async = true;
     			po.src = 'https://apis.google.com/js/platform.js';
-    			var s = document.getElementsByTagName('script')[0]; 
+    			var s = document.getElementsByTagName('script')[0];
     			s.parentNode.insertBefore(po, s);
   			})();
 		
@@ -64,13 +64,15 @@
 	<!--Wrapper Div?-->
 	<div>
 	
+	<!--
 	<div style = "float: left;">
 	<div class = "sideBar">
-		<div style = "background: #FFFFFF;"><div class = "sideBarItem">Home</div></div>
-		<div style = "background: #FFFFFF;"><div class = "sideBarItem">Works</div></div>
-		<div style = "background: #FFFFFF;"><div class = "sideBarItem">About</div></div>
-		<div style = "background: #FFFFFF;"><div class = "sideBarItem">Contact</div></div>
+		<div style = "background: #FFFFFF;"><div class = "sideBarItem"><a href = "/" class = "blueText">Home</a></div></div>
+		<div style = "background: #FFFFFF;"><div class = "sideBarItem"><a href = "our_work/Works.html" class = "blueText">Works</a></div></div>
+		<div style = "background: #FFFFFF;"><div class = "sideBarItem"><a href = "our_thoughts/About.html" class = "blueText">About</a></div></div>
+		<div style = "background: #FFFFFF;"><div class = "sideBarItem"><a href = "contact/Contact.html" class = "blueText">Contact</a></div></div>
 	</div>
+	-->
 		
 		<!--TWITTER-->
 		<!--
@@ -87,14 +89,47 @@
 		-->
 	</div>
 
+	<div class = "page" style = "height: 80%;">
 	<img class = "uphwImage" src = "images/uphw_white.png"/>
 
 	<div class = "center">
 		<h1 id="main" class="title" style = "float: left;">Uphouseworks</h1>
 		<h3 id="supMain" class = "centerText logoText" style = "width: 170px; float: left;">It's always about creating.</h3>
 	</div>
+	</div>
+	
+	<div class = "center item" style = "font-size: 30px; background: #FFFFFF; box-shadow: 1px 1px 200px #FFFFFF;">
+		<h1 class = "centerText blueText" style = "margin-top: 100px; font-family: Fantasy;">Welcome.</h1>
+		<p class = "stdPara blueText">
+			My intentions are simple.<br>
+		 	To bring ideas to reality, and to share them with you.<br><br>
+		  	It has always been a strong interest of mine to invent, create and inspire.
+		  	<br>With software it is easier than ever to share ideas with others and to <i class = "blueText">inspire</i> others.
+		</p>
+	</div>
 	
 	
+	<div class = "center item" style = "background: #383838; width: 100%; margin-top: 0px; font-size: 35px;">
+		<h1 class = "centerText fancyFont" style = "margin-top: 100px; margin-bottom: 20px; color: #A0A0A0">Mobile Apps</h1>
+		<p class = "stdPara centerText" style = "color: #A0A0A0; margin: 50px;">These are a few of my own apps as well as one that I worked on collaboratively with the Oregon State University App Club.</p>
+		<p></p>
+		<div class = "center">
+			<div>
+				<img id = "app1" class = "showcase" src="images/azul_512.png">
+				<img id = "app2" class = "showcase" src="images/bsImg.png">
+			</div>
+			<div>
+				<img id = "app3" class = "showcase" src="images/floidialogo.png">
+				<img id = "app4" class = "showcase" src = "images/corvallis_transit.png"/>
+			</div>
+		</div>
+		
+		<p class = "stdPara centerText" style = "color: #A0A0A0; margin: 50px;">Mobile applications are a personal favorite, and a convenient way to showcase your product, skills or services.</p>
+		
+	</div>
+	
+	
+	<!--
 	<div id="announcement" class = "center item" style = "background: #000000; height: 350px;">
 	
 		<h1 class = "regItem">A New App for Android</h1>
@@ -110,24 +145,15 @@
   			<img alt="Get it on Google Play" src="images/en_generic_rgb_wo_60.png" />
 		</a>
 	</div>
-	
-	<div class = "center plainItem" style = "font-size: 30px;">
-		<h1 class = "centerText">Welcome.</h1>
-		<p class = "stdPara">
-			My intentions are simple.<br>
-		 	To bring ideas to reality, and to share them with you.<br><br>
-		  	It has always been a strong interest of mine to invent, create and inspire.
-		  	<br>With software it is easier than ever to share ideas with others and to <i>inspire</i> others.
-		</p>
-	</div>
+	-->
 	
 	
-	<div class = "center item" style = "font-size: 30px;">
-		<img src="images/AssetHouse.svg" style = "float: left;">
-		<h1 class = "centerText" style = "float; left;">Fresh from the house.</h1>
+	<div class = "center page" style = "font-size: 30px;">
+		<img id = "assetImage" src="images/AssetHouse.svg" style = "margin-top: 150px; margin-left: 2%;">
+		<h1 id = "assetTxt" class = "centerText" style = "float; left; margin-left: 20px; font-family: Fantasy;">Fresh from the house.</h1>
 		
 		<p class = "stdPara">
-		I just released another application to Google Play called "Hangman Azul". The purpose is in the name, it's a hangman game!
+		I recently released another application to Google Play called "Hangman Azul". The purpose is in the name, it's a hangman game!
 		However the azul portion bears significance as well. Azul is spanish for <i>blue</i>, and that color would be the basis for the theme of this app.
 		The background is blue and the usage is through bluetooth. The bluetooth part is the primary function, as this is only a multiplayer game.
 		I attempted to start something like this over a year ago, but was unable to realize it. Earlier this year I revisited the idea and was able to finally get it set up!
@@ -142,8 +168,8 @@
 	</div>
 	
 	
-	<div class = "center plainItem" style = "font-size: 30px;">
-	<h1 class = "centerText" style = "float; left;">The Works ˚¬˚</h1>
+	<div class = "center item page" style = "font-size: 30px; background: #888888;">
+	<h1 id = "workTxt" class = "centerText" style = "margin-top: 100px; font-family: Fantasy;">The Works</h1>
 	<p class = "stdPara">
 		Hangman Azul is being worked on consistently, however it is notable to mention that this will be the last game I will be doing for some time.<br>
 		I feel the need to move onto some more practical applications, although it is fun to write these things!<br>
@@ -158,7 +184,7 @@
 	</div>
 
 	<div class = "footer centerText">
-	 About • Support • © Benjamin Wilson Friedman 2014
+	 <br>About • Support • © Benjamin Wilson Friedman 2014
 	</div>
 
 </body>
