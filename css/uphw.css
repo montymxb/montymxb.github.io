@@ -1,0 +1,101 @@
+
+* {
+	color: #FFFFFF;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0px;
+}
+
+.title {
+	text-align: center;
+	font-size: 48px;
+	margin: 20px;
+}
+
+body {
+	background: #00CCFF;
+}
+
+.block {
+	height: 300px;
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+	display: table;
+}
+
+.centerText {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.logoText {
+	margin-top: 25px;
+	vertical-align: middle;
+}
+
+.item {
+	margin-top: 25%;
+	width: 100%;
+	box-shadow: 1px 1px 20px #000000;
+}
+
+.plainItem {
+	margin-top: 25%;
+	width: 100%;
+}
+
+.footer {
+	margin-top: 25%;
+	width: 100%;
+	height: 45px;
+}
+
+.regItem {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 10%;
+}
+
+.uphwImage {
+	margin-left: 1%;
+}
+
+.blueText {
+	color: #00CCFF;
+}
+
+.large {
+	font-size: 40px;
+}
+
+.medium {
+	font-size: 30px;
+}
+
+.small {
+	font-size: 18px;
+}
+
+.stdPara {
+	font-size: 18px;
+	margin: 50px;
+}
+
+.sideBar {
+	box-shadow: 2px 2px 20px #FFFFFF;
+	width: 150px;
+	margin: 20px;
+	margin-top: 40px;
+	float: left;
+}
+
+.sideBarItem {
+	color: #00CCFF;
+	margin-top: 2px;
+	background: #FFFFFF;
+	height: 40px;
+	font-size: 25px;
+	margin-left: 40px;
+}
