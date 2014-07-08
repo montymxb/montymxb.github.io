@@ -120,6 +120,15 @@ body {
 	margin-right: 2%;
 }
 
+.liftedImage {
+	box-shadow: 1px 1px 20px #000000;
+	margin: 20px;
+}
+
+.lifted {
+	box-shadow: 1px 1px 20px #000000;
+}
+
 .link {
 	text-decoration: none;
 }

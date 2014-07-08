@@ -1,6 +1,10 @@
 var width = document.body.clientWidth;
 var height = document.body.clientHeight;
 
+if(height < 400) {
+	document.getElementById("titlePiece").style.height = "320px";
+}
+
 if(width < 640) {
 	document.getElementById("main").style.fontSize = "280%";
 	document.getElementById("supMain").style.fontSize = "110%";
@@ -35,6 +39,13 @@ if(width < 540) {
 
 window.onresize = function(event) {
 	var width = document.body.clientWidth;
+	var height = document.body.clientHeight;
+	
+	if(height < 400) {
+		document.getElementById("titlePiece").style.height = "320px";
+	} else {
+		document.getElementById("titlePiece").style.height = "80%";
+	}
 	
 	if(width < 640) {
 		document.getElementById("main").style.fontSize = "280%";
