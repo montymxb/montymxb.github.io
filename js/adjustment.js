@@ -37,6 +37,13 @@ if(width < 540) {
 	document.getElementById("app4").style.marginRight = "auto";
 }
 
+if(width < 400) {
+	document.getElementById("bakeImg").style.width = "150px";
+	document.getElementById("bakeImg").style.height = "150px";
+	document.getElementById("pencilImg").style.width = "150px";
+	document.getElementById("pencilImg").style.height = "100px";
+}
+
 window.onresize = function(event) {
 	var width = document.body.clientWidth;
 	var height = document.body.clientHeight;
@@ -96,6 +103,18 @@ window.onresize = function(event) {
 	
 		document.getElementById("app4").style.display = "inline";
 		document.getElementById("app4").style.margin = "10px";
+	}
+	
+	if(width < 400) {
+		document.getElementById("bakeImg").style.width = "150px";
+		document.getElementById("bakeImg").style.height = "150px";
+		document.getElementById("pencilImg").style.width = "150px";
+		document.getElementById("pencilImg").style.height = "100px";
+	} else {
+		document.getElementById("bakeImg").style.width = "300px";
+		document.getElementById("bakeImg").style.height = "300px";
+		document.getElementById("pencilImg").style.width = "300px";
+		document.getElementById("pencilImg").style.height = "200px";
 	}
 	
 };

@@ -84,7 +84,7 @@
 		A visually appealing wordplay experience.
 	</h2>
 	
-	<div class = "center">
+	<div class = "center" style = "height: 150px;">
 	<div id="paid" class = "centerText" style ="float: left;">
 	<!--Paid Link (Full)-->
 		<a class = "link" href="https://play.google.com/store/apps/details?id=com.uphouseworks.hangman.paid">
@@ -166,7 +166,7 @@
 var width = document.body.clientWidth;
 var height = document.body.clientHeight;
 if(height < 400) {
-	document.getElementById("titlePiece").style.height = "400px";
+	//document.getElementById("titlePiece").style.height = "400px";
 }
 
 if(height < 800) {
@@ -183,17 +183,17 @@ if(width < 400) {
 	
 	document.getElementById("img1").style.cssFloat = "none";
 	document.getElementById("img2").style.cssFloat = "none";
+} else {
+	if(height < 400) {
+			document.getElementById("titlePiece").style.height = "400px";
+		} else {
+			document.getElementById("titlePiece").style.height = "110%";
+		}
 }
 	
 window.onresize = function(event) {
 	var height = document.body.clientHeight;
 	var width = document.body.clientWidth;
-	
-	if(height < 400) {
-		document.getElementById("titlePiece").style.height = "400px";
-	} else {
-		document.getElementById("titlePiece").style.height = "110%";
-	}
 	
 	if(height < 800) {
 		document.getElementById("descrip").style.height = "800px";
@@ -220,7 +220,13 @@ window.onresize = function(event) {
 		
 		document.getElementById("img1").style.cssFloat = "left";
 		document.getElementById("img2").style.cssFloat = "left";
-	}
+		
+		if(height < 400) {
+			document.getElementById("titlePiece").style.height = "400px";
+		} else {
+			document.getElementById("titlePiece").style.height = "110%";
+		}
+	} 
 }
 </script>
 
