@@ -120,6 +120,15 @@ body {
 	margin-right: 2%;
 }
 
+.link {
+	text-decoration: none;
+}
+
+.link:hover
+{ 
+	color: #C0C0C0;
+}
+
 .fancyFont {
 	font-family: Papyrus;
 }
