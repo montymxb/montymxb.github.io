@@ -85,17 +85,19 @@
 	</h2>
 	
 	<div class = "center">
-	<div class = "centerText" style ="float: left">
+	<div id="paid" class = "centerText" style ="float: left;">
 	<!--Paid Link (Full)-->
 		<a class = "link" href="https://play.google.com/store/apps/details?id=com.uphouseworks.hangman.paid">
 			<br>Hangman Azul<br>
 			<img alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_generic_rgb_wo_60.png" />
 		</a>
 	</div>
-	<div class = "centerText" style = "float: left; margin: 15px;">
+	
+	<div id="moar" class = "centerText" style = "float: left; margin: 15px;">
 	<h1 style = "margin-top: 35px;"> & </h1>
 	</div>
-	<div class = "centerText" style = "float: right">
+	
+	<div id="free" class = "centerText" style = "float: right;">
 	<!--Free Link (Lite)-->
 		<a class = "link" href="https://play.google.com/store/apps/details?id=com.uphouseworks.hangman">
 			<br>Hangman Azul Lite<br>
@@ -143,8 +145,8 @@
 	<img class = "center" src = "../images/azul_pic_1.png" style = "max-width:300px; max-height:300px; box-shadow: 1px 1px 1px 1px #181818; margin-top: 50px;">
 	
 	<div class = "center" style = "height: 300px; margin-bottom: 20px;">
-	<img class = "center" src = "../images/azul_pic_3.png" style = "float: left; max-width:300px; max-height:300px; margin: 8px; box-shadow: 1px 1px 1px 1px #181818;">
-	<img class = "center" src = "../images/azul_pic_2.png" style = "float: left; max-width:300px; max-height:300px; margin: 8px; box-shadow: 1px 1px 1px 1px #181818;">
+	<img id="img1" class = "center" src = "../images/azul_pic_3.png" style = "float: left; max-width:300px; max-height:300px; margin: 8px; box-shadow: 1px 1px 1px 1px #181818;">
+	<img id="img2" class = "center" src = "../images/azul_pic_2.png" style = "float: left; max-width:300px; max-height:300px; margin: 8px; box-shadow: 1px 1px 1px 1px #181818;">
 	</div>
 	<br><br>
 
@@ -161,6 +163,7 @@
 
 <!-- Javascript to adjust page contents -->
 <script>
+var width = document.body.clientWidth;
 var height = document.body.clientHeight;
 if(height < 400) {
 	document.getElementById("titlePiece").style.height = "400px";
@@ -169,9 +172,22 @@ if(height < 400) {
 if(height < 800) {
 	document.getElementById("descrip").style.height = "800px";
 }
+
+if(width < 400) {
+	document.getElementById("descrip").style.height = "900px";
+	document.getElementById("titlePiece").style.height = "700px";
+	
+	document.getElementById("paid").style.cssFloat = "none";
+	document.getElementById("moar").style.cssFloat = "none";
+	document.getElementById("free").style.cssFloat = "none";
+	
+	document.getElementById("img1").style.cssFloat = "none";
+	document.getElementById("img2").style.cssFloat = "none";
+}
 	
 window.onresize = function(event) {
 	var height = document.body.clientHeight;
+	var width = document.body.clientWidth;
 	
 	if(height < 400) {
 		document.getElementById("titlePiece").style.height = "400px";
@@ -183,6 +199,27 @@ window.onresize = function(event) {
 		document.getElementById("descrip").style.height = "800px";
 	} else {
 		document.getElementById("descrip").style.height = "110%";
+	}
+	
+	if(width < 400) {
+		document.getElementById("descrip").style.height = "900px";
+		
+		document.getElementById("titlePiece").style.height = "700px";
+		
+		document.getElementById("paid").style.cssFloat = "none";
+		document.getElementById("moar").style.cssFloat = "none";
+		document.getElementById("free").style.cssFloat = "none";
+		
+		document.getElementById("img1").style.cssFloat = "none";
+		document.getElementById("img2").style.cssFloat = "none";
+	} else {
+		document.getElementById("paid").style.cssFloat = "left";
+		document.getElementById("moar").style.cssFloat = "left";
+		document.getElementById("free").style.cssFloat = "right";
+		document.getElementById("titlePiece").style.height = "110%";
+		
+		document.getElementById("img1").style.cssFloat = "left";
+		document.getElementById("img2").style.cssFloat = "left";
 	}
 }
 </script>
