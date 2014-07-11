@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: rent-stream.html
+
