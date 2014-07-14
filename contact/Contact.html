@@ -60,7 +60,7 @@
 
 		var bodyRect = document.body.getBoundingClientRect(),
 			elemRect = element.getBoundingClientRect(),
-			offset   = bodyRect.bottom - elemRect.bottom;
+			offset   = (bodyRect.bottom - elemRect.bottom) * 2.0;
 	
 		if(offset > 0) {
 			alert("moving:"+offset);
