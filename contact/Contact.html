@@ -44,12 +44,50 @@
 	For business you can reach me at <a href = "mailto:friedman.benjamin@gmail.com@?Subject=Business" target = "_top" class = "link">friedman.benjamin@gmail.com</a>.
 </p>
 
-<h6 class = "centerText" style = "font-family: Fantasy; margin-top: 5%;">This site was recently migrated and is still undergoing work...</h6>
+<div id = "bottomId">
+	<h6 class = "centerText" style = "font-family: Fantasy;">This site was recently migrated and is still undergoing work...</h6>
 
 	<div class = "footer centerText">
 	 <br><a class="link" href="">Contact</a> • <a class="link" href = "../support/Support.html">Support</a> • © Benjamin Wilson Friedman 2014
 	</div>
+</div>
 
 </body>
+
+<script>
+	window.onload = function() {
+		var element = document.getElementById("bottomId");
+
+		var bodyRect = document.body.getBoundingClientRect(),
+			elemRect = element.getBoundingClientRect(),
+			offset   = bodyRect.bottom - elemRect.bottom;
+	
+		if(offset > 0) {
+			element.style.marginTop = offset + "px";	
+		}
+	};
+	
+</script>
+
+<script>
+//if(height < 400) {
+	//document.getElementById("titlePiece").style.height = "400px";
+//}
+    
+//alert(offset);
+	
+	/*
+window.onresize = function(event) {
+	var height = document.body.clientHeight;
+	
+	if(height < 400) {
+		document.getElementById("titlePiece").style.height = "400px";
+	} else {
+		document.getElementById("titlePiece").style.height = "110%";
+	}
+}
+*/
+
+</script>
 
 </html>
