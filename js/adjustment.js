@@ -1,6 +1,16 @@
 var width = document.body.clientWidth;
 var height = document.body.clientHeight;
 
+//handle firefox issue with text sizing
+if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1)
+{
+    var elements = document.getElementsByClassName("stdPara");
+	
+	var testDivs = Array.prototype.filter.call(elements, function(elm){
+		elm.style.fontSize = "15px";
+	});
+}
+
 if(height < 400) {
 	document.getElementById("titlePiece").style.height = "320px";
 }
@@ -14,6 +24,10 @@ if(width < 640) {
 }
 
 if(width < 540) {
+	document.getElementById("uphwImage").style.marginLeft = "0px";
+	document.getElementById("uphwImage").style.width = "200px";
+	document.getElementById("uphwImage").style.height = "200px";
+	
 	document.getElementById("main").style.fontSize = "165%";
 	document.getElementById("supMain").style.fontSize = "90%";
 	document.getElementById("supMain").style.marginTop = "21px";
@@ -89,6 +103,10 @@ window.onresize = function(event) {
 	}
 
 	if(width < 540) {
+		document.getElementById("uphwImage").style.marginLeft = "0px";
+		document.getElementById("uphwImage").style.width = "200px";
+		document.getElementById("uphwImage").style.height = "200px";
+	
 		document.getElementById("main").style.fontSize = "165%";
 		document.getElementById("supMain").style.fontSize = "90%";
 		document.getElementById("supMain").style.marginTop = "21px";
@@ -111,6 +129,10 @@ window.onresize = function(event) {
 		document.getElementById("app4").style.marginLeft = "auto";
 		document.getElementById("app4").style.marginRight = "auto";
 	} else {
+		document.getElementById("uphwImage").style.marginLeft = "1%";
+		document.getElementById("uphwImage").style.width = "300px";
+		document.getElementById("uphwImage").style.height = "300px";
+	
 		document.getElementById("app1").style.display = "inline";
 		document.getElementById("app1").style.margin = "10px";
 

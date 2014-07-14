@@ -1,8 +1,8 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<link href="css/uphw.css" type="text/css" rel="stylesheet">
 <!DOCTYPE html>
-<link rel="stylesheet" href="css/uphw.css">
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,6 +29,7 @@
 	
 	<!--For Google +-->
 		<script type="text/javascript">
+		/*
   			(function() 
   			{
     			var po = document.createElement('script'); 
@@ -39,7 +40,7 @@
     			s.parentNode.insertBefore(po, s);
   			})();
 		
-			<!--For Twitter-->
+			//For Twitter
 			(function(d,s,id)
 			{
 				var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
@@ -53,6 +54,7 @@
 				//}
 			}
 			(document, 'script', 'twitter-wjs'));
+			*/
 		</script>
 </head>
   
@@ -87,7 +89,7 @@
 	</div>
 
 	<div id="titlePiece" class = "page" style = "height: 80%;">
-	<img class = "uphwImage" src = "images/uphw_white.png"/>
+	<img id = "uphwImage" src = "images/uphw_white.png"/>
 
 	<div class = "center">
 		<h1 id="main" class="title" style = "float: left;">Uphouseworks</h1>
@@ -96,7 +98,7 @@
 	</div>
 	
 	<div class = "center item" style = "font-size: 30px; background: #FFFFFF; box-shadow: 1px 1px 200px #FFFFFF;">
-		<h1 class = "centerText blueText" style = "margin-top: 100px; font-family: Fantasy;">Welcome.</h1>
+		<h1 class = "centerText blueText fancyFont" style = "margin-top: 100px;">Welcome.</h1>
 		<p class = "stdPara blueText">
 			My intentions are simple.<br>
 		 	To bring ideas to reality, and to share them with you.<br><br>
@@ -122,27 +124,7 @@
 			</div>
 		</div>
 		
-	</div>
-	
-	
-	<!--
-	<div id="announcement" class = "center item" style = "background: #000000; height: 350px;">
-	
-		<h1 class = "regItem">A New App for Android</h1>
-		<img class = "regItem" src = "images/azul_512.png" style = "width: 150px; height: 150px; float: left;"/>
-		<br>
-		<br>
-		<h3 class = "regItem" style = "float: left;">
-			Hangman Azul is now available for download on<br>Google Play<br>
-		</h3>
-		<h5 class = "specialIntroText regItem">
-		</h5>
-		<a class = "googlePlayLink regItem" style = "float: left; margin-top: 40px; margin-right: 20px;" href="https://play.google.com/store/apps/details?id=com.uphouseworks.hangman.paid">
-  			<img alt="Get it on Google Play" src="images/en_generic_rgb_wo_60.png" />
-		</a>
-	</div>
-	-->
-	
+	</div>	
 	
 	<div class = "center page" style = "font-size: 30px; margin-top: 0px;">
 		<img id = "bakeImg" src="images/fresh_baked_goods.png" style = "margin-top: 150px; margin-left: 5%;">
@@ -176,16 +158,14 @@
 	</p>
 	<h6 class = "centerText" style = "font-family: Fantasy; font-size: 12px;">This site was recently migrated and is still undergoing work...</h6>
 	</div>
-	
-	</div>
 
 	<div class = "footer centerText">
 	 <br><a class="link" href="contact/Contact.html">Contact</a> • <a class="link" href = "support/Support.html">Support</a> • © Benjamin Wilson Friedman 2014
 	</div>
+	
+	<!-- Javascript to adjust page contents -->
+	<script src = "js/adjustment.js"></script>
 
 </body>
-
-<!-- Javascript to adjust page contents -->
-<script src = "js/adjustment.js"></script>
 
 </html>
