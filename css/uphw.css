@@ -142,3 +142,11 @@ body {
 .fancyFont {
 	font-family: Papyrus;
 }
+
+@media print {
+	
+}
+
+@media screen {
+	
+}
