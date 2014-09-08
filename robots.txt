@@ -1,4 +1,2 @@
 User-agent: *
 Disallow: rent-stream.html
-Disallow: /tester/
-
