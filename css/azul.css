@@ -1,0 +1,30 @@
+
+@media (max-width: 400px) {
+
+	#descrip {
+		height: 1050px;
+	}
+	
+	#titlePiece {
+		height: 700px;
+	}
+	
+	#img1,#img2 {
+		clear: both;
+	}
+	
+	#moar, #paid, #free {
+		clear: both;
+		display: table;
+		margin-left: auto;
+    	margin-right: auto;
+    	width: 82%;
+	}
+}
+
+@media (max-width: 800px) {
+
+	#descrip {
+		height: 800px;
+	}
+}

@@ -2,6 +2,7 @@
 <html>
 <head>
   	<link rel="stylesheet" href="../css/uphw.css" />
+  	<link rel="stylesheet" href="../css/azul.css" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Sharing the works of Benjamin Wilson Friedman." />
@@ -25,26 +26,20 @@
   		})();
 
 	</script>
-	
 	<link rel="icon" type="image/ico" href="../favicon.ico">
-	
 	<style>
 		* {
 			color: #FFFFFF;
 		}
 	</style>
-    
 </head>
-  
 <body>
 
 	<!--Wrapper Div?-->
 <div style = "height: 90%;">
-
 <div class = "blackBackIntroItem" style = "margin-bottom: -10px;">
-	
 	<div id = "titlePiece" class = "plainItem" style = "margin-top: 125px; margin-bottom: 125px;">
-		<div class = "center" style = "background: #FFFFFF; box-shadow: 1px 1px 20px #FFFFFF; margin-bottom: 0px;">
+		<div class = "center" style = "margin-bottom: 0px;">
 			<img src = "../images/azul_512.png" style = "max-width:180px; max-height:180px;" alt="">
 		</div>
 
@@ -122,76 +117,5 @@
 	</div>
 
 </div>
-
-<!-- Javascript to adjust page contents -->
-<script>
-var width = document.body.clientWidth;
-var height = document.body.clientHeight;
-if(height < 400) {
-	//document.getElementById("titlePiece").style.height = "400px";
-}
-
-if(height < 800) {
-	document.getElementById("descrip").style.height = "800px";
-}
-
-if(width < 400) {
-	document.getElementById("descrip").style.height = "1050px";
-	document.getElementById("titlePiece").style.height = "700px";
-	
-	document.getElementById("paid").style.cssFloat = "none";
-	document.getElementById("moar").style.cssFloat = "none";
-	document.getElementById("free").style.cssFloat = "none";
-	
-	document.getElementById("img1").style.cssFloat = "none";
-	document.getElementById("img2").style.cssFloat = "none";
-} else {
-	if(height < 400) {
-			document.getElementById("titlePiece").style.height = "400px";
-		} else {
-			document.getElementById("titlePiece").style.height = "110%";
-		}
-}
-	
-window.onresize = function(event) {
-	var height = document.body.clientHeight;
-	var width = document.body.clientWidth;
-	
-	if(height < 800) {
-		document.getElementById("descrip").style.height = "800px";
-	} else {
-		document.getElementById("descrip").style.height = "110%";
-	}
-	
-	if(width < 400) {
-		document.getElementById("descrip").style.height = "1050px";
-		
-		document.getElementById("titlePiece").style.height = "700px";
-		
-		document.getElementById("paid").style.cssFloat = "none";
-		document.getElementById("moar").style.cssFloat = "none";
-		document.getElementById("free").style.cssFloat = "none";
-		
-		document.getElementById("img1").style.cssFloat = "none";
-		document.getElementById("img2").style.cssFloat = "none";
-	} else {
-		document.getElementById("paid").style.cssFloat = "left";
-		document.getElementById("moar").style.cssFloat = "left";
-		document.getElementById("free").style.cssFloat = "right";
-		document.getElementById("titlePiece").style.height = "110%";
-		
-		document.getElementById("img1").style.cssFloat = "left";
-		document.getElementById("img2").style.cssFloat = "left";
-		
-		if(height < 400) {
-			document.getElementById("titlePiece").style.height = "400px";
-		} else {
-			document.getElementById("titlePiece").style.height = "110%";
-		}
-	} 
-}
-</script>
-
 </body>
-
 </html>

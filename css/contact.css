@@ -1,0 +1,15 @@
+
+#main_body {
+	margin: 50px;
+}
+
+@media (max-width: 400px) {
+	#main_body {
+		margin-bottom: 100px;
+	}
+	
+	#bot_bar {
+		margin-top: 100px;
+		background: #A98090;
+	}
+}

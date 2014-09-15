@@ -2,6 +2,7 @@
 <html>
 <head>
   	<link rel="stylesheet" href="../css/uphw.css" />
+  	<link rel="stylesheet" href="../css/floidia.css" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Sharing the works of Benjamin Wilson Friedman." />
@@ -39,11 +40,11 @@
 		<img src = "../images/floidialogo.png" style = "max-width:180px; max-height:180px;" alt="">
 	</div>
 
-	<h2 class = "centerText" style = "font-family: Fantasy; margin-top: 40px; font-size: 35px; margin-bottom: 10px;">
+	<h2 id = "floidia_statement" class = "centerText">
 		You are the maestro.
 	</h2>
 	
-	<div class = "center lifted">
+	<div class = "center">
 		<!--APP STORE LINK-->
 		<a class = "googlePlayLink" href="https://play.google.com/store/apps/details?id=com.uphouseworks.floidia">
   			<img alt="Get it on Google Play" src="../images/en_generic_rgb_wo_60.png">
@@ -82,70 +83,17 @@
 		<br>	
 	</p>
 	</div>
-	
 	<div class = "center">
-		<img class = "center liftedImage" src = "../images/mphone4.png" style = "width:360px; height:360px; margin-top: 150px;" alt="">
-		<img class = "center liftedImage" src = "../images/mphone2.png" style = "width:360px; height:360px; margin-top: 150px;" alt="">
-		<img class = "center liftedImage" src = "../images/mphone1.png" style = "width:360px; height:360px; margin-top: 150px;" alt="">
+		<img class = "center liftedImage gameimage" src = "../images/mphone4.png" alt=""/>
+		<img class = "center liftedImage gameimage" src = "../images/mphone2.png" alt=""/>
+		<img class = "center liftedImage gameimage" src = "../images/mphone1.png" alt=""/>
 	</div>
 	<br>
 	<br>
-
 <h6 class = "centerText" style = "font-family: Fantasy;">This site was recently migrated and is still undergoing work...</h6>
-
 <div class = "footer centerText">
 	 <br><a class="link" href="../contact/Contact">Contact</a> • <a class="link" href = "../support/Support">Support</a> • © Benjamin Wilson Friedman 2014
 </div>
-
 </div>
-
-<!-- Javascript to adjust page contents -->
-<script>
-var height = document.body.clientHeight;
-var width = document.body.clientWidth;
-
-if(height < 320) {
-	document.getElementById("titlePiece").style.height = "320px";
-}
-
-if(width < 400) {
-
-	var elements = document.getElementsByClassName("liftedImage");
-	
-	var testDivs = Array.prototype.filter.call(elements, function(elm){
-    	elm.style.width = "250px";
-		elm.style.height = "250px";
-	});
-}
-	
-window.onresize = function(event) {
-	var width = document.body.clientWidth;
-	var height = document.body.clientHeight;
-	
-	if(height < 320) {
-		document.getElementById("titlePiece").style.height = "320px";
-	} else {
-		document.getElementById("titlePiece").style.height = "110%";
-	}
-	
-	if(width < 400) {
-
-		var elements = document.getElementsByClassName("liftedImage");
-	
-		var testDivs = Array.prototype.filter.call(elements, function(elm){
-			elm.style.width = "250px";
-			elm.style.height = "250px";
-		});
-		
-	} else {
-		var elements = document.getElementsByClassName("liftedImage");
-	
-		var testDivs = Array.prototype.filter.call(elements, function(elm){
-			elm.style.width = "360px";
-			elm.style.height = "360px";
-		});
-	}
-}
-</script>
 </body>
 </html>
