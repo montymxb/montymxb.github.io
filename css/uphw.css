@@ -51,6 +51,7 @@ body {
 	background: #383838;
 	width: 100%;
 	padding-bottom: 15px;
+	height: 50px;
 }
 
 .regItem {
@@ -113,6 +114,13 @@ body {
 
 .page {
 	height: 110%;
+}
+
+.page_header {
+	position: absolute;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
 }
 
 .rightImage {

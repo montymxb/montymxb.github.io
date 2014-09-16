@@ -29,7 +29,6 @@
 	
 	<!--For Google +-->
 		<script type="text/javascript">
-		/*
   			(function() 
   			{
     			var po = document.createElement('script'); 
@@ -44,35 +43,20 @@
 			(function(d,s,id)
 			{
 				var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
-				//if(!d.getElementById(id))
-				//{
+				if(!d.getElementById(id))
+				{
 					js=d.createElement(s);
 					js.id=id;
 					js.async = true;
 					js.src=p+'://platform.twitter.com/widgets.js';
 					fjs.parentNode.insertBefore(js,fjs);
-				//}
+				}
 			}
 			(document, 'script', 'twitter-wjs'));
-			*/
 		</script>
 </head>
   
-<body>
-
-	<!--Wrapper Div?-->
-	<div>
-	
-	<!--
-	<div style = "float: left;">
-	<div class = "sideBar">
-		<div style = "background: #FFFFFF;"><div class = "sideBarItem"><a href = "/" class = "blueText">Home</a></div></div>
-		<div style = "background: #FFFFFF;"><div class = "sideBarItem"><a href = "our_work/Works.html" class = "blueText">Works</a></div></div>
-		<div style = "background: #FFFFFF;"><div class = "sideBarItem"><a href = "our_thoughts/About.html" class = "blueText">About</a></div></div>
-		<div style = "background: #FFFFFF;"><div class = "sideBarItem"><a href = "contact/Contact.html" class = "blueText">Contact</a></div></div>
-	</div>
-	-->
-		
+<body>			
 		<!--TWITTER-->
 		<!--
 		<div class="socialMediaButton" style = "margin-left: 20px; margin-bottom: 10px;">
@@ -86,9 +70,8 @@
 			<g:plusone></g:plusone>
 		</div>
 		-->
-	</div>
 
-	<div id="titlePiece" class = "page" style = "height: 80%;">
+	<div id="titlePiece">
 	<img id = "uphwImage" src = "images/uphw_white.png" alt="">
 
 	<div class = "center">
@@ -96,41 +79,50 @@
 		<h3 id="supMain" class = "centerText logoText" style = "width: 170px; float: left; font-family: Fantasy;">It's always about creating.</h3>
 	</div>
 	</div>
+	<div id="underliner"></div>
 	
-	<div class = "center" style = "font-size: 30px; margin-top: 300px; margin-bottom: 200px;">
-		<h1 class = "centerText fancyFont" style = "margin-top: 100px;">Welcome.</h1>
-		<p class = "stdPara" style="color: #ffffff;">
-			My intentions are simple.<br>
+	
+	<div id = "mobile_apps">
+	<!--
+		<p id = "site_description">
 		 	To bring ideas to reality, and to share them with you.<br><br>
 		  	It has always been a strong interest of mine to invent, create and inspire.
 		  	<br>With software it is easier than ever to share ideas with others and to inspire others.
 		</p>
-	</div>
-	
-	
-	<div class = "center item" style = "background: #383838; width: 100%; margin-top: 0px; font-size: 35px;">
-		<h1 class = "centerText fancyFont" style = "margin-top: 100px; margin-bottom: 20px; color: #A0A0A0">Mobile Apps</h1>
-		<p class = "stdPara centerText" style = "color: #A0A0A0; margin: 50px;">Mobile applications are a personal favorite, and a convenient way to showcase your products, skills and services.</p>
-		<p class = "stdPara centerText" style = "color: #A0A0A0; margin: 50px;">These are a few of my own apps as well as one that I worked on collaboratively with the Oregon State University App Club.</p>
+		-->
+		<p id="site_description">
+		My name is Ben Friedman.
+		</p>
+		<img id="dev_pic" class="center" src="images/dev_pic.png" alt=""/>
+		<p id="site_description" style = "margin-bottom: 50px;">
+		I am a Designer, Developer and enthusiast of software.
+		</p>
+		
+		<div id="breaker" class="center">
+		</div>
+		
+		<h1 id="mobile_app_title" class = "centerText fancyFont">Mobile Apps</h1>
+		<p class = "centerText app_descriptors" style = "margin: 50px;">Mobile applications are a personal favorite.<br>Providing a convenient way to showcase products or skills and promote services.</p>
+		<p class="centerText secondary_point fancyFont">These are a few of my own apps</p>
+		<p class = "centerText app_descriptors" style = "margin: 50px; margin-top: 10px;">as well as one that I worked on collaboratively with the Oregon State University App Club.</p>
 		<p></p>
 		<div class = "center" style = "margin-bottom: 50px;">
 			<div>
-				<a class = "link" href = "about_azul/HangmanAzul"><img id = "app1" class = "showcase" src="images/azul_512.png" alt=""></a>
-				<a class = "link" href = "about_bit_shooter/AboutBitShooter"><img id = "app2" class = "showcase" src="images/bsImg.png" alt=""></a>
+				<a class = "link" href = "about_azul/HangmanAzul"><img id = "app1" class = "showcase" src="images/azul_512.png" alt="Hangman Azul"/></a>
+				<a class = "link" href = "about_bit_shooter/AboutBitShooter"><img id = "app2" class = "showcase" src="images/bsImg.png" alt="Bit Shooter"/></a>
 			</div>
 			<div>
-				<a class = "link" href = "about_floidia/Floidia"><img id = "app3" class = "showcase" src="images/floidialogo.png" alt=""></a>
-				<a class = "link" href = "https://play.google.com/store/apps/details?id=com.jmstudios.corvallistransit"><img id = "app4" class = "showcase" src = "images/corvallis_transit.png" alt=""></a>
+				<a class = "link" href = "about_floidia/Floidia"><img id = "app3" class = "showcase" src="images/floidialogo.png" alt="Floidia"/></a>
+				<a class = "link" href = "https://play.google.com/store/apps/details?id=com.jmstudios.corvallistransit"><img id = "app4" class = "showcase" src = "images/corvallis_transit.png" alt="Corvallis Transit"/></a>
 			</div>
 		</div>
 		
 	</div>	
 	
-	<div class = "center page" style = "font-size: 30px; margin-top: 0px;">
-		<img id = "bakeImg" src="images/fresh_baked_goods.png" style = "margin-top: 150px; margin-left: 5%;" alt="">
-		<h1 id = "assetTxt" class = "centerText" style = "float; left; margin-left: 20px; font-family: Fantasy; margin-top: 0px;">Fresh from the house.</h1>
-		
-		<p class = "stdPara">
+	<img id = "bakeImg" src="images/fresh_baked_goods_hex.png" style = "margin-left: 5%;" alt=""/>
+	<div id="fresh_section" class = "center">
+		<h1 id = "assetTxt" class = "centerText">Fresh from the house.</h1>
+		<p id="fresh_descrip" class = "stdPara">
 		I recently released another application to Google Play called "Hangman Azul". The purpose is in the name, it's a hangman game!
 		However the azul portion bears significance as well. Azul is spanish for blue, and that color would be the basis for the theme of this app.
 		The background is blue and the usage is through bluetooth. The bluetooth part is the primary function, as this is only a multiplayer game.
@@ -142,24 +134,33 @@
 		<br>
 		<br>
 		</p>
-		
 	</div>
 	
-	
-	<div class = "center item page" style = "font-size: 30px; background: #888888; margin-top: 0px;">
+	<!--
+	<div class = "center" style = "font-size: 30px; background: #888888; margin-top: 0px;">
 	<img id = "pencilImg" src="images/what_a_pencil.png" style = "margin-top: 150px; margin-right: 5%; margin-bottom: 0px; display: table; margin-left: auto;" alt="">
 	<h1 id = "workTxt" class = "centerText" style = "font-family: Fantasy;">The Works</h1>
-	<p class = "stdPara">
+	<p id="works_section" class = "stdPara">
 		Hangman Azul is being worked on consistently, however it is notable to mention that this will be the last game I will be doing for some time.<br>
 		I feel the need to move onto some more practical applications, although it is fun to write these things!<br>
 		Stay tuned for whatever new product decides to roll out the door next, of course, by then I'll have something a little more documented as to what that will be.
-		<br>
-		<br>
 	</p>
 	</div>
-	<h6 class = "centerText" style = "font-family: Fantasy; font-size: 12px; background: #888888;">This site was recently migrated and is still undergoing work...</h6>
-	<div class = "footer centerText">
-	 <br><a class="link" href="contact/Contact">Contact</a> • <a class="link" href = "support/Support">Support</a> • © Benjamin Wilson Friedman 2014
+	-->
+	<div class = "shadowed" style="background: #383838; padding-bottom: 30px; padding-left: 20px;">
+		<div style="margin: 0px; padding-top: 20px;">
+	 		<!--TWITTER-->
+			<div class="socialMediaButton center" style = "margin-bottom: 10px; margin-left: 0px;">
+				<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.uphouseworks.com" data-hashtags="uphouseworks">Tweet</a>
+			</div>
+			<!--GOOGLE +-->
+			<div class="googlePlusButton center" style="margin-left: 0px;">
+				<g:plusone></g:plusone>
+			</div>
+			<br>
+			<a class="link" href="contact/Contact">Contact</a> • <a class="link" href = "support/Support">Support</a><br><br>
+			<p style="color: #707070;">© Benjamin Wilson Friedman 2014</p>
+		</div>
 	</div>
 </body>
 </html>
