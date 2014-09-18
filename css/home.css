@@ -21,7 +21,7 @@ div {
 	background: #ffffff;
 }
 
-#site_description {
+.site_description {
 	margin-left: 17px;
 	margin-right: 17px;
 	text-align: center;
