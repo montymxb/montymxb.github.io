@@ -67,9 +67,9 @@
 					}
 					
 					*/
-					//var seperateComponents = event.data.split("===SPLIT-SECTION-HERE===");
-					//var utilData = seperateComponents[0].split("&");
-					//var rentdata = seperateComponents[1].split("&");
+					var seperateComponents = event.data.split("===SPLIT-SECTION-HERE===");
+					var utilData = seperateComponents[0].split("&");
+					var rentdata = seperateComponents[1].split("&");
 			
 					//Print out the start of our container div, to hold UTILITIES
 					document.write("\
@@ -83,7 +83,7 @@
 					");
 					
 					//Loops through array and will write out (in html) each utility item
-					utilData.forEach(addUtil);
+					//////////////////utilData.forEach(addUtil);
 					//Print out the end & start of our container div, to hold TENANTS
 					document.write("\
 					</div>\
@@ -94,7 +94,7 @@
 							<h1 style = 'margin-left: 20px;'>Rent</h1>\
 						</div>\
 					");
-					rentData.forEach(addTenant);
+					/////////////////////rentData.forEach(addTenant);
 					document.write("</div>");
 				}
 				castReceiverManager.start();
