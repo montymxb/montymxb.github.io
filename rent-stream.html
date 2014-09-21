@@ -4,7 +4,7 @@
 		<title>Rent Checka by Uphouseworks</title>
 		<link rel="stylesheet" href="css/rent-display.css"/>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />s
     	<meta name="description" content="Rent Checka web app by Ben Friedman @uphouseworks" />
     	<meta name="author" content="Benjamin Wilson Friedman" />
 		<script src="https://www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
@@ -68,8 +68,8 @@
 					
 					*/
 					var seperateComponents = event.data.split("===SPLIT-SECTION-HERE===");
-					//var utilData = seperateComponents[0].split("&");
-					//var rentdata = seperateComponents[1].split("&");
+					var utilData = seperateComponents[0].split("&");
+					var rentdata = seperateComponents[1].split("&");
 			
 					//Print out the start of our container div, to hold UTILITIES
 					/*
