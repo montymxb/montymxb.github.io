@@ -29,7 +29,7 @@
 		
 				var customMessageBus = castReceiverManager.getCastMessageBus('urn:x-cast:uphouseworks.rentchecka');
 				customMessageBus.onMessage = function(event) {
-					/*
+				
 					function addUtil(element, index, array) {
 						var inArray = element.split(":");
 						var nameId = "util";
@@ -46,9 +46,7 @@
 						</div>\
 						");
 					}
-					*/
 					
-					/*
 					function addTenant(element, index, array) {
 						var inArray = element.split(":");
 						var nameId = "user";
@@ -66,13 +64,11 @@
 						");
 					}
 					
-					*/
 					var seperateComponents = event.data.split("===SPLIT-SECTION-HERE===");
 					var utilData = seperateComponents[0].split("&");
 					var rentdata = seperateComponents[1].split("&");
 			
 					//Print out the start of our container div, to hold UTILITIES
-					/*
 					document.write("\
 					<!--Main Content Container--> \
 					<div style='float: left; width: 45%;'>\
@@ -81,15 +77,12 @@
 						<div id = 'subTitle'>\
 							<h1 style = 'margin-left: 20px;'>Utilities</h1>\
 						</div>\
-					</div>\
 					");
-					*/
 					
 					//Loops through array and will write out (in html) each utility item
-					//////////////////utilData.forEach(addUtil);
+					utilData.forEach(addUtil);
 					
 					//Print out the end & start of our container div, to hold TENANTS
-					/*
 					document.write("\
 					</div>\
 					<div style = 'float: right; width: 45%;'>\
@@ -99,9 +92,8 @@
 							<h1 style = 'margin-left: 20px;'>Rent</h1>\
 						</div>\
 					");
-					*/
-					/////////////////////rentData.forEach(addTenant);
-					//////////////////////document.write("</div>");
+					rentData.forEach(addTenant);
+					document.write("</div>");
 				}
 				castReceiverManager.start();
 			//}
