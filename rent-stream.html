@@ -16,7 +16,6 @@
 		</a>
 		<div style="height: 75px;"></div>
 		<h1 class = "title">Rent Checka</h1>
-		<!--
 		<script>
 			window.onload = function() {
 			  //window.mediaElement = document.getElementById('messages');
@@ -30,7 +29,7 @@
 		
 				var customMessageBus = castReceiverManager.getCastMessageBus('urn:x-cast:uphouseworks.rentchecka');
 				customMessageBus.onMessage = function(event) {
-				
+					/*
 					function addUtil(element, index, array) {
 						var inArray = element.split(":");
 						var nameId = "util";
@@ -47,7 +46,9 @@
 						</div>\
 						");
 					}
+					*/
 					
+					/*
 					function addTenant(element, index, array) {
 						var inArray = element.split(":");
 						var nameId = "user";
@@ -65,9 +66,10 @@
 						");
 					}
 					
-					var seperateComponents = event.data.split("===SPLIT-SECTION-HERE===");
-					var utilData = seperateComponents[0].split("&");
-					var rentdata = seperateComponents[1].split("&");
+					*/
+					//var seperateComponents = event.data.split("===SPLIT-SECTION-HERE===");
+					//var utilData = seperateComponents[0].split("&");
+					//var rentdata = seperateComponents[1].split("&");
 			
 					//Print out the start of our container div, to hold UTILITIES
 					document.write("\
@@ -98,6 +100,5 @@
 				castReceiverManager.start();
 			}
 		</script>
-		-->
 	</body>
 </html>
