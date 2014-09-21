@@ -10,15 +10,12 @@
 		<script src="https://www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
 	</head>
 	<body>
-		
 		<a class="home_link link" href="index.html">
 			<img class="home_image" src = "images/uphw_white.png" alt=""/>
 			<h1 class="home_text">Uphouseworks</h1>
 		</a>
 		<div style="height: 75px;"></div>
-		
 		<h1 class = "title">Rent Checka</h1>
-	
 		<script>
 			window.onload = function() {
 			  //window.mediaElement = document.getElementById('messages');
@@ -34,41 +31,35 @@
 				customMessageBus.onMessage = function(event) {
 				
 					function addUtil(element, index, array) {
-						var nameId = "";
-						var costId = "";
 						var inArray = element.split(":");
-						
-						nameId = "util";
+						var nameId = "util";
 						nameId = nameId + index;
 						
-						costId = "util";
+						var costId = "util";
 						costId = costId + index;
 						costId = costId + "+";
 				
 						document.write("\
 						<div class='utilBlue item'>\
-							<h2 id='" + nameId + "' class='itemLeft'></h2>\
-							<h2 id='" + costId + "' class='itemRight'></h2>\
+							<h2 id='" + nameId + "' class='itemLeft'>" + inArray[0] + "</h2>\
+							<h2 id='" + costId + "' class='itemRight'>" + inArray[1] + "</h2>\
 						</div>\
 						");
 					}
 					
 					function addTenant(element, index, array) {
-						var nameId = "";
-						var costId = "";
 						var inArray = element.split(":");
-						
-						nameId = "user";
+						var nameId = "user";
 						nameId = nameId + index;
 						
-						costId = "user";
+						var costId = "user";
 						costId = costId + index;
 						costId = costId + "+";
 				
 						document.write("\
 						<div class='tenantOrange item'>\
-							<h2 id='" + nameId + "' class='itemLeft'></h2>\
-							<h2 id='" + costId + "' class='itemRight'></h2>\
+							<h2 id='" + nameId + "' class='itemLeft'>" + inArray[0] + "</h2>\
+							<h2 id='" + costId + "' class='itemRight'>" + inArray[1] + "</h2>\
 						</div>\
 						");
 					}
@@ -90,7 +81,6 @@
 					
 					//Loops through array and will write out (in html) each utility item
 					utilData.forEach(addUtil);
-					
 					//Print out the end & start of our container div, to hold TENANTS
 					document.write("\
 					</div>\
@@ -101,37 +91,11 @@
 							<h1 style = 'margin-left: 20px;'>Rent</h1>\
 						</div>\
 					");
-					
 					rentData.forEach(addTenant);
-					
 					document.write("</div>");
 				}
-		
 				castReceiverManager.start();
 			}
 		</script>
-
-		<!--Main Content Container-->
-		<!--
-		<div style = "float: left; width: 45%;">
-			<div id = "subTitle">
-				<h1 style = "margin-left: 20px;">Utilities</h1>
-			</div>
-			<div class = "utilBlue item">
-				<h2 id="util1" class = "itemLeft"></h2>
-				<h2 id="util1+" class = "itemRight"></h2>
-			</div>
-		</div>
-
-		<div style = "float: right; width: 45%;">
-			<div id = "subTitle">
-				<h1 style = "margin-left: 20px;">Rent</h1>
-			</div>
-			<div class = "tenantOrange item">
-				<h2 id="user1" class = "itemLeft"></h2>
-				<h2 id="user1+" class = "itemRight"></h2>
-			</div>
-		</div>
-		-->
 	</body>
 </html>
