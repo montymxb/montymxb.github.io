@@ -22,7 +22,7 @@
 			  //window.mediaElement = document.getElementById('messages');
 			  //window.mediaManager = new cast.receiver.MediaManager(window.mediaElement);
 				castReceiverManager = cast.receiver.CastReceiverManager.getInstance();
-			  castReceiverManager.onSenderDisconnected = function(event) {
+			  	castReceiverManager.onSenderDisconnected = function(event) {
 					if(castReceiverManager.getSenders().length == 0 && event.reason == cast.receiver.system.DisconnectReason.REQUESTED_BY_SENDER) {
 						close();
 					}
@@ -99,6 +99,7 @@
 					
 					//set the view back to our loaded content!
 					document.getElementById("loaded_content").innerHTML = content;
+					console.log(content);
 				}
 				castReceiverManager.start();
 			}
