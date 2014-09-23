@@ -96,6 +96,9 @@
 					";
 					rentData.forEach(addTenant);
 					content+="</div>";
+					
+					//set the view back to our loaded content!
+					document.getElementById("loaded_content").innerHTML = content;
 				}
 				castReceiverManager.start();
 			}
