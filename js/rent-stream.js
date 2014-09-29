@@ -46,7 +46,6 @@ customMessageBus.onMessage = function(event) {
 		";
 	}
 	
-	console.log(event.data);
 	var seperateComponents = event.data.split("===SPLIT-SECTION-HERE===");
 	var utilData = seperateComponents[0].split("&");
 	var rentData = seperateComponents[1].split("&");
@@ -80,8 +79,6 @@ customMessageBus.onMessage = function(event) {
 	
 	//set the view back to our loaded content!
 	document.getElementById("loaded_content").innerHTML = content;
-	
-	console.log(content);
 }
 castReceiverManager.start();
 }
