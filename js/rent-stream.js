@@ -14,8 +14,7 @@ customMessageBus.onMessage = function(event) {
 	var content = document.getElementById("loaded_content").innerHTML;
 
 	function addUtil(element, index, array) {
-		console.log("(UTI)Element:" + element + " index:" + index);
-		if(element == "undefined")
+		if(element == "")
 			return;
 		var inArray = element.split(":");
 		var nameId = "util";
@@ -33,7 +32,6 @@ customMessageBus.onMessage = function(event) {
 	}
 	
 	function addTenant(element, index, array) {
-		console.log("(TEN)Element:" + element + " index:" + index);
 		if(element == "")
 			return;
 		var inArray = element.split(":");
