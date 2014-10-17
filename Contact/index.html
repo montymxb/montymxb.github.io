@@ -11,6 +11,8 @@
     <title>UphouseWorks</title>
     <link rel="canonical" href="http://www.uphouseworks.com" />
 	<link rel="author" href="https://plus.google.com/100154577387983623561/posts"/>
+	<script src = "../js/jquery-1.11.1.min.js"></script>
+	<script src = "../js/send-mail.js"></script>
     <script type="text/javascript">
 
   		var _gaq = _gaq || [];
@@ -30,7 +32,7 @@
 <body style = "background: #383838;">
 
 <!-- Page Wrapper -->
-<div style = "height: 500px; background: #A98090;">
+<div style = "background: #A98090;">
 	
 <a class="home_link link" href="../">
 	<img class="home_image" src = "../images/uphw_white.png" alt=""/>
@@ -43,9 +45,49 @@
 </h2>
 
 <p id = "main_body" class = "stdPara centerText">
-	You can send your ideas, support, and concerns to <a href = "mailto:mxb.atria@gmail.com@?Subject=Hi%20UphouseWorks" target = "_top" class = "link">mxb.atria@gmail.com</a>.<br><br>
-	For business you can reach me at <a href = "mailto:friedman.benjamin@gmail.com@?Subject=Business" target = "_top" class = "link">friedman.benjamin@gmail.com</a>.
+	You can send your ideas, support, and concerns below.<br><br>
+	I am also available for hire/contract. If you are interested please detail your request below.
 </p>
+
+<!--Start Contact Section-->
+<div class = "centerText">
+	<form class="form-horizontal" id="contact_form">
+
+	<!-- Text input-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="name">Name</label>
+	  <div class="col-md-5">
+		<input id="name" name="name" style="width: 250px; background: #383838;" type="text" placeholder="Enter your full name here" class="form-control input-md" required=""/>
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="email">Email</label>  
+	  <div class="col-md-5">
+		<input id="email" name="email" style="width: 250px; background: #383838;" type="text" placeholder="Enter your email address here" class="form-control input-md" required=""/>
+	  </div>
+	</div>
+
+	<!-- Textarea -->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="msg">Message</label>
+	  <div class="col-md-4">                     
+		<textarea class="form-control" style="width: 250px; background: #383838;" id="msg" name="msg" cols="6" rows="6"></textarea>
+	  </div>
+	</div>
+
+	<!-- Button -->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="submit"></label>
+	  <div class="col-md-4">
+		<button id="submit" name="submit" style="color: #383838;" class="btn btn-primary">Send Message</button><br><br>
+	  </div>
+	</div>
+	</form>
+</div>
+<!--End Contact Section-->
+
 </div>
 <div style="background: #383838; padding-bottom: 30px; padding-left: 20px;">
 	<div style="margin: 0px; padding-top: 20px;">		
