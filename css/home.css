@@ -12,15 +12,6 @@ div {
 	width: 100%;
 }
 
-#underliner {
-	display: table;
-	margin-left: auto;
-	margin-right: auto;
-	width: 100%;
-	height: 60px;
-	background: #ffffff;
-}
-
 .site_description {
 	margin-left: 17px;
 	margin-right: 17px;
