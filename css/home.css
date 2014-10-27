@@ -12,6 +12,15 @@ div {
 	width: 100%;
 }
 
+#head_underliner {
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	height: 5px;
+	background: #707070;
+}
+
 .site_description {
 	margin-left: 17px;
 	margin-right: 17px;
