@@ -10,6 +10,14 @@ div {
 
 #titlePiece {
 	width: 100%;
+	height: #c8c8c8;
+	transition: 0.3s;
+}
+
+#titlePiece:hover {
+	background: #000000;
+	transition: 0.3s;
+	opacity: 0.5
 }
 
 #head_underliner {
@@ -52,6 +60,13 @@ div {
 
 #dev_pic {
 	width: 360px;
+	transition: 0.3s;
+	padding: 0px;
+}
+
+#dev_pic:hover {
+	transition: 0.3s;
+	padding: 25px;
 }
 
 #breaker {
@@ -59,6 +74,14 @@ div {
 	height: 60px;
 	background-image: url(../images/illumination.png);
 	background-attachment: fixed;
+	opacity: 0.25;
+	transition: 0.3s;
+}
+
+#breaker:hover {
+	transition: 0.3s;
+	opacity: 1;
+	height: 120px;
 }
 
 .app_descriptors {
@@ -76,6 +99,13 @@ div {
 	margin-right: 30px;
 	padding-top: 60px;
 	margin-bottom: 60px;
+	transition: 0.3s;
+}
+
+#fresh_section:hover {
+	transition: 0.3s;
+	box-shadow: 10px 10px 10px #383838;
+	background: #606060;
 }
 
 #assetTxt {
