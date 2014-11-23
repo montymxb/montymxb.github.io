@@ -9,3 +9,13 @@
 		font-size: 14px;
 	}
 }
+
+@media print {
+	.home_text {
+		font-size: 36px;
+	}
+	
+	#titulo {
+		font-size: 25px;
+	}
+}

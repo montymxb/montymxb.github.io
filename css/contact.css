@@ -12,3 +12,13 @@
 		background: #A98090;
 	}
 }
+
+@media print {
+	.home_text {
+		font-size: 36px;
+	}
+	
+	.title {
+		font-size: 25px;
+	}
+}
