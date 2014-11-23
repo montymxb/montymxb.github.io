@@ -267,4 +267,14 @@
   animation-iteration-count: infinite;
 }
 
+/*Landscape to be added later*/
+@media (max-device-width: 1280px) and (orientation: landscape) {
+
+}
+/*Portrait to be added later*/
+
+@media (max-device-width: 800px) and (orientation: portrait) {
+
+} 
+
 
