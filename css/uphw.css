@@ -267,14 +267,13 @@
   animation-iteration-count: infinite;
 }
 
-/*Landscape to be added later*/
-@media (max-device-width: 1280px) and (orientation: landscape) {
-
+/*Tablet*/
+@media only screen and (min-device-width: 768px){
+	.title {
+		text-align: center;
+		font-size: 60px;
+		margin: 20px;
+	}
 }
-/*Portrait to be added later*/
-
-@media (max-device-width: 800px) and (orientation: portrait) {
-
-} 
 
 
