@@ -228,3 +228,40 @@ div {
 		width: 150px;
 	}
 }
+
+@media print {
+	#uphwImage, #breaker {
+		height: 0px;
+		margin-top: 0px;
+	}	
+	
+	#supMain {
+		margin-left: 16px;
+	}
+	
+	#my_name_is_sect,#my_profession_is {
+		text-align: left;
+	}
+	
+	#dev_pic {
+		width: 205px;
+		height: 145px;
+		margin-left: 16px;
+	}
+	
+	.centerText, #as_well_section {
+		margin-left: 16px;
+	}
+	
+	.showcase {
+		width: 125px;
+		height: 125px;
+		float: left;
+		margin-top: 16px;
+	}
+	
+	#bakeImg {
+		height: 100px;
+		width :100px;
+	}
+}
