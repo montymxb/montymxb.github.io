@@ -11,7 +11,8 @@
     <link rel="canonical" href="http://uphouseworks.com">
     <meta name="keywords" content="uphouseworks, Programming, Apps, Mobile Apps, Applications, Mobile Applications, Mobile Dev, Ben, Friedman, Ben Friedman, Benjamin Wilson Friedman, mxb, Benjamin, montymxb, mernok, Bit Shooter, Floidia, Hangman, Azul, Hangman Azul, Corvallis, Transit, Corvallis Transit, iOS, Android, iPhone, iPad, Development, Home Page, Home, Main, OSU, App, Club, Objective-C, Java, uphouse, works, Score Savers, Score, Savers" />
     <title>UphouseWorks</title>
-    
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/home.js"
     <link rel="canonical" href="http://www.uphouseworks.com" />
 	<link rel="author" href="https://plus.google.com/100154577387983623561/posts"/>
     <link rel="icon" type="image/ico" href="favicon.ico"/>
@@ -60,10 +61,10 @@
 <body>
 
 	<div id="uphw_navbar">
-		<a href="#Head"><img class="home_image" src = "images/uphw_white.png" alt=""/></a>
-		<a href="#About" class="navbar_link">Info</a>
-		<a href="#MobileApps" class="navbar_link">Apps</a>
-		<a href="#News" class="navbar_link">News</a>
+		<a href="#Home" onclick="$('#Head').scrollView();"><img class="home_image" src = "images/uphw_white.png" alt=""/></a>
+		<a href="#Info" onclick="$('#About').scrollView();" class="navbar_link">Info</a>
+		<a href="#Apps" onclick="$('#MobileApps').scrollView();" class="navbar_link">Apps</a>
+		<a href="#News" onclick="$('#NewNews').scrollView();" class="navbar_link">News</a>
 	</div>
 	
 	<!--Scoot to Head Div-->
@@ -91,7 +92,7 @@
 			</p>
 		</div>
 		
-		<!--Nav Div for MobileApps-->
+		<!--Nav Div for Apps-->
 		<div id="MobileApps"></div>
 		
 		<div id="breaker" class="center">
@@ -116,7 +117,7 @@
 	</div>	
 	
 	<!--Nav Div for News-->
-	<div id="News"></div>
+	<div id="NewNews"></div>
 	<img id = "bakeImg" src="images/fresh_baked_goods_hex.png" style = "margin-left: 5%;" alt=""/>
 	<div id="fresh_section" class = "center">
 		<h2 id = "assetTxt" class = "centerText">Fresh from the house.</h2>
