@@ -3,12 +3,35 @@ body {
 	background-attachment: fixed;
 }
 
+#top_info_section {
+	/* IE10 Consumer Preview */ 
+	background-image: -ms-linear-gradient(right, #505050 0%, #383838 100%);
+
+	/* Mozilla Firefox */ 
+	background-image: -moz-linear-gradient(right, #505050 0%, #383838 100%);
+
+	/* Opera */ 
+	background-image: -o-linear-gradient(right, #505050 0%, #383838 100%);
+
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #505050), color-stop(1, #383838));
+
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-linear-gradient(right, #505050 0%, #383838 100%);
+
+	/* W3C Markup, IE10 Release Preview */ 
+	background-image: linear-gradient(to left, #505050 0%, #383838 100%);
+	padding-top: 30px;
+	padding-bottom: 50px;
+}
+
 div {
 	padding: 0px;
 	height: 100%;
 }
 
 #titlePiece {
+	padding-top: 0px;
 	width: 100%;
 	height: #c8c8c8;
 	transition: 0.3s;
@@ -38,9 +61,25 @@ div {
 }
 
 #mobile_apps {
-	padding-top: 30px;
+	padding-top: 0px;
 	padding-bottom: 50px;
-	background: #383838;
+	/* IE10 Consumer Preview */ 
+	background-image: -ms-linear-gradient(right, #505050 0%, #383838 100%);
+
+	/* Mozilla Firefox */ 
+	background-image: -moz-linear-gradient(right, #505050 0%, #383838 100%);
+
+	/* Opera */ 
+	background-image: -o-linear-gradient(right, #505050 0%, #383838 100%);
+
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #505050), color-stop(1, #383838));
+
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-linear-gradient(right, #505050 0%, #383838 100%);
+
+	/* W3C Markup, IE10 Release Preview */ 
+	background-image: linear-gradient(to left, #505050 0%, #383838 100%);
 }
 
 .main_point {
@@ -91,6 +130,13 @@ div {
 #bakeImg {
 	position:relative;
 	top: 90px;
+	padding-bottom: 0px;
+	transition: 0.3s;
+}
+
+#bakeImg:hover {
+	padding-bottom: 90px;
+	transition: 0.3s;
 }
 
 #fresh_section {
@@ -119,8 +165,25 @@ div {
 	box-shadow: 1px 1px 10px #383838;
 }
 
+#uphw_navbar {
+	position: fixed;
+	height: 60px;
+	width: 100%;
+	background: #000000;
+	opacity: 0.8;
+	z-index: 1;
+}
+
+.navbar_link {
+	text-decoration: none;
+	margin-left: 18px;
+	line-height: 60px;
+	font-weight: bold;
+}
+
 @media (max-height: 680px) {
 	#titlePiece {
+		padding-top: 40px;
 		height: 680px;
 	}
 }

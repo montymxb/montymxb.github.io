@@ -59,6 +59,16 @@
 </head>
 <body>
 
+	<div id="uphw_navbar">
+		<a href="#Head"><img class="home_image" src = "images/uphw_white.png" alt=""/></a>
+		<a href="#About" class="navbar_link">Info</a>
+		<a href="#MobileApps" class="navbar_link">Apps</a>
+		<a href="#News" class="navbar_link">News</a>
+	</div>
+	
+	<!--Scoot to Head Div-->
+	<div id="Head"></div>
+	
 	<div id="titlePiece">
 	<img id = "uphwImage" class="animated pulse" src = "images/uphw_white.png" alt=""/>
 
@@ -69,13 +79,20 @@
 	</div>
 	<div id="head_underliner"></div>
 	<div id = "mobile_apps">
-		<p id="my_name_is_sect" class="site_description">
-		My name is Ben Friedman.
-		</p>
-		<img id="dev_pic" class="center" src="images/dev_pic.png" alt=""/>
-		<p id="my_profession_is" class="site_description" style = "margin-bottom: 50px;">
-		I am a Designer, Developer and enthusiast of software.
-		</p>
+		<!--Nav Div for About-->
+		<div id="About"></div>
+		<div id="top_info_section">
+			<p id="my_name_is_sect" class="site_description">
+			My name is Ben Friedman.
+			</p>
+			<img id="dev_pic" class="center" src="images/dev_pic.png" alt=""/>
+			<p id="my_profession_is" class="site_description" style = "margin-bottom: 50px;">
+			I am a Designer, Developer and enthusiast of software.
+			</p>
+		</div>
+		
+		<!--Nav Div for MobileApps-->
+		<div id="MobileApps"></div>
 		
 		<div id="breaker" class="center">
 		</div>
@@ -98,6 +115,8 @@
 		
 	</div>	
 	
+	<!--Nav Div for News-->
+	<div id="News"></div>
 	<img id = "bakeImg" src="images/fresh_baked_goods_hex.png" style = "margin-left: 5%;" alt=""/>
 	<div id="fresh_section" class = "center">
 		<h2 id = "assetTxt" class = "centerText">Fresh from the house.</h2>
