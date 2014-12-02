@@ -6,6 +6,12 @@ body {
 #top_info_section {
 	padding-top: 30px;
 	padding-bottom: 50px;
+	background: url("../images/noisy.png") repeat;
+}
+
+#bot_info_section {
+	background: url("../images/noisy.png") repeat;
+    padding-bottom: 50px;
 }
 
 div {
@@ -46,7 +52,6 @@ div {
 #mobile_apps {
 	padding-top: 0px;
 	padding-bottom: 50px;
-	background: url("../images/noisy.png") repeat;
 }
 
 .main_point {
@@ -64,18 +69,18 @@ div {
 	color: #ffffff;
 }
 
-#dev_pic {
+.dev_pic {
 	width: 360px;
 	transition: 0.3s;
 	padding: 0px;
 }
 
-#dev_pic:hover {
+.dev_pic_viewing {
 	transition: 0.3s;
 	padding: 25px;
 }
 
-#breaker {
+.breaker {
 	width: 100%;
 	height: 60px;
 	background-image: url(../images/illumination.jpg);
@@ -84,10 +89,13 @@ div {
 	transition: 0.3s;
 }
 
-#breaker:hover {
-	transition: 0.3s;
-	opacity: 1;
+.opaque_breaker {
+	width: 100%;
 	height: 120px;
+	background-image: url(../images/illumination.jpg);
+	background-attachment: fixed;
+	opacity: 1.0;
+	transition: 0.3s;
 }
 
 .app_descriptors {
