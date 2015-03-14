@@ -3,6 +3,7 @@ body {
 	/*background-image: url(../images/old-volcano2.jpg);*/
 	background-position: right;
 	background-attachment: fixed;
+	background-repeat: repeat-x;
 }
 
 #top_info_section {
