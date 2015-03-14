@@ -1,9 +1,8 @@
 body {
-	background-image: url(../images/cloud_shot.png);
-	/*background-image: url(../images/old-volcano2.jpg);*/
-	background-position: right;
-	background-attachment: fixed;
-	background-repeat: repeat-x;
+	/*background-image: url(../images/cloud_shot.png);*/
+	/*background-image: url(../images/old-volcano2.jpg);
+	background-position: center;
+	background-attachment: fixed;*/
 }
 
 #top_info_section {
@@ -26,13 +25,23 @@ div {
 	padding-top: 0px;
 	width: 100%;
 	height: #c8c8c8;
+	background-image: url(../images/old-volcano3.jpg);
+	background-position: center;
+	background-attachment: fixed;
 	transition: 0.3s;
 }
 
 #titlePiece:hover {
-	background: #000000;
-	transition: 0.3s;
-	opacity: 0.5
+	/*background: #000000;*/
+	/*transition: 0.3s;*/
+	/*opacity: 0.5*/
+}
+
+#newsWrapper {
+	background-image: url(../images/cloud_shot.png);
+	background-position: center;
+	background-attachment: fixed;
+	padding-bottom: 60px;
 }
 
 #head_underliner {
@@ -54,7 +63,7 @@ div {
 
 #mobile_apps {
 	padding-top: 0px;
-	padding-bottom: 50px;
+	padding-bottom: 0px; /* USED TO BE 50px*/
 }
 
 .main_point {
