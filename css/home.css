@@ -1,5 +1,7 @@
 body {
-	background-image: url(../images/cloud_shot.png);
+	/*background-image: url(../images/cloud_shot.png);*/
+	background-image: url(../images/old-volcano2.jpg);
+	background-position: center;
 	background-attachment: fixed;
 }
 
