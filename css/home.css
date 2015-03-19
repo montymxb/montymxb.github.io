@@ -8,11 +8,13 @@ body {
 #top_info_section {
 	padding-top: 30px;
 	padding-bottom: 50px;
-	background: url("../images/noisy.png") repeat;
+	/*background: url("../images/noisy.png") repeat;*/
+	background: #ffffff;
 }
 
 #bot_info_section {
-	background: url("../images/noisy.png") repeat;
+	/*background: url("../images/noisy.png") repeat;*/
+	background: #ffffff;
     padding-bottom: 50px;
 }
 
@@ -25,8 +27,8 @@ div {
 	padding-top: 0px;
 	width: 100%;
 	height: #c8c8c8;
-	background-image: url(../images/old-volcano3.jpg);
-	background-position: center;
+	background-image: url(../images/water_tree.jpg);
+	background-position: 60% 60%;
 	background-attachment: fixed;
 	transition: 0.3s;
 }
@@ -38,7 +40,7 @@ div {
 }
 
 #newsWrapper {
-	background-image: url(../images/cloud_shot.png);
+	background-image: url(../images/desk_shot.jpg);
 	background-position: center;
 	background-attachment: fixed;
 	padding-bottom: 60px;
@@ -78,7 +80,7 @@ div {
 	padding: 20px;
 	padding-top: 50px;
 	font-size: 50px;
-	color: #ffffff;
+	color: #707070;
 }
 
 .dev_pic {
@@ -95,23 +97,29 @@ div {
 .breaker {
 	width: 100%;
 	height: 60px;
-	background-image: url(../images/illumination.jpg);
+	background-image: url(../images/casual.jpg);
 	background-attachment: fixed;
-	opacity: 0.25;
+	background-position: 10% 50%;
+	opacity: 1.0;
 	transition: 0.3s;
 }
 
 .opaque_breaker {
 	width: 100%;
 	height: 120px;
-	background-image: url(../images/illumination.jpg);
+	background-image: url(../images/casual.jpg);
 	background-attachment: fixed;
+	background-position: 75% 50%;
 	opacity: 1.0;
 	transition: 0.3s;
 }
 
 .app_descriptors {
 	font-size: 20px;
+}
+
+.newGreyText {
+	color: #707070;
 }
 
 #bakeImg {
@@ -132,19 +140,25 @@ div {
 	padding-top: 60px;
 	margin-bottom: 60px;
 	transition: 0.3s;
-	background: url("../images/light.png") repeat;
+	/*background: url("../images/light.png") repeat;*/
+	background: #ffffff;
 }
 
 #fresh_section:hover {
 	transition: 0.3s;
-	box-shadow: 10px 10px 10px #383838;
+	box-shadow: 10px 10px 10px #000000;
+}
+
+#fresh_descrip {
+		color: #707070;
 }
 
 #assetTxt {
 	margin-left: 20px;
-	font-family: Fantasy;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
 	margin-top: 0px;
 	font-size: 50px;
+	color: #707070;
 }
 
 .shadowed {

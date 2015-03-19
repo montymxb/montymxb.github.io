@@ -162,7 +162,7 @@
 }
 
 .fancyFont {
-	font-family: Papyrus;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 @media print {
@@ -191,9 +191,11 @@
 
 /* Carbon Background*/
 .carbon-print {
-	background:
-	linear-gradient(45deg, #1d1d1d 2px, #1a1a1a 2px, #1a1a1a 50%, transparent 50%, transparent 5px, #242424 5px, #242424);
+/*
+	background: linear-gradient(45deg, #1d1d1d 2px, #1a1a1a 2px, #1a1a1a 50%, transparent 50%, transparent 5px, #242424 5px, #242424);
 	background-size: 15px 15px;
+	*/
+	background-color: #ffffff;
 }
 
 /* Comment Outline*/
