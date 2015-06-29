@@ -84,7 +84,10 @@ div {
 }
 
 .dev_pic {
-	width: 360px;
+	margin-top: 32px;
+	border-radius: 300px;
+	width: 270px;
+	height: 270px;
 	transition: 0.3s;
 	padding: 0px;
 }
