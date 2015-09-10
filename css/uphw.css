@@ -26,6 +26,24 @@
 	color: #707070;
 }
 
+/* Footer Item Labels */
+.footer-item-label {
+	font-size: 16px;
+	font-weight: bold;
+	color: #000
+}
+
+/* Covers a footer link */
+.footer-link {
+	font-size: 14px;
+}
+
+/* Wraps a section up nicely */
+.footer-section {
+	margin: 8px;
+	padding: 8px;
+}
+
 .spec_footer:hover { 
 	color: #C0C0C0;
 }
