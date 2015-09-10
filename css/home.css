@@ -89,8 +89,8 @@ div {
 	border-width: 2px;
 	border-color: #e0e0e0;
 	border-radius: 300px;
-	width: 270px;
-	height: 270px;
+	width: 150px;
+	height: 150px;
 	transition: 0.3s;
 	padding: 0px;
 }
@@ -240,7 +240,8 @@ div {
 	}
 
 	#dev_pic {
-		width: 270px;
+		width: 150px;
+		height: 150px;
 	}
 
 	#main {
@@ -316,8 +317,8 @@ div {
 	}
 	
 	#dev_pic {
-		width: 205px;
-		height: 145px;
+		width: 100px;
+		height: 100px;
 		margin-left: 16px;
 	}
 	
