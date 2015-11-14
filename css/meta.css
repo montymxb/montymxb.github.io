@@ -1,7 +1,7 @@
 * {
 font-family: 'Hind', sans-serif;
 }
-form input{color:#000}
+div input{color:#000}
 h1{
 font-size:40px
 }
@@ -113,10 +113,31 @@ text-align: center;
 font-size: 25px;
 padding-top: 100px
 }
+/* start loading */
 .loader-hot {
 	display: block !important;
 	background: rgba(0,0,0,0.6);
-	color: #fff
+	color: #fff;
+	-webkit-animation: fadein 0.3s forwards; /* Safari 4+ */
+	-moz-animation:    fadein 0.3s forwards; /* Fx 5+ */
+	-o-animation:      fadein 0.3s forwards; /* Opera 12+ */
+	animation:         fadein 0.3s forwards; /* IE 10+, Fx 29+ */
+}
+@-webkit-keyframes fadein  {
+0%{opacity:0;}
+100%{opacity:1}
+}
+@-moz-keyframes fadein {
+0%{opacity:0;}
+100%{opacity:1}
+}
+@-o-keyframes fadein {
+0%{opacity:0;}
+100%{opacity:1}
+}
+@keyframes fadein {
+0%{opacity:0;}
+100%{opacity:1}
 }
 
 #fail-count {
