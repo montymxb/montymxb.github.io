@@ -1,3 +1,4 @@
+/* © Benjamin Wilson Friedman 2015, All Rights Reserved */
 var lastUrl;
 function test(){var a;a=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject("Microsoft.XMLHTTP");var d=document.getElementById("site-fetch").value;lastUrl=d;a.onreadystatechange=function(){4==a.readyState&&200==a.status&&""!=a.responseText?(document.getElementById("siteresult").innerHTML=a.responseText,testMeta(a.responseText)):4==a.readyState&&(document.getElementById("siteresult").innerHTML="<h2 style='text-align:center;padding:32px'>Couldn't find the requested site!</h2>",document.getElementById("loader").className="",
 document.getElementById("siteresult").style.background="#fff")};d="url="+encodeURIComponent(d);a.open("POST","https://secure.netsolhost.com/goldtrackerssociety.com/MT/metatest.php",!0);a.setRequestHeader("Content-type","application/x-www-form-urlencoded");a.send(d)}var score,failScore;
