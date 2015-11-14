@@ -172,11 +172,11 @@
 
 .link {
 	text-decoration: none;
+	transition: 0.3s
 }
 
-.link:hover
-{ 
-	color: #C0C0C0;
+.link:hover { 
+	color: #C0C0C0
 }
 
 .fancyFont {
