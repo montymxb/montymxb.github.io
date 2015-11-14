@@ -2,31 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
       <loc>http://uphouseworks.com/</loc>
-      <lastmod>2015-10-24</lastmod>
+      <lastmod>2015-11-13</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>http://uphouseworks.com/HangmanAzul/</loc>
-      <lastmod>2015-10-24</lastmod>
+      <loc>http://uphouseworks.com/Metatester/</loc>
+      <lastmod>2015-11-13</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>http://uphouseworks.com/HangmanAzul/</loc>
+      <lastmod>2015-11-13</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
    </url>
    <url>
       <loc>http://uphouseworks.com/BitShooter/</loc>
-      <lastmod>2015-10-24</lastmod>
+      <lastmod>2015-11-13</lastmod>
       <changefreq>monthly</changefreq>
-      <priority>0.9</priority>
+      <priority>0.8</priority>
    </url>
    <url>
       <loc>http://uphouseworks.com/Contact/</loc>
-      <lastmod>2015-10-24</lastmod>
+      <lastmod>2015-11-13</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
       <loc>http://uphouseworks.com/Support/</loc>
-      <lastmod>2015-10-24</lastmod>
+      <lastmod>2015-11-13</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
