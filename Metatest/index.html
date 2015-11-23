@@ -77,19 +77,18 @@
 
 <div id="uphw_navbar">
 	<a href="http://uphouseworks.com" onclick="$('#Head').scrollView();"><img class="home_image" src = "../images/uphw_white.png" alt="Home"/></a>
-	<a style="color:#fff" href="#Info" onclick="$('#metatest').scrollView();" class="navbar_link">Metatest</a>
+	<a style="color:#fff" href="#" onclick="$('#metatest').scrollView();" class="navbar_link">Metatest</a>
 </div>
 
-<!--<div id="noscript-message">Javascript is required to make this tool work!</div>-->
-
-<div style="background:url('../images/fl.png');padding-top:100px;text-align:center;padding-left:4px;padding-right:4px">
-	<h1>Metatest<br/><span style="font-size:20px;color:#e0e0e0">strengthen your web presence</span></h1><br/>
+<div style="background:#fff;padding-top:100px;text-align:center;padding-left:4px;padding-right:4px">
+<img src="../images/meta.png" alt=""/>
+	<h1>Metatest<br/><span style="font-size:16px;color:#000">strengthen your web presence</span></h1><br/>
 	<div style="overflow:hidden;margin-top:50px;max-width:1000px;display:block;margin-left:auto;margin-right:auto">
 		<div id="ldiv">
-			<h2 class="cblock">Test any website that can be reached with a url.</h2><br/><br/>
+			<img src="../images/meta2.png" alt="" style="border:solid 2px #fff;border-radius:150px"/>
 		</div>
 		<div id="rdiv">
-			<h3 class="cblock">Meta tags can improve how social services like facebook, twitter, google + and more present your site.<br/><br/>Good meta tags can lead to solid and engaging content across all mediums for your website.</h3>
+			<p class="cblock" style="color:#000"><span class='success-mark'>✔</span> <span style="text-decoration:underline;color:#000">Test any website</span> that can be reached with a url.<br/><br/><span class='success-mark'>✔</span> <span style="text-decoration:underline;color:#000">Useful Meta tags</span> can improve how social services like facebook, twitter, google + and more present your site.<br/><br/><span class='success-mark'>✔</span> <span style="text-decoration:underline;color:#000">Good meta tags can lead to solid and engaging content</span> across all mediums for your website.</p>
 		</div>
 	</div>
 	<br/><br/>
@@ -99,7 +98,7 @@
 	<br/>
 </div>
 <br/>
-<form style="text-align:center;padding:8px">
+<form style="text-align:center;padding:8px;min-height:40vh">
 	<input id="site-fetch" type="url" placeholder="http://www.yoursite.com" onkeydown="if(event.keyCode==13){event.preventDefault();document.getElementById('submit').click();}"/>
 	<input id="submit" type="button" value="Test" onclick="test();"/>
 </form>
