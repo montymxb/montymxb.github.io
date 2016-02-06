@@ -1,5 +1,20 @@
 {
-	"testCases" : [
-	
+	"testCases": [
+		{
+			"testId"	 : 1,
+			"name"		 : "Document Type",
+			"expression" : "!DOCTYPE\\s+html",
+			"description": "Says whether this page is written in HTML5",
+			"success"	 : "This page is configured for HTML5.",
+			"failure"	 : "This page is not configured for HTML5."
+		},
+		{
+			"testId"	 : 2,
+			"name"		 : "Description",
+			"expression" : "<\\s*meta.*name\\s*=\\s*\"\\s*description\\s*\"",
+			"description": "The description of your website, often used as a summary",
+			"success"	 : "Description Found.",
+			"failure"	 : "This page is missing a description."
+		}
 	]
 }
