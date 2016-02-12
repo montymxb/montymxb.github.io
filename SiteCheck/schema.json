@@ -14,7 +14,7 @@
 			"name"		 : "Description",
 			"expression" : "<\\s*meta.*name\\s*=\\s*\"\\s*description\\s*\"",
 			"description": "The description of your website, often used as a summary",
-			"image"		 : "http://www.clker.com/cliparts/W/A/h/a/P/D/check-mark-md.png",
+			"image"		 : "https://all3dp.com/wp-content/uploads/2015/07/T-Hub.png",
 			"success"	 : "Description Found.",
 			"failure"	 : "This page is missing a description."
 		}
