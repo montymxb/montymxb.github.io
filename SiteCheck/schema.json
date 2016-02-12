@@ -11,6 +11,15 @@
 		},
 		{
 			"testId"	 : 2,
+			"name"		 : "AppCache",
+			"expression" : "<\\s*html.*manifest\\s*=\\s*\".*appcache\"",
+			"description": "A cache of resources to save from your site. These resources can be loaded locally instead of downloaded again, making the next time they visit take significantly less time to load.",
+			"image"		 : "https://all3dp.com/wp-content/uploads/2015/07/T-Hub.png",
+			"success"	 : "AppCache.",
+			"failure"	 : "No AppCache found."
+		},
+		{
+			"testId"	 : 3,
 			"name"		 : "Description",
 			"expression" : "<\\s*meta.*name\\s*=\\s*\"\\s*description\\s*\"",
 			"description": "The description of your website, often used as a summary",
