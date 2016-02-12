@@ -4,28 +4,89 @@
 			"testId"	 : 1,
 			"name"		 : "Document Type",
 			"expression" : "!DOCTYPE\\s+html",
-			"description": "Says whether this page is written in HTML5",
-			"success"	 : "This page is configured for HTML5.",
+			"description": "The HTML standard this page uses",
 			"image"		 : "http://www.clker.com/cliparts/W/A/h/a/P/D/check-mark-md.png",
-			"failure"	 : "This page is not configured for HTML5."
+			"failure"	 : "This page does not state which HTML standard it is written for"
 		},
 		{
 			"testId"	 : 2,
 			"name"		 : "AppCache",
 			"expression" : "<\\s*html.*manifest\\s*=\\s*\".*appcache\"",
-			"description": "A cache of resources to save from your site. These resources can be loaded locally instead of downloaded again, making the next time they visit take significantly less time to load.",
+			"description": "A cache of resources to save from your site",
 			"image"		 : "http://www.clker.com/cliparts/W/A/h/a/P/D/check-mark-md.png",
-			"success"	 : "AppCache.",
-			"failure"	 : "No AppCache found."
+			"failure"	 : "No AppCache found. These resources can be loaded locally instead of downloaded again, making the next time they visit take significantly less time to load"
 		},
 		{
 			"testId"	 : 3,
 			"name"		 : "Description",
 			"expression" : "<\\s*meta.*name\\s*=\\s*\"\\s*description\\s*\"",
-			"description": "The description of your website, often used as a summary",
+			"description": "The description of this website, often used as a summary",
 			"image"		 : "http://www.clker.com/cliparts/W/A/h/a/P/D/check-mark-md.png",
-			"success"	 : "Description Found.",
 			"failure"	 : "This page is missing a description."
+		},
+		{
+			"testId"	 : 4,
+			"name"		 : "ItemProp Name",
+			"expression" : "<\\s*meta.*itemprop\\s*=\\s*\"\\s*name\\s*\"",
+			"description": "Mircrodata markup for this site's name",
+			"image"		 : "http://www.clker.com/cliparts/W/A/h/a/P/D/check-mark-md.png",
+			"failure"	 : "No 'name' itemprop found. This is structured data used to identify your site name."
+		},
+		{
+			"testId"	 : 5,
+			"name"		 : "ItemProp URL",
+			"expression" : "<\\s*meta.*itemprop\\s*=\\s*\"\\s*url\\s*\"",
+			"description": "Microdata markup that identifies this site's url",
+			"image"		 : "http://www.clker.com/cliparts/W/A/h/a/P/D/check-mark-md.png",
+			"failure"	 : "No 'url' itemprop found. This is structured data used to identify your site name."
+		},
+		{
+			"testId"	 : 6,
+			"name"		 : "ItemProp Description",
+			"expression" : "<\\s*meta.*itemprop\\s*=\\s*\"\\s*description\\s*\"",
+			"description": "Microdata markup for this site's Description",
+			"image"		 : "http://www.clker.com/cliparts/W/A/h/a/P/D/check-mark-md.png",
+			"failure"	 : "No 'description' itemprop found. This is structured data used to identify your site's description."
+		},
+		{
+			"testId"	 : 7,
+			"name"		 : "ItemProp Image",
+			"expression" : "<\\s*meta.*itemprop\\s*=\\s*\"\\s*image\\s*\"",
+			"description": "Microdata markup that identifies your site's representative image",
+			"image"		 : "http://www.clker.com/cliparts/W/A/h/a/P/D/check-mark-md.png",
+			"failure"	 : "No 'image' itemprop found. This is structured data used to identify your site's representative image."
+		},
+		{
+			"testId"	 : 8,
+			"name"		 : "Author",
+			"expression" : "<\\s*meta.*name\\s*=\\s*\"\\s*author\\s*\"",
+			"description": "This site's creator",
+			"image"		 : "http://www.clker.com/cliparts/W/A/h/a/P/D/check-mark-md.png",
+			"failure"	 : "No site author found"
+		},
+		{
+			"testId"	 : 9,
+			"name"		 : "Keywords",
+			"expression" : "<\\s*meta.*name\\s*=\\s*\"\\s*keywords\\s*\"",
+			"description": "Search keywords that identify this site to search engines",
+			"image"		 : "http://www.clker.com/cliparts/W/A/h/a/P/D/check-mark-md.png",
+			"failure"	 : "An optional addition to help visibility to search engines, but don't use more than 10-15 keywords"
+		},
+		{
+			"testId"	 : 10,
+			"name"		 : "Robots",
+			"expression" : "<\\s*meta.*name\\s*=\\s*\"\\s*robots\\s*\"",
+			"description": "Rules that tell crawlers how to handle this webpage",
+			"image"		 : "http://www.clker.com/cliparts/W/A/h/a/P/D/check-mark-md.png",
+			"failure"	 : "This helps better tell crawlers how to interact with your site"
+		},
+		{
+			"testId"	 : 11,
+			"name"		 : "Viewport",
+			"expression" : "<\\s*meta.*name\\s*=\\s*\"\\s*viewport\\s*\"",
+			"description": "Defines how your site behaves on devices",
+			"image"		 : "http://www.clker.com/cliparts/W/A/h/a/P/D/check-mark-md.png",
+			"failure"	 : "Having this can help define how your site scales on devices, especially on mobile"
 		}
 	]
 }
