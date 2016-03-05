@@ -9,6 +9,28 @@
 	font-size: 60px;
 	margin: 20px
 }
+.centerfloat {
+	background: #fff;
+	display: block;
+	margin: 8px auto 8px auto;
+	text-align: center;
+	max-width: 1000px
+}
+.centerfloat-item {
+	display: inline-block;
+	border: 8px #fff;
+	border-radius: 10px;
+	border-style: none none solid none;
+	transition: 0.3s;
+	height: 200px;
+	width: 200px;
+	margin: 10px;
+	opacity: 0.85;
+}
+.centerfloat-item:hover {
+	border-color: #6cf;
+	opacity: 1
+}
 
 .articles {
 	background: #fff;
