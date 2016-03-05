@@ -178,24 +178,27 @@
 #vizual24x7 div {
 	display: inline-block;
 	margin: 8px;
-	padding: 8px
+	margin-top: 32px;
+	padding: 8px;
+	border: 10px #fff;
+	border-style: none none solid none;
+	transition: 0.3s;
+	width: 125px
+}
+
+#vizual24x7 div:hover {
+	border-color: #6cf;
+	border-style: inset
 }
 
 #vizual24x7 a {
-	border: 10px #fff;
-	border-style: none none solid none;
 	font-size: 30px;
 	text-decoration: none;
-	margin: 8px;
-	margin-top: 32px;
-	padding: 8px;
 	transition: 0.3s
 }
 
 #vizual24x7 a:hover {
 	color: #6cf;
-	border-color: #6cf;
-	border-style: inset;
 	transition: 0.3s
 }
 
