@@ -108,6 +108,7 @@
 .footer-section {
 	margin: 8px;
 	padding: 8px;
+	float: left
 }
 
 .spec_footer:hover { 
