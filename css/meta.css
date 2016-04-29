@@ -16,6 +16,19 @@ transition:0.3s
 .embedded-link:hover {
 color:#a0a0a5
 }
+
+.meta-footer {
+	padding-bottom: 30px;
+	padding-left: 20px;
+	min-height: 300px;
+}
+
+@media(max-width: 700px) {
+	.meta-footer {
+		min-height: 600px;	
+	}
+}
+
 #site-fetch{
 	width: 50%;
 	min-width: 300px;
