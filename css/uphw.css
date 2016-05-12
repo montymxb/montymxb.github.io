@@ -21,6 +21,10 @@
 	border: 8px #fff;
 	border-radius: 10px;
 	border-style: none none solid none;
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-o-transition: 0.3s;
 	transition: 0.3s;
 	height: 200px;
 	width: 200px;
@@ -64,6 +68,10 @@
 
 .article-link * {
 	color: #c6f;
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-o-transition: 0.3s;
 	transition: 0.3s;
 	text-decoration: none
 }
@@ -163,8 +171,14 @@
 	width: 100vw;
 	text-align: center;
 	background-image: url("../images/s5.png");
-	background-repeat: none;
-	background-position: 50% 0%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: 50% 0;
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
 }
 
 #vizual24x7 h2 {
@@ -181,26 +195,40 @@
 	margin: 8px;
 	margin-top: 32px;
 	padding: 8px;
-	border: 10px #fff;
-	border-style: none none solid none;
+	border-width: 10px;
+	border-color: transparent transparent #fff transparent;
+	border-style: solid none solid none;
+	width: 125px;
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-o-transition: 0.3s;
 	transition: 0.3s;
-	width: 125px
 }
 
 #vizual24x7 div:hover {
-	border-color: #6cf;
-	border-style: inset
+	border: 10px #6cf;
+	border-style: solid none solid none;
+	background-color: rgba(255, 255, 255, 0.3);
 }
 
 #vizual24x7 a {
 	font-size: 30px;
 	text-decoration: none;
-	transition: 0.3s
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
 }
 
 #vizual24x7 a:hover {
 	color: #6cf;
-	transition: 0.3s
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
 }
 
 .blueText {
@@ -246,6 +274,10 @@
 	height: 200px; 
 	width: 200px;
 	box-shadow: 1px 1px 10px #000000;
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-o-transition: 0.3s;
 	transition: 0.3s;
 	margin: 10px;
 	opacity: 0.85;
@@ -253,6 +285,10 @@
 
 .showcase:hover {
 	box-shadow: 10px 10px 10px #000000;
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-o-transition: 0.3s;
 	transition: 0.3s;
 	opacity: 1;
 }
@@ -285,7 +321,11 @@
 
 .link {
 	text-decoration: none;
-	transition: 0.3s
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
 }
 
 .link:hover { 
