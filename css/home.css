@@ -27,10 +27,9 @@ div {
 	padding-top: 0px;
 	width: 100%;
 	height: 90vh;
+	max-height: 600px;
 	background-image: url("../images/s2.png");
-	background-color: #000;
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
+	/*background-position: 50% 50%;*/
 	background-attachment: fixed;
 	transition: 0.3s;
 }
