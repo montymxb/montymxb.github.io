@@ -199,6 +199,7 @@
 	border-width: 10px;
 	border-color: transparent transparent #fff transparent;
 	border-style: solid none solid none;
+	border-radius: 0 8px 0 0;
 	width: 125px;
 	-webkit-transition: 0.3s;
 	-moz-transition: 0.3s;
