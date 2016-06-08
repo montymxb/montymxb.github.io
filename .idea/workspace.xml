@@ -43,8 +43,8 @@
       <file leaf-file-name="uphw.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/uphw.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="176" column="26" selection-start-line="176" selection-start-column="26" selection-end-line="176" selection-end-column="26" />
+            <state relative-caret-position="646">
+              <caret line="207" column="17" selection-start-line="207" selection-start-column="17" selection-end-line="207" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -192,12 +192,12 @@
       <workItem from="1463013730102" duration="805000" />
       <workItem from="1463034267747" duration="14000" />
       <workItem from="1463083493125" duration="409000" />
-      <workItem from="1465414727416" duration="209000" />
+      <workItem from="1465414727416" duration="267000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1437000" />
+    <option name="totallyTimeSpent" value="1495000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="6" />
@@ -459,8 +459,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/uphw.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="176" column="26" selection-start-line="176" selection-start-column="26" selection-end-line="176" selection-end-column="26" />
+        <state relative-caret-position="646">
+          <caret line="207" column="17" selection-start-line="207" selection-start-column="17" selection-end-line="207" selection-end-column="17" />
           <folding />
         </state>
       </provider>
