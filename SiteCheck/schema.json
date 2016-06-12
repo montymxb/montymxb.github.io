@@ -17,14 +17,6 @@
 			"failure"	 : "Having this helps better declare what language this page supports when you intend to serve content in multiple languages"
 		},
 		{
-			"testId"	 : 2,
-			"name"		 : "AppCache",
-			"expression" : "<\\s*html.*manifest\\s*=\\s*\".*appcache\"",
-			"description": "A cache of resources to save from your site",
-			"image"		 : "http://www.clker.com/cliparts/W/A/h/a/P/D/check-mark-md.png",
-			"failure"	 : "No AppCache found. These resources can be loaded locally instead of downloaded again, making the next time they visit take significantly less time to load"
-		},
-		{
 			"testId"	 : 3,
 			"name"		 : "Description",
 			"expression" : "<\\s*meta.*name\\s*=\\s*\"\\s*description\\s*\"",
