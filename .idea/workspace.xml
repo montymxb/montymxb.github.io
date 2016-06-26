@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e622084-9305-4c6c-b0a3-67f83b854516" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Terms/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Articles/Latria.html" afterPath="$PROJECT_DIR$/Articles/Latria.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Articles/template.html" afterPath="$PROJECT_DIR$/Articles/template.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BitShooter/index.html" afterPath="$PROJECT_DIR$/BitShooter/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Contact/index.html" afterPath="$PROJECT_DIR$/Contact/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Floidia/index.html" afterPath="$PROJECT_DIR$/Floidia/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangmanAzul/index.html" afterPath="$PROJECT_DIR$/HangmanAzul/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Metatest/index.html" afterPath="$PROJECT_DIR$/Metatest/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Privacy/index.html" afterPath="$PROJECT_DIR$/Privacy/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Support/index.html" afterPath="$PROJECT_DIR$/Support/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="montymxb.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,8 +29,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="272" column="141" selection-start-line="272" selection-start-column="141" selection-end-line="272" selection-end-column="141" />
+            <state relative-caret-position="483">
+              <caret line="274" column="18" selection-start-line="274" selection-start-column="18" selection-end-line="274" selection-end-column="18" />
               <folding>
                 <element signature="n#style#0;n#h1#0;n#div#0;n#article#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h3#0;n#div#0;n#article#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -67,44 +58,22 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HangmanAzul/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="141" column="14" selection-start-line="141" selection-start-column="14" selection-end-line="141" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Floidia/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="573">
-              <caret line="139" column="113" selection-start-line="139" selection-start-column="113" selection-end-line="139" selection-end-column="113" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Contact/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+            <state relative-caret-position="33">
+              <caret line="105" column="90" selection-start-line="105" selection-start-column="90" selection-end-line="105" selection-end-column="90" />
               <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Support/index.html">
+        <entry file="file://$PROJECT_DIR$/Floidia/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="471">
-              <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+            <state relative-caret-position="378">
+              <caret line="132" column="8" selection-start-line="132" selection-start-column="8" selection-end-line="132" selection-end-column="8" />
               <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -113,9 +82,11 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BitShooter/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="150" column="14" selection-start-line="150" selection-start-column="14" selection-end-line="150" selection-end-column="14" />
-              <folding />
+            <state relative-caret-position="138">
+              <caret line="121" column="107" selection-start-line="121" selection-start-column="107" selection-end-line="121" selection-end-column="107" />
+              <folding>
+                <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -172,12 +143,12 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/Articles/Latria.html" />
         <option value="$PROJECT_DIR$/Metatest/index.html" />
-        <option value="$PROJECT_DIR$/HangmanAzul/index.html" />
-        <option value="$PROJECT_DIR$/Floidia/index.html" />
-        <option value="$PROJECT_DIR$/BitShooter/index.html" />
         <option value="$PROJECT_DIR$/Articles/template.html" />
         <option value="$PROJECT_DIR$/Contact/index.html" />
         <option value="$PROJECT_DIR$/Support/index.html" />
+        <option value="$PROJECT_DIR$/BitShooter/index.html" />
+        <option value="$PROJECT_DIR$/HangmanAzul/index.html" />
+        <option value="$PROJECT_DIR$/Floidia/index.html" />
       </list>
     </option>
   </component>
@@ -455,12 +426,12 @@
       <workItem from="1466130150437" duration="792000" />
       <workItem from="1466201290072" duration="79000" />
       <workItem from="1466817576629" duration="74000" />
-      <workItem from="1466971135338" duration="4446000" />
+      <workItem from="1466971135338" duration="4732000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9741000" />
+    <option name="totallyTimeSpent" value="10027000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="6" />
@@ -899,32 +870,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="272" column="141" selection-start-line="272" selection-start-column="141" selection-end-line="272" selection-end-column="141" />
-          <folding>
-            <element signature="n#style#0;n#h1#0;n#div#0;n#article#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#0;n#article#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#4;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#4;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Metatest/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="573">
           <caret line="148" column="113" selection-start-line="148" selection-start-column="113" selection-end-line="148" selection-end-column="113" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HangmanAzul/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="141" column="14" selection-start-line="141" selection-start-column="14" selection-end-line="141" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -936,14 +885,6 @@
           <folding>
             <marker date="1452482218000" expanded="true" signature="379:425" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BitShooter/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="150" column="14" selection-start-line="150" selection-start-column="14" selection-end-line="150" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -974,11 +915,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Floidia/index.html">
+    <entry file="file://$PROJECT_DIR$/Support/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="139" column="113" selection-start-line="139" selection-start-column="113" selection-end-line="139" selection-end-column="113" />
-          <folding />
+        <state relative-caret-position="471">
+          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -993,13 +937,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Support/index.html">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+        <state relative-caret-position="483">
+          <caret line="274" column="18" selection-start-line="274" selection-start-column="18" selection-end-line="274" selection-end-column="18" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#article#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#0;n#article#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#4;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BitShooter/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="121" column="107" selection-start-line="121" selection-start-column="107" selection-end-line="121" selection-end-column="107" />
+          <folding>
             <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HangmanAzul/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="105" column="90" selection-start-line="105" selection-start-column="90" selection-end-line="105" selection-end-column="90" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Floidia/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="132" column="8" selection-start-line="132" selection-start-column="8" selection-end-line="132" selection-end-column="8" />
+          <folding>
+            <element signature="n#style#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
