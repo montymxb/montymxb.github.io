@@ -60,7 +60,7 @@
 	<link rel="apple-touch-icon" sizes="152x152" href="images/apple4.png"/>
 	<link rel="apple-touch-startup-image" href="images/startup.png"/>
 	<title>Projects, Software and News</title>
-    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/Scroller.js"></script>
     <script src="js/home.js"></script>
 	<link rel="author" href="https://plus.google.com/+Uphouseworks/posts"/>
 	<link rel="publisher" href="https://plus.google.com/+Uphouseworks"/>
@@ -75,9 +75,8 @@
     		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   		})();
 	</script>
-	
-	<!--For Google +-->
 	<script type="text/javascript">
+		// g+
 		(function() {
 			var po = document.createElement('script'); 
 			po.type = 'text/javascript'; 
@@ -86,7 +85,6 @@
 			var s = document.getElementsByTagName('script')[0];
 			s.parentNode.insertBefore(po, s);
 		})();
-	
 		//For Twitter
 		(function(d,s,id)
 		{
@@ -99,8 +97,7 @@
 				js.src=p+'://platform.twitter.com/widgets.js';
 				fjs.parentNode.insertBefore(js,fjs);
 			}
-		}
-		(document, 'script', 'twitter-wjs'));
+		}(document, 'script', 'twitter-wjs'));
 	</script>
 	<script type="application/ld+json">
     {
@@ -119,10 +116,10 @@
 </head>
 <body>
 	<div id="uphw_navbar">
-		<a href="#Home" onclick="$('#Head').scrollView();"><img class="home_image" src = "images/uphw_white.png" alt="Home"/></a>
-		<a href="#Info" onclick="$('#About').scrollView();" class="navbar_link">Info</a>
-		<a href="#Apps" onclick="$('#MobileApps').scrollView();" class="navbar_link">Apps</a>
-		<a href="#Contact" onclick="$('#ContactMe').scrollView();" class="navbar_link">Contact</a>
+		<a href="#Home" onclick="Scroller.scrollToId('Head')"><img class="home_image" src = "images/uphw_white.png" alt="Home"/></a>
+		<a href="#Info" onclick="Scroller.scrollToId('About')" class="navbar_link">Info</a>
+		<a href="#Apps" onclick="Scroller.scrollToId('MobileApps')" class="navbar_link">Apps</a>
+		<a href="#Contact" onclick="Scroller.scrollToId('ContactMe')" class="navbar_link">Contact</a>
 	</div>
 	
 	<!--Scoot to Head Div-->
