@@ -3,7 +3,6 @@
 <head>
 	<link href="../css/uphw.css" type="text/css" rel="stylesheet"/>
 	<link href="../css/home.css" type="text/css" rel="stylesheet"/>
-	<link href="../css/animate.css" type="text/css" rel="stylesheet"/>
 	<link href="../css/article.css" type="text/css" rel="stylesheet"/>
 	<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
     <meta charset="utf-8">
@@ -43,11 +42,10 @@
 	<link rel="apple-touch-icon" sizes="152x152" href="../images/apple4.png"/>
 	<link rel="apple-touch-startup-image" href="../images/startup.png"/>
 	<title>The Latria Scripting Language | Uphouseworks</title>
-    <script src="../js/jquery-1.11.1.min.js"></script>
-    <script src="../js/home.js"></script>
+    <script src="../js/Scroller.js"></script>
 	<link rel="author" href="https://plus.google.com/+Uphouseworks/posts"/>
 	<link rel="publisher" href="https://plus.google.com/+Uphouseworks"/>
-    <link rel="icon" type="image/ico" href="favicon.ico"/>
+    <link rel="icon" type="image/ico" href="../favicon.ico"/>
     <script type="text/javascript">
   		var _gaq = _gaq || [];
   		_gaq.push(['_setAccount', 'UA-47712445-1']);
@@ -105,7 +103,7 @@
 
 	<div id="uphw_navbar">
 		<a href="http://uphouseworks.com" class="navbar_link">Uphouseworks</a>
-		<a href="#Head" onclick="$('#Head').scrollView();" class="navbar_link">Latria</a>
+		<a href="#Head" onclick="Scroller.scrollToId('Head')" class="navbar_link">Latria</a>
 	</div>
 	
 	<!--Scoot to Head Div-->
