@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5e622084-9305-4c6c-b0a3-67f83b854516" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BitShooter/index.html" afterPath="$PROJECT_DIR$/BitShooter/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Floidia/index.html" afterPath="$PROJECT_DIR$/Floidia/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HangmanAzul/index.html" afterPath="$PROJECT_DIR$/HangmanAzul/index.html" />
-    </list>
+    <list default="true" id="5e622084-9305-4c6c-b0a3-67f83b854516" name="Default" comment="" />
     <ignored path="montymxb.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -426,12 +422,12 @@
       <workItem from="1466130150437" duration="792000" />
       <workItem from="1466201290072" duration="79000" />
       <workItem from="1466817576629" duration="74000" />
-      <workItem from="1466971135338" duration="4732000" />
+      <workItem from="1466971135338" duration="4784000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10027000" />
+    <option name="totallyTimeSpent" value="10079000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="6" />
