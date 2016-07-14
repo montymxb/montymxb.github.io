@@ -4,7 +4,7 @@
 }
 
 .navbar_link {
-	border: solid 4px #000;
+	border: 4px #000;
 	border-style: none none solid none;
 	transition: 0.3s;
 	color: #fff;
@@ -24,7 +24,6 @@
 	margin-right: auto;
 	padding-top: 16px;
 	max-width: 700px;
-	box-shadow: 1px 1px 5px #707070
 }
 
 .tab {
