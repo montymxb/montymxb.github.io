@@ -95,3 +95,55 @@
 	border-radius: 4px;
 	background: #f0f0f0
 }
+
+/* ARTICLES home page CSS */
+.articles-array {
+	max-width: 800px;
+	display: block;
+	margin: 8px auto 8px auto;
+	padding: 8px;
+	background: #f0f0f0;
+	border-radius: 8px;
+	text-align: center;
+}
+
+.article-option {
+	display: inline-block;
+	width: 300px;
+	height: 400px;
+	margin: 4px;
+	background: #fff;
+	border-radius: 4px;
+	overflow: hidden;
+	text-decoration: none;
+
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
+}
+
+.article-option:hover {
+	box-shadow: 0 0 9px #6cf;
+}
+
+.article-option img {
+	width: 300px;
+	height: 150px;
+	text-align: center;
+	display: block;
+}
+
+.article-option h3 {
+	padding: 4px;
+	font-family: 'Avenir Next', sans-serif;
+	font-weight: 400;
+}
+
+.article-option p {
+	padding: 4px;
+	font-family: 'Avenir Next', sans-serif;
+	font-weight: 100;
+}
+/* END ARTICLES home page css */
