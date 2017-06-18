@@ -1,0 +1,353 @@
+<!DOCYTPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Popup Test</title>
+</head>
+<body>
+
+
+	<!--            -->
+	<!-- COPY START -->
+	<!--            -->
+	<style>
+		.axolsoft-popup-display {
+			max-width: 500px;
+			width: 500px;
+			min-height: 300px;
+			display: block;
+			position: fixed;
+			z-index: 102;
+			background-color: #fff;
+			border-radius: 4px;
+			left: 50vw;
+			top: 47vh;
+			margin-left: -266px;
+			margin-top: -150px;
+			padding: 8px 16px 8px 16px;
+			text-align: center;
+			-webkit-transition: 0.3s;
+			-moz-transition: 0.3s;
+			-ms-transition: 0.3s;
+			-o-transition: 0.3s;
+			transition: 0.3s;
+			opacity: 0;
+			font-family:'Avenir Next',sans-serif;
+
+			/* Standard fade in */
+			-moz-animation:     popup-fade-in 0.3s forwards ease-in;
+			-webkit-animation:  popup-fade-in 0.3s forwards ease-in;
+			-o-animation:       popup-fade-in 0.3s forwards ease-in;
+			animation:          popup-fade-in 0.3s forwards ease-in;
+
+			/* EXPERIMENT */
+			box-shadow: 0 0 2px #000;
+			max-height: 100vh;
+			overflow: auto;
+		}
+		
+		.axolsoft-popup-title {
+			font-size: 32px;
+			font-weight: bold;
+			margin-bottom: 8px;
+			padding: 4px;
+			
+		}
+		
+		.axolsoft-popup-info {
+			padding: 4px;
+		}
+
+		/* Small close button for dismissing this popup */
+		.axolsoft-popup-close-button {
+			font-size: 19px;
+			font-weight: 100;
+			border: none;
+			float: right;
+			background: #fff;
+
+			-webkit-transition: 0.3s;
+			-moz-transition: 0.3s;
+			-ms-transition: 0.3s;
+			-o-transition: 0.3s;
+			transition: 0.3s;
+	
+		}
+
+		.axolsoft-popup-close-button:hover {
+			color: #f06;
+			cursor: pointer;
+		}
+
+		@media(min-height: 650px) {
+			.axolsoft-popup-display {
+				opacity: 0;
+
+				/* Forward animations */
+				-moz-animation:     popup-animate-in 0.3s forwards ease-in;
+				-webkit-animation:  popup-animate-in 0.3s forwards ease-in;
+				-o-animation:       popup-animate-in 0.3s forwards ease-in;
+				animation:          popup-animate-in 0.3s forwards ease-in;
+			}
+		}
+
+		@media(max-width: 600px) {
+			.axolsoft-popup-display {
+				max-width: inherit;
+				left: 0;
+
+				/* EXPERIMENT */
+				min-height: inherit;
+				height: auto;
+				padding: 8px 0 0 0;
+				margin: 0;
+				width: 100vw;
+				top: 2px !important;
+
+			}
+		}
+
+		/* EXPERIMENT */
+		@media(max-height: 500px) {
+			.axolsoft-popup-display {
+				top: 2px !important;
+				margin-top: 0;
+				min-height: inherit;
+				height: auto;
+				padding-bottom: 0;
+			}
+		}
+
+		/* PHASE IN */
+		@keyframes popup-animate-in {
+			0% {
+				opacity: 0;
+				top: 47vh;
+			}
+			100% {
+				top: 50vh;
+				opacity: 1;
+			}
+		}
+
+		@-moz-keyframes popup-animate-in {
+			0% {
+				opacity: 0;
+				top: 47vh;
+			}
+			100% {
+				top: 50vh;
+				opacity: 1;
+			}
+		}
+
+		@-ms-keyframes popup-animate-in {
+			0% {
+				opacity: 0;
+				top: 47vh;
+			}
+			100% {
+				top: 50vh;
+				opacity: 1;
+			}
+		}
+
+		@-o-keyframes popup-animate-in {
+			0% {
+				opacity: 0;
+				top: 47vh;
+			}
+			100% {
+				top: 50vh;
+				opacity: 1;
+			}
+		}
+
+		@-webkit-keyframes popup-animate-in {
+			0% {
+				opacity: 0;
+				top: 47vh;
+			}
+			100% {
+				top: 50vh;
+				opacity: 1;
+			}
+		}
+
+
+		/* FADE IN */
+		@keyframes popup-fade-in {
+			0% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+
+		@-moz-keyframes popup-fade-in {
+			0% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+
+		@-ms-keyframes popup-fade-in {
+			0% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+
+		@-o-keyframes popup-fade-in {
+			0% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+
+		@-webkit-keyframes popup-fade-in {
+			0% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+
+
+		.axolsoft-overlay {
+			position:fixed;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			opacity: 0;
+			background-color: #000;
+			z-index:101;
+			margin: 0;
+			padding: 0;
+			text-align: center;
+			overflow: hidden;
+
+			-moz-animation:     overlay-animate 0.3s forwards;
+			-webkit-animation:  overlay-animate 0.3s forwards;
+			-o-animation:       overlay-animate 0.3s forwards;
+			animation:          overlay-animate 0.3s forwards;
+		}
+
+		@keyframes overlay-animate {
+			0% {opacity: 0}
+			100% {opacity: 0.7}
+		}
+
+		@-moz-keyframes overlay-animate {
+			0% {opacity: 0}
+			100% {opacity: 0.7}
+		}
+
+		@-ms-keyframes overlay-animate {
+			0% {opacity: 0}
+			100% {opacity: 0.7}
+		}
+
+		@-o-keyframes overlay-animate {
+			0% {opacity: 0}
+			100% {opacity: 0.7}
+		}
+
+		@-webkit-keyframes overlay-animate {
+			0% {opacity: 0}
+			100% {opacity: 0.7}
+		}
+
+		.axolsoft-facebook-like-wrapper {
+			margin: 8px auto;
+			padding: 4px;
+			overflow: hidden;
+		}
+	</style>
+	<script type="text/javascript">
+		// dismisses an axolsoft popup
+		function axolsoftDismissPopup() {
+			// get the popup container
+			var container = document.getElementById("axolsoft-popup-container");
+			// hide this container
+			container.style.display = "none";
+			
+		}
+		
+		function axolsoftGetCookie(name)
+		{
+			name = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i = 0; i <ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length,c.length);
+                }
+            }
+            return "";
+            
+		}
+		
+		function axolsoftDecideToShowPopup() {
+			var hasShown = axolsoftGetCookie("axolsoft-fb-popup-shown");
+			if(!hasShown || hasShown === "") {
+				// show and set
+				var container = document.getElementById("axolsoft-popup-container");
+				container.style.display = "block";
+				//document.cookie = "axolsoft-fb-popup-shown=1;";
+				
+			}
+		}
+		
+	</script>
+	<!-- Facebook SDK -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	
+	<!--Popup Container-->
+	<div id="axolsoft-popup-container" style="display:none">
+	<div class="axolsoft-overlay" onclick="axolsoftDismissPopup()"></div>
+	<div class="axolsoft-popup-display">
+		<button class="axolsoft-popup-close-button" type="button" onclick="axolsoftDismissPopup()" title="close">x</button>
+		<p class="axolsoft-popup-title">Like us on Facebook</p>
+		<p class="axolsoft-popup-info">We would really appreciate it and it's the best way to stay in touch!</p>
+		
+		<!--Facebook like section-->
+		<div class="axolsoft-facebook-like-wrapper">
+			<div class="fb-like" 
+				data-href="https://www.facebook.com/RidgwayMusicOfficial/" 
+				data-layout="standard" 
+				data-action="like" 
+				data-size="large" 
+				data-show-faces="true" 
+				data-share="true"
+				data-width="200">
+			</div>
+		</div>
+	</div>
+	</div>
+	<script>axolsoftDecideToShowPopup()</script>
+	<!--           -->
+	<!-- COPY STOP -->
+	<!--           -->
+	
+</body>
+</html>
