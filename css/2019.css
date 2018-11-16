@@ -1,0 +1,149 @@
+/* close enough to be considered for 2019 */
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  background: #000;
+  font-family: 'Avenir Next';
+  font-weight: 100;
+}
+
+#title {
+  display: block;
+  padding: 12px;
+  margin: 0;
+  background-color: #111;
+  text-align: center;
+  font-weight: 100;
+  z-index: 2;
+  position: relative;
+  opacity: 0.9;
+  overflow: hidden;
+}
+
+h1,h2,h3 {
+  font-weight: 100;
+  opacity: 1;
+}
+
+#content {
+  background: #111;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-image: url("../images/2019/s2.jpg");
+  background-position: top;
+  background-size: cover;
+  transition: 0.3s;
+  animation: animate-images forwards 60s infinite ease;
+}
+
+@keyframes animate-images {
+  0% {
+    background-position: top;
+  }
+  50% {
+    background-position: bottom;
+  }
+  100% {
+    background-position: top;
+  }
+}
+
+#underlay-center {
+  position: fixed;
+  display: block;
+  text-align: center;
+  margin: 8px auto;
+  top: 40vh;
+  left: 50%;
+  margin-left: -75px;
+  width: 100px;
+  height: 100px;
+  border: solid 25px #000;
+
+  animation: spin forwards 3600s infinite linear;
+
+}
+
+#logo-center {
+  position: absolute;
+  display: block;
+  text-align: center;
+  top: 40vh;
+  left: 50%;
+  margin-left: -50px;
+  margin-top: 33px;
+  width: 50px;
+  height: 50px;
+  border: solid 25px;
+  border-color: #000;
+
+  animation: spin forwards 60s infinite linear;
+  box-shadow: 0 5px 5px #000;
+}
+
+#logo-center-center {
+  position: absolute;
+  display: block;
+  text-align: center;
+  top: 40vh;
+  left: 50%;
+  margin-left: -30px;
+  margin-top: 52px;
+  width: 10px;
+  height: 10px;
+  border: solid 25px;
+  border-color: #000;
+
+  animation: spin forwards 1s infinite linear;
+  box-shadow: 0 5px 5px #000;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(45deg) rotateY(0);
+    border-color: #000;
+  }
+  66% {
+    opacity: 1;
+  }
+  67% {
+    opacity: 0;
+  }
+  68% {
+    opacity: 1;
+    border-color: #202;
+  }
+  69% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(405deg) rotateY(360deg);
+    border-color: #000;
+  }
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 50px;
+  background: #111;
+  padding: 0;
+  text-align: center;
+  opacity: 0.9;
+}
+
+a {
+  color: #fff;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #6cf;
+}
