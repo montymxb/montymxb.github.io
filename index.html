@@ -82,6 +82,42 @@
 
 			<!--BoGl when ready-->
 
+			<!--FBM Terrain Generation-->
+			<a class="entry" href="https://github.com/montymxb/FBM_TerrrainGenerator">
+				<!--<div class="banner" style="background-image:url('https://raw.githubusercontent.com/montymxb/FBM_TerrainGenerator/master/submission/cloud2.gif');background-size:contain"></div>-->
+				<p class="date">March 30th, 2020</p>
+				<h3>Fractal Brownian Motion</h3>
+				<p class="text">I was playing around with fractal brownian motion (fbm) as a form of generating computer graphics noise.
+			  I implemented a terrain generator based off of fbm for land, water, and clouds.
+				The generation of the land as a heightmap from the resulting values came out quite nice, and I was able to generate fairly decent types of terrain in OpenGL Shader Language.
+			  The approach I used allowed me to perform nearly all of the generation for the terrain in shaders, along with the water and clouds.
+				The water itself was also an interesting experiment, which was a simple sin wave modifed with a light dash of fbm to give it an uneven wavey texture.
+				The results here were quite surprising in terms of quality, and this is something I will certainly look into down the road.
+				<br/>
+				<div class="sqimg" style="display:inline-block;background-image:url('https://raw.githubusercontent.com/montymxb/FBM_TerrainGenerator/master/submission/cloud2.gif')"></div>
+				<div class="sqimg" style="display:inline-block;background-image:url('https://raw.githubusercontent.com/montymxb/FBM_TerrainGenerator/master/submission/island2.gif')"></div>
+				<br/>
+				The clouds themselves were implemented using fbm as well, but were generated using volumetric ray casting.
+				This technique allows a ray to be cast through a solid surface, computing the fbm values as the ray moves through the surface.
+				The result is calculated dynamically, and as the eye position changes, the resulting values computed by the rays change as well.
+				To the viewer it then appears that a solid surface (such as a cube) is in fact a volume of clouds.
+				Adding a slight adjustment with regards to time and a flowing volume of clouds was completed.
+				</p>
+			</a>
+
+			<!--Pacman Search-->
+			<a class="entry" href="https://github.com/montymxb/pacman">
+				<p class="date">Mar 30th, 2020</p>
+				<h3>Blind Search in Pacman</h3>
+				<div class="sqimg" style="background-image: url('images/pac1.png')"></div>
+				<p class="text">Various search algorithms that I implemented on a simple HTML5 implementation of Pacman.
+					I was interested in seeing how various heuristic search techniques would compare against uninformed search approaches.
+					What was interesting is how quickly a breadth first search can finish a level of Pacman, even if it runs through lives rather quickly.
+					Even if it doesn't play as optimally as would be disired, it still plays better than most humans.
+					In addition, there may be some interesting follow up research with regards to how longevity and survival can factor into using search on Pacman.
+				</p>
+			</a>
+
 			<!--Banter (Github)-->
 			<a class="entry" href="https://github.com/montymxb/banter">
 				<div class="banner" style="background-image: url('images/banter1.png')"></div>

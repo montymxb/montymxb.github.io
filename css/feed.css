@@ -14,11 +14,21 @@
 
 .feed .entry {
   padding: 8px;
+  /*
   border-bottom: solid;
   border-width: 1px;
+  */
+  border: solid 8px;
+  border-color: #eee;
+  border-radius: 8px;
+  margin: 16px 8px 16px 8px;
   color: #000;
   text-decoration: none;
   display: block;
+}
+
+.feed .entry:hover {
+  background: #eee;
 }
 
 .feed .entry .date {
@@ -37,16 +47,18 @@
   background-size: cover;
 }
 
-.feed .entry h3:hover {
-  transition: 0.3s;
-  color: #6cf;
+.feed .entry .sqimg {
+  height: 300px;
+  width: 300px;
+  background-position: center;
+  background-size: cover;
 }
 
 .feed .entry h3 {
   padding: 4px;
   margin: 4px 0 4px 0;
-  font-size: 20px;
-  text-decoration: underline;
+  font-size: 30px;
+  font-family: "Arial";
 }
 
 .feed .entry .text {
