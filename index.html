@@ -75,7 +75,7 @@
 		</div>
 
 		<div class="highlight" style="background-image: url('images/uphw_white_greyBack.png')"></div>
-		<h2 style="color:black;font-family:'Garamond';text-align:center;font-style:italic">A brief blog about software and projects.</h2>
+		<h2 style="color:black;text-align:center;font-style:italic">A brief blog about software and projects.</h2>
 
 		<!--feed of stuff that has happened lately-->
 		<div class="feed" style="color:black">
@@ -87,7 +87,7 @@
 
 
 			<!--Banter (Github)-->
-			<a class="entry" href="https://github.com/montymxb/banter">
+			<div class="entry">
 				<p class="date">April 22nd, 2020</p>
 				<h3>Banter</h3>
 				<div class="sqimg" style="display:inline-block;background-image:url('images/b3.gif')"></div>
@@ -102,10 +102,11 @@
 			  I believe I will come back to this concept later on, but apply it in a more specific context, as there is not practical application I can think of at the moment.
 			  Research into software and program visualization has been done in the past, and has had issues as well weak adoption in practical applications.
 				I still believe there is something more to be discovered in this field, but I believe it will take some more time, and a slightly different perspective.</p>
-			</a>
+				<a class="link" href="https://github.com/montymxb/banter">Github Link.</a>
+			</div>
 
 			<!--FBM Terrain Generation-->
-			<a class="entry" href="https://github.com/montymxb/FBM_TerrrainGenerator">
+			<div class="entry">
 				<!--<div class="banner" style="background-image:url('https://raw.githubusercontent.com/montymxb/FBM_TerrainGenerator/master/submission/cloud2.gif');background-size:contain"></div>-->
 				<p class="date">March 30th, 2020</p>
 				<h3>Fractal Brownian Motion</h3>
@@ -115,20 +116,23 @@
 			  The approach I used allowed me to perform nearly all of the generation for the terrain in shaders, along with the water and clouds.
 				The water itself was also an interesting experiment, which was a simple sin wave modifed with a light dash of fbm to give it an uneven wavey texture.
 				The results here were quite surprising in terms of quality, and this is something I will certainly look into down the road.
+				</p>
 				<br/>
 				<div class="sqimg" style="display:inline-block;background-image:url('https://raw.githubusercontent.com/montymxb/FBM_TerrainGenerator/master/submission/cloud2.gif')"></div>
 				<div class="sqimg" style="display:inline-block;background-image:url('https://raw.githubusercontent.com/montymxb/FBM_TerrainGenerator/master/submission/island2.gif')"></div>
 				<br/>
+				<p class="text">
 				The clouds themselves were implemented using fbm as well, but were generated using volumetric ray casting.
 				This technique allows a ray to be cast through a solid surface, computing the fbm values as the ray moves through the surface.
 				The result is calculated dynamically, and as the eye position changes, the resulting values computed by the rays change as well.
 				To the viewer it then appears that a solid surface (such as a cube) is in fact a volume of clouds.
 				Adding a slight adjustment with regards to time and a flowing volume of clouds was completed.
 				</p>
-			</a>
+				<a class="link" href="https://github.com/montymxb/FBM_TerrrainGenerator">Github Link.</a>
+			</div>
 
 			<!--Pacman Search-->
-			<a class="entry" href="https://github.com/montymxb/pacman">
+			<div class="entry">
 				<p class="date">Mar 30th, 2020</p>
 				<h3>Blind Search in Pacman</h3>
 				<div class="sqimg" style="background-image: url('images/pac1.png')"></div>
@@ -139,47 +143,53 @@
 					In addition, there may be some interesting follow up research with regards to how longevity and survival can factor into using search on Pacman.
 				</p>
 				<div class="sqimg" style="background-image: url('images/pacm1.gif')"></div>
-			</a>
+				<br/>
+				<a class="link" href="https://github.com/montymxb/pacman">Github Link.</a>
+			</div>
 
 			<!--HTJSON-->
-			<a class="entry" href="https://github.com/montymxb/HTJSON">
+			<div class="entry">
 				<p class="date">March 8th, 2017</p>
 				<h3>HTJSON</h3>
 				<p class="text">While experimenting with verifying the structure of HTML (from Metatest and Sitecheck before), I went ahead and spent some time to write up a simple parser in php.
 				This can go through most HTML and convert it into json, which can then be worked on by other programs.
 
 				The plan was to utilize this as a step in later building and processing websites as JSON, and then decoding them back into HTML, but I decided to leave it at this.</p>
-			</a>
+				<a class="link" href="https://github.com/montymxb/HTJSON">Github Link.</a>
+			</div>
 
 			<!--Parse-->
-			<a class="entry" href="https://github.com/parse-community/parse-php-sdk">
+			<div class="entry">
 				<div class="smimg" style="background-image: url('images/parse.png')"></div>
 				<p class="date">2017</p>
 				<h3>Working on Parse</h3>
 				<p class="text"> After Parse went open source, we had already been using their php SDK for some time at Axolsoft, and we had to figure how to handle the migration.
 					Over time I ended up working more on the sdk itself, contributing to it, and eventually taking it on as a project of my own.
 					It was definitely a lot of fun fixing bugs, introducing features, managing PRs, and bringing the test suite up to spec.</p>
-			</a>
+					<a class="link" href="https://github.com/parse-community/parse-php-sdk">Github Link.</a>
+			</div>
 
 			<!--Latria-->
-			<a class="entry" href="Articles/Latria.html">
+			<div class="entry">
 				<div class="banner" style="background-image: url('images/article_images/og_image.png')"></div>
 				<p class="date">July 14th, 2016</p>
 				<h3>Latria</h3>
 				<p class="text">A small programming language that I wrote some time ago.
 					Based heavily off of Lua, and a means by which to test some theories and ideas of developing a simple language.</p>
-			</a>
+					<a class="link" href="Articles/Latria.html">Article Link.</a>
+			</div>
 
 			<!--SiteCheck: July 14th, 2016-->
-			<a class="entry" href="Articles/Sitecheck.html">
+			<div class="entry">
 				<div class="smimg" style="background-image: url('images/sitecheck.png')"></div>
 				<p class="date">2016</p>
 				<h3>SiteCheck</h3>
 				<p class="text">An old app that I wrote that was an iOS version of the online Metatest tool I had written before.</p>
-			</a>
+				<a class="link" href="Articles/Sitecheck.html">Article Link.</a>
+			</div>
 
 			<!--Metatest-->
-			<a class="entry" href="Metatest/index.html">
+			<div class="entry">
 				<div class="smimg" style="background-image: url('images/meta.png')"></div>
 				<p class="date">2016</p>
 				<h3>Metatest</h3>
@@ -187,10 +197,11 @@
 					Verified and checked for proper integration of third party tags to enhance posting and sharing on twitter and facebook.
 					The primary means was a test to apply some complex regexes to attempt to parse HTML, which being inherently irregular needed some programming around it to handle some odd cases.
 					Inadvertently, this also turned out to be a handy approach towards verifying the structure of an HTML document.</p>
-			</a>
+					<a class="link" href="Metatest/index.html">Article Link.</a>
+			</div>
 
 			<!--Hangman Azul-->
-			<a class="entry" href="HangmanAzul/index.html">
+			<div class="entry">
 				<div class="smimg" style="background-image: url('images/azul_512.png')"></div>
 				<p class="date">January 2016</p>
 				<h3>Hangman Azul</h3>
@@ -198,32 +209,36 @@
 				This was probably one of my favorite applications that I built, one which created a fully dynamic interface for a Hangman game.
 				In addition, it gave me an excuse to play around with implementing some bluetooth networking code, and it ended up working out quite well.
 				Creating the animation of the letter tray at the bottom was really pretty neat too.</p>
-			</a>
+				<a class="link" href="HangmanAzul/index.html">Article Link.</a>
+			</div>
 
 			<!--Axolsoft-->
-			<a class="entry" href="https://www.axolsoft.com/">
+			<div class="entry">
 				<div class="smimg" style="background-image: url('images/axolsoft.png')"></div>
 				<p class="date">2015</p>
 				<h3>Axolsoft</h3>
 				<p class="text">Started working at a new business called Axolsoft as the Head Software Engineer.
 				The majority of my work was programmer-centric, involving developing a set of internal tools, several online portals, and when possible automating any standardized procedures.</p>
-			</a>
+				<a class="link" href="https://www.axolsoft.com/">Link to Axolsoft.</a>
+			</div>
 
 			<!--Floidia-->
-			<a class="entry" href="Floidia/index.html">
+			<div class="entry">
 				<div class="smimg" style="background-image: url('images/floidialogo.png')"></div>
 				<p class="date">2014</p>
 				<h3>Floidia</h3>
 				<p class="text">A simple soundboard application, made up of the leftover components from developing BitShooter. Long since defunct now.</p>
-			</a>
+				<a class="link" href="Floidia/index.html">Article Link.</a>
+			</div>
 
 			<!--BitShooter-->
-			<a class="entry" href="BitShooter/index.html">
+			<div class="entry">
 				<div class="smimg" style="background-image: url('images/bsImg.png')"></div>
 				<p class="date">2013</p>
 				<h3>Bit Shooter</h3>
 				<p class="text">The first game that I ever wrote for Android in early 2013. Utilized OpenGL, and was eventually written across to iOS as well.</p>
-			</a>
+				<a class="link" href="BitShooter/index.html">Article Link.</a>
+			</div>
 
 		</div>
 

@@ -5,11 +5,10 @@
  */
 
 .feed {
-  max-width: 800px;
+  max-width: 50rem;
   display: block;
   margin: 12px auto;
   padding: 12px;
-  font-family: "Garamond";
 }
 
 .feed .entry {
@@ -27,13 +26,22 @@
   display: block;
 }
 
+.feed .entry .link {
+  color: #69f;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+/*
 .feed .entry:hover {
   background: #eee;
 }
+*/
 
 .feed .entry .date {
-  font-size: 12px;
+  font-size: 18px;
   float: right;
+  font-weight: 200;
 }
 
 .feed .entry .banner {
@@ -45,6 +53,7 @@
   width: 75px;
   background-position: center;
   background-size: cover;
+  border-radius: 8px;
 }
 
 .feed .entry .sqimg {
@@ -52,13 +61,15 @@
   width: 300px;
   background-position: center;
   background-size: cover;
+  border-radius: 8px;
+
 }
 
 .feed .entry h3 {
   padding: 4px;
   margin: 4px 0 4px 0;
   font-size: 30px;
-  font-family: "Arial";
+  /*font-family: "Arial";*/
 }
 
 .feed .entry .text {
