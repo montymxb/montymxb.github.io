@@ -1,7 +1,68 @@
 let timer1 = Math.random() * 10000.0;
 const seed = Math.random() * 10000.0;
 
+const heartSteps = 50;
+let vertexCount = 0;
+
+// Print mode
+// 0 = Cube
+// 1 = Heart
+// 3 = island stuff
+let mode = 0;
+
 main();
+
+
+let qe = () => {
+  let whoa = 13245;
+  return 12455;
+};
+
+// Going to come up with a way to write out this whole thing, w/out too much work...
+/*
+Goal: Allow me to play with no JS / WebGL stuff, but create WebGL items
+- ShaderToy does this (..., but I want to factor one out for my own purposes...minus the tool endpoint)
+- I just want it to be an experiment for myself, simpler, not as feature rich, but effective at doing simple things
+- Let's identify the stages:
+  1. Retrieve the gl context from the canvas (can fail)
+  2. Load shaders & compile them into 'programs' (can fail)
+  3. Create programs, attach Vertex & Fragment shaders, link them (can fail)
+  4. Get and associate attribute and uniform locations for a program (can fail)
+  5. Produce vertex/texture data to feed in via one or more approaches
+    - this part needs user intervention
+  6. Create, bind, and add data into buffers (can fail)
+  7. ~ Prepare the scene and draw clear/color setup, position scene for camera
+  8. Bind buffer, vertex attrib ptr, enable it
+  9. Bind program, update uniforms
+  10.Draw items onto the screen
+
+- Provide 5 panes
+  - 1 for graphics results
+  - 1 for JS
+    - clientside
+  - 1 for vertex shader
+    - clientside
+  - 1 for fragment shader
+    - clientside
+  - 1 for debugging information (bad JS / bad shaders)
+  - now that would be best for me to work with things, and to set things up
+
+- Equations that change position over time could be modeled easily...like turtle, and could be tagged with the relevant changing line on the position as well?
+- But container examples would be extremely cool as well
+*/
+
+
+/*
+TODO, add a sheet for water, and a sheet for land. like I've done before
+- make them white sheets initially
+- switch land into land shader
+- switch water into water shader
+- add abstracted Geometry class
+- add abstracted Shader class
+- add combo of both objects...
+- allow auto-draw of all Geometry objs w/ shaders...easy WebGL setup?
+TODO, instead of 3 sheets, try and make this work only for the x/y coordinate at a fixed height? hmmm...maybe
+*/
 
 //
 // Start here
@@ -9,7 +70,7 @@ main();
 function main() {
   requestAnimationFrame(main);
   const canvas = document.querySelector('#canvas-1');
-  const gl = canvas.getContext('webgl');
+  const gl = canvas.getContext('webgl2'); // or webgl
 
   // If we don't have a GL context, give up now
 
@@ -298,6 +359,7 @@ function main() {
     vModelViewMatrix_Inverse = inverse(uModelViewMatrix);
 
     gl_Position = uProjectionMatrix * ECPosition;
+    gl_PointSize = 5.0;
 
   }
 
@@ -931,6 +993,7 @@ function main() {
   	//getColor_ByRayCast_NoBound_UsingModelCoordinates();
 
   	// this is the one to use
+    //gl_FragColor = vec4(1.0, 0.0, 0.0,1.0);
   	getColor_ByRayCast_NoBound_UsingEyeCoordinates();
 
   	//gl_FragColor = vec4(texture2D(uNoiseTexture, vECPosition.xz).rgb, 1.0);
@@ -987,12 +1050,38 @@ function main() {
   drawScene(gl, programInfo, buffers);
 }
 
+
+function bezierCurve(p1,p2,p3,p4,t) {
+  // P(t) = B0(1-t)3 + B13t(1-t)2 + B23t2(1-t) + B3t3
+  return (p1 * Math.pow((1.0 - t),3.0)) +
+  (p2 * 3.0 * t * Math.pow((1.0 - t),2.0)) +
+  (p3 * 3.0 * (1.0 - t) * Math.pow(t,2.0)) +
+  (Math.pow(t,3.0) * p4);
+}
+
+
+function getPointsForBezierCurve(p1, p2, p3, p4, steps) {
+
+  let bezierPoints = [];
+  // perform a bezier calculation for a given # of steps
+  for(let x = 0; x < steps; x++) {
+    //P = (1−t)3P1 + 3(1−t)2tP2 +3(1−t)t2P3 + t3P4
+    let t = (x*1.0) / steps;
+    bezierPoints[bezierPoints.length] = bezierCurve(p1[0],p2[0],p3[0],p4[0],t);
+    bezierPoints[bezierPoints.length] = bezierCurve(p1[1],p2[1],p3[1],p4[1],t);
+    bezierPoints[bezierPoints.length] = bezierCurve(p1[2],p2[2],p3[2],p4[2],t);
+  }
+
+  return bezierPoints;
+}
+
 //
 // initBuffers
 //
 // Initialize the buffers we'll need. For this demo, we just
 // have one object -- a simple two-dimensional square.
 //
+
 function initBuffers(gl) {
 
   // Create a buffer for the square's positions.
@@ -1004,17 +1093,8 @@ function initBuffers(gl) {
 
   gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
 
-  // Now create an array of positions for the square.
-
+  // cube positions
   const positions = [
-    /*
-     1.0,  1.0, 0.0,
-    -1.0,  1.0, 0.0,
-     1.0, -1.0, 0.0,
-    -1.0, -1.0, 0.0
-    */
-
-    /**/
     -1.0, 1.0, 1.0,     // Front-top-left
     1.0, 1.0, 1.0,      // Front-top-right
     -1.0, -1.0, 1.0,    // Front-bottom-left
@@ -1029,59 +1109,42 @@ function initBuffers(gl) {
     1.0, -1.0, -1.0,    // Back-bottom-right
     -1.0, 1.0, -1.0,    // Back-top-left
     1.0, 1.0, -1.0      // Back-top-right
-    /**/
-
-
-    /*
-    -1.0,-1.0,-1.0, // triangle 1 : begin
-   -1.0,-1.0, 1.0,
-   -1.0, 1.0, 1.0, // triangle 1 : end
-   1.0, 1.0,-1.0, // triangle 2 : begin
-   -1.0,-1.0,-1.0,
-   -1.0, 1.0,-1.0, // triangle 2 : end
-   1.0,-1.0, 1.0,
-   -1.0,-1.0,-1.0,
-   1.0,-1.0,-1.0,
-   1.0, 1.0,-1.0,
-   1.0,-1.0,-1.0,
-   -1.0,-1.0,-1.0,
-   -1.0,-1.0,-1.0,
-   -1.0, 1.0, 1.0,
-   -1.0, 1.0,-1.0,
-   1.0,-1.0, 1.0,
-   -1.0,-1.0, 1.0,
-   -1.0,-1.0,-1.0,
-   -1.0, 1.0, 1.0,
-   -1.0,-1.0, 1.0,
-   1.0,-1.0, 1.0,
-   1.0, 1.0, 1.0,
-   1.0,-1.0,-1.0,
-   1.0, 1.0,-1.0,
-   1.0,-1.0,-1.0,
-   1.0, 1.0, 1.0,
-   1.0,-1.0, 1.0,
-   1.0, 1.0, 1.0,
-   1.0, 1.0,-1.0,
-   -1.0, 1.0,-1.0,
-   1.0, 1.0, 1.0,
-   -1.0, 1.0,-1.0,
-   -1.0, 1.0, 1.0,
-   1.0, 1.0, 1.0,
-   -1.0, 1.0, 1.0,
-   1.0,-1.0, 1.0
-   */
   ];
+
+  vertexCount = positions.length / 3;
+
+  //// Heart Positions
+  // Bezier Curve equation
+  let rot1 = Math.sin(timer1 + 0.824);
+  let rot2 = Math.cos(timer1 + 0.824);
+  let b1 = 0.5 ;//+ Math.abs(Math.sin(timer1 * 10.0));
+  let b2 = 1.0 ;//+ Math.abs(Math.sin(timer1 * 10.0));
+  let b3 = 0.06;
+  let b4 = 0.6 ;//+ Math.abs(Math.sin(timer1 * 10.0));
+  let b5 = Math.sin(timer1 * 20.0) * 0.66;
+  let b6 = Math.cos(timer1 * 20.0) * 0.1;
+  let b7 = Math.sin(timer1 * 20.0) * 0.01;
+  let heartPositions = getPointsForBezierCurve([rot1,rot2,b6], [-b1, b1, 0.0], [-b2, b2, b5], [b3, b4, b7], heartSteps);
+  heartPositions = heartPositions.concat(getPointsForBezierCurve([rot1, rot2, b6], [b1, b1, 0.0], [b2, b2, b5], [-b3, b4, b7], heartSteps));
 
   // Now pass the list of positions into WebGL to build the
   // shape. We do this by creating a Float32Array from the
   // JavaScript array, then use it to fill the current buffer.
 
-  gl.bufferData(gl.ARRAY_BUFFER,
-                new Float32Array(positions),
-                gl.STATIC_DRAW);
+  if(mode == 0) {
+    // draw cube
+    gl.bufferData(gl.ARRAY_BUFFER,
+                  new Float32Array(positions),
+                  gl.STATIC_DRAW);
+  } else {
+    // draw heart
+    gl.bufferData(gl.ARRAY_BUFFER,
+                  new Float32Array(heartPositions),
+                  gl.STATIC_DRAW);
+  }
 
   return {
-    position: positionBuffer,
+    position: positionBuffer
   };
 }
 
@@ -1089,7 +1152,7 @@ function initBuffers(gl) {
 // Draw the scene.
 //
 function drawScene(gl, programInfo, buffers) {
-  gl.clearColor(0.0, 0.0, 0.0, 1.0);  // Clear to black, fully opaque
+  gl.clearColor(0.0, 0.0, 0.0, 0.0);  // Clear to black, fully opaque
   gl.clearDepth(1.0);                 // Clear everything
   gl.enable(gl.DEPTH_TEST);           // Enable depth testing
   gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
@@ -1132,8 +1195,10 @@ function drawScene(gl, programInfo, buffers) {
   /**/
   mat4.translate(modelViewMatrix,     // destination matrix
                  modelViewMatrix,     // matrix to translate
-                 [-0.0, 0.0, -6.0]);  // amount to translate
+                 [0.0, 0.0, -6.0]);  // amount to translate
+                 // -0.0, 0.0, -6.0
                  /**/
+
   mat4.rotate(modelViewMatrix,modelViewMatrix, -45.0, [1.0,0.0,0.0]);
   //mat4.rotate(modelViewMatrix,modelViewMatrix, -45.0 [0.0,1.0,0.0]);
   mat4.rotate(modelViewMatrix,modelViewMatrix, timer1 * 1.0, [0.0,0.0,1.0]);
@@ -1154,12 +1219,10 @@ function drawScene(gl, programInfo, buffers) {
         normalize,
         stride,
         offset);
-    gl.enableVertexAttribArray(
-        programInfo.attribLocations.vertexPosition);
+    gl.enableVertexAttribArray(programInfo.attribLocations.vertexPosition);
   }
 
   // Tell WebGL to use our program when drawing
-
   gl.useProgram(programInfo.program);
 
   // Set the shader uniforms
@@ -1184,8 +1247,8 @@ function drawScene(gl, programInfo, buffers) {
   gl.uniform1f(programInfo.uniformLocations.ambient, 0.1);
   gl.uniform1f(programInfo.uniformLocations.diffuse, 0.6);
   gl.uniform1f(programInfo.uniformLocations.specular, 1.0);
-  gl.uniform3f(programInfo.uniformLocations.specularColor, 1.0, 0.0, 0.0);
-  gl.uniform3f(programInfo.uniformLocations.cloudColor, 1.0, 1.0, 1.0);
+  gl.uniform3f(programInfo.uniformLocations.specularColor, 1.0, 1.0, 1.0);
+  gl.uniform3f(programInfo.uniformLocations.cloudColor, 1.0, 0.0, 0.0);
   gl.uniform1f(programInfo.uniformLocations.shininess, 6.0);
   gl.uniform3f(programInfo.uniformLocations.volumeStart, -1.0, -1.0, -1.0);
   gl.uniform3f(programInfo.uniformLocations.volumeDimens, 2.0, 2.0, 2.0);
@@ -1197,8 +1260,13 @@ function drawScene(gl, programInfo, buffers) {
 
   {
     const offset = 0;
-    const vertexCount = 14; // 4
-    gl.drawArrays(gl.TRIANGLE_STRIP, offset, vertexCount);
+    const vertexCount2 = vertexCount;
+    const heartCount = heartSteps * 2;
+    if(mode == 0) {
+      gl.drawArrays(gl.TRIANGLE_STRIP, offset, vertexCount2);
+    } else {
+      gl.drawArrays(gl.TRIANGLE_FAN, offset, heartCount);
+    }
   }
 }
 

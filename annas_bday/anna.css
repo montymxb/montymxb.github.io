@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Parisienne', sans-serif;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+p {
+  font-size: 40px;
+}
+
+.page {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.page .content {
+  margin: 0;
+  padding: 8px;
+}
+
+.pleft {
+  width: 50vw;
+  background-color: #fff;
+  opacity: 0.7;
+  margin: -8px;
+  padding: 8px;
+}
+
+.pright {
+  width: 49vw;
+  background-color: #fff;
+  opacity: 0.7;
+  margin-top: -48px;
+  margin-left: 50vw;
+  z-index: 0;
+}
+
+.pleft p, .pright p {
+  padding: 8px;
+}
+
+#p1 {
+  background-image: url("imgs/i1.jpg");
+}
+
+#p2 {
+  background-position: bottom;
+  background-image: url("imgs/i2.jpg");
+}
+
+#p3 {
+  background-image: url("imgs/i3.jpg");
+}
+
+#p4 {
+  background-image: url("imgs/i4.jpg");
+}
+
+#p5 {
+  background-image: url("imgs/i5.jpg");
+}
+
+.sep {
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  position: absolute;
+  transform: rotate(45deg);
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:-50px;
+  opacity: 0.9666;
+  z-index: 1;
+}
+
+#sep1 {
+  background: linear-gradient(135deg, rgb(87,131,47), rgb(230,231,235));
+}
+
+#sep2 {
+  background: linear-gradient(135deg, rgb(130,140,132), rgb(211,209,202));
+}
+
+#sep3 {
+  background: linear-gradient(135deg, rgb(19,18,16), rgb(27,41,75));
+}
+
+#sep4 {
+  background: linear-gradient(135deg, rgb(2,2,2), rgb(146,172,197));
+}
+
+.heart:before {
+  content: '\2764';
+}
+
+/* The animation code */
+@keyframes example {
+  0% {
+    color: #fff;
+    transform: rotate(33deg);
+  }
+  100% {
+    color: #f00;
+    transform: rotate(-33deg);
+  }
+}
+
+.heart {
+  position: absolute;
+  font-size: 50px;
+  color: #fff;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+  /*background: #f00;*/
+  padding: 8px;
+  border-radius: 40px;
+  transform: rotate(33deg);
+
+  animation-name: example;
+  animation-duration: 0.666s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
