@@ -1,0 +1,126 @@
+@font-face {
+  font-family: Tangerine;
+  src: url(Tangerine-Regular.ttf);
+}
+
+@font-face {
+  font-family: TangerineBold;
+  src: url(Tangerine-Bold.ttf);
+}
+
+.ff {
+  font-family: Tangerine, Garamond, serif;
+  font-size: 30px;
+}
+
+.fb {
+  font-family: TangerineBold, Garamond, serif;
+  font-size: 30px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Garamond, Times, serif;
+  color: #555;
+}
+
+h1 {
+  font-family: Tangerine, Garamond, serif;
+  font-size: 55px;
+  text-align: center;
+}
+
+h3 {
+  font-style: bold;
+  font-size: 20px;
+}
+
+#main {
+    height: 10vh;
+}
+
+#img1 {
+  display: inline-block;
+  background-image: url(img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 500px;
+  height: 500px;
+  margin: 35px;
+  border-radius: 8px;
+}
+
+/* block 2 side x side elms */
+.c2x {
+  /*background: #eef;*/
+  display: block;
+  width: 1000px;
+  padding: 8px;
+  margin: 8px auto;
+  border-radius: 8px;
+}
+
+.b {
+  font-weight: bold;
+}
+
+.i {
+  font-style: italic;
+}
+
+/* block for 50% screen size */
+.b50 {
+  display: inline-block;
+  width: 390px;
+  height: 500px;
+  margin: 35px;
+  margin-left: 0;
+  float: right;
+  font-size: 20px;
+  font-family: Garamond;
+}
+
+
+
+
+
+/**** Animated Heart ****/
+.heart:before {
+  content: '\2764';
+}
+
+/* The animation code */
+@keyframes heart-keyframes {
+  0% {
+    color: #fff;
+    transform: rotate(33deg);
+  }
+  100% {
+    color: #f00;
+    transform: rotate(-33deg);
+  }
+}
+
+.heart {
+  position: absolute;
+  font-size: 50px;
+  color: #fff;
+  left: 0;
+  right: 0;
+  top: 150px;
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+  /*background: #f00;*/
+  padding: 8px;
+  border-radius: 40px;
+  transform: rotate(33deg);
+
+  animation-name: heart-keyframes;
+  animation-duration: 0.666s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
