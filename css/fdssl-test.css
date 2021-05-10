@@ -1,0 +1,33 @@
+canvas {
+  border: solid 1px;
+}
+
+.left {
+  width: 47%;
+  margin: 4px;
+  padding: 0;
+  display: inline-block;
+}
+
+.right {
+  width: 47%;
+  margin: 4px;
+  padding: 0;
+  display: inline-block;
+}
+
+#wrap {
+  max-width: 1000px;
+  margin: 8px auto;
+}
+
+#fragmentShader, #vertexShader, #errors {
+  margin: 8px;
+  display: block;
+  width: 100%;
+  min-height: 200px;
+}
+
+#errors {
+  color: red;
+}
