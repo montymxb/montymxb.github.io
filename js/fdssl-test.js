@@ -1,5 +1,6 @@
 // Test for FDSSL
 let timer1 = Math.random() * 10000.0;
+const seed = Math.random() * 10000.0;
 let vertexCount = 0;
 let rotate = false;
 let vsSource = `
@@ -14,6 +15,7 @@ attribute vec4 aVertPos;
 varying vec2 vXY;
 
 void main() {
+  vXY = vec2(aVertPos.x, aVertPos.y);
   gl_Position = uProjectionMatrix * uModelViewMatrix  * aVertPos;
 }`;
 
@@ -23,11 +25,19 @@ precision highp int;
 
 uniform mat4 uProjectionMatrix;
 uniform mat4 uModelViewMatrix;
+uniform float	uTime;
 
 varying vec2 vXY;
 
 void main() {
-  gl_FragColor = vec4(vXY.x,0.0,vXY.y,1.0);
+  float x = vXY.x + uTime * 3.3;
+  float y = vXY.y + uTime * 3.7;
+
+  float r = cos(x);
+  float g = sin(y);
+  float b = r + g;
+
+  gl_FragColor = vec4(r,g,b,1.0);
 }
 `;
 
@@ -96,12 +106,12 @@ function main() {
       projectionMatrix: gl.getUniformLocation(shaderProgram, 'uProjectionMatrix'),
       modelViewMatrix: gl.getUniformLocation(shaderProgram, 'uModelViewMatrix'),
 
-      //slowTime: gl.getUniformLocation(shaderProgram, 'uSlowTime'),
-      //seed: gl.getUniformLocation(shaderProgram, 'uSeed'),
-      //time: gl.getUniformLocation(shaderProgram, 'uTime'),
-      //lightX: gl.getUniformLocation(shaderProgram, 'LightX'),
-      //lightY: gl.getUniformLocation(shaderProgram, 'LightX'),
-      //lightZ: gl.getUniformLocation(shaderProgram, 'LightX'),
+      slowTime: gl.getUniformLocation(shaderProgram, 'uSlowTime'),
+      seed: gl.getUniformLocation(shaderProgram, 'uSeed'),
+      time: gl.getUniformLocation(shaderProgram, 'uTime'),
+      lightX: gl.getUniformLocation(shaderProgram, 'LightX'),
+      lightY: gl.getUniformLocation(shaderProgram, 'LightX'),
+      lightZ: gl.getUniformLocation(shaderProgram, 'LightX'),
 
       //ambient: gl.getUniformLocation(shaderProgram, 'uAmbient'),
       //diffuse: gl.getUniformLocation(shaderProgram, 'uDiffuse'),
@@ -267,12 +277,12 @@ function drawScene(gl, programInfo, buffers) {
       modelViewMatrix);
 
   // additional uniforms
-  //gl.uniform1f(programInfo.uniformLocations.seed, seed);
-  //gl.uniform1f(programInfo.uniformLocations.slowTime, timer1 * 5.0);
-  //gl.uniform1f(programInfo.uniformLocations.time, timer1 * 2.5);
-  //gl.uniform1f(programInfo.uniformLocations.lightX, 10.0); // 10.0 * Math.sin(timer1 * 5.0)
-  //gl.uniform1f(programInfo.uniformLocations.lightY, 10.0); // 10.0 * Math.cos(timer1 * 5.0)
-  //gl.uniform1f(programInfo.uniformLocations.lightZ, 10.0); // 0.0
+  gl.uniform1f(programInfo.uniformLocations.seed, seed);
+  gl.uniform1f(programInfo.uniformLocations.slowTime, timer1 * 5.0);
+  gl.uniform1f(programInfo.uniformLocations.time, timer1 * 2.5);
+  gl.uniform1f(programInfo.uniformLocations.lightX, 10.0); // 10.0 * Math.sin(timer1 * 5.0)
+  gl.uniform1f(programInfo.uniformLocations.lightY, 10.0); // 10.0 * Math.cos(timer1 * 5.0)
+  gl.uniform1f(programInfo.uniformLocations.lightZ, 10.0); // 0.0
 
   //gl.uniform1f(programInfo.uniformLocations.ambient, 0.1);
   //gl.uniform1f(programInfo.uniformLocations.diffuse, 0.6);
