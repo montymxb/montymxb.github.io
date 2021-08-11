@@ -12,7 +12,7 @@ body {
 ul {
   line-height: 1.5;
   font-size: 18px;
-  font-weight: 300;
+  /*font-weight: 300;*/
 }
 
 /* title section of the site */
@@ -42,7 +42,7 @@ h3 {
 p {
   line-height: 1.5;
   font-size: 18px;
-  font-weight: 300;
+  /*font-weight: 300;*/
 }
 
 /* navbar on index.html */

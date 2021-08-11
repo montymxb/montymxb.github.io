@@ -42,7 +42,7 @@
 .feed .entry .link {
   color: #69f;
   font-size: 18px;
-  font-weight: 300;
+  /*font-weight: 300;*/
   padding: 4px;
 }
 
