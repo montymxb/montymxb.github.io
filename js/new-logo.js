@@ -13,7 +13,8 @@ gradient.addColorStop(.5, 'green');
 gradient.addColorStop(1, 'blue');
 
 ctx.strokeStyle = gradient;
-ctx.lineWidth = 1;
+const lineWidth = 8;
+ctx.lineWidth = lineWidth;
 
 let xStart = 150;
 let yStart = 150;
@@ -26,21 +27,21 @@ ctx.moveTo(x,y);
 x-=25;
 ctx.lineTo(x,y);
 // move down -25 (stopping early)
-y+=25;
+y+=25 + (lineWidth / 2);
 ctx.lineTo(x,y);
 ctx.stroke();
 
 
 
 // move right 25 (starting early)
-y+=25;
-x+=25;
+y+=25 - (lineWidth / 2);
+x+=25 - (lineWidth / 2);
 ctx.beginPath();
 ctx.moveTo(x,y);
-x+=25;
+x+=25 + (lineWidth / 2);
 ctx.lineTo(x,y);
 // move up 100
-y-=100;
+y-= (100 + (lineWidth / 2));
 ctx.lineTo(x,y);
 // move left -50
 x-=50;
@@ -50,7 +51,7 @@ y-=50;
 ctx.lineTo(x,y);
 
 // move right 125 (stopping early)
-x+=125;
+x+=(125 + (lineWidth / 2));
 ctx.lineTo(x,y);
 ctx.stroke();
 
@@ -65,7 +66,7 @@ ctx.lineTo(x,y);
 x-=50;
 ctx.lineTo(x,y);
 // move down -100
-y+=100;
+y+=(100 + (lineWidth / 2));
 ctx.lineTo(x,y);
 // move right 50
 x+=50;
@@ -83,6 +84,11 @@ ctx.stroke();
 ctx.beginPath();
 ctx.arc(xStart - 25, yStart + 50, 25, 1.5 * Math.PI, 2.0 * Math.PI, false);
 ctx.stroke();
+
+// draw circle at the point
+// ctx.beginPath();
+// ctx.arc(xStart - 25, yStart + 25, 1, 2.0 * Math.PI, 1.5 * Math.PI, false);
+// ctx.stroke();
 
 // top right arc LARGE
 ctx.beginPath();

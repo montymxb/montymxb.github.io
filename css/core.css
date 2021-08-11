@@ -3,33 +3,35 @@
 body {
   margin: 0;
   padding: 0;
-  color: #fff;
+  /*color: #fff;*/
   background: #000;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 100;
+  /*font-weight: 100;*/
 }
 
+ul {
+  line-height: 1.5;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+/* title section of the site */
 #title {
   display: block;
   padding: 12px;
   margin: 0;
-  background-color: #111;
+  /*color: #777;*/
   text-align: center;
-  font-weight: 100;
-  z-index: 2;
-  position: relative;
-  opacity: 0.9;
-  overflow: hidden;
 }
 
-h1,h2,h3 {
-  font-weight: 100;
-  opacity: 1;
+h1 {
+  font-size: 45px;
 }
 
 h2 {
-  font-size: 25px;
+  font-size: 35px;
   font-weight: 400;
+  text-align: center;
 }
 
 h3 {
@@ -41,6 +43,74 @@ p {
   line-height: 1.5;
   font-size: 18px;
   font-weight: 300;
+}
+
+/* navbar on index.html */
+#nav {
+  text-align: center;
+}
+
+/* navbar item on index.html */
+#nav .nav-item {
+  color: #000;
+  font-weight: bold;
+  display: inline-block;
+  margin: 4px 16px;
+  font-size: 20px;
+  width: 150px;
+  text-decoration: none;
+  border-style: none none solid none;
+}
+
+#nav .nav-item:hover {
+  color: #6cf;
+}
+
+/* about image div */
+#about-img {
+  background-image: url("../images/b2021.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 250px;
+  height: 250px;
+  border-radius: 250px;
+}
+
+/* side-by-side blocks 30/70 */
+.side-by-side {
+  display: block;
+  overflow: hidden;
+}
+
+.side-by-side .left {
+  float: left;
+  display: inline-block;
+  width: 30%;
+}
+
+.side-by-side .right {
+  display: inline-block;
+  max-width: 70%;
+}
+
+@media(max-width:1000px) {
+  #about-img {
+    margin: 8px auto;
+  }
+
+  .side-by-side .left {
+    float: none;
+    display: block;
+    width: auto;
+  }
+
+  .side-by-side .right {
+    display: block;
+    margin: 8px auto;
+    padding: 12px;
+    max-width: 50rem;
+  }
 }
 
 #content {
@@ -145,21 +215,47 @@ p {
 }
 
 #footer {
+  /*
   position: fixed;
   bottom: 0;
+  */
   width: 100vw;
-  height: 50px;
-  background: #111;
-  padding: 0;
+  min-height: 50px;
+  /*background: #111;*/
+  padding: 8px 0;
   text-align: center;
-  opacity: 0.9;
+  color: #000;
+}
+
+#footer .fimg {
+  display: block;
+  margin: 8px auto;
+  background-image: url("../images/b2021.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 35px;
+  height: 35px;
 }
 
 a {
-  color: #fff;
+  /*color: #fff;*/
+  color: #000;
   transition: 0.3s;
 }
 
 a:hover {
   color: #6cf;
+}
+
+todo::before {
+  content: 'TODO';
+  color: #f00;
+  font-weight: 900;
+}
+
+proof::before {
+  content: 'PROOFREAD';
+  color: #f00;
+  font-weight: 900;
 }

@@ -13,39 +13,52 @@
 
 .feed .entry {
   padding: 8px;
-  /*
-  border-bottom: solid;
-  border-width: 1px;
-  */
-  border: solid 8px;
-  border-color: #eee;
-  border-radius: 8px;
-  margin: 16px 8px 16px 8px;
+  margin: 32px 8px 32px 8px;
   color: #000;
   text-decoration: none;
   display: block;
+  overflow: hidden;
+}
+
+/* feed floating right image */
+.feed .rimg {
+  float: right;
+  display: inline-block;
+  width: 30%;
+  width: 250px;
+  height: 250px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 4px;
+}
+
+/* feed right content */
+.feed .rcontent {
+  display: inline-block;
+  width: 70%;
 }
 
 .feed .entry .link {
   color: #69f;
   font-size: 18px;
   font-weight: 300;
+  padding: 4px;
 }
-
-/*
-.feed .entry:hover {
-  background: #eee;
-}
-*/
 
 .feed .entry .date {
-  font-size: 18px;
-  float: right;
+  font-size: 16px;
   font-weight: 200;
+  padding-left: 4px;
+  margin: 4px 0;
+  font-style: italic;
 }
 
 .feed .entry .banner {
   height: 75px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .feed .entry .smimg {
@@ -53,7 +66,6 @@
   width: 75px;
   background-position: center;
   background-size: cover;
-  border-radius: 8px;
 }
 
 .feed .entry .sqimg {
@@ -61,8 +73,6 @@
   width: 300px;
   background-position: center;
   background-size: cover;
-  border-radius: 8px;
-
 }
 
 .feed .entry h3 {
@@ -74,6 +84,7 @@
 
 .feed .entry .text {
   padding: 4px;
+  margin: 4px 0;
 }
 
 .highlightback {
@@ -84,9 +95,20 @@
 }
 
 .highlight {
-  width: 125px;
-  height: 125px;
+  width: 200px;
+  height: 200px;
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
   margin: 36px auto;
+  animation: unzoom forwards 1s linear;
+}
+
+@keyframes unzoom {
+  0% {
+    border-radius: 200px;
+  }
+  100% {
+    border-radius: 0px;
+  }
 }
