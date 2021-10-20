@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns#">
 <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-47712445-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-47712445-1');
+	</script>
 	<link href="../css/uphw.css" type="text/css" rel="stylesheet"/>
 	<link href="../css/home.css" type="text/css" rel="stylesheet"/>
 	<link href="../css/animate.css" type="text/css" rel="stylesheet"/>
@@ -48,44 +56,6 @@
 	<link rel="author" href="https://plus.google.com/+Uphouseworks/posts"/>
 	<link rel="publisher" href="https://plus.google.com/+Uphouseworks"/>
     <link rel="icon" type="image/ico" href="../favicon.ico"/>
-    <script type="text/javascript">
-  		var _gaq = _gaq || [];
-  		_gaq.push(['_setAccount', 'UA-47712445-1']);
-  		_gaq.push(['_trackPageview']);
-  		(function() {
-    		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  		})();
-	</script>
-	
-	<!--For Google +-->
-	<script type="text/javascript">
-		(function() {
-			var po = document.createElement('script'); 
-			po.type = 'text/javascript'; 
-			po.async = true;
-			po.src = 'https://apis.google.com/js/platform.js';
-			var s = document.getElementsByTagName('script')[0];
-			s.parentNode.insertBefore(po, s);
-		})();
-	
-		//For Twitter
-		(function(d,s,id)
-		{
-			var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
-			if(!d.getElementById(id))
-			{
-				js=d.createElement(s);
-				js.id=id;
-				js.async = true;
-				js.src=p+'://platform.twitter.com/widgets.js';
-				fjs.parentNode.insertBefore(js,fjs);
-			}
-		}
-		(document, 'script', 'twitter-wjs'));
-	</script>
-	
 	<script type="application/ld+json">
     {
       "@context": "http://schema.org",
@@ -107,7 +77,7 @@
 		<a href="http://uphouseworks.com" class="navbar_link">Uphouseworks</a>
 		<a href="#Head" onclick="$('#Head').scrollView();" class="navbar_link">Latria</a>
 	</div>
-	
+
 	<!--Scoot to Head Div-->
 	<div id="Head"></div>
 	<div style="height:60px;background:#000"></div>
@@ -151,7 +121,7 @@
 		<p class="article-paragraph">
 		<span class="tab"></span>Due to the number of variations from language to language source code is required to fit inbetween the ## and #> sequences with nothing else on the line (excluding whitespace). The statement as a whole is effectively a multi-line system execute, but allows variables to interpolated via IN{var} in order to dynamically alter the code. The current setup does only allow system execution, but in the future I will most likely create a stronger tie to commonly used languages such as Java, PHP, Python, etc; but for now this syntax is fairly generic, allowing it to work for most of my needs.
 		</p>
-		
+
 		<p class="article-paragraph">
 		<span class="tab"></span>
 		Now during the course of building latria I had constructed a simple syntax-tree interpreter, slightly adhoc. This was slow, but worked. Eventually I migrated this syntax tree into what became the compiler, and created a standalone Virtual Machine to which bytecode could be fed into. The interpreter for the VM accepts Latria bytecode and embedded source code for other languages as plain text, which is executed on the system as mentioned before. The interpreter can also be coupled with the compiler, creating a standalone executable that is capable of both compiling and executing source code. To keep things simple this will be the default build when the language is released. However for embedded systems or size/time sensitive implementations the interpreter and compiler can be built separately. Requiring only that the Latria source code be compiled beforehand in order to run.
@@ -164,13 +134,13 @@
 		<span class="tab"></span>
 		If you're interested (and when it's released) you can check out the project and download the source code at <a href="http://latria.uphouseworks.com">latria.uphouseworks.com</a>. There is still a lot to attend to but I expect to put up Latria sometime around December 10th. I intend on making Latria opensource for C programmers and others that are interested in enhancing the functionality of the language. Overall with a year's worth of code in it I still expect to see large room for improvement at the least. Languages take years to mature before they are accepted for general use; so take Latria with the consideration that it is still young and has a ways to go. Hopefully it will be something we all can use!
 		</p>
-		
+
 		<p class="article-ender">
 			Questions? Corrections? Concerns? You can reach me at <a href="mailto:friedman.benjamin@gmail.com">friedman.benjamin@gmail.com</a>
 		</p>
 	</article>
-	</div>	
-	
+	</div>
+
 	<div id="underliner"></div>
 	<div class = "shadowed carbon-print" style="padding-bottom:30px;padding-left:20px;overflow:hidden">
 		<div style="margin:0;padding-top:20px;">
@@ -185,7 +155,7 @@
 				<!--Twitter Page Link-->
 				<a class="footer-link link spec_footer" href="https://twitter.com/uphouseworks">Twitter</a><br/>
 			</div>
-			
+
 			<!--Work-->
 			<div class='footer-section'>
 				<p class='footer-item-label'>Work</p>
@@ -202,7 +172,7 @@
 				<a class="footer-link link spec_footer" href="http://latria.uphouseworks.com">Latria</a><br/>
 				<a class="footer-link link spec_footer" href="http://uphouseworks.com/Metatest">Metatest</a><br/>
 			</div>
-			
+
 			<!--Reach Me Items-->
 			<div class='footer-section'>
 				<p class='footer-item-label'>Reach Me</p>
