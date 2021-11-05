@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-47712445-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-47712445-1');
+  </script>
+  <link href="../css/core.css" type="text/css" rel="stylesheet"/>
+  <link href="../css/feed.css" type="text/css" rel="stylesheet"/>
+  <meta charset="utf-8">
+  <meta name="robots" content="index,follow,noodp">
+  <meta itemprop="name" content="Writing a Resume in LaTeX">
+  <meta itemprop="url" content="https://www.uphouseworks.com/posts/writing-a-resume-in-latex.html">
+  <meta itemprop="description" content="Learning what to consider while building your resume in LaTeX.">
+  <meta itemprop="image" content="https://www.uphouseworks.com/images/uphw_white_greyBack.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="theme-color" content="#000000">
+  <meta name="msapplication-TileColor" content="#000000">
+  <meta name="msapplication-TileImage" content="../images/ms-tile.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@uphouseworks">
+  <meta name="twitter:creator" content="@mxbdev">
+  <meta name="twitter:title" content="Writing a Resume in LaTeX">
+  <meta name="twitter:image" content="https://www.uphouseworks.com/images/og_image.png">
+  <meta name="twitter:description" content="Learning what to consider while building your resume in LaTeX.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learning what to consider while building your resume in LaTeX.">
+  <meta name="keywords" content="resume,cv,latex,curriculum,vitae">
+  <meta name="author" content="Benjamin Friedman Wilson">
+  <meta property="og:title" content="Learning what to consider while building your resume in LaTeX.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.uphouseworks.com/images/og_image.png">
+  <meta property="og:url" content="https://www.uphouseworks.com/posts/writing-a-resume-in-latex.html">
+  <meta property="og:site_name" content="Uphouseworks">
+  <meta property="og:description" content="Learning what to consider while building your resume in LaTeX.">
+  <link rel="home" href="https://www.uphouseworks.com"/>
+  <link rel="canonical" href="https://www.uphouseworks.com"/>
+  <link rel="apple-touch-icon" href="../images/apple1.png"/>
+	<link rel="apple-touch-icon" sizes="76x76" href="../images/apple2.png"/>
+	<link rel="apple-touch-icon" sizes="120x120" href="../images/apple3.png"/>
+	<link rel="apple-touch-icon" sizes="152x152" href="../images/apple4.png"/>
+	<link rel="apple-touch-startup-image" href="../images/startup.png"/>
+	<title>Writing a Resume in LaTeX | Benjamin Friedman Wilson</title>
+  <script src="../js/Scroller.js"></script>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico"/>
+	<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico"/>
+	<!--JSON LD-->
+	<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "Learning what to consider while building your resume in LaTeX.",
+      "url": "https://www.uphouseworks.com",
+      "image": "https://www.uphouseworks.com/images/uphw_white_greyBack.png",
+	  	"sameAs" : [
+				"https://www.facebook.com/uphouseworks",
+				"https://twitter.com/uphouseworks"
+	  	]
+    }
+  </script>
+</head>
+<body style="background:#fff">
+	<div>
+
+    <div class="feed" style="color:black">
+
+      <div style="margin-left:16px">
+        <a href="../"> Home</a> / posts / Writing a Resume in LaTeX
+      </div>
+
+      <div class="entry">
+        <div class="sqimg" style="width:100%;display:inline-block;background-image:url('../images/og_image.png');background-repeat:no-repeat;background-size:cover"></div>
+
+				<h1>Writing a Resume in LaTeX</h1>
+        <h2 style="font-size:20px;text-align:left">Learning what to consider while building your resume in LaTeX.</h2>
+				<p class="date">by Benjamin Friedman Wilson, Nov. 5th, 2021</p>
+        <br/><br/>
+				<p class="text">
+					I've recently been applying for careers, and have found myself exploring how I could best design my resume in LaTeX.
+          I've had several years of experience writing technical documents in LaTeX, but none in writing a resume (or a CV for that matter).
+          My first versions were not quite up to par, but it was through repeated iteration and exploration that I've begun to settle on a design that I'm happy with.
+          Here are some points that I would like to share about writing a resume/CV in LaTeX.
+          As a disclaimer my points are not perfect, and I'm still discovering new facets to keep in mind.
+        </p>
+
+        <!-- -->
+        <h3>For starters, why would you want to write your resume in LaTeX?</h3>
+        <p class="text">
+          This is a great question to start with, as I don't want to give the impression that LaTeX is somehow the <span style="font-style:italic">only</span> way to prepare your resume.
+          Clearly, this is not the case, and there are an abundance of sensible alternatives out there to choose from.
+          My personal rationale for picking LaTeX stems from how many other choices I've used and abandoned over the years.
+          I've had to rewrite my resumes numerous times over the last 8 years, and everytime I somehow ended up using a different choice.
+          Ranging from Word, Google Docs and even Libre Office.
+          At the time I found these document editors were sufficient, but when I wanted to go back and track revisions it wasn't so clear.
+          Today most document editors should have some form of versioning, but what I was really looking for were notes & annotations.
+          A resume can change widely based on the kind of job or career you're applying for, and having notes to track changes is helpful.
+          Document editors do have these features, but I always found myself wanting to keep the formatting & content notes separate from the final document.
+          To this end, LaTeX fills the requirement nicely. Here are a few other points that come to mind.
+          <ul>
+            <li><a href="https://www.latex-project.org/get/">Great platform support</a>, and web support via <a href="https://www.overleaf.com/">Overleaf</a>.</li>
+            <li>Ability to build a <a href="https://www.overleaf.com/learn/latex/How_to_write_a_LaTeX_class_file_and_design_your_own_CV_(Part_1)">reusable resume/CV class</a> for usage down the road.</li>
+            <li>Can version control cleanly with your favorite VCS, probably <a href="https://git-scm.com/">git</a>.</li>
+          </ul>
+        <p class="text">
+          In addition, LaTeX offers a degree of control that is closer to how I write markdown or programs every day.
+          When I work in LaTeX I feel that I can innately follow the notation in this fashion, but this is admittedly a personal bias.
+          Based on what you daily drive for your work, it is likely you will find and cherish a very specific document editor for your uses.
+        </p>
+
+        <!-- -->
+        <h3>What can I use to get started?</h3>
+        <p class="text">
+          As mentioned above you can always hop on Overleaf to get started writing your resume.
+          They have excellent documentation as well, in case your LaTeX is a little rusty or if you're venturing out of your experienced area.
+        </p>
+        <p class="text">
+          I daily drive on macOS, and have found that <a href="https://pages.uoregon.edu/koch/texshop/">TexShop</a> works great locally.
+          I even used it to write up my thesis earlier this year using a wonderful document class provided from Oregon State University.
+        </p>
+
+        <!---->
+        <h3>What should I watch out for?</h3>
+        <p class="text">
+          This isn't exhaustive, but here are some key elements that caught me while I was writing my resume in LaTeX.
+        </p>
+
+        <h4 style="font-size:22px">Make sure your document dimensions are formatted correctly</h4>
+        <p class="text">
+          This may seem obvious, but I definitely missed this one the first time around while I was laser focused on <span style="text-style:italic">content</span>.
+          In particular, <span style="font-weight:bold">make sure you maintain clean 1 inch margins on all edges</span>.
+          If your use case requires you to have a different margin size, that's perfectly fine, but pay careful attention to making sure this is set correctly.
+          A poorly formatted margin will immediately show up in comparison to other resumes.
+        </p>
+        <p class="text">
+          This is where other document editors have an advantage, as most automatically set these margins correctly for you at the start.
+          If you're not sure, you can open up a quick document in Word or Google Docs to check how the margins are set.
+        <p>
+
+
+        <h4 style="font-size:22px">Watch those line numbers!</h4>
+        <p class="text">
+          For a CV, line numbers are sensible, but make sure to <span style="font-weight:bold">drop the line numbers on your resume</span>.
+          It's a small 'gotcha', but if you're sharing a LaTeX class for your resume and CV it's easy to slip up.
+          This quick mark can help right before your resume document start.
+          <br><br><code>
+            \pagenumbering{gobble}
+          </code><br><br>
+        </p>
+
+        <h4 style="font-size:22px">Choose your font(s) carefully</h4>
+        <p class="text">
+          <a href="https://www.creativelive.com/blog/how-much-does-fonts-matter/">Picking your font is an important choice</a>.
+          For some this may be a matter of settling on the default font, but with piles of resumes it's easy for yours to blend into the rest.
+          Picking a good font, or pairing of fonts, can help improve the legibility and presentation of your resume.
+          It can also make your resume stand out visually from others.
+          LaTeX's default font isn't too bad, but I personally have found going with Times is simple and quick to read.
+          <br/><br/><code>
+            <span style="color:green">% If ptm is present, you can get Times this way</span>
+            <br/>
+            \renewcommand{\rmdefault}{ptm}
+          </code><br><br>
+          The above can be added before your document start, and will change the serif font in your document to Times New Roman.
+          You can find more detail about this at <a href="https://www.sascha-frank.com/Fonts/Times_New_Roman.html">Sacha Frank's page on Times New Roman in LaTeX</a>.
+          <br/><br/>
+          In addition, it's a good idea to pick a pair of fonts that work well together.
+          <a href="https://www.canva.com/learn/the-ultimate-guide-to-font-pairing/">There are a variety of pairing choices you can use</a>, but I tend to work with a clear sans-serif font for my headers and serif font for my content.
+          In my recent resume and CV I have found that I have a preference for <span style="font-family:Helvetica">Helvetica</span> and <span style="font-family:'Times New Roman'">Times New Roman</span>, but I have changed this many times already, and probably will continue to do so.
+          As you may have noticed, my entire site uses Helvetica, so I am <span style="font-style:italic">definitely</span> biased towards it.
+        </p>
+        <p class="text">
+          Perhaps most of all, <span style="font-weight:bold">keep in mind the impression that your font choices create, and whether it matches the desired tone of your document</span>.
+
+        </p>
+
+        <h4 style="font-size:22px">Abstract Repeated Definitions</h4>
+        <p class="text">
+          If you find a number of acronyms or names that you write frequently, you have the option of <span style="font-weight:bold">defining a new command in latex to abstract the implementation detail away</span>.
+          <br><br>
+          Writing C++ in LaTeX is a great example. I missed it numerous times, but simply writing <code>C$++$</code> drops the ++ slightly below the C, making it a bit awkward (evident here as well).
+          Maybe this was a poor to begin with on my part, but after doing some looking around it appears this has been <a href="https://tex.stackexchange.com/questions/4302/prettiest-way-to-typeset-c-cplusplus">a pretty common problem with a variety of solutions</a>.
+          Regardless of your solution choice, it's often best to implement it as a reusable command.
+          <br/><br/><code>
+            \newcommand{\cpp}{C\texttt{++}}<br>
+            ...<br>
+            And did I mention I know \cpp{}?
+          </code><br><br>
+          Again, this was a small change, but I found it to be dramatically better looking on the final result.
+				</p>
+
+        <h4 style="font-size:22px">Keep an eye on your space</h4>
+        <p class="text">
+          When writing a resume, <span style="font-weight:bold">it's in your best interest to take advantage of all the space you have on your page</span>.
+          Especially when you have large margins, you want to make sure that you're demonstrating your best self on the limited real estate that you have.
+          To this end, take care about how much trailing space you're leaving behind throughout your document.
+          If you're finding that most of your lines are only half or 3/4 of the available width, maybe it would be best to segment your resume into a new layout with side-by-side sections.
+          Not only can this help fill out some of the extra space on your resume, but it can bring a bit of balance and style to your resume's presentation.
+        </p>
+
+        <h4 style="font-size:22px">Don't be afraid to change the layout</h4>
+        <p class="text">
+          This ties in closely with what was mentioned above, but really don't be worried to push the boundaries of the layout on your resume.
+          Not only is this a learning opportunity, but it's also a chance to create a truly spectacular resume that is, at the same time, clean and clear to your personal identity.
+          Your resume's layout is as much about you as it's content, so make sure to take equal care of it!
+        </p>
+        <br/>
+        <p class="text">
+          ...And that's about it.
+          <br/><br/>
+          As a parting note, there are plenty of LaTeX resume/CV templates out there to explore.
+          I've recently been working with a version of a template that itself was based off of <a href="https://github.com/deedy/Deedy-Resume">Deedy's template on Github</a>, a notably popular choice.
+          As of writing this it hasn't been touched since 2016, but it serves as a nice example for the kind of resume layouts you can build in LaTeX.
+          That, and there's no shortage of forks based on it.
+          <br/><br/>
+          If you have any questions, or concerns, you can reach me at <a href="mailto:wilson.f.benjamin@gmail.com">wilson.f.benjamin@gmail.com</a>.
+          I'm always happy to hear your thoughts, corrections, and suggestions to provide better content for readers like yourself.
+        </p>
+			</div>
+    </div>
+
+		<div id="footer" style="max-width:75vw;margin:8px auto">
+			<span style="display:inline-block;margin-top:4px">Copyright &copy Benjamin Friedman Wilson 2021</span>
+			<br/>
+			<div class="fimg" style="background-image: url('../images/spatial_script_bw.png')"></div>
+			<br/>
+      <a href="https://www.linkedin.com/in/benwilsonfriedman/">LinkedIn</a> •
+			<a href="https://github.com/montymxb">Github</a> •
+			<a href="../Privacy/index.html">Privacy</a> •
+			<a href="../Terms/index.html">Terms of Service</a>
+			<br/><br/>
+		</div>
+
+	</div>
+	<script type="text/javascript" src="../js/script.js" async></script>
+</body>
+</html>
