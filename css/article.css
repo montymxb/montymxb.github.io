@@ -1,6 +1,7 @@
 * {
 	color: #000;
-	font-family: 'Roboto', sans-serif
+	/*font-family: 'Roboto', sans-serif*/
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .navbar_link {
@@ -32,9 +33,10 @@
 }
 
 .article-paragraph {
-	font-size: 15px;
+	font-size: 18px;
 	max-width: 600px;
-	margin-top: 16px
+	margin-top: 16px;
+	line-height: 1.5em;
 }
 
 .article-paragraph a {
@@ -71,14 +73,15 @@
 
 .article-date {
 	color: #707070;
-	font-size: 14px;
-	margin: 8px;
-	padding: 8px
+	font-size: 16px;
+	margin: 8px 0;
+	padding: 8px 0;
+	font-style: italic;
 }
 
 .code {
 	padding: 16px;
-	margin: 8px;
+	margin: 8px 0;
 	background: #f0f0f0;
 	color: #707070;
 	border-radius: 4px
@@ -89,7 +92,7 @@
 }
 
 .article-ender {
-	margin: 16px;
+	margin: 8px 0;
 	padding: 16px;
 	font-size: 16px;
 	border-radius: 4px;
@@ -137,13 +140,14 @@
 
 .article-option h3 {
 	padding: 4px;
-	font-family: 'Avenir Next', sans-serif;
-	font-weight: 400;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 600;
 }
 
 .article-option p {
 	padding: 4px;
-	font-family: 'Avenir Next', sans-serif;
-	font-weight: 100;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	line-height: 1.5em;
 }
 /* END ARTICLES home page css */
