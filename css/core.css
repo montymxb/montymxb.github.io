@@ -219,7 +219,7 @@ p {
   position: fixed;
   bottom: 0;
   */
-  width: 100vw;
+  max-width: 100%;
   min-height: 50px;
   /*background: #111;*/
   padding: 8px 0;
