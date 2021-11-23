@@ -1,0 +1,153 @@
+* {
+	color: #000;
+	/*font-family: 'Roboto', sans-serif*/
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.navbar_link {
+	border: 4px #000;
+	border-style: none none solid none;
+	transition: 0.3s;
+	color: #fff;
+	padding-bottom: 16px
+}
+
+.navbar_link:hover {
+	border-color: #6cf;
+	color: #6cf
+}
+
+#article-body {
+	min-height: 90vh;
+	margin: 8px;
+	padding: 8px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 16px;
+	max-width: 700px;
+}
+
+.tab {
+	display: inline-block;
+	width: 20px
+}
+
+.article-paragraph {
+	font-size: 18px;
+	max-width: 600px;
+	margin-top: 16px;
+	line-height: 1.5em;
+}
+
+.article-paragraph a {
+	transition: 0.3s
+}
+
+.article-paragraph a:hover {
+	color: #6cf
+}
+
+.article-ender a {
+	transition: 0.3s
+}
+
+.article-ender a:hover {
+	color: #6cf
+}
+
+.article-head-image {
+	float: left;
+	margin: 8px;
+	padding: 8px;
+	width: 200px;
+	height: 200px
+}
+
+.article-image {
+	float: right;
+	margin: 8px;
+	padding: 8px;
+	max-width: 400px;
+	max-height: 200px
+}
+
+.article-date {
+	color: #707070;
+	font-size: 16px;
+	margin: 8px 0;
+	padding: 8px 0;
+	font-style: italic;
+}
+
+.code {
+	padding: 16px;
+	margin: 8px 0;
+	background: #f0f0f0;
+	color: #707070;
+	border-radius: 4px
+}
+
+.comment {
+	color: #6ac
+}
+
+.article-ender {
+	margin: 8px 0;
+	padding: 16px;
+	font-size: 16px;
+	border-radius: 4px;
+	background: #f0f0f0
+}
+
+/* ARTICLES home page CSS */
+.articles-array {
+	max-width: 800px;
+	display: block;
+	margin: 8px auto 8px auto;
+	padding: 8px;
+	background: #f0f0f0;
+	border-radius: 8px;
+	text-align: center;
+}
+
+.article-option {
+	display: inline-block;
+	width: 300px;
+	height: 400px;
+	margin: 4px;
+	background: #fff;
+	border-radius: 4px;
+	overflow: hidden;
+	text-decoration: none;
+
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
+}
+
+.article-option:hover {
+	box-shadow: 0 0 9px #6cf;
+}
+
+.article-option img {
+	width: 300px;
+	height: 150px;
+	text-align: center;
+	display: block;
+}
+
+.article-option h3 {
+	padding: 4px;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 600;
+}
+
+.article-option p {
+	padding: 4px;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	line-height: 1.5em;
+}
+/* END ARTICLES home page css */

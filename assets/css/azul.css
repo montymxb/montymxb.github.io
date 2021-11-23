@@ -1,0 +1,88 @@
+body {
+	background: #00CCFF;
+}
+
+#titlePiece {
+	margin-top: 125px;
+	margin-bottom: 125px;
+}
+
+#prime_image {
+	max-width:300px;
+	max-height:300px;
+	box-shadow: 1px 1px 1px 1px #181818;
+	margin-top: 150px;
+}
+
+#secondary_image_div {
+	height: 300px;
+	margin-bottom: 20px;
+}
+
+.floidia_ingame_img {
+	float: left;
+	max-width:300px;
+	max-height:300px;
+	margin: 8px;
+	box-shadow: 1px 1px 1px 1px #181818;
+}
+
+@media (max-width: 400px) {
+
+	#descrip {
+		height: 1050px;
+	}
+	
+	#titlePiece {
+		height: 700px;
+	}
+	
+	#img1,#img2 {
+		clear: both;
+	}
+	
+	#moar, #paid, #free {
+		clear: both;
+		display: table;
+		margin-left: auto;
+    	margin-right: auto;
+    	width: 82%;
+	}
+}
+
+@media (max-width: 800px) {
+
+	#descrip {
+		height: 800px;
+	}
+}
+
+@media print {
+	.home_text {
+		font-size: 36px;
+		margin-bottom: 16px;
+	}
+	
+	#titlePiece {
+		margin-top: 100px;
+		margin-bottom: 10px;
+	}
+	
+	.floidia_ingame_img {
+		float: left;
+		width:127px;
+		height:225px;
+		margin: 8px;
+	}
+	
+	#prime_image {
+		float: left;
+		width:127px;
+		height:225px;
+		margin: 8px;
+	}
+	
+	#secondary_image_div {
+		height: 200px;
+	}
+}

@@ -1,0 +1,20 @@
+/* 2021 Article Styling */
+
+article h4 {
+  font-size: 22px;
+}
+
+article h2 {
+  font-size: 20px;
+  padding-left: 4px;
+  font-weight: 400;
+}
+
+article .date {
+  margin: 4px 0 3em 0 !important;
+}
+
+article .entry {
+  margin: 0 8px 32px 8px !important;
+  padding: 0 8px 8px 8px !important;
+}

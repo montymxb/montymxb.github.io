@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>FDSSL Test</title>
+  <meta name="robots" content="noindex"/>
+  <link href="css/fdssl-test.css" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"
+            integrity="sha512-zhHQR0/H5SEBL3Wn6yYSaTTZej12z0hVZKOv3TwCUXT1z5qeqGcXJLLrbERYRScEDDpYIJhPC1fk31gqR783iQ=="
+            crossorigin="anonymous" defer></script>
+</head>
+<body>
+  <div id="wrap">
+    <div class="left">
+      <textarea id="vertexShader" placeholder="Vertex Shader..."></textarea>
+      <textarea id="fragmentShader" placeholder="Fragment Shader..."></textarea>
+      <input id="updateShaders" type="button" onclick="update" value="Update">
+      <span>Rotate: </span><input id="rotatebutton" type="checkbox" checked=false onclick="update">
+      <textarea id="errors" readonly></textarea>
+    </div>
+    <div class="right">
+      <canvas id="canvas-1" width=500 height=500></canvas>
+    </div>
+  </div>
+  <script src="js/fdssl-test.js" defer></script>
+</body>
+</html>

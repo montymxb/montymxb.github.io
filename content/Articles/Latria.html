@@ -1,0 +1,200 @@
+---
+title: "The Latria Scripting Language"
+date: 2015-11-28T16:02:32+01:00
+layout: plain
+description: "A lightweight multi-purpose scripting language. Allow yourself to merge together scripts and programs of varying language under one uniforming latria script."
+author: "Benjamin Friedman Wilson"
+draft: false
+url: /Articles/Latria.html
+---
+
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-47712445-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-47712445-1');
+	</script>
+	{{< csslink "css/uphw.css" >}}
+	{{< csslink "css/home.css" >}}
+	{{< csslink "css/article.css" >}}
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8">
+    <meta name="robots" content="index,follow">
+    <meta itemprop="name" content="The Latria Scripting Language | Uphouseworks">
+    <meta itemprop="url" content="http://uphouseworks.com/Articles/Latria.html">
+    <meta itemprop="description" content="A lightweight multi-purpose scripting language. Allow yourself to merge together scripts and programs of varying language under one uniforming latria script.">
+    <meta itemprop="image" content="http://uphouseworks.com/images/article_images/logo.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="theme-color" content="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="../images/ms-tile.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uphouseworks">
+    <meta name="twitter:creator" content="@mxbdev">
+    <meta name="twitter:title" content="The Latria Scripting Language | Uphouseworks">
+    <meta name="twitter:image" content="http://uphouseworks.com/images/article_images/og_image.png">
+    <meta name="twitter:description" content="A lightweight multi-purpose scripting language. Allow yourself to merge together scripts and programs of varying language under one uniforming latria script.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A lightweight multi-purpose scripting language. Allow yourself to merge together scripts and programs of varying language under one uniforming latria script.">
+    <meta name="keywords" content="uphouseworks,latria,language,script,program,virtual,machine,embeddable,lightweight,build">
+    <meta name="author" content="Benjamin Friedman Wilson">
+    <meta property="og:title" content="The Latria Scripting Language | Uphouseworks">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="http://uphouseworks.com/images/article_images/og_image.png">
+    <meta property="og:url" content="http://uphouseworks.com/Articles/Latria.html">
+    <meta property="og:site_name" content="The Latria Scripting Language | Uphouseworks">
+    <meta property="og:description" content="A lightweight multi-purpose scripting language. Allow yourself to merge together scripts and programs of varying language under one uniforming latria script.">
+    <link rel="home" href="http://uphouseworks.com"/>
+    <link rel="canonical" href="http://uphouseworks.com/Articles/Latria.html"/>
+    <link rel="apple-touch-icon" href="/images/apple1.png"/>
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/apple2.png"/>
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/apple3.png"/>
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/apple4.png"/>
+	<link rel="apple-touch-startup-image" href="/images/startup.png"/>
+	<title>The Latria Scripting Language for Lightweight and Embedded Applications</title>
+	{{< jslink "js/Scroller.js" >}}
+	<link rel="author" href="https://plus.google.com/+Uphouseworks/posts"/>
+	<link rel="publisher" href="https://plus.google.com/+Uphouseworks"/>
+    <link rel="icon" type="image/ico" href="../favicon.ico"/>
+	<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "The Latria Scripting Language | Uphouseworks",
+      "url": "http://uphouseworks.com/Articles/Latria.html",
+      "image": "http://uphouseworks.com/images/article_images/og_image.png",
+	  "sameAs" : [
+		"https://www.facebook.com/uphouseworks",
+		"https://twitter.com/uphouseworks",
+		"https://plus.google.com/+Uphouseworks/"
+	  ]
+    }
+    </script>
+</head>
+<body>
+
+	<div id="uphw_navbar">
+		<a href="http://uphouseworks.com" class="navbar_link">Uphouseworks</a>
+		<a href="#Head" onclick="Scroller.scrollToId('Head')" class="navbar_link">Latria</a>
+	</div>
+
+	<!--Scoot to Head Div-->
+	<div id="Head"></div>
+	<div style="height:60px;background:#000"></div>
+	<div id = "article-body">
+	<article>
+		<h1 style="font-size:45px">Latria, a lightweight scripting language.</h1><br/>
+		<p class="article-date">Written by Benjamin Friedman Wilson, November 28th, 2015</p>
+		<img class="article-head-image" src="../images/article_images/logo.png" alt="Latria article image, header."/>
+		<p class="article-paragraph">
+			<span class="tab"></span>Lately I have been focusing intently on finishing up a little scripting language of my own design, something called <a href="http://latria.uphouseworks.com">Latria</a>.</p>
+		<p class="article-paragraph">
+			<span class="tab"></span>
+			First, a little background on why I started this in the first place. Overall, I desired a lightweight, embeddable scripting language. Something with an emphasis on cross language meshing. There are quite a number of loose scripts, programs, etc. that I have written over the years and I desired a way to work with them collectively when I could. Usually this involved writing up bash scripts, batch scripts, lua scripts, or other scripts to mediate between one or more programs or scripts that I had written. Generally this involved capturing input and interpolating it into another program, which took a bit of work and was unsightly at times.
+		</p>
+		<p class="article-paragraph">
+		<span class="tab"></span>
+		At one point I had a thought. Wouldn't it be neat if I could just inline the desired functionality from another language, creating a sort of frankenstein script. Something that could execute itself, but could also run other lines of code in other languages. That was when I started writing up Latria over a year ago. Now, with the language nearing completion, I'm ready to test it's mettle. It's been a very long process, but here I'll just cover some general goals of the language.
+		</p>
+		<p class="article-paragraph">
+		<span class="tab"></span>
+			<ul style="font-size:18px;line-height:1.5em">
+				<li>Execute multiple languages inline</li>
+				<li>Interpolate values to and from languages</li>
+				<li>Be relatively independent of the underlying system</li>
+				<li>Be lightweight enough not to be a nuisance to add to an existing project</li>
+			</ul>
+		</p>
+		<br/>
+		<img class="article-image" src="../images/article_images/og_image.png" alt="Article open graph image, decorative."/>
+		<p class="article-paragraph">
+		<span class="tab"></span>
+		In order to achieve those goals I choose to write Latria in ANSI-C (following the C90 standard). It's a bit outdated, but assures some reasonable reverse compatibility with older systems. To achieve cross language execution Latria uses a glorified piping mechanism, which allows embedding of source code from (just about) any another language. When embedding source code the syntax looks a bit like the following.<br/>
+		</p>
+		<p class="code">
+			<span class="comment">//assigns 'value' to the result of what is run between ## and #&gt;<br/></span>
+			value##<br/>
+			language specification<br/>
+			code in another language to run<br/>
+			#&gt;<br/>
+		</p>
+		<p class="article-paragraph">
+		<span class="tab"></span>Due to the number of variations from language to language source code is required to fit inbetween the ## and #> sequences with nothing else on the line (excluding whitespace). The statement as a whole is effectively a multi-line system execute, but allows variables to interpolated via IN{var} in order to dynamically alter the code. The current setup does only allow system execution, but in the future I will most likely create a stronger tie to commonly used languages such as Java, PHP, Python, etc; but for now this syntax is fairly generic, allowing it to work for most of my needs.
+		</p>
+
+		<p class="article-paragraph">
+		<span class="tab"></span>
+		Now during the course of building latria I had constructed a simple syntax-tree interpreter, slightly adhoc. This was slow, but worked. Eventually I migrated this syntax tree into what became the compiler, and created a standalone Virtual Machine to which bytecode could be fed into. The interpreter for the VM accepts Latria bytecode and embedded source code for other languages as plain text, which is executed on the system as mentioned before. The interpreter can also be coupled with the compiler, creating a standalone executable that is capable of both compiling and executing source code. To keep things simple this will be the default build when the language is released. However for embedded systems or size/time sensitive implementations the interpreter and compiler can be built separately. Requiring only that the Latria source code be compiled beforehand in order to run.
+		</p>
+		<p class="article-paragraph">
+		<span class="tab"></span>
+		There is quite a lot that I've packed into this language, while still attempting to keep it simple. It supports basic types of Number (double,float,int), String, Array, File and Boolean values. There is a very basic DFA regex included that I wrote from scratch. It supports most of the basic quantifiers (no backtracking) and has capturing parentheses. It will also support networking for basic server/client systems. Overall the interpreter weighs in at under 100kb, while the interpreter and compiler together are around 150kb. Not too shabby, but this is still pretty fat and I expect some culling before the release will make it a more comfortable fit for embedded systems.
+		</p>
+		<p class="article-paragraph">
+		<span class="tab"></span>
+		If you're interested (and when it's released) you can check out the project and download the source code at <a href="http://latria.uphouseworks.com">latria.uphouseworks.com</a>. There is still a lot to attend to but I expect to put up Latria sometime around December 10th. I intend on making Latria opensource for C programmers and others that are interested in enhancing the functionality of the language. Overall with a year's worth of code in it I still expect to see large room for improvement at the least. Languages take years to mature before they are accepted for general use; so take Latria with the consideration that it is still young and has a ways to go. Hopefully it will be something we all can use!
+		</p>
+
+		<p class="article-ender">
+			Questions? Corrections? Concerns? You can reach me at <a href="mailto:friedman.benjamin@gmail.com">friedman.benjamin@gmail.com</a>
+		</p>
+	</article>
+	</div>
+
+	<div id="underliner"></div>
+	<div class = "shadowed carbon-print" style="padding-bottom: 30px; padding-left: 20px;">
+		<div style="margin:0;padding-top:20px;overflow:hidden">
+			<p style="color: #707070; font-size: 14px; margin: 8px; padding: 8px; word-wrap:break-word">© Benjamin Friedman Wilson 2021</p>
+			<!--Social Items-->
+			<div class='footer-section'>
+				<p class='footer-item-label'>Social</p>
+				<!--Facebook Page Link-->
+				<a class="footer-link link spec_footer" href="https://www.facebook.com/uphouseworks">Facebook</a><br/>
+				<!--Twitter Page Link-->
+				<a class="footer-link link spec_footer" href="https://twitter.com/uphouseworks">Twitter</a><br/>
+			</div>
+
+			<!--Work-->
+			<div class='footer-section'>
+				<p class='footer-item-label'>Work</p>
+				<a class="footer-link link spec_footer" href="http://www.axolsoft.com">Axolsoft</a><br/>
+				<a class="footer-link link spec_footer" href="http://www.getsteinwise.com">Steinwise</a><br/>
+			</div>
+
+			<div class='footer-section'>
+				<p class='footer-item-label'>Links</p>
+				<a class="footer-link link spec_footer" href="http://uphouseworks.com/Articles">Articles</a><br/>
+				<a class="footer-link link spec_footer" href="http://sitecheck.uphouseworks.com">SiteCheck</a><br/>
+				<a class="footer-link link spec_footer" href="http://latria.uphouseworks.com">Latria</a><br/>
+				<a class="footer-link link spec_footer" href="http://uphouseworks.com/Metatest">Metatest</a><br/>
+			</div>
+
+			<!--Reach Me Items-->
+			<div class='footer-section'>
+				<p class='footer-item-label'>Reach Me</p>
+				<!--Github-->
+				<a class="footer-link link spec_footer" href="https://github.com/montymxb/">Github</a><br/>
+				<a class="footer-link link spec_footer" href="http://uphouseworks.com/Contact">Contact</a><br>
+				<a class="footer-link link spec_footer" href = "http://uphouseworks.com/Support">Support</a><br>
+			</div>
+
+			<!-- Legal -->
+			<div class="footer-section">
+				<p class="footer-item-label">Legal</p>
+				<a class="footer-link link spec_footer" href="http://uphouseworks.com/Privacy" title="Privacy Policy">Privacy Policy</a><br/>
+				<a class="footer-link link spec_footer" href="http://uphouseworks.com/Terms" title="Terms of Service">Terms of Service</a>
+			</div>
+		</div>
+		<!--mernok-->
+	</div>
+	</article>
+</body>
+</html>

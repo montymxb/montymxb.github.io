@@ -1,0 +1,21 @@
+body {
+	background: #00CCFF;
+}
+
+@media (max-width: 400px) {
+	#titlePiece {
+		height: 400px;
+	}
+}
+
+@media print {
+	.home_text {
+		font-size: 36px;
+	}
+	
+	.print_screen_size {
+		margin-top: 0px;
+		width: 75px;
+		height: 133px;
+	}
+}

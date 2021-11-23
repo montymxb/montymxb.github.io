@@ -1,0 +1,2 @@
+{{ $css := resources.Get (.Get 0) | minify -}}
+{{ printf `<link rel="stylesheet" type="text/css" href="%s">` $css.RelPermalink | safeHTML }}
