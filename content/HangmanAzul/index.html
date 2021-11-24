@@ -11,14 +11,7 @@ url: /HangmanAzul/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-47712445-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-47712445-1');
-  </script>
+    {{< tracker >}}
     {{< csslink "css/uphw.css" >}}
     {{< csslink "css/azul.css" >}}
     <meta charset="utf-8" />
@@ -29,7 +22,7 @@ url: /HangmanAzul/
 	<title>Hangman Azul, a Hangman-Style Android App</title>
     <link rel="canonical" href="http://www.uphouseworks.com" />
 	<link rel="author" href="https://plus.google.com/100154577387983623561/posts"/>
-	<link rel="icon" type="image/ico" href="../favicon.ico">
+	<link rel="icon" type="image/ico" href="/favicon.ico">
 	<style>
 		* {
 			color: #FFFFFF;
@@ -50,7 +43,7 @@ url: /HangmanAzul/
 <div class = "blackBackIntroItem" style = "margin-bottom: -10px;">
 	<div id = "titlePiece" class = "plainItem">
 		<div class = "center" style = "margin-bottom: 0px;">
-			<img src = "../images/azul_512.png" style = "max-width:180px; max-height:180px;" alt="Hangman Azul android app icon">
+			<img src = "/images/azul_512.png" style = "max-width:180px; max-height:180px;" alt="Hangman Azul android app icon">
 		</div>
 
 		<h2 class = "centerText" style = "font-size: 35px; font-family: Fantasy; margin: 20px;">
@@ -61,7 +54,7 @@ url: /HangmanAzul/
 			<div id="paid" class = "centerText" style ="float: left;">
 			<!--Paid Link (Full)-->
 				<a class = "link" href="https://play.google.com/store/apps/details?id=com.uphouseworks.hangman.paid">
-					<img alt="Get it on Google Play" src="../images/en_generic_rgb_wo_60.png" alt="Google play icon">
+					<img alt="Get it on Google Play" src="/images/en_generic_rgb_wo_60.png" alt="Google play icon">
 				</a>
 			</div>
 		</div>

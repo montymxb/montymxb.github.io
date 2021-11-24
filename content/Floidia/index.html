@@ -11,14 +11,7 @@ url: /Floidia/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-47712445-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-47712445-1');
-    </script>
+    {{< tracker >}}
     {{< csslink "css/uphw.css" >}}
     {{< csslink "css/floidia.css" >}}
     <meta charset="utf-8">
@@ -30,7 +23,7 @@ url: /Floidia/
     <title>Floidia, an Android Soundboard App</title>
     <link rel="canonical" href="http://www.uphouseworks.com" />
 	<link rel="author" href="https://plus.google.com/100154577387983623561/posts"/>
-	<link rel="icon" type="image/ico" href="../favicon.ico"/>
+	<link rel="icon" type="image/ico" href="/favicon.ico"/>
 </head>
 
 <body style = "background: #00D9A0;">

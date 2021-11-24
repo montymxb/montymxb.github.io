@@ -11,14 +11,7 @@ url: /Contact/
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-47712445-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-47712445-1');
-    </script>
+    {{< tracker >}}
     {{< csslink "css/uphw.css" >}}
     {{< csslink "css/contact.css" >}}
     {{< csslink "css/custom_button.css" >}}
@@ -32,9 +25,7 @@ url: /Contact/
     <link rel="canonical" href="http://uphouseworks.com" />
 	<link rel="author" href="https://plus.google.com/100154577387983623561/posts"/>
   {{< jslink "js/jquery-1.11.1.min.js" >}}
-	  <!-- <script src="https://www.parsecdn.com/js/parse-1.3.1.min.js"></script> -->
   {{< jslink "js/send-mail.js" >}}
-	<script src = "../js/send-mail.js"></script>
 	<link rel="icon" type="image/ico" href="/favicon.ico"/>
 </head>
 

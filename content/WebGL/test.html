@@ -1,27 +1,37 @@
+---
+title: "WebGL Vertex and Fragment Shader Testing"
+date: 2021-07-15T16:02:32+01:00
+layout: plain
+description: "Test WebGL vertex and fragment shaders on a small cube."
+author: "Benjamin Friedman Wilson"
+draft: true
+url: /WebGL/test.html
+---
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>FDSSL Test</title>
+  <title>WebGL Vertex and Fragment Shader Testing</title>
   <meta name="robots" content="noindex"/>
-  <link href="css/fdssl-test.css" rel="stylesheet"/>
+  {{< csslink "css/fdssl-test.css" >}}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"
             integrity="sha512-zhHQR0/H5SEBL3Wn6yYSaTTZej12z0hVZKOv3TwCUXT1z5qeqGcXJLLrbERYRScEDDpYIJhPC1fk31gqR783iQ=="
             crossorigin="anonymous" defer></script>
 </head>
 <body>
   <div id="wrap">
-    <div class="left">
+    <div class="half">
       <textarea id="vertexShader" placeholder="Vertex Shader..."></textarea>
       <textarea id="fragmentShader" placeholder="Fragment Shader..."></textarea>
       <input id="updateShaders" type="button" onclick="update" value="Update">
       <span>Rotate: </span><input id="rotatebutton" type="checkbox" checked=false onclick="update">
       <textarea id="errors" readonly></textarea>
     </div>
-    <div class="right">
+    <div class="half">
       <canvas id="canvas-1" width=500 height=500></canvas>
     </div>
   </div>
-  <script src="js/fdssl-test.js" defer></script>
+  {{< jslink "js/fdssl-test.js" >}}
 </body>
 </html>

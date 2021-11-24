@@ -1,5 +1,7 @@
 <head>
-    {{ if not .Site.IsServer }}
+    {{ if .Site.IsServer }}
+    <!-- No tracking on local deployment -->
+    {{ else }}
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-47712445-1"></script>
     <script>
@@ -8,8 +10,6 @@
       gtag('js', new Date());
       gtag('config', 'UA-47712445-1');
     </script>
-    {{ else }}
-    <!-- No tracking on local development -->
     {{ end }}
     <meta charset="utf-8">
     <meta name="robots" content="index,follow,noodp">

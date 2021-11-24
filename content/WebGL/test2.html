@@ -1,5 +1,15 @@
+---
+title: "WebGL Cloud Volume Test"
+date: 2021-07-15T16:02:32+01:00
+layout: plain
+description: "Second WebGL test with cloud volumes"
+author: "Benjamin Friedman Wilson"
+draft: true
+url: /WebGL/test2.html
+---
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Testing</title>
@@ -12,10 +22,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"
             integrity="sha512-zhHQR0/H5SEBL3Wn6yYSaTTZej12z0hVZKOv3TwCUXT1z5qeqGcXJLLrbERYRScEDDpYIJhPC1fk31gqR783iQ=="
             crossorigin="anonymous" defer></script>
-   <!--<script src="js/canvas.js" defer></script>-->
-   <script src="js/webgl-ex.js" defer></script>
 </head>
 <body>
   <canvas id="canvas-1" width=500 height=500></canvas>
+  {{< jslink "js/webgl-ex.js" >}}
 </body>
 </html>

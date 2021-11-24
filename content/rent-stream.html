@@ -1,8 +1,18 @@
+---
+title: "Rent Stream Test"
+date: 2014-07-15T16:02:32+01:00
+layout: plain
+description: "Shows rent information, from 2014-2015"
+author: "Benjamin Friedman Wilson"
+draft: true
+url: rent-stream.html
+---
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<title>Rent Checka by Uphouseworks</title>
-		<link rel="stylesheet" href="css/rent-display.css"/>
+		{{< csslink "css/rent-display.css" >}}
 		<meta name="robots" content="noindex"/>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,12 +22,15 @@
 	</head>
 	<body>
 		<a class="home_link link" href="index.html">
-			<img class="home_image" src = "images/uphw_white.png" alt=""/>
+			<img class="home_image" src = "/images/uphw_white.png" alt=""/>
 			<h1 class="home_text">Uphouseworks</h1>
 		</a>
 		<div style="height: 75px;"></div>
 		<h1 class = "title">Rent Checka</h1>
-		<div id="loaded_content"></div>
-		<script src="js/rent-stream.js"></script>
+		<div id="loaded_content">
+			<br/><br/>
+			<p style='text-align:center;font-size:20px'>...currently retired after a couple years of helpful rent checking!...</p>
+		</div>
+		{{< jslink "js/rent-stream.js" >}}
 	</body>
 </html>

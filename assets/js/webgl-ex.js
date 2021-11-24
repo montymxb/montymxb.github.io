@@ -8,7 +8,7 @@ let vertexCount = 0;
 // 0 = Cube
 // 1 = Heart
 // 3 = island stuff
-let mode = 3;
+let mode = 0;
 
 main();
 
@@ -118,7 +118,7 @@ function main() {
    // eye coordinate lights
    varying highp vec3 vECLight;
 
-   const int uOctaves = 8;
+   const int uOctaves = 4;
 
    // inverse of model view matrix
    varying highp mat4 vModelViewMatrix_Inverse;
@@ -242,10 +242,10 @@ function main() {
 
    	// slightly shift p2's x up and calc new y
    	p2.x += 0.0001;
-    p2.y += fbm(p2.xz + fbm(p2.xz + fbm(p2.xz + uSlowTime + uSeed))) * 0.05;
+    p2.y += fbm(p2.xz + fbm(p2.xz + fbm(p2.xz + uTime + uSeed))) * 0.05;
    	// slightly shift p3's z up and calc new y
    	p3.z += 0.0001;
-    p3.y += fbm(p3.xz + fbm(p3.xz + fbm(p3.xz + uSlowTime + uSeed))) * 0.05;
+    p3.y += fbm(p3.xz + fbm(p3.xz + fbm(p3.xz + uTime + uSeed))) * 0.05;
 
    	// calculate cross of vector(p1,p2) and vector(p1,p3)
    	highp vec3 v1 = p1 - p2;
@@ -396,7 +396,7 @@ function main() {
   uniform highp vec3 uCloudColor;
   uniform highp float Shininess;
 
-  const int uOctaves = 8;
+  const int uOctaves = 4;
 
   // start & dimensions of this volume, adjusted to eye space
   uniform highp vec3 uVolumeStart;
@@ -735,7 +735,7 @@ function main() {
   		/**/
   		// get fractal brownian motion val
   		highp float f = fbm(rayCastPos.xyz + uSeed) * 2.0;
-  		//highp float f = fbm(rayCastPos.xyz + fbm(rayCastPos.xyz + fbm(rayCastPos.xyz + uSlowTime + uSeed))) * 2.0;
+  		//highp float f = fbm(rayCastPos.xyz + fbm(rayCastPos.xyz + fbm(rayCastPos.xyz + uTime + uSeed))) * 2.0;
   		// only apply if greater than 0.8
   		if(f > 0.8) {
   			// add color only if exceeds the threshold to display
@@ -807,7 +807,7 @@ function main() {
   	int steps = 0;
 
   	// time and seed adjustment
-  	highp float timeAndSeed = (uSlowTime * 0.5) + uSeed;
+  	highp float timeAndSeed = (uTime) + uSeed;
 
   	// convert point to model coordinates before we start
   	highp vec4 convertedPoint = vModelViewMatrix_Inverse * rayCastPos;
@@ -844,7 +844,7 @@ function main() {
   		/**/
   		// get fractal brownian motion val
   		highp float f = fbm(convertedPoint.xyz + timeAndSeed) * 2.0;
-  		//highp float f = fbm(convertedPoint.xyz + fbm(convertedPoint.xyz + fbm(convertedPoint.xyz + uSlowTime * 0.5 + uSeed))) * 2.0;
+  		//highp float f = fbm(convertedPoint.xyz + fbm(convertedPoint.xyz + fbm(convertedPoint.xyz + uTime + uSeed))) * 2.0;
   		// only apply if greater than 0.8
   		if(f > 0.8) {
   			// add color only if exceeds the threshold to display
@@ -868,7 +868,7 @@ function main() {
   		/*
   		if(c2.a < 1.0) {
   			highp vec4 cp2 = vModelViewMatrix_Inverse * rc2;
-  			f = fbm(cp2.xyz + (uSlowTime * 0.5) + uSeed) * 2.0;
+  			f = fbm(cp2.xyz + (uTime) + uSeed) * 2.0;
   			if(f > 0.8) {
   				highp vec4 tColor = mix(
   					vec4(0.0),
@@ -886,7 +886,7 @@ function main() {
   		/*
   		if(c3.a < 1.0) {
   			highp vec4 cp3 = vModelViewMatrix_Inverse * rc3;
-  			f = fbm(cp3.xyz + (uSlowTime * 0.5) + uSeed) * 2.0;
+  			f = fbm(cp3.xyz + (uTime) + uSeed) * 2.0;
   			if(f > 0.8) {
   				highp vec4 tColor = mix(
   					vec4(0.0),
@@ -1152,7 +1152,7 @@ function initBuffers(gl) {
 // Draw the scene.
 //
 function drawScene(gl, programInfo, buffers) {
-  gl.clearColor(0.0, 0.0, 0.0, 0.0);  // Clear to black, fully opaque
+  gl.clearColor(1.0, 1.0, 1.0, 1.0);  // Clear to black, fully opaque
   gl.clearDepth(1.0);                 // Clear everything
   gl.enable(gl.DEPTH_TEST);           // Enable depth testing
   gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
