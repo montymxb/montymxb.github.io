@@ -8,7 +8,7 @@ let vertexCount = 0;
 // 0 = Cube
 // 1 = Heart
 // 3 = island stuff
-let mode = 1;
+let mode = 3;
 
 main();
 
