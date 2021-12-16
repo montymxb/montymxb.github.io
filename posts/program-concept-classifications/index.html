@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns"><head>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-47712445-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script><meta charset="utf-8">
+    <meta name="robots" content="index,follow,noodp">
+    <title>Research: Program-Concept Classifications</title>
+    <meta name="description" content="A brief discussion about my MS thesis research, focusing on using Formal Concept Analysis to identify and classify programs for education purposes.">
+    <meta name="author" content="Benjamin Friedman Wilson">
+    <meta name="date" content="2021-06-01T16:02:32+01:00" >
+    <meta name="keywords" content="MS,Thesis,Benjamin,Wilson">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <link rel="home" href="https://www.uphouseworks.com"/>
+    <link rel="canonical" href="https://www.uphouseworks.com/posts/program-concept-classifications/"/>
+    <meta name="generator" content="Hugo 0.89.2" /><link rel="shortcut icon" href="https://www.uphouseworks.com/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="https://www.uphouseworks.com/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome/all.min.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/core.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/feed.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/article2021.min.css">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/ms-tile.png">
+    <meta name="twitter:site" content="@uphouseworks">
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.uphouseworks.com/image/og_image.png"/>
+
+<meta name="twitter:title" content="Research: Program-Concept Classifications"/>
+<meta name="twitter:description" content="A brief discussion about my MS thesis research, focusing on using Formal Concept Analysis to identify and classify programs for education purposes."/>
+
+    <meta itemprop="image" content="/images/uphw_white_greyBack.png">
+    <meta itemprop="url" content="https://www.uphouseworks.com/posts/program-concept-classifications/"><meta itemprop="name" content="Research: Program-Concept Classifications">
+<meta itemprop="description" content="A brief discussion about my MS thesis research, focusing on using Formal Concept Analysis to identify and classify programs for education purposes."><meta itemprop="datePublished" content="2021-06-01T16:02:32+01:00" />
+<meta itemprop="dateModified" content="2021-06-01T16:02:32+01:00" />
+<meta itemprop="wordCount" content="517"><meta itemprop="image" content="https://www.uphouseworks.com/image/og_image.png"/>
+<meta itemprop="keywords" content="Programming,Research,Education,Analysis,Discussion," />
+    <meta property="og:site_name" content="Uphouseworks"><meta property="og:title" content="Research: Program-Concept Classifications" />
+<meta property="og:description" content="A brief discussion about my MS thesis research, focusing on using Formal Concept Analysis to identify and classify programs for education purposes." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.uphouseworks.com/posts/program-concept-classifications/" /><meta property="og:image" content="https://www.uphouseworks.com/image/og_image.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-06-01T16:02:32+01:00" />
+<meta property="article:modified_time" content="2021-06-01T16:02:32+01:00" />
+<meta property="og:see_also" content="https://www.uphouseworks.com/posts/banter/" /><meta property="og:see_also" content="https://www.uphouseworks.com/posts/fractal-brownian-motion/" />
+
+<link rel="apple-touch-icon" href="/images/apple1.png"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/apple2.png"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/apple3.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/apple4.png"/>
+    <link rel="apple-touch-startup-image" href="/images/startup.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script src="js/Scroller.js" type="application/javascript"></script>
+    <script src="js/fontawesome/all.min.js" type="application/javascript"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "name": "Research: Program-Concept Classifications",
+        "url": "https:\/\/www.uphouseworks.com\/posts\/program-concept-classifications\/",
+        "image": "/images/uphw_white_greyBack.png",
+        "sameAs" : [
+          "https:\/\/www.facebook.com\/uphouseworks",
+          "https:\/\/twitter.com\/uphouseworks",
+        ]
+      }
+    </script>
+
+</head>
+<body><header id="banner">
+  <nav class="navbar">
+    <a class="home" href="/">Uphouseworks</a>
+    <div class="links">
+      <a class="link-item small-hidden" href="/">Uphouseworks</a>
+      <a class="link-item" href="/About/">About</a>
+      <a class="link-item" href="/posts/">Posts</a>
+      <a class="link-item" href="https://www.linkedin.com/in/benwilsonfriedman/"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a class="link-item" href="https://github.com/montymxb"><i class="fab fa-github-square"></i> Github</a>
+      <a class="link-item" href="/contact/">Contact</a>
+    </div>
+
+    
+  </nav>
+  
+</header>
+<main id="content">
+<article class="feed">
+    <div class="entry">
+      <header id="post-header"><p><a href="/">Home</a> / <a href="/posts/">posts</a> / Research: Program-Concept Classifications</p><h1>Research: Program-Concept Classifications</h1><div id="contain-img" class="sqimg" style="width:100%;display:inline-block;background-image:url('/images/e1.png');background-repeat:no-repeat;background-size:contain"></div><h2>A brief discussion about my MS thesis research, focusing on using Formal Concept Analysis to identify and classify programs for education purposes.</h2>
+          <span class="date"> Reading Time: 3 mins </span>
+          <div>
+              <p class="date">by Benjamin Friedman Wilson, <time>June 1, 2021</time></p>
+              </div></header>
+<div class="tags">
+  
+   <a class="tag-item" href="/tags/programming">
+     <span>Programming</span></a>
+  
+   <a class="tag-item" href="/tags/research">
+     <span>Research</span></a>
+  
+   <a class="tag-item" href="/tags/education">
+     <span>Education</span></a>
+  
+   <a class="tag-item" href="/tags/analysis">
+     <span>Analysis</span></a>
+  
+   <a class="tag-item" href="/tags/discussion">
+     <span>Discussion</span></a>
+  
+</div>
+<p>My MS thesis, <em>Structuring Teachable Knowledge through Program-Concept Classifications</em>, was finished and defended mid-June 2021.
+It was quite a difficult effort, but well worth the time and experience.
+I knew when I returned to Oregon State University in January 2018 that I wanted to finish not only my undergrad, but my MS as well.
+Earlier in the same year I never would have imagined that I would go back, but I am more than happy that I did.
+I already had acquired practical CS engineering experience in the 5 years before, but I was ready to challenge my understanding and to learn more about computer graphics, programming languages, and education.
+Having achieved an MS, it&rsquo;s been nice to take some time to reflect back on my work and what I have learned.</p>
+<h3 id="background">Background</h3>
+<p>While working on my thesis I researched heavily into <a href="https://en.wikipedia.org/wiki/Formal_concept_analysis">Formal Concept Analysis (FCA)</a>, a theory that allows describing and classifying objects and their attributes together.
+The resulting classifications can be related together in a complete lattice, which has properties that enable clear paths of exploration through those classifications.
+The theory itself is a tad dense, but it is sound and clear once understood.
+I found it to be effective given the fact we had programs and concepts we wanted to associate to each other, which correlated nicely with FCA&rsquo;s notion of <em>objects</em> and <em>attributes</em>.
+We wanted to be able to guide the way programs were presented based on the concepts that they entailed.
+We also wanted to avoid oversimplifying with a linear order, and to instead provide a series of paths that account for the possible programs and concepts a learner already may understand.
+Using FCA was a natural solution to combining programs with their attributes, and it gave us a structure that facilitated multiple paths of exploration.</p>
+<p>Since we were interested in building classifications for the sake of guiding which programs and concepts were presented in what order, Machine Learning techniques could also have been utilized instead of FCA.
+Using ML can produce classification systems that work just as well, or better, but they are often not easy to explain or customize.
+While ML is not unreasonable for this application, we wanted to produce work that was customizable for a given set of programs and concepts, and could be easily understood in terms of set &amp; lattice theory.
+With FCA there are no decision boundaries or weights involved, simply a series of sub-set relations and a directly customizable set of programs and concepts, which better suited our constraints.
+With that being said further work on ordering programs through ML techniques is still worthwhile exploring.</p>
+<p>There is much more to detail as to how this program-concept classification technique was developed from FCA, and the rationale as to why.
+If you&rsquo;re interested you can read my thesis below, and feel free to jump towards the chapters that are particularly of interest.
+As one recommendation, it&rsquo;s helpful to first familiarize yourself with the basics of FCA, as it forms the groundwork of the classification system used in the thesis.</p>
+<p><a href="https://ir.library.oregonstate.edu/concern/graduate_thesis_or_dissertations/tq57nz829">Thesis: Structuring Teachable Knowledge through Program-Concept Classifications.</a></p>
+<aside>
+
+
+
+<h3>See Also</h3>
+<ul>
+	
+  <div>
+    <div class="entry" style="display:flex">
+  <span style="margin-right:8px"><img src="/images/bogl.ico" width="100"><div style="width:100px"></div></span>
+  <span>
+    <a href="https://www.uphouseworks.com/posts/bogl/" class="link" style='font-size:30px;font-weight:500;margin:0'>BoGL: The Board Game Language</a>
+    <p class="date">Jun 1, 2021</p>
+    <p class="text" style='margin:0'>A brief discussion about BoGL, a novel domain specific educational programming language that myself and a team developed at Oregon State University.</p>
+  </span>
+</div>
+
+  </div>
+	
+  <div>
+    <div class="entry" style="display:flex">
+  <span style="margin-right:8px"><img src="/images/b3.gif" width="100"><div style="width:100px"></div></span>
+  <span>
+    <a href="https://www.uphouseworks.com/posts/banter/" class="link" style='font-size:30px;font-weight:500;margin:0'>Banter</a>
+    <p class="date">Apr 22, 2020</p>
+    <p class="text" style='margin:0'>A data visualization tool for observing the underlying structure of files in a data agnostic fashion.</p>
+  </span>
+</div>
+
+  </div>
+	
+  <div>
+    <div class="entry" style="display:flex">
+  <span style="margin-right:8px"><img src="/images/pacm1.gif" width="100"><div style="width:100px"></div></span>
+  <span>
+    <a href="https://www.uphouseworks.com/posts/pacman/" class="link" style='font-size:30px;font-weight:500;margin:0'>Blind Search in Pacman</a>
+    <p class="date">Mar 30, 2020</p>
+    <p class="text" style='margin:0'>A quick demonstration of blind search techniques being applied to the game of Pacman, and observations about the effectiveness of a simple BFS approach.</p>
+  </span>
+</div>
+
+  </div>
+	
+  <div>
+    <div class="entry" style="display:flex">
+  <span style="margin-right:8px"><img src="https://raw.githubusercontent.com/montymxb/FBM_TerrainGenerator/master/submission/cloud2.gif" width="100"><div style="width:100px"></div></span>
+  <span>
+    <a href="https://www.uphouseworks.com/posts/fractal-brownian-motion/" class="link" style='font-size:30px;font-weight:500;margin:0'>Fractal Brownian Motion: Terrain Generator</a>
+    <p class="date">Mar 30, 2020</p>
+    <p class="text" style='margin:0'>A terrain generator utilizing fractal brownian motion to produce terrain, water, and clouds using OpenGL Shaders.</p>
+  </span>
+</div>
+
+  </div>
+	
+  <div>
+    <div class="entry" style="display:flex">
+  <span style="margin-right:8px"><div style="width:100px"></div></span>
+  <span>
+    <a href="https://www.uphouseworks.com/posts/htjson/" class="link" style='font-size:30px;font-weight:500;margin:0'>HTJSON</a>
+    <p class="date">Mar 8, 2017</p>
+    <p class="text" style='margin:0'>A prototype HTML parser implemented in PHP.</p>
+  </span>
+</div>
+
+  </div>
+	
+</ul>
+
+</aside>
+    </div>
+</article>
+
+        </main><footer id="footer">
+    <span>Copyright &copy; Benjamin Friedman Wilson 2021</span>
+    <br/>
+    <div class="fimg" style="background-image: url('/images/spatial_script_bw.png')"></div>
+    <br/>
+    <a href="https://www.linkedin.com/in/benwilsonfriedman/"><i class="fab fa-linkedin"></i> LinkedIn </a> •
+    <a href="/contact/"><i class="fas fa-envelope-square"></i> Contact</a> •
+		<a href="/Privacy/index.html"><i class="fas fa-user-lock"></i> Privacy</a> •
+		<a href="/Terms/index.html"><i class="fas fa-scroll"></i> Terms of Service</a> •
+    <a href="https://github.com/montymxb"><i class="fab fa-github-square"></i> Github</a>
+</footer>
+</body>
+</html>

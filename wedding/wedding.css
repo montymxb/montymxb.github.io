@@ -1,0 +1,230 @@
+@font-face {
+  font-family: Tangerine;
+  src: url(Tangerine-Regular.ttf);
+}
+
+@font-face {
+  font-family: TangerineBold;
+  src: url(Tangerine-Bold.ttf);
+}
+
+.ff {
+  font-family: Tangerine, Garamond, serif;
+  font-size: 30px;
+}
+
+.fb {
+  font-family: TangerineBold, Garamond, serif;
+  font-size: 30px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Garamond, Baskerville, serif";
+  color: #555;
+}
+
+h1 {
+  font-family: Tangerine, Garamond, serif;
+  font-size: 55px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+h3 {
+  font-style: bold;
+  font-size: 20px;
+}
+
+#main {
+    height: 10vh;
+}
+
+#img1 {
+  display: inline-block;
+  background-image: url(img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#img2 {
+  background-image: url(ben_and_anna.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  border-radius: 16px;
+}
+
+/* block 2 side x side elms */
+.block2,.block3 {
+  display: block;
+  width: 1000px;
+  padding: 8px;
+  margin: 0 auto 8px auto;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.block3 {
+  text-align: center;
+}
+
+.b1,.b2,.b3 {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  margin: 8px;
+  border-radius: 300px;
+}
+
+.b1,.b3 {
+  background-image: url(f1.png);
+  background-repeat: no-repeat;
+  background-size: 200px;
+  background-position: center;
+}
+
+.b1 {
+  float: left;
+}
+
+.b2 {
+  margin: 8px auto;
+}
+
+.b3 {
+  float: right;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.left,.right {
+  display: inline-block;
+  width: 420px;
+  height: 500px;
+  margin: 35px;
+  font-size: 20px;
+  font-family: Garamond;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+@media(max-width: 1025px) {
+  .block2,.block3 {
+    overflow: clear;
+    width: auto;
+    /*margin-top: 48px;*/
+  }
+
+  .left,.right {
+    float: none;
+    display: block !important;
+    margin: 8px auto;
+    padding: 8px;
+  }
+
+  .b1 {
+    display: none;
+    float: none;
+  }
+
+  .b3 {
+    display: block;
+    float: none;
+    margin: 8px auto;
+    -webkit-transform: rotate(-33deg);
+    transform: rotate(-33deg);
+  }
+}
+
+@media(max-width: 500px) {
+  .left {
+    width: 90vw;
+  }
+
+  .right {
+    width: auto;
+    height: auto;
+  }
+}
+
+.b {
+  font-weight: bold;
+}
+
+.i {
+  font-style: italic;
+}
+
+/**** Animated Heart ****/
+.heart:before {
+  content: '\2764';
+}
+
+/* The animation code */
+@keyframes heart-keyframes {
+  0% {
+    color: #fff;
+    transform: rotate(33deg);
+  }
+  100% {
+    color: #f00;
+    transform: rotate(-33deg);
+  }
+}
+
+@keyframes fly-in {
+  0% {
+    transform: translateY(-100px) rotate(33deg) scale(2);
+    color: #fff;
+  }
+  100% {
+    transform: translateY(0) rotate(-33deg) scale(1);
+    color: #f00;
+  }
+}
+
+
+.heart {
+  /*position: absolute;*/
+  font-size: 50px;
+  color: #fff;
+  /*
+  left: 0;
+  right: 0;
+  */
+  /*top: 100px;*/
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+  /*background: #f00;*/
+  padding: 8px;
+  border-radius: 40px;
+  transform: rotate(33deg);
+  animation:
+    heart-keyframes 0.666s ease-in-out infinite alternate,
+    fly-in 1.998s ease 1;
+
+  /*
+  animation-name: heart-keyframes;
+  animation-duration: 0.666s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+
+  animation-name: fly-in;
+  animation-duration: 0.666s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  */

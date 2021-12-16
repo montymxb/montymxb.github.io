@@ -1,0 +1,17 @@
+#peach {
+  font-size: 150px;
+  text-align: center;
+  transform: rotate(-23deg);
+  margin: 8px auto;
+}
+
+#front-text {
+  max-width: 800px;
+  margin: 8px auto;
+}
+
+#back-text {
+  max-width: 800px;
+  margin: 8px auto 8px auto;
+  padding-top: 100px;
+}

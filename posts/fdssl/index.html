@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns"><head>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-47712445-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script><meta charset="utf-8">
+    <meta name="robots" content="index,follow,noodp">
+    <title>Functional Domain-Specific Shader Language (FDSSL)</title>
+    <meta name="description" content="A breakdown of the Function Domain-Specific Shader Language (FDSSL), which enables writing composable shaders for usage with OpenGL.">
+    <meta name="author" content="Benjamin Friedman Wilson">
+    <meta name="date" content="2021-06-25T13:56:27+02:00" >
+    <meta name="keywords" content="Shaders,Education,Programming,GLSL">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <link rel="home" href="https://www.uphouseworks.com"/>
+    <link rel="canonical" href="https://www.uphouseworks.com/posts/fdssl/"/>
+    <meta name="generator" content="Hugo 0.89.2" /><link rel="shortcut icon" href="https://www.uphouseworks.com/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="https://www.uphouseworks.com/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome/all.min.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/core.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/feed.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/article2021.min.css">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/ms-tile.png">
+    <meta name="twitter:site" content="@uphouseworks">
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.uphouseworks.com/image/og_image.png"/>
+
+<meta name="twitter:title" content="Functional Domain-Specific Shader Language (FDSSL)"/>
+<meta name="twitter:description" content="A breakdown of the Function Domain-Specific Shader Language (FDSSL), which enables writing composable shaders for usage with OpenGL."/>
+
+    <meta itemprop="image" content="/images/uphw_white_greyBack.png">
+    <meta itemprop="url" content="https://www.uphouseworks.com/posts/fdssl/"><meta itemprop="name" content="Functional Domain-Specific Shader Language (FDSSL)">
+<meta itemprop="description" content="A breakdown of the Function Domain-Specific Shader Language (FDSSL), which enables writing composable shaders for usage with OpenGL."><meta itemprop="datePublished" content="2021-06-25T13:56:27+02:00" />
+<meta itemprop="dateModified" content="2021-06-25T13:56:27+02:00" />
+<meta itemprop="wordCount" content="217"><meta itemprop="image" content="https://www.uphouseworks.com/image/og_image.png"/>
+<meta itemprop="keywords" content="FDSSL,OpenGL,Shaders,GLSL,Discussion,Github," />
+    <meta property="og:site_name" content="Uphouseworks"><meta property="og:title" content="Functional Domain-Specific Shader Language (FDSSL)" />
+<meta property="og:description" content="A breakdown of the Function Domain-Specific Shader Language (FDSSL), which enables writing composable shaders for usage with OpenGL." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.uphouseworks.com/posts/fdssl/" /><meta property="og:image" content="https://www.uphouseworks.com/image/og_image.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-06-25T13:56:27+02:00" />
+<meta property="article:modified_time" content="2021-06-25T13:56:27+02:00" />
+
+<link rel="apple-touch-icon" href="/images/apple1.png"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/apple2.png"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/apple3.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/apple4.png"/>
+    <link rel="apple-touch-startup-image" href="/images/startup.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script src="js/Scroller.js" type="application/javascript"></script>
+    <script src="js/fontawesome/all.min.js" type="application/javascript"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "name": "Functional Domain-Specific Shader Language (FDSSL)",
+        "url": "https:\/\/www.uphouseworks.com\/posts\/fdssl\/",
+        "image": "/images/uphw_white_greyBack.png",
+        "sameAs" : [
+          "https:\/\/www.facebook.com\/uphouseworks",
+          "https:\/\/twitter.com\/uphouseworks",
+        ]
+      }
+    </script>
+
+</head>
+<body><header id="banner">
+  <nav class="navbar">
+    <a class="home" href="/">Uphouseworks</a>
+    <div class="links">
+      <a class="link-item small-hidden" href="/">Uphouseworks</a>
+      <a class="link-item" href="/About/">About</a>
+      <a class="link-item" href="/posts/">Posts</a>
+      <a class="link-item" href="https://www.linkedin.com/in/benwilsonfriedman/"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a class="link-item" href="https://github.com/montymxb"><i class="fab fa-github-square"></i> Github</a>
+      <a class="link-item" href="/contact/">Contact</a>
+    </div>
+
+    
+  </nav>
+  
+</header>
+<main id="content">
+<article class="feed">
+    <div class="entry">
+      <header id="post-header"><p><a href="/">Home</a> / <a href="/posts/">posts</a> / Functional Domain-Specific Shader Language (FDSSL)</p><h1>Functional Domain-Specific Shader Language (FDSSL)</h1><h2>A breakdown of the Function Domain-Specific Shader Language (FDSSL), which enables writing composable shaders for usage with OpenGL.</h2>
+          <span class="date"> Reading Time: 2 mins </span>
+          <div>
+              <p class="date">by Benjamin Friedman Wilson, <time>June 25, 2021</time></p>
+              </div></header>
+<div class="tags">
+  
+   <a class="tag-item" href="/tags/fdssl">
+     <span>FDSSL</span></a>
+  
+   <a class="tag-item" href="/tags/opengl">
+     <span>OpenGL</span></a>
+  
+   <a class="tag-item" href="/tags/shaders">
+     <span>Shaders</span></a>
+  
+   <a class="tag-item" href="/tags/glsl">
+     <span>GLSL</span></a>
+  
+   <a class="tag-item" href="/tags/discussion">
+     <span>Discussion</span></a>
+  
+   <a class="tag-item" href="/tags/github">
+     <span>Github</span></a>
+  
+</div>
+<p>A coleague and myself have recently undertaken early work on a higher-level shader language that compiles to <a href="https://www.khronos.org/opengl/wiki/OpenGL_Shading_Language">OpenGL Shading Language (GLSL)</a>.
+This effort comes from my own personal experience working with GLSL shaders, and witnessing the complexity that they often entail.</p>
+<p>To be frank I thoroughly enjoy working with shaders because of this complexity and the customization it enables, but it is difficult to get new-comers to understand how to work with and debug shaders for the same reasons.
+To address this, we wanted to design a language with some simple goals:</p>
+<ul>
+<li>a simplified syntax with regard to GLSL</li>
+<li>a functional paradigm</li>
+<li>support shader composition (effectful sequencing)</li>
+<li>support function composition</li>
+<li>unify vertex and fragment shader workflows into a single script</li>
+<li>enforce strong typing and ensure type safety</li>
+<li>compile to various GLSL versions</li>
+</ul>
+<p>Our initial efforts produced a workable version of FDSSL, but we still have much we would like to do.
+Ultimately, we&rsquo;re hoping that this language provides a way for general necomers to computer graphics (or newcomers from functional languages) to be able to ease into GLSL itself.
+If our efforts are effective, we would also like to see how FDSSL could work in practical applications.
+Upon completion, we are also thinking about making this tool available online as a <a href="https://webassembly.org/">Web Assembly</a> module.</p>
+<p><a href="https://github.com/montymxb/FDSSL#readme">FDSSL on Github.</a></p>
+<aside>
+
+
+
+<h3>See Also</h3>
+<ul>
+	
+  <div>
+    <div class="entry" style="display:flex">
+  <span style="margin-right:8px"><img src="/images/bogl.ico" width="100"><div style="width:100px"></div></span>
+  <span>
+    <a href="https://www.uphouseworks.com/posts/bogl/" class="link" style='font-size:30px;font-weight:500;margin:0'>BoGL: The Board Game Language</a>
+    <p class="date">Jun 1, 2021</p>
+    <p class="text" style='margin:0'>A brief discussion about BoGL, a novel domain specific educational programming language that myself and a team developed at Oregon State University.</p>
+  </span>
+</div>
+
+  </div>
+	
+  <div>
+    <div class="entry" style="display:flex">
+  <span style="margin-right:8px"><img src="https://raw.githubusercontent.com/montymxb/FBM_TerrainGenerator/master/submission/cloud2.gif" width="100"><div style="width:100px"></div></span>
+  <span>
+    <a href="https://www.uphouseworks.com/posts/fractal-brownian-motion/" class="link" style='font-size:30px;font-weight:500;margin:0'>Fractal Brownian Motion: Terrain Generator</a>
+    <p class="date">Mar 30, 2020</p>
+    <p class="text" style='margin:0'>A terrain generator utilizing fractal brownian motion to produce terrain, water, and clouds using OpenGL Shaders.</p>
+  </span>
+</div>
+
+  </div>
+	
+  <div>
+    <div class="entry" style="display:flex">
+  <span style="margin-right:8px"><img src="/images/b3.gif" width="100"><div style="width:100px"></div></span>
+  <span>
+    <a href="https://www.uphouseworks.com/posts/banter/" class="link" style='font-size:30px;font-weight:500;margin:0'>Banter</a>
+    <p class="date">Apr 22, 2020</p>
+    <p class="text" style='margin:0'>A data visualization tool for observing the underlying structure of files in a data agnostic fashion.</p>
+  </span>
+</div>
+
+  </div>
+	
+  <div>
+    <div class="entry" style="display:flex">
+  <span style="margin-right:8px"><img src="/images/pacm1.gif" width="100"><div style="width:100px"></div></span>
+  <span>
+    <a href="https://www.uphouseworks.com/posts/pacman/" class="link" style='font-size:30px;font-weight:500;margin:0'>Blind Search in Pacman</a>
+    <p class="date">Mar 30, 2020</p>
+    <p class="text" style='margin:0'>A quick demonstration of blind search techniques being applied to the game of Pacman, and observations about the effectiveness of a simple BFS approach.</p>
+  </span>
+</div>
+
+  </div>
+	
+  <div>
+    <div class="entry" style="display:flex">
+  <span style="margin-right:8px"><img src="/images/article_images/og_image.png" width="100"></span>
+  <span>
+    <a href="https://www.uphouseworks.com/posts/latria/" class="link" style='font-size:30px;font-weight:500;margin:0'>The Latria Scripting Language</a>
+    <p class="date">Nov 28, 2015</p>
+    <p class="text" style='margin:0'>A lightweight multi-purpose scripting language. Allow yourself to merge together scripts and programs of varying language under one uniforming latria script.</p>
+  </span>
+</div>
+
+  </div>
+	
+</ul>
+
+</aside>
+    </div>
+</article>
+
+        </main><footer id="footer">
+    <span>Copyright &copy; Benjamin Friedman Wilson 2021</span>
+    <br/>
+    <div class="fimg" style="background-image: url('/images/spatial_script_bw.png')"></div>
+    <br/>
+    <a href="https://www.linkedin.com/in/benwilsonfriedman/"><i class="fab fa-linkedin"></i> LinkedIn </a> •
+    <a href="/contact/"><i class="fas fa-envelope-square"></i> Contact</a> •
+		<a href="/Privacy/index.html"><i class="fas fa-user-lock"></i> Privacy</a> •
+		<a href="/Terms/index.html"><i class="fas fa-scroll"></i> Terms of Service</a> •
+    <a href="https://github.com/montymxb"><i class="fab fa-github-square"></i> Github</a>
+</footer>
+</body>
+</html>

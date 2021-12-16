@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns"><head>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-47712445-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script><meta charset="utf-8">
+    <meta name="robots" content="index,follow,noodp">
+    <title>Revising the Latria Programming Language</title>
+    <meta name="description" content="Going back over and discussing how to revise the Latria programming language.">
+    <meta name="author" content="Benjamin Friedman Wilson">
+    <meta name="date" content="2021-11-20T16:02:32+01:00" >
+    <meta name="keywords" content="C,Programming,Scripting,Language,Design">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <link rel="home" href="https://www.uphouseworks.com"/>
+    <link rel="canonical" href="https://www.uphouseworks.com/posts/revising-the-latria-programming-language/"/>
+    <meta name="generator" content="Hugo 0.89.2" /><link rel="shortcut icon" href="https://www.uphouseworks.com/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="https://www.uphouseworks.com/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome/all.min.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/core.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/feed.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/article2021.min.css">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/ms-tile.png">
+    <meta name="twitter:site" content="@uphouseworks">
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.uphouseworks.com/image/og_image.png"/>
+
+<meta name="twitter:title" content="Revising the Latria Programming Language"/>
+<meta name="twitter:description" content="Going back over and discussing how to revise the Latria programming language."/>
+
+    <meta itemprop="image" content="/images/uphw_white_greyBack.png">
+    <meta itemprop="url" content="https://www.uphouseworks.com/posts/revising-the-latria-programming-language/"><meta itemprop="name" content="Revising the Latria Programming Language">
+<meta itemprop="description" content="Going back over and discussing how to revise the Latria programming language."><meta itemprop="datePublished" content="2021-11-20T16:02:32+01:00" />
+<meta itemprop="dateModified" content="2021-11-20T16:02:32+01:00" />
+<meta itemprop="wordCount" content="997"><meta itemprop="image" content="https://www.uphouseworks.com/image/og_image.png"/>
+<meta itemprop="keywords" content="Latria,Languages,C,Programming,Analysis," />
+    <meta property="og:site_name" content="Uphouseworks"><meta property="og:title" content="Revising the Latria Programming Language" />
+<meta property="og:description" content="Going back over and discussing how to revise the Latria programming language." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.uphouseworks.com/posts/revising-the-latria-programming-language/" /><meta property="og:image" content="https://www.uphouseworks.com/image/og_image.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-11-20T16:02:32+01:00" />
+<meta property="article:modified_time" content="2021-11-20T16:02:32+01:00" />
+<meta property="og:see_also" content="https://www.uphouseworks.com/posts/latria/" />
+
+<link rel="apple-touch-icon" href="/images/apple1.png"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/apple2.png"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/apple3.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/apple4.png"/>
+    <link rel="apple-touch-startup-image" href="/images/startup.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script src="js/Scroller.js" type="application/javascript"></script>
+    <script src="js/fontawesome/all.min.js" type="application/javascript"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "name": "Revising the Latria Programming Language",
+        "url": "https:\/\/www.uphouseworks.com\/posts\/revising-the-latria-programming-language\/",
+        "image": "/images/uphw_white_greyBack.png",
+        "sameAs" : [
+          "https:\/\/www.facebook.com\/uphouseworks",
+          "https:\/\/twitter.com\/uphouseworks",
+        ]
+      }
+    </script>
+
+</head>
+<body><header id="banner">
+  <nav class="navbar">
+    <a class="home" href="/">Uphouseworks</a>
+    <div class="links">
+      <a class="link-item small-hidden" href="/">Uphouseworks</a>
+      <a class="link-item" href="/About/">About</a>
+      <a class="link-item" href="/posts/">Posts</a>
+      <a class="link-item" href="https://www.linkedin.com/in/benwilsonfriedman/"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a class="link-item" href="https://github.com/montymxb"><i class="fab fa-github-square"></i> Github</a>
+      <a class="link-item" href="/contact/">Contact</a>
+    </div>
+
+    
+  </nav>
+  
+</header>
+<main id="content">
+<article class="feed">
+    <div class="entry">
+      <header id="post-header"><p><a href="/">Home</a> / <a href="/posts/">posts</a> / Revising the Latria Programming Language</p><h1>Revising the Latria Programming Language</h1><div id="contain-img" class="sqimg" style="width:100%;display:inline-block;background-image:url('/images/latria.png');background-repeat:no-repeat;background-size:contain"></div><h2>Going back over and discussing how to revise the Latria programming language.</h2>
+          <span class="date"> Reading Time: 5 mins </span>
+          <div>
+              <p class="date">by Benjamin Friedman Wilson, <time>November 20, 2021</time></p>
+              </div></header>
+<div class="tags">
+  
+   <a class="tag-item" href="/tags/latria">
+     <span>Latria</span></a>
+  
+   <a class="tag-item" href="/tags/languages">
+     <span>Languages</span></a>
+  
+   <a class="tag-item" href="/tags/c">
+     <span>C</span></a>
+  
+   <a class="tag-item" href="/tags/programming">
+     <span>Programming</span></a>
+  
+   <a class="tag-item" href="/tags/analysis">
+     <span>Analysis</span></a>
+  
+</div>
+<h3 id="introduction">Introduction</h3>
+<p>Latria is a very small scripting language that I started writing back in 2014, and finished up sometime in 2016. The goal was to see whether or not I could write my own language if I really put my mind to it. In addition, I had recently learned <a href="https://www.lua.org/">lua</a>, and was inspired to write something in a similar vein. It was a vast undertaking at the time, as I had no formal experience writing languages at all (and no programming language theory experience either at that point). It taught me a considerable amount about writing cross platform applications, dealing with stealthy pointer-related bugs, and the fundamentals of garbage collection. Towards the end I pushed myself to write in a simplified regular expression parsing engine, which was sufficient enough to integrate into the parser as well.</p>
+<p>Looking back at it now, it certainly hasn’t aged in the prettiest way. There was a lot I didn’t understand at the time. However, this has had an unexpected fruit to bear. It now provides a wonderful opportunity to go back and revise what I initially wrote to create a better language than before.</p>
+<h3 id="problems-from-the-old-design">Problems from the Old Design</h3>
+<p>The first question is, of course, how can I make it better? Well, having authored the language I was acutely aware of some glaring problems:</p>
+<ul>
+<li>no formal semantics</li>
+<li>dynamic scoping instead of static scoping</li>
+<li>problems with the regular expression parsing engine</li>
+<li>inconsistent null comparisons</li>
+<li>issues passing the results of function calls directly as arguments to other functions</li>
+<li><em>really</em> tightly coupled lexer and parser</li>
+<li>and more&hellip;</li>
+</ul>
+<h3 id="benefits-from-the-old-design">Benefits from the Old Design</h3>
+<p>Thankfully, there were also some benefits to the design that I went with all those years ago:</p>
+<ul>
+<li>minimal dependencies, making the same code base compile on systems 6 years later with no problems</li>
+<li>minimal size, both of the code base and the produced binary, so there isn’t so much to look over</li>
+<li>documented guide that describes the existing behavior at <a href="http://latria.uphouseworks.com/Guide/">latria.uphouseworks.com</a></li>
+<li>integrated unit and functional tests</li>
+</ul>
+<h3 id="and-what-i-would-like-to-preserve">And, What I Would Like to Preserve</h3>
+<p>With these pros and cons in mind, there are some aspects I would like to preserve whilst making revisions to the language:</p>
+<ul>
+<li>keeping it in ANSI C as a singular codebase</li>
+<li>maintaining cross platform support for modern Mac, Linux and Windows operating systems (not necessarily in that order)</li>
+<li>retain about the same level of expressiveness, i.e. no adding of additional syntax that needs to have the semantics extended</li>
+</ul>
+<p>As an extra note about cross platform support, the goal with Latria is that it can be pulled down, quickly compiled, and rendered executable in a minute or less on most systems.</p>
+<h3 id="rework-outline">Rework Outline</h3>
+<p>With that last point, here is a general outline for the initial steps I will be taking in the rework of Latria.</p>
+<h4 id="re-familiarize-myself-with-the-codebase">Re-familiarize myself with the codebase</h4>
+<p>And to also document the general flow. Although I wrote this language myself, it’s been some years since I’ve worked on it, and my initial response is to simply dive in. However, it would be best to survey the general layout of the project again so I can be sure of what I’m working with (or was working with). This is particularly important for any software project. Being well informed about the architectural structure of your project before making changes can limit the number of unintended bugs that you introduce. For those that you do still introduce, it can help you understand why they occur and how they can be fixed.</p>
+<h4 id="formalize-the-existing-syntax-and-semantics">Formalize the existing syntax and semantics</h4>
+<p>This point is somewhat connected to the prior one, as it is also a way of understanding the existing codebase. However, formalizing the existing syntax and semantics will inevitably unveil discrepancies in the original language design. It will also give me an idea of what kinds of changes I want to make to the syntax and semantics to closer represent the language that I’m looking for.</p>
+<h4 id="fix-dynamic-scoping">Fix dynamic scoping</h4>
+<p>This is the first bug that I would like to tackle, and I would like to do so without revising everything. The purpose of doing this first, as opposed to rewriting the language first, is to get an idea of what it’s like to fix an integrated part of this project. If it’s easy, it could be indicative that it won’t be too bad to migrate things. If it’s difficult, it may suggest that it would be better to rebuild everything from scratch using parts of the old framework.</p>
+<p>I haven’t planned too far past this point, since it will be a litmus test for what comes next. Regardless of how it goes, I will probably spend a bit more time working on other smaller bugs (like function issues) to gradually bite off larger and larger chunks of the language.</p>
+<h3 id="end-goals">End Goals</h3>
+<p>As mentioned before, once this whole rework is done, I would like to have both a new and a familiar language. Latria should retain the notions of the original language, whilst also having a more rigorous implementation. The known bugs that I’m dealing with should be factored out, and the new implementation should have a clear syntax &amp; semantics defined for it. I also want to keep the language fast, since that was one of the original goals of Latria to begin with.</p>
+<p>I also want to add in a few new items:</p>
+<ul>
+<li>function composition (inspired by my recent work with Haskell at Oregon State University)</li>
+<li>a Web Assembly implementation, so that Latria can be operated in the browser, independent of a server environment</li>
+</ul>
+<p>Ultimately I’m very excited to be looking back at this project again! It was originally a very exciting way to test my skills at the time, and I certainly expect it to be the same now; but on a more advanced level. As I start work on components I’ll add my progress to this site as separate posts periodically. Partly for my own reference, but also as resource for others that are interested in this kind of work.</p>
+<aside>
+
+
+
+<h3>See Also</h3>
+<ul>
+	
+  <div>
+    <div class="entry" style="display:flex">
+  <span style="margin-right:8px"><img src="/images/article_images/og_image.png" width="100"></span>
+  <span>
+    <a href="https://www.uphouseworks.com/posts/latria/" class="link" style='font-size:30px;font-weight:500;margin:0'>The Latria Scripting Language</a>
+    <p class="date">Nov 28, 2015</p>
+    <p class="text" style='margin:0'>A lightweight multi-purpose scripting language. Allow yourself to merge together scripts and programs of varying language under one uniforming latria script.</p>
+  </span>
+</div>
+
+  </div>
+	
+  <div>
+    <div class="entry" style="display:flex">
+  <span style="margin-right:8px"><img src="/images/bogl.ico" width="100"><div style="width:100px"></div></span>
+  <span>
+    <a href="https://www.uphouseworks.com/posts/bogl/" class="link" style='font-size:30px;font-weight:500;margin:0'>BoGL: The Board Game Language</a>
+    <p class="date">Jun 1, 2021</p>
+    <p class="text" style='margin:0'>A brief discussion about BoGL, a novel domain specific educational programming language that myself and a team developed at Oregon State University.</p>
+  </span>
+</div>
+
+  </div>
+	
+  <div>
+    <div class="entry" style="display:flex">
+  <span style="margin-right:8px"><img src="/images/e1.png" width="100"><div style="width:100px"></div></span>
+  <span>
+    <a href="https://www.uphouseworks.com/posts/program-concept-classifications/" class="link" style='font-size:30px;font-weight:500;margin:0'>Research: Program-Concept Classifications</a>
+    <p class="date">Jun 1, 2021</p>
+    <p class="text" style='margin:0'>A brief discussion about my MS thesis research, focusing on using Formal Concept Analysis to identify and classify programs for education purposes.</p>
+  </span>
+</div>
+
+  </div>
+	
+  <div>
+    <div class="entry" style="display:flex">
+  <span style="margin-right:8px"><img src="/images/b3.gif" width="100"><div style="width:100px"></div></span>
+  <span>
+    <a href="https://www.uphouseworks.com/posts/banter/" class="link" style='font-size:30px;font-weight:500;margin:0'>Banter</a>
+    <p class="date">Apr 22, 2020</p>
+    <p class="text" style='margin:0'>A data visualization tool for observing the underlying structure of files in a data agnostic fashion.</p>
+  </span>
+</div>
+
+  </div>
+	
+  <div>
+    <div class="entry" style="display:flex">
+  <span style="margin-right:8px"><div style="width:100px"></div></span>
+  <span>
+    <a href="https://www.uphouseworks.com/posts/fdssl/" class="link" style='font-size:30px;font-weight:500;margin:0'>Functional Domain-Specific Shader Language (FDSSL)</a>
+    <p class="date">Jun 25, 2021</p>
+    <p class="text" style='margin:0'>A breakdown of the Function Domain-Specific Shader Language (FDSSL), which enables writing composable shaders for usage with OpenGL.</p>
+  </span>
+</div>
+
+  </div>
+	
+</ul>
+
+</aside>
+    </div>
+</article>
+
+        </main><footer id="footer">
+    <span>Copyright &copy; Benjamin Friedman Wilson 2021</span>
+    <br/>
+    <div class="fimg" style="background-image: url('/images/spatial_script_bw.png')"></div>
+    <br/>
+    <a href="https://www.linkedin.com/in/benwilsonfriedman/"><i class="fab fa-linkedin"></i> LinkedIn </a> •
+    <a href="/contact/"><i class="fas fa-envelope-square"></i> Contact</a> •
+		<a href="/Privacy/index.html"><i class="fas fa-user-lock"></i> Privacy</a> •
+		<a href="/Terms/index.html"><i class="fas fa-scroll"></i> Terms of Service</a> •
+    <a href="https://github.com/montymxb"><i class="fab fa-github-square"></i> Github</a>
+</footer>
+</body>
+</html>
