@@ -11,6 +11,135 @@
     
     
     
+    <item>
+      <title>A Rotational Ball-Maze Style Puzzle</title>
+      <link>https://www.uphouseworks.com/posts/rotational-puzzle/</link>
+      <pubDate>Fri, 11 Feb 2022 11:30:32 +0100</pubDate>
+      
+      <guid>https://www.uphouseworks.com/posts/rotational-puzzle/</guid>
+      <description>&lt;p&gt;I wrote up a version of this puzzle back in 2017 for fun over a sunny day, and I had &lt;em&gt;quite&lt;/em&gt; a lot of fun with it!
+The design is simple, but it was still enjoyable to learn on, and a nice way to pass the time.
+Although the puzzle itself was finished some time ago, I wanted to collect all the details before writing this article.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.uphouseworks.com/images/final-puz.png&#34;
+         alt=&#34;An image of the final puzzle design, with player&amp;amp;rsquo;s &amp;amp;lsquo;ball&amp;amp;rsquo; in blue and the goal position in green.&#34; width=&#34;350&#34;/&gt;&lt;figcaption&gt;
+            &lt;p&gt;An image of the final puzzle design, with player&amp;rsquo;s &amp;lsquo;ball&amp;rsquo; in blue and the goal position in green.&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;If you&amp;rsquo;re looking to try out the puzzle first, &lt;a href=&#34;https://www.uphouseworks.com/puzzles/p1/&#34;&gt;you can click here to play it now&lt;/a&gt;. I&amp;rsquo;ve setup a simple stepping of 10 puzzles, starting at the easiest difficulty and gradually ramping up to something decently challenging.&lt;/p&gt;
+&lt;p&gt;In the following article I&amp;rsquo;ll elaborate on some background regarding the idea and design, how I built the puzzle, and where the process led me. Overall, I found the whole experience very interesting, as I had never written up an HTML5 game from scratch before.&lt;/p&gt;
+&lt;h2 id=&#34;the-idea-and-design&#34;&gt;The Idea and Design&lt;/h2&gt;
+&lt;p&gt;It&amp;rsquo;s been almost 5 years ago since I decided to start writing this puzzle, making it a bit difficult to recall &lt;em&gt;all&lt;/em&gt; the details.&lt;/p&gt;
+&lt;p&gt;What I do remember was the idea: to make a fun, simple puzzle that inverted the traditional &amp;lsquo;player moves in the puzzle&amp;rsquo; mechanic. I remember being inspired by the design of &lt;a href=&#34;https://en.wikipedia.org/wiki/Ball-in-a-maze_puzzle&#34;&gt;ball-maze puzzles&lt;/a&gt;. If you&amp;rsquo;ve ever tried one of those then you already have a good idea of what I&amp;rsquo;m talking about.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.uphouseworks.com/images/puz.jpg&#34;
+         alt=&#34;An image depicting a wooden puzzle with channels cut for a ball to move through.&#34; width=&#34;350&#34;/&gt;&lt;figcaption&gt;
+            &lt;p&gt;An example of simple wooden ball-maze puzzle, from the Shalinindia Store on Amazon.&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;I figured it would be a good exercise to try and capture that same experience in a single web page. In doing so, I had to determine what elements I wanted to capture and how.&lt;/p&gt;
+&lt;p&gt;It made sense to first quantize positions rather than to try and represent all possible positions on a board &amp;ndash; as is the case with the original game. If I could still captured the navigational &amp;lsquo;feel&amp;rsquo; of rotating a puzzle around, then this would be an okay choice. What I did lose by doing this was the flexible nature of those puzzles, where small movements can have a big difference. To me that was important, &lt;em&gt;but&lt;/em&gt; I decided to eschew the extra motion in favor of a simpler left/right rotation. In choosing to take the simpler design route, I could represent a puzzle and its solution as a combination of rotations. No need to do a physics simulation to achieve the same effect.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.uphouseworks.com/images/p-rotation.png&#34;
+         alt=&#34;A sketch demonstrating what left/right rotations would mean for this puzzle.&#34; width=&#34;350&#34;/&gt;&lt;figcaption&gt;
+            &lt;p&gt;A sketch demonstrating what left/right rotations would mean for this puzzle.&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;I also knew early on that I wanted to be able to quickly generate new puzzles of varying difficulty. I figured I could do this via a search algorithm, but that it would be best to first focus on generating puzzles &amp;ndash; and to resolve difficulty later. Once I got to the point of establishing puzzle difficulty, my plan was to integrate search to guarantee solvable puzzles of a given difficulty.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.uphouseworks.com/images/p-diff.png&#34;
+         alt=&#34;An example of 3 puzzles of increasing difficulty.&#34; width=&#34;400&#34;/&gt;&lt;figcaption&gt;
+            &lt;p&gt;An example of 3 puzzles of increasing difficulty.&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;In general, I found it very enjoyable to break a problem like this into several smaller ones, solving one step at a time and building them back together to finish the task. It makes for a more fruitful end result, a more relaxing process, and is a good skill to use for projects in general.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.uphouseworks.com/images/p-flow.png&#34;
+         alt=&#34;The steps I had planned out for building this puzzle.&#34; width=&#34;400&#34;/&gt;&lt;figcaption&gt;
+            &lt;p&gt;The steps I had planned out for building this puzzle.&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;building-the-puzzle&#34;&gt;Building the Puzzle&lt;/h2&gt;
+&lt;p&gt;To begin the process, I thought of some technologies that I could use to build such a puzzle. I was able to lean on my prior experience building full-stack applications, and plenty of front-end experience too. So, I decided to implement this puzzle as a static web page. I went with the usual HTML/CSS/Javascript approach to build up the components of the puzzle. I could have used WebGL to implement the puzzle, but I wanted to see if it could be done &amp;ndash; and done reasonably &amp;ndash; in HTML with CSS animations.&lt;/p&gt;
+&lt;p&gt;I didn&amp;rsquo;t go with a front-end framework like Vue.js or React, and instead stayed with plain Javascript (generally ES5 and up). There was no particular reason for this, just a personal preference. To me, this was an experiment, and so I wanted to see how this would work without adding in too many other dependencies. As problems popped up, I figured I could then look towards frameworks to solve them later on.&lt;/p&gt;
+&lt;p&gt;When I started designing the puzzle I knew I wanted it to run on a single web page with a simple interface. When I thought of how I could design this visually, I actually thought of a crossword puzzle. I noticed the same arrangement of black and white squares could be used to represent quantized positions. White squares would be akin to open spaces, forming paths, while black squares would be barriers in the puzzle. My first approaches produced layouts that looked exactly like a crossword puzzle, much like the cover image for this article above. Puzzles in this style were also pretty straightforward to generate, suggesting that I would have an easy time manipulating puzzles further in the design process.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.uphouseworks.com/images/p-sq.png&#34;
+         alt=&#34;Choosing to have a crossword puzzle look for my puzzle layout.&#34; width=&#34;400&#34;/&gt;&lt;figcaption&gt;
+            &lt;p&gt;Choosing to have a crossword puzzle look for my puzzle layout.&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Next, with my puzzle layout chosen, I chose a square &amp;lsquo;space&amp;rsquo; to represent the ball. This matched nicely with the geometry of the puzzle, and could be de-marked by a different color (I went with blue). This allowed me to easily fit the player into the more discrete representation that I chose for this puzzle. Since the representation I had so far was 2 dimensional, I limited the rotations to simple 90 degree turns in the XY plane. This gave me simple rotations for a simple puzzle, where I could &amp;lsquo;simulate&amp;rsquo; the player&amp;rsquo;s square moving down at all times as the puzzle rotated around. To fulfill the objective of the puzzle, a goal space was added in green.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.uphouseworks.com/images/p-cols.png&#34;
+         alt=&#34;An example of a puzzle with a player and a goal.&#34; width=&#34;400&#34;/&gt;&lt;figcaption&gt;
+            &lt;p&gt;An example of a puzzle with a player and a goal.&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Once the rotations were in place I quickly realized that made the puzzle a bit &lt;em&gt;disorienting&lt;/em&gt;. After only a few rotations in either direction, it was difficult to determine the original orientation of the puzzle. For smaller puzzles this wasn&amp;rsquo;t too problematic, but as they became larger it was increasingly more complex to track orientation over rotations. Thankfully, the solution that I came up with was pretty simple, not too different from a compass mark actually. I added a dashed line to de-mark the bottom of the puzzle in the starting orientation. Once this was present, no matter how many times the puzzle was rotated, it was easy to determine &amp;lsquo;how&amp;rsquo; the puzzle was rotated in relation to where it started at.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.uphouseworks.com/images/p-bar.png&#34;
+         alt=&#34;A crude example of a dashed marker to denote the bottom of the puzzle, to track its orientation as rotations are performed.&#34; width=&#34;300&#34;/&gt;&lt;figcaption&gt;
+            &lt;p&gt;A crude example of a dashed marker to denote the bottom of the puzzle, to track its orientation as rotations are performed.&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;verifying-puzzles&#34;&gt;Verifying Puzzles&lt;/h2&gt;
+&lt;p&gt;So, at this point I had built up a simple puzzle setup. I had rotations, a start point, and a goal, along with a simple goal check. However the puzzles generated at this point were not guaranteed to be solvable. In fact, while trying things out, I had implemented a &lt;em&gt;page reload&lt;/em&gt; to generate puzzles until a solvable one was found. Needless to say, it wasn&amp;rsquo;t so great to use at that point.&lt;/p&gt;
+&lt;p&gt;That brought me to the next problem to solve, producing puzzles that are guaranteed to be solvable in a certain number of moves by applying search. In order to do this correctly, I needed to solve a pair of problems:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How to determine if a puzzle was solvable.&lt;/li&gt;
+&lt;li&gt;How to determine the &lt;em&gt;difficulty&lt;/em&gt; of a puzzle&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Turns out these two problems were capable of being solved together through Breadth-first Search (BFS). Implementing BFS in Javascript was simple enough, simulating a virtual traversal through the puzzle by a series of moves (following the rules imposed by rotations). From a given starting point, if BFS was able to find a path to the end goal, then the puzzle was deemed solvable; easy enough.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.uphouseworks.com/images/bfs-sol.png&#34;
+         alt=&#34;Example of how BFS can simulate clockwise (CW) and counterclockwise (CCW) rotations to discover a solution; where each &amp;amp;lsquo;p#&amp;amp;rsquo; represents a unique position on the board.&#34; width=&#34;350&#34;/&gt;&lt;figcaption&gt;
+            &lt;p&gt;Example of how BFS can simulate clockwise (CW) and counterclockwise (CCW) rotations to discover a solution; where each &amp;lsquo;p#&amp;rsquo; represents a unique position on the board.&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;However, there were some limitations. BFS would only work so long as the depth of the solution space was relatively small &amp;ndash; which was the case here (thankfully). In addition, that&amp;rsquo;s assuming a puzzle &lt;em&gt;has&lt;/em&gt; a solution. In the case it doesn&amp;rsquo;t, the maximal depth that BFS could explore would need to have a reasonable bound. In practice I found that building random puzzles of 10x10 dimensions proved to be rarely difficult to verify or invalidate, making this a non-issue.&lt;/p&gt;
+&lt;p&gt;This was great, since using BFS would let me be sure that if I &lt;em&gt;did&lt;/em&gt; find a solution it was guaranteed to be one of the shortest possible solutions &amp;ndash; albeit maybe not the only shortest solution. This also allowed me to determine the difficulty of a puzzle as a function of the minimal number of rotations required to solve it. At this point I was feeling pretty good about the puzzle verification, but it wasn&amp;rsquo;t my first time doing something like this. I had previously written up a project where I implemented &lt;a href=&#34;https://www.uphouseworks.com/posts/pacman/&#34;&gt;blind search in pacman project&lt;/a&gt; that tried BFS, DFS, minimax, and A* to guide a simple AI agent playing the game.&lt;/p&gt;
+&lt;p&gt;While implementing BFS I did run into a small problem that was noteworthy. On writing this puzzle solver the first time around I wasn&amp;rsquo;t doing &lt;em&gt;any&lt;/em&gt; path trimming to reduce my search space. The result was BFS would almost &lt;em&gt;never&lt;/em&gt; terminate, since it could simply loop forever by rotating back &amp;amp; forth repeatedly. This made verification impossible, even for trivially simple 2x2 puzzles. So, I rectified this by adding in some history, and excluded previously visited spaces from being visited again.&lt;/p&gt;
+&lt;p&gt;At first this worked, and successfully reduced the search space. However, it also excluded puzzles that were still legitimately solvable &amp;ndash; being some of the best ones to try out too! I had forgotten to account for puzzles that required 2 rotations to pass through a 90 degree corner. These were valid puzzles, so I increased the exclusion condition to only apply to spaces that had been visited 2 or more times. The first visit would be to enter the corner, and the 2nd would be to rotate out of the corner.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.uphouseworks.com/images/p-pocket.png&#34;
+         alt=&#34;An example of a double rotation through a corner, where 2 visits are required to pass through.&#34; width=&#34;400&#34;/&gt;&lt;figcaption&gt;
+            &lt;p&gt;An example of a double rotation through a corner, where 2 visits are required to pass through.&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;After that I was getting some very challenging puzzles &amp;ndash; exactly what I was looking for! This also increased the complexity for verifying (or invalidating) puzzles, but the overall puzzle size kept this reasonably bounded.&lt;/p&gt;
+&lt;p&gt;An interesting note about this method of verification is that it verified that puzzles were guaranteed to be solvable from a &lt;em&gt;given starting point&lt;/em&gt;. It did &lt;em&gt;not&lt;/em&gt; guarantee that puzzles were solvable from &lt;em&gt;any&lt;/em&gt; point. As an example, a player could perform a series of rotations to trap themselves into a portion of the puzzle that did not have a path to the solution. I didn&amp;rsquo;t anticipate this in advance, but honestly I was quite happy with it. By making the price of some moves infinitely high (rendering the puzzle incapable of being solved) it created an extra element of challenge in the game. To keep the game going when a player got stuck they would have to reset the puzzle &amp;amp; try again. I found this forced me to deeply consider my moves before I made them, and overall made me enjoy it more than I expected.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.uphouseworks.com/images/p-stuck.png&#34;
+         alt=&#34;A stuck position, where a solution is no longer possible without resetting.&#34; width=&#34;400&#34;/&gt;&lt;figcaption&gt;
+            &lt;p&gt;A stuck position, where a solution is no longer possible without resetting.&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;a-sidenote-javascript-and-random&#34;&gt;A Sidenote: Javascript and Random&lt;/h2&gt;
+&lt;p&gt;During this process I was working with PRNGs in Javascript and noticed the lack of a configurable one. I&amp;rsquo;m a bit embarrassed to admit that I didn&amp;rsquo;t realize this before, but I somehow managed to work with Javascript&amp;rsquo;s PRNG over many years without realizing it can&amp;rsquo;t be seeded &amp;ndash; at least not by the user. According to &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random&#34;&gt;Mozilla&amp;rsquo;s Javascript docs&lt;/a&gt; the built-in random number generator is a PRNG, but the seed is chosen by the underlying implementation and not settable by the user.&lt;/p&gt;
+&lt;p&gt;For my approach to work, I needed a seed-able PRNG so I could discover &amp;amp; then regenerate the same puzzles repeatedly. It turns out you can write up something that acts a PRNG without too much difficulty, where even a relatively decent hash function would work for something non-critical like this. Rather than write one up myself &amp;amp; try to achieve an ideal distribution, I found an implementation of the Simple Fast counter PRNG (SFC32). I was able to plug this into my implementation and get a decent 128 bits of state. SFC32 comes from &lt;a href=&#34;http://pracrand.sourceforge.net/&#34;&gt;PractRand&lt;/a&gt;, but the beauty of picking a PRNG is that there&amp;rsquo;s &lt;em&gt;so many choices&lt;/em&gt;. Depending on what properties your application requires, you can pick and choose the right PRNG for your case, or even multiple for different parts of your process. I picked SFC32 based on its speed, decent state, and the fact that it passes PractRand&amp;rsquo;s suite of tests.&lt;/p&gt;
+&lt;p&gt;Although I didn&amp;rsquo;t use it here, I would also recommend checking out the &lt;a href=&#34;https://www.pcg-random.org/&#34;&gt;PCG Random family of PRNGs&lt;/a&gt;. PCG Random was written up back in 2014, but it makes for an excellent read. I find that I keep coming back across it when it comes to implementing PRGNs, and it was one of the first implementations that I seriously read into.&lt;/p&gt;
+&lt;p&gt;At this point I was pretty much done, and went to writing up the post that you&amp;rsquo;re reading right now! The last additions were to wrap a simple interface around the puzzle to describe how to play it and progress.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.uphouseworks.com/images/final-puz.png&#34;
+         alt=&#34;Final implementation of the puzzle.&#34; width=&#34;350&#34;/&gt;&lt;figcaption&gt;
+            &lt;p&gt;Final implementation of the puzzle.&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;final-thoughts-and-considerations&#34;&gt;Final Thoughts and Considerations&lt;/h2&gt;
+&lt;p&gt;With the puzzle done I&amp;rsquo;ve had a lot of time to reflect on the process, and to think about what was most notable to me. I&amp;rsquo;ve done a lot of front-end development over the years, but I&amp;rsquo;ve only done a handful of game related projects. With that in mind, these aspects stood out to me:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Going with HTML and CSS for an interactive game works great for discrete implementations.&lt;/li&gt;
+&lt;li&gt;BFS gives an easy way to verify that a problem is solvable and has a minimum difficulty&lt;/li&gt;
+&lt;li&gt;Not having a seed-able PRNG wasn&amp;rsquo;t a problem, given that all the elements to create one are already present. If you&amp;rsquo;re interested in Javascript&amp;rsquo;s PRNG situation you can also check out &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random&#34;&gt;Mozilla&amp;rsquo;s docs&lt;/a&gt; for more details.&lt;/li&gt;
+&lt;li&gt;Writing this up took &lt;em&gt;way&lt;/em&gt; more time than I expected, probably because the time from implementation to documentation was so far apart.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Anyways, I hope you&amp;rsquo;ve enjoyed this read, and &lt;a href=&#34;https://www.uphouseworks.com/puzzles/p1/&#34;&gt;if you want to play the puzzle now you can try it out here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
     
     
     <item>
@@ -488,6 +617,8 @@ Nothing beats a simple check and scan method that deterministically indicates wh
 &lt;p&gt;&lt;a href=&#34;https://www.uphouseworks.com/BitShooter/index.html&#34;&gt;You can see the original Bit Shooter app link here&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
+    
+    
     
     
   </channel>

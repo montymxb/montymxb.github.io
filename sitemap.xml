@@ -3,6 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.uphouseworks.com/posts/rotational-puzzle/</loc>
+    <lastmod>2022-02-11T11:30:32+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.uphouseworks.com/tags/discussion/</loc>
+    <lastmod>2022-02-11T11:30:32+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.uphouseworks.com/posts/</loc>
+    <lastmod>2022-02-11T11:30:32+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.uphouseworks.com/tags/puzzle/</loc>
+    <lastmod>2022-02-11T11:30:32+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.uphouseworks.com/tags/</loc>
+    <lastmod>2022-02-11T11:30:32+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.uphouseworks.com/</loc>
+    <lastmod>2022-02-11T11:30:32+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.uphouseworks.com/contact/</loc>
     <lastmod>2021-12-15T16:02:32+01:00</lastmod>
   </url>
@@ -13,32 +43,12 @@
   </url>
   
   <url>
-    <loc>https://www.uphouseworks.com/tags/discussion/</loc>
-    <lastmod>2021-11-21T16:02:32+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.uphouseworks.com/tags/latex/</loc>
     <lastmod>2021-11-21T16:02:32+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.uphouseworks.com/posts/</loc>
-    <lastmod>2021-11-21T16:02:32+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.uphouseworks.com/tags/resume/</loc>
-    <lastmod>2021-11-21T16:02:32+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.uphouseworks.com/tags/</loc>
-    <lastmod>2021-11-21T16:02:32+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.uphouseworks.com/</loc>
     <lastmod>2021-11-21T16:02:32+01:00</lastmod>
   </url>
   
@@ -369,6 +379,14 @@
   
   <url>
     <loc>https://www.uphouseworks.com/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.uphouseworks.com/puzzles/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.uphouseworks.com/puzzles/p5/</loc>
   </url>
   
 </urlset>
