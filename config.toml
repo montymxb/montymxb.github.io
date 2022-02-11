@@ -1,15 +1,24 @@
 baseURL = "https://www.uphouseworks.com"
 languageCode = "en-us"
 title = "Uphouseworks"
-description = "An early build of the new UPHW website."
+description = "Computer Science projects, research, and articles by Benjamin Friedman Wilson."
+googleAnalytics = "UA-47712445-1"
+
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
+  series = 'series'
+
 [params]
+  mainSections = ["posts","OldArticles"]
   copyright = "Copyright &copy; Benjamin Friedman Wilson 2021"
+  description = "Computer Science projects, research, and articles by Benjamin Friedman Wilson."
   author = "Benjamin Friedman Wilson"
-  description = "An early build of the new UPHW website."
   themeColor = "#ffffff"
   twitterCard = "summary_large_image"
   twitterSite = "@uphouseworks"
   twitterCreator = "@mxbdev"
-  twitterImage = "images/og_image.png"
+  twitterImage = "/images/og_image.png"
   facebookLink = "https://www.facebook.com/uphouseworks"
   twitterLink = "https://twitter.com/uphouseworks"
+  images = ["/image/og_image.png"]

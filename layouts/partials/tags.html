@@ -1,0 +1,11 @@
+{{/*
+Baesd on the Ananke Hugo Theme: https://themes.gohugo.io/themes/gohugo-theme-ananke/
+*/}}
+<div class="tags">
+  {{ range .Params.tags }}
+   <a class="tag-item" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
+     <span>
+       {{- . -}}
+     </span></a>
+  {{ end }}
+</div>

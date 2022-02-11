@@ -1,4 +1,4 @@
-<h3 style='text-align:center;font-size:30px'>Posts</h3>
+<h2 style='text-align:center;font-size:30px'>Posts</h2>
 <div class="feed">
 {{- range where site.RegularPages "Type" "in" site.Params.mainSections }}
     {{ .Render "li" }}

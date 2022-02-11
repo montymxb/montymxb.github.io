@@ -1,13 +1,22 @@
 {{ define "main" }}
 <article class="feed">
-    <div class="entry">
+    <div class="entry" style="display:inherit">
       <header id="post-header">
+          {{- if not (.Params.no_dir) -}}
+          <p><a href="/">Home</a> / <a href="/{{ .Page.Type }}/">{{ .Page.Type }}</a> / {{ .Title }}</p>
+          {{- end -}}
 
-          <p><a href="/">Home</a> / <a href="/posts/">posts</a> / {{ .Title }}</p>
-
-          <div class="sqimg" style="width:100%;display:inline-block;background-image:url('{{ .Page.Params.image }}');background-repeat:no-repeat;background-size:cover"></div>
           <h1>{{ .Title }}</h1>
+
+          {{- if isset .Params "image" -}}
+          <div id="cover-img" class="sqimg" style="width:100%;display:inline-block;background-image:url('{{ .Page.Params.image }}');background-repeat:no-repeat;background-size:cover"></div>
+          {{- else if isset .Params "image_contain" -}}
+          <div id="contain-img" class="sqimg" style="width:100%;display:inline-block;background-image:url('{{ .Page.Params.image_contain }}');background-repeat:no-repeat;background-size:contain"></div>
+          {{- end -}}
+
+          {{- if not (.Params.no_details) -}}
           <h2>{{ .Page.Params.description }}</h2>
+          <span class="date"> Reading Time: {{ .ReadingTime }} mins </span>
           <div>
           {{- if isset .Params "date" -}}
               {{ if eq .Lastmod .Date }}
@@ -17,8 +26,28 @@
               {{ end }}
           {{- end -}}
           </div>
+          {{- end -}}
       </header>
+      {{- partial "tags.html" . -}}
+
+      {{- if and (gt .WordCount 400) (.Params.toc) -}}
+      <aside>
+        <br/><br/>
+        <h3>Table of Contents</h3>
+        {{ .TableOfContents }}
+        <br/>
+      </aside>
+      {{- end -}}
+
+      {{- if .Params.draft -}}
+      <p class='draft'>This article is still a draft, and not yet finished!</p>
+      {{- end -}}
+
       {{- .Content -}}
+
+      <aside>
+      {{- partial "related.html" . -}}
+      </aside>
     </div>
 </article>
 {{ end }}

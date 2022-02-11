@@ -1,8 +1,12 @@
 ---
 title: "Functional Domain-Specific Shader Language (FDSSL)"
 date: 2021-06-25T13:56:27+02:00
-draft: true
+author: "Benjamin Friedman Wilson"
+draft: false
 description: "A breakdown of the Function Domain-Specific Shader Language (FDSSL), which enables writing composable shaders for usage with OpenGL."
+tags: ["FDSSL","OpenGL","Shaders","GLSL","Discussion","Github"]
+keywords: ["Shaders","Education","Programming","GLSL"]
+ldtype: "blog"
 ---
 
 A coleague and myself have recently undertaken early work on a higher-level shader language that compiles to [OpenGL Shading Language (GLSL)](https://www.khronos.org/opengl/wiki/OpenGL_Shading_Language).

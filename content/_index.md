@@ -1,8 +1,12 @@
 ---
 title: "Uphouseworks"
-description: "Building Software for Applied Visualization and Structural Analysis of Data."
+description: "Computer Science projects, research, and articles by Benjamin Friedman Wilson."
 keywords: [benjamin,wilson,friedman,banter,latria,software,engineering]
 ---
+
+{{< center >}}
+<h1>Uphouseworks</h1>
+{{< /center >}}
 
 {{< newlogo-fadein >}}
 
@@ -14,5 +18,5 @@ keywords: [benjamin,wilson,friedman,banter,latria,software,engineering]
 
 {{< center >}}
 <br/>
-Written by Benjamin Friedman Wilson, <a href="/About/index.html">read about me here</a>.
+<span style='margin:8px'>Written by Benjamin Friedman Wilson, <nobr><a href="/About/index.html">read about me here</a></nobr>.</span>
 {{< /center >}}

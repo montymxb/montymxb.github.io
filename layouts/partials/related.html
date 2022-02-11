@@ -1,0 +1,16 @@
+{{/*
+  Use Hugo's native related content feature to pull in content that may have similar parameters, like tags. etc.
+  https://gohugo.io/content-management/related/
+*/}}
+
+{{ $related := .Site.RegularPages.Related . | first 5 }}
+{{ with $related }}
+<h3>See Also</h3>
+<ul>
+	{{ range . }}
+  <div>
+    {{ .Render "li" }}
+  </div>
+	{{ end }}
+</ul>
+{{ end }}

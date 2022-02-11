@@ -1,0 +1,42 @@
+---
+title: "Rotation Puzzle 4"
+date: 2022-02-11T16:02:32+01:00
+layout: plain
+description: "A rotational puzzle in HTML"
+author: "Benjamin Friedman Wilson"
+url: /puzzles/p4/
+draft: false
+type: "game"
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.5">
+  {{< tracker >}}
+  <title>Rotational Puzzle</title>
+  {{< csslink "css/rotational-puzzle.css" >}}
+  {{< jslink "js/rotational-puzzle.js" >}}
+</head>
+<body>
+  <div class="c">
+    <h1>Puzzle 4</h1>
+    <p>
+      Use the left and right arrow keys on the keyboard, or swipe left and right to turn the puzzle.
+      <br/>
+      End on the green square to finish.
+      <br/><br/>
+      This puzzle takes at least 6 turns to finish.
+    </p>
+    <div style="margin-top:10%;">
+      <div id="rotational-puzzle" class="field" dimen=10 diff=6 seed=4281>
+      </div>
+    </div>
+    <br/><br/>
+    <div>
+      <a href="/puzzles/p5/">Next Puzzle</a>
+    </div>
+  </div>
+  {{< little-footer >}}
+</body>
+</html>

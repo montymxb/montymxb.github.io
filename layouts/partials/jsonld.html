@@ -1,0 +1,33 @@
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    {{- if eq .Page.Type "page" -}}
+    {{/* Website page */}}
+    "@type": "WebSite",
+    {{- else if .Page.Params.ldtype -}}
+    {{- $t := .Page.Params.ldtype -}}
+    {{- if eq $t "blog" -}}
+    {{/* Blog post of some form */}}
+    "@type": "BlogPosting",
+    "headline": "{{ .Description }}",
+    {{- else if eq $t "game" -}}
+    "@type": "Game",
+    "headline": "{{ .Description }}",
+    {{- end -}}
+    {{- end }}
+    "name": "{{ .Title }}",
+    "author": {
+      "@type": "Person",
+      "url": {{ printf "%s" "/About/" | printf "%s%s" .Site.BaseURL }},
+      "name": {{ .Site.Params.author }}
+    },
+    "datePublished": "{{ .Date.Format "2006-01-02" }}",
+    "description": "{{ .Description }}",
+    "url": {{ .Permalink | safeURL }},
+    "image": {{ replace (printf "%s" "/images/uphw_white_greyBack.png" | printf "%s%s" .Site.BaseURL) "//images" "/images" }},
+    "sameAs" : [
+      {{ .Site.Params.facebookLink | safeURL }},
+      {{ .Site.Params.twitterLink | safeURL }}
+    ]
+  }
+</script>

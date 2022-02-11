@@ -10,9 +10,11 @@ article h2 {
   font-weight: 400;
 }
 
+/*
 article .date {
   margin: 4px 0 3em 0 !important;
 }
+*/
 
 article .entry {
   margin: 0 8px 32px 8px !important;

@@ -1,2 +1,2 @@
-{{ $js := resources.Get (.Get 0) | js.Build }}
+{{ $js := resources.Get (.Get 0) | js.Build | minify }}
 <script type="text/javascript" src="{{ $js.RelPermalink }}"></script>

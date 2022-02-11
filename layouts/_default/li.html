@@ -1,5 +1,17 @@
 <div class="entry">
-  <a href="{{ .Permalink }}" class="link" style='font-size:30px;font-weight:500;margin:0'>{{ .Title }}</a>
-  <p class="date">{{ .Date.Format "Jan 2, 2006" }}</p>
-  <p class="text" style='margin:0'>{{ .Params.description }}</p>
+  <span style="margin-right:8px">
+    {{- if .Params.image_contain -}}
+    <img src="{{ .Params.image_contain }}" width="100">
+    {{- end -}}
+    {{- if .Params.image -}}
+    <img src="{{ .Params.image }}" width="100">
+    {{- else -}}
+    <div style="width:100px"></div>
+    {{- end -}}
+  </span>
+  <span>
+    <a href="{{ .Permalink }}" class="link">{{ .Title }}</a>
+    <p class="date">{{ .Date.Format "Jan 2, 2006" }}</p>
+    <p class="text" style='margin:0'>{{ .Params.description }}</p>
+  </span>
 </div>

@@ -5,6 +5,10 @@ description: "Learning what to consider while building your resume in LaTeX."
 author: "Benjamin Friedman Wilson"
 image: "/images/og_image.png"
 draft: false
+tags: ["Resume","Latex","Discussion","Analysis"]
+toc: true
+keywords: ["Latex","Resume","Job","Typesetting"]
+ldtype: "blog"
 ---
 
 I've recently been applying for careers, and have found myself exploring how I could best design my resume in LaTeX. I've had several years of experience writing technical documents in LaTeX, but none in writing a resume (or a CV for that matter). My first versions were not quite up to par, but it was through repeated iteration and exploration that I've begun to settle on a design that I'm happy with. Here are some points that I would like to share about writing a resume/CV in LaTeX. As a disclaimer my points are not perfect, and I'm still discovering new facets to keep in mind.

@@ -1,12 +1,20 @@
-<header id="banner" style="text-align:center">
-    <h1>{{ .Site.Title }}</h1>
-    <nav>
-        <ul>
-            {{ range .Site.Menus.main.ByWeight -}}
-            <li>
-                {{ .Pre }}<a href="{{ .URL }}" title="{{ .Title }}">{{- .Name -}}</a>{{ .Post }}
-            </li>
-            {{- end }}
-        </ul>
-    </nav>
+<header id="banner">
+  <nav class="navbar">
+    <a class="home" href="/"><span class="uphw-mini-logo"></span> Uphouseworks</a>
+    <div class="links">
+      <a class="link-item small-hidden" href="/"><span class="uphw-mini-logo"></span> Uphouseworks</a>
+      <a class="link-item" href="/About/">About</a>
+      <a class="link-item" href="/posts/">Posts</a>
+      <a class="link-item" href="https://www.linkedin.com/in/benwilsonfriedman/"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a class="link-item" href="https://github.com/montymxb"><i class="fab fa-github-square"></i> Github</a>
+      <a class="link-item" href="/contact/">Contact</a>
+    </div>
+
+    {{ range .Site.Menus.main.ByWeight -}}
+    <li>
+        {{ .Pre }}<a href="{{ .URL }}" title="{{ .Title }}">{{- .Name -}}</a>{{ .Post }}
+    </li>
+    {{- end }}
+  </nav>
+  {{/* <h1 style="text-align:center">{{ .Site.Title }}</h1> */}}
 </header>

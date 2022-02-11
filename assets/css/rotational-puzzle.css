@@ -1,0 +1,87 @@
+body {
+  background: #000;
+}
+
+h1,p {
+  color: #fff;
+}
+
+.c {
+  text-align: center;
+}
+
+.c div a {
+  font-size: 20px;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.c div a:hover {
+  color: #6cf;
+}
+
+.victory {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  color: #0b0;
+}
+
+/* field */
+.field {
+  margin: 0 auto;
+  padding: 0;
+  width: 600px;
+  /*
+  -webkit-animation: skew-it 3s infinite;
+  /**/
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+
+  background: #fff;
+  overflow: hidden;
+  border: 2px;
+  border-style: none none dashed none;
+}
+
+.row {
+  display: block;
+  margin: 0 0 -6px 0;
+  padding: 0;
+  height: auto;
+}
+
+/* individual block */
+.block {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: #0c6;
+  /*border: 2px solid;*/
+}
+
+.block.player {
+  background: #6cf;
+  box-shadow: 0 0 5px #000;
+
+  -webkit-transition: 0.7s;
+  -moz-transition: 0.7s;
+  -ms-transition: 0.7s;
+  -o-transition: 0.7s;
+  transition: 0.7s;
+}
+
+.block.victory {
+  box-shadow: 0 0 5px #000;
+}
+
+.block.path {
+  background: #fff;
+}
+
+.block.barrier {
+  background: #000;
+}
