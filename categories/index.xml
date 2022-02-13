@@ -11,12 +11,30 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <item>
-      <title>A Rotational Ball-Maze Style Puzzle</title>
-      <link>https://www.uphouseworks.com/posts/rotational-puzzle/</link>
+      <title>A Labyrinth Style Puzzle</title>
+      <link>https://www.uphouseworks.com/posts/labyrinth-puzzle/</link>
       <pubDate>Fri, 11 Feb 2022 11:30:32 +0100</pubDate>
       
-      <guid>https://www.uphouseworks.com/posts/rotational-puzzle/</guid>
+      <guid>https://www.uphouseworks.com/posts/labyrinth-puzzle/</guid>
       <description>&lt;p&gt;I wrote up a version of this puzzle back in 2017 for fun over a sunny day, and I had &lt;em&gt;quite&lt;/em&gt; a lot of fun with it!
 The design is simple, but it was still enjoyable to learn on, and a nice way to pass the time.
 Although the puzzle itself was finished some time ago, I wanted to collect all the details before writing this article.&lt;/p&gt;
@@ -30,10 +48,10 @@ Although the puzzle itself was finished some time ago, I wanted to collect all t
 &lt;p&gt;In the following article I&amp;rsquo;ll elaborate on some background regarding the idea and design, how I built the puzzle, and where the process led me. Overall, I found the whole experience very interesting, as I had never written up an HTML5 game from scratch before.&lt;/p&gt;
 &lt;h2 id=&#34;the-idea-and-design&#34;&gt;The Idea and Design&lt;/h2&gt;
 &lt;p&gt;It&amp;rsquo;s been almost 5 years ago since I decided to start writing this puzzle, making it a bit difficult to recall &lt;em&gt;all&lt;/em&gt; the details.&lt;/p&gt;
-&lt;p&gt;What I do remember was the idea: to make a fun, simple puzzle that inverted the traditional &amp;lsquo;player moves in the puzzle&amp;rsquo; mechanic. I remember being inspired by the design of &lt;a href=&#34;https://en.wikipedia.org/wiki/Ball-in-a-maze_puzzle&#34;&gt;ball-maze puzzles&lt;/a&gt;. If you&amp;rsquo;ve ever tried one of those then you already have a good idea of what I&amp;rsquo;m talking about.&lt;/p&gt;
+&lt;p&gt;What I do remember was the idea: to make a fun, simple puzzle that inverted the traditional &amp;lsquo;player moves in the puzzle&amp;rsquo; mechanic. I remember being inspired by the design of &lt;a href=&#34;https://en.wikipedia.org/wiki/Labyrinth_(marble_game)&#34;&gt;labyrinth puzzles&lt;/a&gt; and &lt;a href=&#34;https://en.wikipedia.org/wiki/Ball-in-a-maze_puzzle&#34;&gt;ball-maze puzzles&lt;/a&gt;. If you&amp;rsquo;ve ever tried one of those then you already have a good idea of what I&amp;rsquo;m talking about.&lt;/p&gt;
 &lt;figure&gt;&lt;img src=&#34;https://www.uphouseworks.com/images/puz.jpg&#34;
          alt=&#34;An image depicting a wooden puzzle with channels cut for a ball to move through.&#34; width=&#34;350&#34;/&gt;&lt;figcaption&gt;
-            &lt;p&gt;An example of simple wooden ball-maze puzzle, from the Shalinindia Store on Amazon.&lt;/p&gt;
+            &lt;p&gt;An example of simple wooden labyrinth puzzle, from the Shalinindia Store on Amazon.&lt;/p&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
