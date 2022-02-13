@@ -1,12 +1,12 @@
 ---
-title: "A Rotational Ball-Maze Style Puzzle"
+title: "A Rotational Labyrinth Style Puzzle"
 date: 2022-02-11T11:30:32+01:00
-description: "How I wrote a simple rotating puzzle inspired by the classic ball-maze design, and what I encountered through the design process."
+description: "How I wrote a simple rotating puzzle inspired by the classic labyrinth/ball-maze design, and what I encountered through the design process."
 author: "Benjamin Friedman Wilson"
 image: "/images/rot_puzz.png"
 tags: ["Puzzle","Discussion"]
 toc: true
-keywords: ["Rotational","Puzzle","Ball","Maze","Game","Development"]
+keywords: ["Labyrinth","Puzzle","Rotational","Ball","Maze","Game","Development"]
 ldtype: "blog"
 draft: false
 ---
@@ -25,9 +25,9 @@ In the following article I'll elaborate on some background regarding the idea an
 
 It's been almost 5 years ago since I decided to start writing this puzzle, making it a bit difficult to recall *all* the details.
 
-What I do remember was the idea: to make a fun, simple puzzle that inverted the traditional 'player moves in the puzzle' mechanic. I remember being inspired by the design of [ball-maze puzzles](https://en.wikipedia.org/wiki/Ball-in-a-maze_puzzle). If you've ever tried one of those then you already have a good idea of what I'm talking about.
+What I do remember was the idea: to make a fun, simple puzzle that inverted the traditional 'player moves in the puzzle' mechanic. I remember being inspired by the design of [labyrinth puzzles](https://en.wikipedia.org/wiki/Labyrinth_(marble_game)) and [ball-maze puzzles](https://en.wikipedia.org/wiki/Ball-in-a-maze_puzzle). If you've ever tried one of those then you already have a good idea of what I'm talking about.
 
-{{< figure src="/images/puz.jpg" caption="An example of simple wooden ball-maze puzzle, from the Shalinindia Store on Amazon." alt="An image depicting a wooden puzzle with channels cut for a ball to move through." width=350 >}}
+{{< figure src="/images/puz.jpg" caption="An example of simple wooden labyrinth puzzle, from the Shalinindia Store on Amazon." alt="An image depicting a wooden puzzle with channels cut for a ball to move through." width=350 >}}
 
 I figured it would be a good exercise to try and capture that same experience in a single web page. In doing so, I had to determine what elements I wanted to capture and how.
 
