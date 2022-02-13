@@ -1,9 +1,11 @@
 ---
-title: "A Rotational Labyrinth Style Puzzle"
+title: "A Labyrinth Style Puzzle"
 date: 2022-02-11T11:30:32+01:00
 description: "How I wrote a simple rotating puzzle inspired by the classic labyrinth/ball-maze design, and what I encountered through the design process."
 author: "Benjamin Friedman Wilson"
 image: "/images/rot_puzz.png"
+aliases:
+    - /posts/rotational-puzzle/
 tags: ["Puzzle","Discussion"]
 toc: true
 keywords: ["Labyrinth","Puzzle","Rotational","Ball","Maze","Game","Development"]
