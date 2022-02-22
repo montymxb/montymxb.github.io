@@ -416,50 +416,6 @@ In addition, there may be some interesting follow up research with regards to ho
     
     
     <item>
-      <title>Fractal Brownian Motion: Terrain Generator</title>
-      <link>https://www.uphouseworks.com/posts/fractal-brownian-motion/</link>
-      <pubDate>Mon, 30 Mar 2020 16:02:32 +0100</pubDate>
-      
-      <guid>https://www.uphouseworks.com/posts/fractal-brownian-motion/</guid>
-      <description>&lt;p&gt;I was playing around with fractal brownian motion (fbm) as a form of generating computer graphics noise.
-I implemented a terrain generator based off of fbm for land, water, and clouds.
-The generation of the land as a height map from the resulting values came out quite nice, and I was able to generate fairly decent types of terrain in OpenGL Shader Language.
-The approach I used allowed me to perform nearly all of the generation for the terrain in shaders, along with the water and clouds.
-The water itself was also an interesting experiment. It was a simple &lt;strong&gt;sin&lt;/strong&gt; wave modified with a light dash of fbm to give it an uneven, wavy texture.
-The results here were quite surprising in terms of quality, and this is something I will certainly look into down the road.&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://raw.githubusercontent.com/montymxb/FBM_TerrainGenerator/master/submission/island2.gif&#34;
-         alt=&#34;A top-down view of the terrain generator. The cloud volume is super-imposed over the landmass, with a separate sheet simulating water below.&#34;/&gt;&lt;figcaption&gt;
-            &lt;p&gt;A top-down view of the terrain generator. The cloud volume is super-imposed over the landmass, with a separate sheet simulating water below.&lt;/p&gt;
-        &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;The clouds themselves were implemented using fbm as well, but were generated using volumetric ray casting.
-This technique allows a ray to be cast through a solid surface, computing the fbm values as the ray moves through the surface.
-The result is calculated dynamically, and as the eye position changes, the resulting values computed by the rays change as well.
-To the viewer it then appears that a solid surface (such as a cube) is in fact a volume of clouds.
-Adding a slight adjustment with regards to time and a flowing volume of clouds was completed.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/montymxb/FBM_TerrrainGenerator#readme&#34;&gt;FBM Terrain Generator on Github.&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    
-    
-    <item>
-      <title>HTJSON</title>
-      <link>https://www.uphouseworks.com/posts/htjson/</link>
-      <pubDate>Wed, 08 Mar 2017 16:02:32 +0100</pubDate>
-      
-      <guid>https://www.uphouseworks.com/posts/htjson/</guid>
-      <description>&lt;p&gt;While experimenting with verifying the structure of HTML (from Metatest and Sitecheck before), I went ahead and spent some time to write up a simple parser in php.
-This can go through most HTML and convert it into json, which can then be worked on by other programs.&lt;/p&gt;
-&lt;p&gt;The plan was to utilize this as a step in later building and processing websites as JSON, and then decoding them back into HTML, but I decided to leave it at this.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/montymxb/HTJSON#readme&#34;&gt;HTJSON on Github.&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    
-    
-    <item>
       <title>Working on Parse</title>
       <link>https://www.uphouseworks.com/posts/parse-community/</link>
       <pubDate>Wed, 08 Mar 2017 16:02:32 +0100</pubDate>
@@ -592,18 +548,31 @@ Nothing beats a simple check and scan method that deterministically indicates wh
       <pubDate>Thu, 01 Jan 2015 16:02:32 +0100</pubDate>
       
       <guid>https://www.uphouseworks.com/posts/axolsoft/</guid>
-      <description>&lt;p&gt;At the beginning of 2015 I started working at a new business called Axolsoft as the Head Software Engineer. I co-founded Axolsoft with partner, and good friend of mine.&lt;/p&gt;
-&lt;p&gt;The majority of my work was programmer-centric, involving developing a set of internal tools, several online portals, and when possible automating any standardized procedures. Most of the time I was developing systems with:&lt;/p&gt;
+      <description>&lt;p&gt;&lt;em&gt;Last updated Feb. 22nd, 2022.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;At the beginning of 2015 I started working at a new LLC called Axolsoft as the Head Software Engineer. I co-founded it with partner and a good friend of mine. The idea was to take my experience building front-end systems, and to build a business around it. Not entirely a &lt;em&gt;novel&lt;/em&gt; idea, but we figured we would give it a shot. I learned quite a lot building a business, and even more about development practices to keep things going &amp;ndash; and customers happy.&lt;/p&gt;
+&lt;h2 id=&#34;what-i-did&#34;&gt;What I did&lt;/h2&gt;
+&lt;p&gt;The majority of my work at Axolsoft was designing and developing client and company software. Many of these tools were to manage client information, deploy and manage client services (full-stack deployments most often), and more. To do this I had to build several online portals, and when possible automating any standardized procedures. Most of the time I was developing systems with:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;PHP / MySQL&lt;/li&gt;
+&lt;li&gt;PHP/MySQL&lt;/li&gt;
 &lt;li&gt;HTML5/CSS/JS&lt;/li&gt;
 &lt;li&gt;NGINX&lt;/li&gt;
 &lt;li&gt;Stripe &amp;amp; Braintree payments&lt;/li&gt;
-&lt;li&gt;Opencart stores&lt;/li&gt;
-&lt;li&gt;MyBB Forums&lt;/li&gt;
 &lt;li&gt;Mailing Systems leveraging SFP, DKIM, and DMARC for email security&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Not to mention that I &lt;em&gt;also designed the logo&lt;/em&gt;. I was, and still am, very happy with it as well. Originally we wanted a logo resembling an &lt;a href=&#34;https://en.wikipedia.org/wiki/Axolotl&#34;&gt;Axolotl&lt;/a&gt;, a fascinating salamander from Mexico. We believed that, like the rare Axolotl, we were creating something special. We of course wanted software as well, so we added on &amp;lsquo;soft&amp;rsquo; afterwards. To be honest, looking back at it (and based on what I&amp;rsquo;ve been told), it does tend to resemble an Eagle more than Axolotl. Still, the imagery was well suited for our work, and for the boldness of starting a small LLC by ourselves.&lt;/p&gt;
+&lt;p&gt;Although this is only a brief summary of my tasks that I handled. It goes without saying that when you co-run a company, even a small one, there&amp;rsquo;s a lot you have to do.&lt;/p&gt;
+&lt;h2 id=&#34;designing-the-logo&#34;&gt;Designing the Logo&lt;/h2&gt;
+&lt;p&gt;Not to mention that I &lt;em&gt;also designed the Axolsoft logo&lt;/em&gt;. I was &amp;ndash; and still am &amp;ndash; very happy with it. Originally we wanted a logo resembling an &lt;a href=&#34;https://en.wikipedia.org/wiki/Axolotl&#34;&gt;Axolotl&lt;/a&gt;, a fascinating salamander from Mexico. We believed that, like the rare Axolotl, we were creating something special. We of course wanted software as well, so we added on &amp;lsquo;soft&amp;rsquo; afterwards. To be honest, looking back at it (and based on what I&amp;rsquo;ve been told), it does tend to resemble an Eagle more than an Axolotl. Still, the imagery was well suited for our work, and for the boldness of starting a company by ourselves. It was also one of the first times I got to use &lt;em&gt;Inkscape&lt;/em&gt; in a professional capacity &amp;ndash; although I am definitely &lt;em&gt;not&lt;/em&gt; a graphic designer.&lt;/p&gt;
+&lt;h2 id=&#34;open-source-work&#34;&gt;Open Source Work&lt;/h2&gt;
+&lt;p&gt;Open source work was closely related to my company, since we often relied on open source tools &amp;amp; services. In particular, Braintree&amp;rsquo;s PHP payments integration, and the &lt;a href=&#34;https://docs.parseplatform.org/parse-server/guide/&#34;&gt;Parse BaaS&lt;/a&gt; SDKs. Both of these tools being available on Github. However, I had never personally gotten involved in open source projects on a large scale until we started using these tools.&lt;/p&gt;
+&lt;p&gt;Working on the Parse PHP SDK was a major part of my work, as we relied on it to build some of our early systems. I figured I would work on improving their tools to share the benefits with all developers who were relying on that SDK. My first contributions were small adjustments &amp;ndash; ones that we thought we needed and others could benefit from. However, when Parse went full open source I took charge of the Parse PHP SDK, which was passed down to me from the previous developer. This prior employee, and their entire team at Parse, had been integrated into Facebook, and due to their new obligations had no time to continue work on Parse. This was a very unique opportunity for me, and I was more than happy to take on the responsibility at the time. I managed that SDK for about a year until I started to transition into a full time student again.&lt;/p&gt;
+&lt;h2 id=&#34;system-administration&#34;&gt;System Administration&lt;/h2&gt;
+&lt;p&gt;What surprised me the most was just &lt;em&gt;how much work&lt;/em&gt; is involved managing systems, actual physical installations, not just deployments in the cloud. At Axolsoft a good part of our infrastructure was physical, meaning we had to oversee our servers on site. To be clear Axolsoft doesn&amp;rsquo;t do this anymore, but some years ago that was how we operated.&lt;/p&gt;
+&lt;p&gt;I learned how to handle some of the most ridiculous problems that you would encounter. I think one of my &lt;em&gt;fondest&lt;/em&gt; memories was having a battery blow up inside one of our servers. It was completely unexpected, and took a whole chunk of our system offline. What followed was 24 hours of going through our recovery procedure, only to find that parts of our recovery procedure were not working as expected.&lt;/p&gt;
+&lt;p&gt;That experience taught me a couple valuable lessons. First have a backup plan and &lt;em&gt;test&lt;/em&gt; your backup plan. Second, always double check your equipment and its associated parts on a schedule, and keep replacements on site &amp;ndash; you never know when you&amp;rsquo;ll need one. Once you have done that, test it again periodically. Verify that things are still capable of being recovered like you think they can be. Thankfully we had redundant data backups (which is a must), so we had no issues recovering the data. Still, the downtime was far from ideal, and it&amp;rsquo;s worth the extra investment against downtime.&lt;/p&gt;
+&lt;h2 id=&#34;thoughts-looking-back&#34;&gt;Thoughts Looking Back&lt;/h2&gt;
+&lt;p&gt;For me, what was most valuable from running a small company was the &lt;em&gt;experience&lt;/em&gt;. I really enjoyed my time at Axolsoft, and I have always thought about &lt;em&gt;maybe&lt;/em&gt; doing something similar again. What I learned has been invaluable to me over the years, and it has also allowed me to stay relaxed and focused in even the worst situations.&lt;/p&gt;
+&lt;p&gt;However, it also taught me something about what I enjoy doing, which is building things, exploring and learning. If I were to do something like Axolsoft again, I would definitely build up a larger group of people to help distribute the workload. The sheer volume of work I had to take care of at Axolsoft was overwhelming at times, and there were often no weekends. Every day was simply a work day, and that in turn has taught me the value of maintaining a healthy work-life balance. It really makes all the difference.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;ve considering doing something like this, or actively are, be prepared to give a lot in order to make things work, and be prepared to be &lt;em&gt;patient&lt;/em&gt;. Building up a service, a client-base, and a  reliable and dedicated team takes &lt;em&gt;time&lt;/em&gt;. A lot of time. If you can manage it, and you invest in your team as people you care about, the rewards are well worth it.&lt;/p&gt;
 </description>
     </item>
     

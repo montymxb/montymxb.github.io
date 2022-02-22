@@ -228,21 +228,6 @@
   </url>
   
   <url>
-    <loc>https://www.uphouseworks.com/tags/fractal-brownian-motion/</loc>
-    <lastmod>2020-03-30T16:02:32+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.uphouseworks.com/posts/fractal-brownian-motion/</loc>
-    <lastmod>2020-03-30T16:02:32+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.uphouseworks.com/tags/graphics/</loc>
-    <lastmod>2020-03-30T16:02:32+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.uphouseworks.com/tags/ml/</loc>
     <lastmod>2020-03-30T16:02:32+01:00</lastmod>
   </url>
@@ -250,21 +235,6 @@
   <url>
     <loc>https://www.uphouseworks.com/tags/pacman/</loc>
     <lastmod>2020-03-30T16:02:32+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.uphouseworks.com/tags/htjson/</loc>
-    <lastmod>2017-03-08T16:02:32+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.uphouseworks.com/posts/htjson/</loc>
-    <lastmod>2017-03-08T16:02:32+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.uphouseworks.com/tags/html/</loc>
-    <lastmod>2017-03-08T16:02:32+01:00</lastmod>
   </url>
   
   <url>
@@ -314,6 +284,11 @@
   
   <url>
     <loc>https://www.uphouseworks.com/tags/hangmanazul/</loc>
+    <lastmod>2016-07-15T16:02:32+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.uphouseworks.com/tags/html/</loc>
     <lastmod>2016-07-15T16:02:32+01:00</lastmod>
   </url>
   
