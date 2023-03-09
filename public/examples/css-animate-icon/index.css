@@ -1,0 +1,66 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:700);
+body {
+  background: #ec6769;
+}
+
+h1 {
+  color: #fff;
+  font-family: 'Lato', arial, sans-serif;
+  font-size: 24px;
+  margin: 1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.menu-icon {
+  display: block;
+  width: 40px;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.menu-icon:before, .menu-icon:after,
+.menu-icon .menu-icon__text {
+  background: #fff;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  content: '';
+  display: block;
+  height: 4px;
+  margin: 6px 0;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+.menu-icon .menu-icon__text {
+  text-indent: -9999px;
+}
+.menu-icon:hover:before {
+  -webkit-transform: rotate(45deg) translate3d(5px, 10px, 0);
+  -moz-transform: rotate(45deg) translate3d(5px, 10px, 0);
+  -ms-transform: rotate(45deg) translate3d(5px, 10px, 0);
+  -o-transform: rotate(45deg) translate3d(5px, 10px, 0);
+  transform: rotate(45deg) translate3d(5px, 10px, 0);
+}
+.menu-icon:hover .menu-icon__text {
+  opacity: 0;
+}
+.menu-icon:hover:after {
+  -webkit-transform: rotate(-45deg) translate3d(5px, -10px, 0);
+  -moz-transform: rotate(-45deg) translate3d(5px, -10px, 0);
+  -ms-transform: rotate(-45deg) translate3d(5px, -10px, 0);
+  -o-transform: rotate(-45deg) translate3d(5px, -10px, 0);
+  transform: rotate(-45deg) translate3d(5px, -10px, 0);
+}
+
+.indent {
+  margin: 40px auto;
+}

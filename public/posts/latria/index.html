@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns"><head>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-47712445-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script><meta charset="utf-8">
+    <meta name="robots" content="index,follow,noodp">
+    <title>The Latria Scripting Language</title>
+    <meta name="description" content="A lightweight multi-purpose scripting language. Allow yourself to merge together scripts and programs of varying language under one uniforming latria script.">
+    <meta name="author" content="Benjamin Friedman Wilson">
+    <meta name="date" content="2015-11-28T16:02:32+01:00" >
+    <meta name="keywords" content="C,Programming,Scripting,Language">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <link rel="home" href="https://www.uphouseworks.com"/>
+    <link rel="canonical" href="https://www.uphouseworks.com/posts/latria/"/>
+    
+    <link rel="shortcut icon" href="https://www.uphouseworks.com/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="https://www.uphouseworks.com/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome/all.min.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/core.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/feed.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/article2021.min.css">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="https://www.uphouseworks.comimages/ms-tile.png">
+    <meta name="twitter:site" content="@uphouseworks">
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.uphouseworks.com/image/og_image.png"/>
+
+<meta name="twitter:title" content="The Latria Scripting Language"/>
+<meta name="twitter:description" content="A lightweight multi-purpose scripting language. Allow yourself to merge together scripts and programs of varying language under one uniforming latria script."/>
+
+    <meta itemprop="image" content="https://www.uphouseworks.comimages/uphw_white_greyBack.png">
+    <meta itemprop="url" content="https://www.uphouseworks.com/posts/latria/"><meta itemprop="name" content="The Latria Scripting Language">
+<meta itemprop="description" content="A lightweight multi-purpose scripting language. Allow yourself to merge together scripts and programs of varying language under one uniforming latria script."><meta itemprop="datePublished" content="2015-11-28T16:02:32+01:00" />
+<meta itemprop="dateModified" content="2015-11-28T16:02:32+01:00" />
+<meta itemprop="wordCount" content="803"><meta itemprop="image" content="https://www.uphouseworks.com/image/og_image.png"/>
+<meta itemprop="keywords" content="Latria,Languages,C,Programming," />
+    <meta property="og:site_name" content="Uphouseworks"><meta property="og:title" content="The Latria Scripting Language" />
+<meta property="og:description" content="A lightweight multi-purpose scripting language. Allow yourself to merge together scripts and programs of varying language under one uniforming latria script." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.uphouseworks.com/posts/latria/" /><meta property="og:image" content="https://www.uphouseworks.com/image/og_image.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2015-11-28T16:02:32+01:00" />
+<meta property="article:modified_time" content="2015-11-28T16:02:32+01:00" />
+<meta property="og:see_also" content="https://www.uphouseworks.com/posts/revising-the-latria-programming-language/" />
+
+<link rel="apple-touch-icon" href="/images/apple1.png"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/apple2.png"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/apple3.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/apple4.png"/>
+    <link rel="apple-touch-startup-image" href="/images/startup.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "A lightweight multi-purpose scripting language. Allow yourself to merge together scripts and programs of varying language under one uniforming latria script.",
+    "name": "The Latria Scripting Language",
+    "author": {
+      "@type": "Person",
+      "url": "https://www.uphouseworks.com/About/",
+      "name": "Benjamin Friedman Wilson"
+    },
+    "datePublished": "2015-11-28",
+    "description": "A lightweight multi-purpose scripting language. Allow yourself to merge together scripts and programs of varying language under one uniforming latria script.",
+    "url": "https://www.uphouseworks.com/posts/latria/",
+    "image": "https://www.uphouseworks.com/images/uphw_white_greyBack.png",
+    "sameAs" : [
+      "https://www.facebook.com/uphouseworks",
+      "https://twitter.com/uphouseworks"
+    ]
+  }
+</script>
+</head>
+<body><header id="banner">
+  <nav class="navbar">
+    <a class="home" href="/"><span class="uphw-mini-logo"></span> Uphouseworks</a>
+    <div class="links">
+      <a class="link-item small-hidden" href="/"><span class="uphw-mini-logo"></span> Uphouseworks</a>
+      <a class="link-item" href="/About/">About</a>
+      <a class="link-item" href="/posts/">Posts</a>
+      <a class="link-item" href="https://www.linkedin.com/in/benwilsonfriedman/"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a class="link-item" href="https://github.com/montymxb"><i class="fab fa-github-square"></i> Github</a>
+      <a class="link-item" href="/contact/">Contact</a>
+    </div>
+
+    
+  </nav>
+  
+</header>
+<main id="content">
+<article class="feed">
+    <div class="entry" style="display:inherit">
+      <header id="post-header"><p><a href="/">Home</a> / <a href="/posts/">posts</a> / The Latria Scripting Language</p><h1>The Latria Scripting Language</h1><div id="cover-img" class="sqimg" style="width:100%;display:inline-block;background-image:url('/images/article_images/og_image.png');background-repeat:no-repeat;background-size:cover"></div><h2>A lightweight multi-purpose scripting language. Allow yourself to merge together scripts and programs of varying language under one uniforming latria script.</h2>
+          <span class="date"> Reading Time: 4 mins </span>
+          <div>
+              <p class="date">by Benjamin Friedman Wilson, <time>November 28, 2015</time></p>
+              </div></header>
+<div class="tags">
+  
+   <a class="tag-item" href="/tags/latria">
+     <span>Latria</span></a>
+  
+   <a class="tag-item" href="/tags/languages">
+     <span>Languages</span></a>
+  
+   <a class="tag-item" href="/tags/c">
+     <span>C</span></a>
+  
+   <a class="tag-item" href="/tags/programming">
+     <span>Programming</span></a>
+  
+</div>
+<p>Lately I have been focusing intently on finishing up a little scripting language of my own design, something called <a href="http://latria.uphouseworks.com">Latria</a>.</p>
+<p>First, a little background on why I started this in the first place. Overall, I desired a lightweight, embeddable scripting language. Something with an emphasis on cross language meshing. There are quite a number of loose scripts, programs, etc. that I have written over the years and I desired a way to work with them collectively when I could. Usually this involved writing up bash scripts, batch scripts, lua scripts, or other scripts to mediate between one or more programs or scripts that I had written. Generally this involved capturing input and interpolating it into another program, which took a bit of work and was unsightly at times.</p>
+<p>At one point I had a thought. Wouldn&rsquo;t it be neat if I could just inline the desired functionality from another language, creating a sort of frankenstein script. Something that could execute itself, but could also run other lines of code in other languages. That was when I started writing up Latria over a year ago. Now, with the language nearing completion, I&rsquo;m ready to test it&rsquo;s mettle. It&rsquo;s been a very long process, but here I&rsquo;ll just cover some general goals of the language.</p>
+<ul>
+<li>Execute multiple languages inline</li>
+<li>Interpolate values to and from languages</li>
+<li>Be relatively independent of the underlying system</li>
+<li>Be lightweight enough not to be a nuisance to add to an existing project</li>
+</ul>
+<p><img src="/images/article_images/logo.png" alt="Latria image"></p>
+<p>In order to achieve those goals I choose to write Latria in ANSI-C (following the C90 standard). It&rsquo;s a bit outdated, but assures some reasonable reverse compatibility with older systems. To achieve cross language execution Latria uses a glorified piping mechanism, which allows embedding of source code from (just about) any another language. When embedding source code the syntax looks a bit like the following.<!-- raw HTML omitted --></p>
+<pre><code>    //assigns 'value' to the result of what is run between ## and #&amp;gt;
+    value##
+    language specification
+    code in another language to run
+    #&amp;gt;
+</code></pre>
+<p>Due to the number of variations from language to language source code is required to fit in-between the ## and #&gt; sequences with nothing else on the line (excluding whitespace). The statement as a whole is effectively a multi-line system execute, but allows variables to interpolated via IN{var} in order to dynamically alter the code. The current setup does only allow system execution, but in the future I will most likely create a stronger tie to commonly used languages such as Java, PHP, Python, etc; but for now this syntax is fairly generic, allowing it to work for most of my needs.</p>
+<p>Now during the course of building latria I had constructed a simple syntax-tree interpreter, slightly adhoc. This was slow, but worked. Eventually I migrated this syntax tree into what became the compiler, and created a standalone Virtual Machine to which bytecode could be fed into. The interpreter for the VM accepts Latria bytecode and embedded source code for other languages as plain text, which is executed on the system as mentioned before. The interpreter can also be coupled with the compiler, creating a standalone executable that is capable of both compiling and executing source code. To keep things simple this will be the default build when the language is released. However for embedded systems or size/time sensitive implementations the interpreter and compiler can be built separately. Requiring only that the Latria source code be compiled beforehand in order to run.</p>
+<p>There is quite a lot that I&rsquo;ve packed into this language, while still attempting to keep it simple. It supports basic types of Number (double,float,int), String, Array, File and Boolean values. There is a very basic DFA regex included that I wrote from scratch. It supports most of the basic quantifiers (no backtracking) and has capturing parentheses. It will also support networking for basic server/client systems. Overall the interpreter weighs in at under 100kb, while the interpreter and compiler together are around 150kb. Not too shabby, but this is still pretty fat and I expect some culling before the release will make it a more comfortable fit for embedded systems.</p>
+<p>If you&rsquo;re interested (and when it&rsquo;s released) you can check out the project and download the source code at <a href="http://latria.uphouseworks.com">latria.uphouseworks.com</a>. There is still a lot to attend to but I expect to put up Latria sometime around December 10th. I intend on making Latria opensource for C programmers and others that are interested in enhancing the functionality of the language. Overall with a year&rsquo;s worth of code in it I still expect to see large room for improvement at the least. Languages take years to mature before they are accepted for general use; so take Latria with the consideration that it is still young and has a ways to go. Hopefully it will be something we all can use!</p>
+<aside>
+
+
+
+</aside>
+    </div>
+</article>
+
+        </main><footer id="footer">
+    <span>Copyright &copy; Benjamin Friedman Wilson 2015</span>
+    <br/>
+    <div class="fimg" style="background-image: url('/images/spatial_script_bw.png')"></div>
+    <br/>
+    <a href="https://www.linkedin.com/in/benwilsonfriedman/"><i class="fab fa-linkedin"></i> LinkedIn </a> •
+    <a href="/contact/"><i class="fas fa-envelope-square"></i> Contact</a> •
+		<a href="/Privacy/index.html"><i class="fas fa-user-lock"></i> Privacy</a> •
+		<a href="/Terms/index.html"><i class="fas fa-scroll"></i> Terms of Service</a> •
+    <a href="https://github.com/montymxb"><i class="fab fa-github-square"></i> Github</a>
+</footer>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns"><head>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-47712445-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script><meta charset="utf-8">
+    <meta name="robots" content="index,follow,noodp">
+    <title>HTJSON</title>
+    <meta name="description" content="A prototype HTML parser implemented in PHP.">
+    <meta name="author" content="Benjamin Friedman Wilson">
+    <meta name="date" content="2017-03-08T16:02:32+01:00" >
+    <meta name="keywords" content="PHP,HTML,JSON">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <link rel="home" href="https://www.uphouseworks.com"/>
+    <link rel="canonical" href="https://www.uphouseworks.com/posts/htjson/"/>
+    <meta name="generator" content="Hugo 0.89.2" /><link rel="shortcut icon" href="https://www.uphouseworks.com/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="https://www.uphouseworks.com/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome/all.min.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/core.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/feed.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/article2021.min.css">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/ms-tile.png">
+    <meta name="twitter:site" content="@uphouseworks">
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.uphouseworks.com/image/og_image.png"/>
+
+<meta name="twitter:title" content="HTJSON"/>
+<meta name="twitter:description" content="A prototype HTML parser implemented in PHP."/>
+
+    <meta itemprop="image" content="/images/uphw_white_greyBack.png">
+    <meta itemprop="url" content="https://www.uphouseworks.com/posts/htjson/"><meta itemprop="name" content="HTJSON">
+<meta itemprop="description" content="A prototype HTML parser implemented in PHP."><meta itemprop="datePublished" content="2017-03-08T16:02:32+01:00" />
+<meta itemprop="dateModified" content="2017-03-08T16:02:32+01:00" />
+<meta itemprop="wordCount" content="83"><meta itemprop="image" content="https://www.uphouseworks.com/image/og_image.png"/>
+<meta itemprop="keywords" content="HTJSON,Programming,PHP,HTML,Github," />
+    <meta property="og:site_name" content="Uphouseworks"><meta property="og:title" content="HTJSON" />
+<meta property="og:description" content="A prototype HTML parser implemented in PHP." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.uphouseworks.com/posts/htjson/" /><meta property="og:image" content="https://www.uphouseworks.com/image/og_image.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2017-03-08T16:02:32+01:00" />
+<meta property="article:modified_time" content="2017-03-08T16:02:32+01:00" />
+
+<link rel="apple-touch-icon" href="/images/apple1.png"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/apple2.png"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/apple3.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/apple4.png"/>
+    <link rel="apple-touch-startup-image" href="/images/startup.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script src="js/Scroller.js" type="application/javascript"></script>
+    <script src="js/fontawesome/all.min.js" type="application/javascript"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "name": "HTJSON",
+        "url": "https:\/\/www.uphouseworks.com\/posts\/htjson\/",
+        "image": "/images/uphw_white_greyBack.png",
+        "sameAs" : [
+          "https:\/\/www.facebook.com\/uphouseworks",
+          "https:\/\/twitter.com\/uphouseworks",
+        ]
+      }
+    </script>
+
+</head>
+<body><header id="banner">
+  <nav class="navbar">
+    <a class="home" href="/">Uphouseworks</a>
+    <div class="links">
+      <a class="link-item small-hidden" href="/">Uphouseworks</a>
+      <a class="link-item" href="/About/">About</a>
+      <a class="link-item" href="/posts/">Posts</a>
+      <a class="link-item" href="https://www.linkedin.com/in/benwilsonfriedman/"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a class="link-item" href="https://github.com/montymxb"><i class="fab fa-github-square"></i> Github</a>
+    </div>
+
+    
+  </nav>
+  
+</header>
+<main id="content">
+<article class="feed">
+    <div class="entry">
+      <header id="post-header"><p><a href="/">Home</a> / <a href="/posts/">posts</a> / HTJSON</p><h1>HTJSON</h1><h2>A prototype HTML parser implemented in PHP.</h2>
+          <span class="date"> Reading Time: 1 mins </span>
+          <div>
+              <p class="date">by Benjamin Friedman Wilson, <time>March 8, 2017</time></p>
+              </div></header>
+<div class="tags">
+  
+   <a class="tag-item" href="/tags/htjson">
+     <span>HTJSON</span></a>
+  
+   <a class="tag-item" href="/tags/programming">
+     <span>Programming</span></a>
+  
+   <a class="tag-item" href="/tags/php">
+     <span>PHP</span></a>
+  
+   <a class="tag-item" href="/tags/html">
+     <span>HTML</span></a>
+  
+   <a class="tag-item" href="/tags/github">
+     <span>Github</span></a>
+  
+</div>
+<p>While experimenting with verifying the structure of HTML (from Metatest and Sitecheck before), I went ahead and spent some time to write up a simple parser in php.
+This can go through most HTML and convert it into json, which can then be worked on by other programs.</p>
+<p>The plan was to utilize this as a step in later building and processing websites as JSON, and then decoding them back into HTML, but I decided to leave it at this.</p>
+<p><a href="https://github.com/montymxb/HTJSON#readme">HTJSON on Github.</a></p>
+<aside>
+
+
+
+<h3>See Also</h3>
+<ul>
+	
+  <div>
+    <div class="entry" style="display:flex">
+  <span style="margin-right:8px"><img src="/images/parse.png" width="100"><div style="width:100px"></div></span>
+  <span>
+    <a href="https://www.uphouseworks.com/posts/parse-community/" class="link" style='font-size:30px;font-weight:500;margin:0'>Working on Parse</a>
+    <p class="date">Mar 8, 2017</p>
+    <p class="text" style='margin:0'>Working on the Parse PHP SDK for Parse Community</p>
+  </span>
+</div>
+
+  </div>
+	
+  <div>
+    <div class="entry" style="display:flex">
+  <span style="margin-right:8px"><img src="/images/sitecheck.png" width="100"><div style="width:100px"></div></span>
+  <span>
+    <a href="https://www.uphouseworks.com/posts/sitecheck/" class="link" style='font-size:30px;font-weight:500;margin:0'>SiteCheck, an iOS App for Verifying SEO Metatags</a>
+    <p class="date">Jul 13, 2016</p>
+    <p class="text" style='margin:0'>Sitecheck is an iOS application that allows scanning the metatags on your website to help with SEO optimization.</p>
+  </span>
+</div>
+
+  </div>
+	
+  <div>
+    <div class="entry" style="display:flex">
+  <span style="margin-right:8px"><div style="width:100px"></div></span>
+  <span>
+    <a href="https://www.uphouseworks.com/Metatest/" class="link" style='font-size:30px;font-weight:500;margin:0'>The Original Metatest Landing Page, Verify Meta tags for Website SEO Optimization</a>
+    <p class="date">Jul 15, 2016</p>
+    <p class="text" style='margin:0'>Metatest verifies that meta-tags on your website to help optimize for SEO purposes. It provides feedback on known issues, and suggests corrections.</p>
+  </span>
+</div>
+
+  </div>
+	
+  <div>
+    <div class="entry" style="display:flex">
+  <span style="margin-right:8px"><img src="/images/meta.png" width="100"><div style="width:100px"></div></span>
+  <span>
+    <a href="https://www.uphouseworks.com/posts/metatest-metatag-verifier/" class="link" style='font-size:30px;font-weight:500;margin:0'>Metatest, Verify HTML metatags</a>
+    <p class="date">Jul 1, 2016</p>
+    <p class="text" style='margin:0'>A web based tool for testing metatag integration on websites.</p>
+  </span>
+</div>
+
+  </div>
+	
+  <div>
+    <div class="entry" style="display:flex">
+  <span style="margin-right:8px"><img src="/images/article_images/og_image.png" width="100"></span>
+  <span>
+    <a href="https://www.uphouseworks.com/posts/latria/" class="link" style='font-size:30px;font-weight:500;margin:0'>The Latria Scripting Language</a>
+    <p class="date">Nov 28, 2015</p>
+    <p class="text" style='margin:0'>A lightweight multi-purpose scripting language. Allow yourself to merge together scripts and programs of varying language under one uniforming latria script.</p>
+  </span>
+</div>
+
+  </div>
+	
+</ul>
+
+</aside>
+    </div>
+</article>
+
+        </main><footer id="footer">
+    <span>Copyright &copy; Benjamin Friedman Wilson 2021</span>
+    <br/>
+    <div class="fimg" style="background-image: url('/images/spatial_script_bw.png')"></div>
+    <br/>
+    <a href="https://www.linkedin.com/in/benwilsonfriedman/"><i class="fab fa-linkedin"></i> LinkedIn </a> •
+		<a href="/Privacy/index.html">Privacy</a> •
+		<a href="/Terms/index.html">Terms of Service</a> •
+    <a href="https://github.com/montymxb"><i class="fab fa-github-square"></i> Github</a>
+</footer>
+</body>
+</html>

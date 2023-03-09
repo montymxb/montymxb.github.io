@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns"><head>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-47712445-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script><meta charset="utf-8">
+    <meta name="robots" content="index,follow,noodp">
+    <title>Fractal Brownian Motion: Terrain Generator</title>
+    <meta name="description" content="A terrain generator utilizing fractal brownian motion to produce terrain, water, and clouds using OpenGL Shaders.">
+    <meta name="author" content="Benjamin Friedman Wilson">
+    <meta name="date" content="2020-03-30T16:02:32+01:00" >
+    <meta name="keywords" content="Shaders,Fractal,Clouds,Graphics">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <link rel="home" href="https://www.uphouseworks.com"/>
+    <link rel="canonical" href="https://www.uphouseworks.com/posts/fractal-brownian-motion/"/>
+    <meta name="generator" content="Hugo 0.89.2" /><link rel="shortcut icon" href="https://www.uphouseworks.com/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="https://www.uphouseworks.com/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome/all.min.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/core.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/feed.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/article2021.min.css">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/ms-tile.png">
+    <meta name="twitter:site" content="@uphouseworks">
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.uphouseworks.com/image/og_image.png"/>
+
+<meta name="twitter:title" content="Fractal Brownian Motion: Terrain Generator"/>
+<meta name="twitter:description" content="A terrain generator utilizing fractal brownian motion to produce terrain, water, and clouds using OpenGL Shaders."/>
+
+    <meta itemprop="image" content="/images/uphw_white_greyBack.png">
+    <meta itemprop="url" content="https://www.uphouseworks.com/posts/fractal-brownian-motion/"><meta itemprop="name" content="Fractal Brownian Motion: Terrain Generator">
+<meta itemprop="description" content="A terrain generator utilizing fractal brownian motion to produce terrain, water, and clouds using OpenGL Shaders."><meta itemprop="datePublished" content="2020-03-30T16:02:32+01:00" />
+<meta itemprop="dateModified" content="2020-03-30T16:02:32+01:00" />
+<meta itemprop="wordCount" content="261"><meta itemprop="image" content="https://www.uphouseworks.com/image/og_image.png"/>
+<meta itemprop="keywords" content="Fractal Brownian Motion,Graphics,Programming,OpenGL,Shaders,Github," />
+    <meta property="og:site_name" content="Uphouseworks"><meta property="og:title" content="Fractal Brownian Motion: Terrain Generator" />
+<meta property="og:description" content="A terrain generator utilizing fractal brownian motion to produce terrain, water, and clouds using OpenGL Shaders." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.uphouseworks.com/posts/fractal-brownian-motion/" /><meta property="og:image" content="https://www.uphouseworks.com/image/og_image.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-03-30T16:02:32+01:00" />
+<meta property="article:modified_time" content="2020-03-30T16:02:32+01:00" />
+<meta property="og:see_also" content="https://www.uphouseworks.com/posts/program-concept-classifications/" /><meta property="og:see_also" content="https://www.uphouseworks.com/posts/banter/" />
+
+<link rel="apple-touch-icon" href="/images/apple1.png"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/apple2.png"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/apple3.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/apple4.png"/>
+    <link rel="apple-touch-startup-image" href="/images/startup.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script src="js/Scroller.js" type="application/javascript"></script>
+    <script src="js/fontawesome/all.min.js" type="application/javascript"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "name": "Fractal Brownian Motion: Terrain Generator",
+        "url": "https:\/\/www.uphouseworks.com\/posts\/fractal-brownian-motion\/",
+        "image": "/images/uphw_white_greyBack.png",
+        "sameAs" : [
+          "https:\/\/www.facebook.com\/uphouseworks",
+          "https:\/\/twitter.com\/uphouseworks",
+        ]
+      }
+    </script>
+
+</head>
+<body><header id="banner">
+  <nav class="navbar">
+    <a class="home" href="/">Uphouseworks</a>
+    <div class="links">
+      <a class="link-item small-hidden" href="/">Uphouseworks</a>
+      <a class="link-item" href="/About/">About</a>
+      <a class="link-item" href="/posts/">Posts</a>
+      <a class="link-item" href="https://www.linkedin.com/in/benwilsonfriedman/"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a class="link-item" href="https://github.com/montymxb"><i class="fab fa-github-square"></i> Github</a>
+    </div>
+
+    
+  </nav>
+  
+</header>
+<main id="content">
+<article class="feed">
+    <div class="entry">
+      <header id="post-header"><p><a href="/">Home</a> / <a href="/posts/">posts</a> / Fractal Brownian Motion: Terrain Generator</p><h1>Fractal Brownian Motion: Terrain Generator</h1><div id="contain-img" class="sqimg" style="width:100%;display:inline-block;background-image:url('https://raw.githubusercontent.com/montymxb/FBM_TerrainGenerator/master/submission/cloud2.gif');background-repeat:no-repeat;background-size:contain"></div><h2>A terrain generator utilizing fractal brownian motion to produce terrain, water, and clouds using OpenGL Shaders.</h2>
+          <span class="date"> Reading Time: 2 mins </span>
+          <div>
+              <p class="date">by Benjamin Friedman Wilson, <time>March 30, 2020</time></p>
+              </div></header>
+<div class="tags">
+  
+   <a class="tag-item" href="/tags/fractal-brownian-motion">
+     <span>Fractal Brownian Motion</span></a>
+  
+   <a class="tag-item" href="/tags/graphics">
+     <span>Graphics</span></a>
+  
+   <a class="tag-item" href="/tags/programming">
+     <span>Programming</span></a>
+  
+   <a class="tag-item" href="/tags/opengl">
+     <span>OpenGL</span></a>
+  
+   <a class="tag-item" href="/tags/shaders">
+     <span>Shaders</span></a>
+  
+   <a class="tag-item" href="/tags/github">
+     <span>Github</span></a>
+  
+</div>
+<p>I was playing around with fractal brownian motion (fbm) as a form of generating computer graphics noise.
+I implemented a terrain generator based off of fbm for land, water, and clouds.
+The generation of the land as a height map from the resulting values came out quite nice, and I was able to generate fairly decent types of terrain in OpenGL Shader Language.
+The approach I used allowed me to perform nearly all of the generation for the terrain in shaders, along with the water and clouds.
+The water itself was also an interesting experiment. It was a simple <strong>sin</strong> wave modified with a light dash of fbm to give it an uneven, wavy texture.
+The results here were quite surprising in terms of quality, and this is something I will certainly look into down the road.</p>
+<figure><img src="https://raw.githubusercontent.com/montymxb/FBM_TerrainGenerator/master/submission/island2.gif"
+         alt="A top-down view of the terrain generator. The cloud volume is super-imposed over the landmass, with a separate sheet simulating water below."/><figcaption>
+            <p>A top-down view of the terrain generator. The cloud volume is super-imposed over the landmass, with a separate sheet simulating water below.</p>
+        </figcaption>
+</figure>
+
+<p>The clouds themselves were implemented using fbm as well, but were generated using volumetric ray casting.
+This technique allows a ray to be cast through a solid surface, computing the fbm values as the ray moves through the surface.
+The result is calculated dynamically, and as the eye position changes, the resulting values computed by the rays change as well.
+To the viewer it then appears that a solid surface (such as a cube) is in fact a volume of clouds.
+Adding a slight adjustment with regards to time and a flowing volume of clouds was completed.</p>
+<p><a href="https://github.com/montymxb/FBM_TerrrainGenerator#readme">FBM Terrain Generator on Github.</a></p>
+<aside>
+
+
+
+<h3>See Also</h3>
+<ul>
+	
+  <div>
+    <div class="entry" style="display:flex">
+  <span style="margin-right:8px"><div style="width:100px"></div></span>
+  <span>
+    <a href="https://www.uphouseworks.com/posts/htjson/" class="link" style='font-size:30px;font-weight:500;margin:0'>HTJSON</a>
+    <p class="date">Mar 8, 2017</p>
+    <p class="text" style='margin:0'>A prototype HTML parser implemented in PHP.</p>
+  </span>
+</div>
+
+  </div>
+	
+  <div>
+    <div class="entry" style="display:flex">
+  <span style="margin-right:8px"><img src="/images/parse.png" width="100"><div style="width:100px"></div></span>
+  <span>
+    <a href="https://www.uphouseworks.com/posts/parse-community/" class="link" style='font-size:30px;font-weight:500;margin:0'>Working on Parse</a>
+    <p class="date">Mar 8, 2017</p>
+    <p class="text" style='margin:0'>Working on the Parse PHP SDK for Parse Community</p>
+  </span>
+</div>
+
+  </div>
+	
+  <div>
+    <div class="entry" style="display:flex">
+  <span style="margin-right:8px"><img src="/images/pacm1.gif" width="100"><div style="width:100px"></div></span>
+  <span>
+    <a href="https://www.uphouseworks.com/posts/pacman/" class="link" style='font-size:30px;font-weight:500;margin:0'>Blind Search in Pacman</a>
+    <p class="date">Mar 30, 2020</p>
+    <p class="text" style='margin:0'>A quick demonstration of blind search techniques being applied to the game of Pacman, and observations about the effectiveness of a simple BFS approach.</p>
+  </span>
+</div>
+
+  </div>
+	
+  <div>
+    <div class="entry" style="display:flex">
+  <span style="margin-right:8px"><div style="width:100px"></div></span>
+  <span>
+    <a href="https://www.uphouseworks.com/HangmanAzul/" class="link" style='font-size:30px;font-weight:500;margin:0'>The Original Hangman Azul Landing Page</a>
+    <p class="date">Jul 15, 2016</p>
+    <p class="text" style='margin:0'>The original landing page for Hangman Azul, a retired Android app that used bluetooth to allow playing with friends anywhere, featuring custom animations and graphics.</p>
+  </span>
+</div>
+
+  </div>
+	
+  <div>
+    <div class="entry" style="display:flex">
+  <span style="margin-right:8px"><img src="/images/azul_512.png" width="100"><div style="width:100px"></div></span>
+  <span>
+    <a href="https://www.uphouseworks.com/posts/hangmanazul/" class="link" style='font-size:30px;font-weight:500;margin:0'>Hangman Azul, a Hangman-Style Android App</a>
+    <p class="date">Jul 15, 2016</p>
+    <p class="text" style='margin:0'>Hangman Azul is a retired Hangman Android app that uses bluetooth to allow playing with friends anywhere, featuring custom animations and graphics.</p>
+  </span>
+</div>
+
+  </div>
+	
+</ul>
+
+</aside>
+    </div>
+</article>
+
+        </main><footer id="footer">
+    <span>Copyright &copy; Benjamin Friedman Wilson 2021</span>
+    <br/>
+    <div class="fimg" style="background-image: url('/images/spatial_script_bw.png')"></div>
+    <br/>
+    <a href="https://www.linkedin.com/in/benwilsonfriedman/"><i class="fab fa-linkedin"></i> LinkedIn </a> •
+		<a href="/Privacy/index.html">Privacy</a> •
+		<a href="/Terms/index.html">Terms of Service</a> •
+    <a href="https://github.com/montymxb"><i class="fab fa-github-square"></i> Github</a>
+</footer>
+</body>
+</html>

@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.container {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+.container .left, .container .right {
+  min-height: 100vh;
+  width: 50%;
+  margin: 0;
+  padding: 0;
+}
+
+.container .left {
+  float: left;
+}
+
+.container .right {
+  float: right;
+  background-color: rgb(253,158,43);
+}
+
+.right .console {
+  margin: 8px;
+  padding: 8px;
+}
+
+#interpreter {
+  margin: 8px;
+  padding: 8px;
+}

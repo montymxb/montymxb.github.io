@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Resume on Uphouseworks</title>
+    <link>https://www.uphouseworks.com/tags/resume/</link>
+    <description>Recent content in Resume on Uphouseworks</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 21 Nov 2021 16:02:32 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.uphouseworks.com/tags/resume/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <item>
+      <title>A Labyrinth Style Puzzle</title>
+      <link>https://www.uphouseworks.com/posts/labyrinth-puzzle/</link>
+      <pubDate>Fri, 11 Feb 2022 11:30:32 +0100</pubDate>
+      
+      <guid>https://www.uphouseworks.com/posts/labyrinth-puzzle/</guid>
+      <description>&lt;p&gt;I wrote up a version of this puzzle back in 2017 for fun over a sunny day, and I had &lt;em&gt;quite&lt;/em&gt; a lot of fun with it!
+The design is simple, but it was still enjoyable to learn on, and a nice way to pass the time.
+Although the puzzle itself was finished some time ago, I wanted to collect all the details before writing this article.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.uphouseworks.com/images/final-puz.png&#34;
+         alt=&#34;An image of the final puzzle design, with player&amp;amp;rsquo;s &amp;amp;lsquo;ball&amp;amp;rsquo; in blue and the goal position in green.&#34; width=&#34;350&#34;/&gt;&lt;figcaption&gt;
+            &lt;p&gt;An image of the final puzzle design, with player&amp;rsquo;s &amp;lsquo;ball&amp;rsquo; in blue and the goal position in green.&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;If you&amp;rsquo;re looking to try out the puzzle first, &lt;a href=&#34;https://www.uphouseworks.com/puzzles/p1/&#34;&gt;you can click here to play it now&lt;/a&gt;. I&amp;rsquo;ve setup a simple stepping of 10 puzzles, starting at the easiest difficulty and gradually ramping up to something decently challenging.&lt;/p&gt;
+&lt;p&gt;In the following article I&amp;rsquo;ll elaborate on some background regarding the idea and design, how I built the puzzle, and where the process led me. Overall, I found the whole experience very interesting, as I had never written up an HTML5 game from scratch before.&lt;/p&gt;
+&lt;h2 id=&#34;the-idea-and-design&#34;&gt;The Idea and Design&lt;/h2&gt;
+&lt;p&gt;It&amp;rsquo;s been almost 5 years ago since I decided to start writing this puzzle, making it a bit difficult to recall &lt;em&gt;all&lt;/em&gt; the details.&lt;/p&gt;
+&lt;p&gt;What I do remember was the idea: to make a fun, simple puzzle that inverted the traditional &amp;lsquo;player moves in the puzzle&amp;rsquo; mechanic. I remember being inspired by the design of &lt;a href=&#34;https://en.wikipedia.org/wiki/Labyrinth_(marble_game)&#34;&gt;labyrinth puzzles&lt;/a&gt; and &lt;a href=&#34;https://en.wikipedia.org/wiki/Ball-in-a-maze_puzzle&#34;&gt;ball-maze puzzles&lt;/a&gt;. If you&amp;rsquo;ve ever tried one of those then you already have a good idea of what I&amp;rsquo;m talking about.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.uphouseworks.com/images/puz.jpg&#34;
+         alt=&#34;An image depicting a wooden puzzle with channels cut for a ball to move through.&#34; width=&#34;350&#34;/&gt;&lt;figcaption&gt;
+            &lt;p&gt;An example of simple wooden labyrinth puzzle, from the Shalinindia Store on Amazon.&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;I figured it would be a good exercise to try and capture that same experience in a single web page. In doing so, I had to determine what elements I wanted to capture and how.&lt;/p&gt;
+&lt;p&gt;It made sense to first quantize positions rather than to try and represent all possible positions on a board &amp;ndash; as is the case with the original game. If I could still captured the navigational &amp;lsquo;feel&amp;rsquo; of rotating a puzzle around, then this would be an okay choice. What I did lose by doing this was the flexible nature of those puzzles, where small movements can have a big difference. To me that was important, &lt;em&gt;but&lt;/em&gt; I decided to eschew the extra motion in favor of a simpler left/right rotation. In choosing to take the simpler design route, I could represent a puzzle and its solution as a combination of rotations. No need to do a physics simulation to achieve the same effect.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.uphouseworks.com/images/p-rotation.png&#34;
+         alt=&#34;A sketch demonstrating what left/right rotations would mean for this puzzle.&#34; width=&#34;350&#34;/&gt;&lt;figcaption&gt;
+            &lt;p&gt;A sketch demonstrating what left/right rotations would mean for this puzzle.&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;I also knew early on that I wanted to be able to quickly generate new puzzles of varying difficulty. I figured I could do this via a search algorithm, but that it would be best to first focus on generating puzzles &amp;ndash; and to resolve difficulty later. Once I got to the point of establishing puzzle difficulty, my plan was to integrate search to guarantee solvable puzzles of a given difficulty.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.uphouseworks.com/images/p-diff.png&#34;
+         alt=&#34;An example of 3 puzzles of increasing difficulty.&#34; width=&#34;400&#34;/&gt;&lt;figcaption&gt;
+            &lt;p&gt;An example of 3 puzzles of increasing difficulty.&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;In general, I found it very enjoyable to break a problem like this into several smaller ones, solving one step at a time and building them back together to finish the task. It makes for a more fruitful end result, a more relaxing process, and is a good skill to use for projects in general.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.uphouseworks.com/images/p-flow.png&#34;
+         alt=&#34;The steps I had planned out for building this puzzle.&#34; width=&#34;400&#34;/&gt;&lt;figcaption&gt;
+            &lt;p&gt;The steps I had planned out for building this puzzle.&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;building-the-puzzle&#34;&gt;Building the Puzzle&lt;/h2&gt;
+&lt;p&gt;To begin the process, I thought of some technologies that I could use to build such a puzzle. I was able to lean on my prior experience building full-stack applications, and plenty of front-end experience too. So, I decided to implement this puzzle as a static web page. I went with the usual HTML/CSS/Javascript approach to build up the components of the puzzle. I could have used WebGL to implement the puzzle, but I wanted to see if it could be done &amp;ndash; and done reasonably &amp;ndash; in HTML with CSS animations.&lt;/p&gt;
+&lt;p&gt;I didn&amp;rsquo;t go with a front-end framework like Vue.js or React, and instead stayed with plain Javascript (generally ES5 and up). There was no particular reason for this, just a personal preference. To me, this was an experiment, and so I wanted to see how this would work without adding in too many other dependencies. As problems popped up, I figured I could then look towards frameworks to solve them later on.&lt;/p&gt;
+&lt;p&gt;When I started designing the puzzle I knew I wanted it to run on a single web page with a simple interface. When I thought of how I could design this visually, I actually thought of a crossword puzzle. I noticed the same arrangement of black and white squares could be used to represent quantized positions. White squares would be akin to open spaces, forming paths, while black squares would be barriers in the puzzle. My first approaches produced layouts that looked exactly like a crossword puzzle, much like the cover image for this article above. Puzzles in this style were also pretty straightforward to generate, suggesting that I would have an easy time manipulating puzzles further in the design process.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.uphouseworks.com/images/p-sq.png&#34;
+         alt=&#34;Choosing to have a crossword puzzle look for my puzzle layout.&#34; width=&#34;400&#34;/&gt;&lt;figcaption&gt;
+            &lt;p&gt;Choosing to have a crossword puzzle look for my puzzle layout.&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Next, with my puzzle layout chosen, I chose a square &amp;lsquo;space&amp;rsquo; to represent the ball. This matched nicely with the geometry of the puzzle, and could be de-marked by a different color (I went with blue). This allowed me to easily fit the player into the more discrete representation that I chose for this puzzle. Since the representation I had so far was 2 dimensional, I limited the rotations to simple 90 degree turns in the XY plane. This gave me simple rotations for a simple puzzle, where I could &amp;lsquo;simulate&amp;rsquo; the player&amp;rsquo;s square moving down at all times as the puzzle rotated around. To fulfill the objective of the puzzle, a goal space was added in green.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.uphouseworks.com/images/p-cols.png&#34;
+         alt=&#34;An example of a puzzle with a player and a goal.&#34; width=&#34;400&#34;/&gt;&lt;figcaption&gt;
+            &lt;p&gt;An example of a puzzle with a player and a goal.&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Once the rotations were in place I quickly realized that made the puzzle a bit &lt;em&gt;disorienting&lt;/em&gt;. After only a few rotations in either direction, it was difficult to determine the original orientation of the puzzle. For smaller puzzles this wasn&amp;rsquo;t too problematic, but as they became larger it was increasingly more complex to track orientation over rotations. Thankfully, the solution that I came up with was pretty simple, not too different from a compass mark actually. I added a dashed line to de-mark the bottom of the puzzle in the starting orientation. Once this was present, no matter how many times the puzzle was rotated, it was easy to determine &amp;lsquo;how&amp;rsquo; the puzzle was rotated in relation to where it started at.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.uphouseworks.com/images/p-bar.png&#34;
+         alt=&#34;A crude example of a dashed marker to denote the bottom of the puzzle, to track its orientation as rotations are performed.&#34; width=&#34;300&#34;/&gt;&lt;figcaption&gt;
+            &lt;p&gt;A crude example of a dashed marker to denote the bottom of the puzzle, to track its orientation as rotations are performed.&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;verifying-puzzles&#34;&gt;Verifying Puzzles&lt;/h2&gt;
+&lt;p&gt;So, at this point I had built up a simple puzzle setup. I had rotations, a start point, and a goal, along with a simple goal check. However the puzzles generated at this point were not guaranteed to be solvable. In fact, while trying things out, I had implemented a &lt;em&gt;page reload&lt;/em&gt; to generate puzzles until a solvable one was found. Needless to say, it wasn&amp;rsquo;t so great to use at that point.&lt;/p&gt;
+&lt;p&gt;That brought me to the next problem to solve, producing puzzles that are guaranteed to be solvable in a certain number of moves by applying search. In order to do this correctly, I needed to solve a pair of problems:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How to determine if a puzzle was solvable.&lt;/li&gt;
+&lt;li&gt;How to determine the &lt;em&gt;difficulty&lt;/em&gt; of a puzzle&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Turns out these two problems were capable of being solved together through Breadth-first Search (BFS). Implementing BFS in Javascript was simple enough, simulating a virtual traversal through the puzzle by a series of moves (following the rules imposed by rotations). From a given starting point, if BFS was able to find a path to the end goal, then the puzzle was deemed solvable; easy enough.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.uphouseworks.com/images/bfs-sol.png&#34;
+         alt=&#34;Example of how BFS can simulate clockwise (CW) and counterclockwise (CCW) rotations to discover a solution; where each &amp;amp;lsquo;p#&amp;amp;rsquo; represents a unique position on the board.&#34; width=&#34;350&#34;/&gt;&lt;figcaption&gt;
+            &lt;p&gt;Example of how BFS can simulate clockwise (CW) and counterclockwise (CCW) rotations to discover a solution; where each &amp;lsquo;p#&amp;rsquo; represents a unique position on the board.&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;However, there were some limitations. BFS would only work so long as the depth of the solution space was relatively small &amp;ndash; which was the case here (thankfully). In addition, that&amp;rsquo;s assuming a puzzle &lt;em&gt;has&lt;/em&gt; a solution. In the case it doesn&amp;rsquo;t, the maximal depth that BFS could explore would need to have a reasonable bound. In practice I found that building random puzzles of 10x10 dimensions proved to be rarely difficult to verify or invalidate, making this a non-issue.&lt;/p&gt;
+&lt;p&gt;This was great, since using BFS would let me be sure that if I &lt;em&gt;did&lt;/em&gt; find a solution it was guaranteed to be one of the shortest possible solutions &amp;ndash; albeit maybe not the only shortest solution. This also allowed me to determine the difficulty of a puzzle as a function of the minimal number of rotations required to solve it. At this point I was feeling pretty good about the puzzle verification, but it wasn&amp;rsquo;t my first time doing something like this. I had previously written up a project where I implemented &lt;a href=&#34;https://www.uphouseworks.com/posts/pacman/&#34;&gt;blind search in pacman project&lt;/a&gt; that tried BFS, DFS, minimax, and A* to guide a simple AI agent playing the game.&lt;/p&gt;
+&lt;p&gt;While implementing BFS I did run into a small problem that was noteworthy. On writing this puzzle solver the first time around I wasn&amp;rsquo;t doing &lt;em&gt;any&lt;/em&gt; path trimming to reduce my search space. The result was BFS would almost &lt;em&gt;never&lt;/em&gt; terminate, since it could simply loop forever by rotating back &amp;amp; forth repeatedly. This made verification impossible, even for trivially simple 2x2 puzzles. So, I rectified this by adding in some history, and excluded previously visited spaces from being visited again.&lt;/p&gt;
+&lt;p&gt;At first this worked, and successfully reduced the search space. However, it also excluded puzzles that were still legitimately solvable &amp;ndash; being some of the best ones to try out too! I had forgotten to account for puzzles that required 2 rotations to pass through a 90 degree corner. These were valid puzzles, so I increased the exclusion condition to only apply to spaces that had been visited 2 or more times. The first visit would be to enter the corner, and the 2nd would be to rotate out of the corner.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.uphouseworks.com/images/p-pocket.png&#34;
+         alt=&#34;An example of a double rotation through a corner, where 2 visits are required to pass through.&#34; width=&#34;400&#34;/&gt;&lt;figcaption&gt;
+            &lt;p&gt;An example of a double rotation through a corner, where 2 visits are required to pass through.&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;After that I was getting some very challenging puzzles &amp;ndash; exactly what I was looking for! This also increased the complexity for verifying (or invalidating) puzzles, but the overall puzzle size kept this reasonably bounded.&lt;/p&gt;
+&lt;p&gt;An interesting note about this method of verification is that it verified that puzzles were guaranteed to be solvable from a &lt;em&gt;given starting point&lt;/em&gt;. It did &lt;em&gt;not&lt;/em&gt; guarantee that puzzles were solvable from &lt;em&gt;any&lt;/em&gt; point. As an example, a player could perform a series of rotations to trap themselves into a portion of the puzzle that did not have a path to the solution. I didn&amp;rsquo;t anticipate this in advance, but honestly I was quite happy with it. By making the price of some moves infinitely high (rendering the puzzle incapable of being solved) it created an extra element of challenge in the game. To keep the game going when a player got stuck they would have to reset the puzzle &amp;amp; try again. I found this forced me to deeply consider my moves before I made them, and overall made me enjoy it more than I expected.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.uphouseworks.com/images/p-stuck.png&#34;
+         alt=&#34;A stuck position, where a solution is no longer possible without resetting.&#34; width=&#34;400&#34;/&gt;&lt;figcaption&gt;
+            &lt;p&gt;A stuck position, where a solution is no longer possible without resetting.&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;a-sidenote-javascript-and-random&#34;&gt;A Sidenote: Javascript and Random&lt;/h2&gt;
+&lt;p&gt;During this process I was working with PRNGs in Javascript and noticed the lack of a configurable one. I&amp;rsquo;m a bit embarrassed to admit that I didn&amp;rsquo;t realize this before, but I somehow managed to work with Javascript&amp;rsquo;s PRNG over many years without realizing it can&amp;rsquo;t be seeded &amp;ndash; at least not by the user. According to &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random&#34;&gt;Mozilla&amp;rsquo;s Javascript docs&lt;/a&gt; the built-in random number generator is a PRNG, but the seed is chosen by the underlying implementation and not settable by the user.&lt;/p&gt;
+&lt;p&gt;For my approach to work, I needed a seed-able PRNG so I could discover &amp;amp; then regenerate the same puzzles repeatedly. It turns out you can write up something that acts a PRNG without too much difficulty, where even a relatively decent hash function would work for something non-critical like this. Rather than write one up myself &amp;amp; try to achieve an ideal distribution, I found an implementation of the Simple Fast counter PRNG (SFC32). I was able to plug this into my implementation and get a decent 128 bits of state. SFC32 comes from &lt;a href=&#34;http://pracrand.sourceforge.net/&#34;&gt;PractRand&lt;/a&gt;, but the beauty of picking a PRNG is that there&amp;rsquo;s &lt;em&gt;so many choices&lt;/em&gt;. Depending on what properties your application requires, you can pick and choose the right PRNG for your case, or even multiple for different parts of your process. I picked SFC32 based on its speed, decent state, and the fact that it passes PractRand&amp;rsquo;s suite of tests.&lt;/p&gt;
+&lt;p&gt;Although I didn&amp;rsquo;t use it here, I would also recommend checking out the &lt;a href=&#34;https://www.pcg-random.org/&#34;&gt;PCG Random family of PRNGs&lt;/a&gt;. PCG Random was written up back in 2014, but it makes for an excellent read. I find that I keep coming back across it when it comes to implementing PRGNs, and it was one of the first implementations that I seriously read into.&lt;/p&gt;
+&lt;p&gt;At this point I was pretty much done, and went to writing up the post that you&amp;rsquo;re reading right now! The last additions were to wrap a simple interface around the puzzle to describe how to play it and progress.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.uphouseworks.com/images/final-puz.png&#34;
+         alt=&#34;Final implementation of the puzzle.&#34; width=&#34;350&#34;/&gt;&lt;figcaption&gt;
+            &lt;p&gt;Final implementation of the puzzle.&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;final-thoughts-and-considerations&#34;&gt;Final Thoughts and Considerations&lt;/h2&gt;
+&lt;p&gt;With the puzzle done I&amp;rsquo;ve had a lot of time to reflect on the process, and to think about what was most notable to me. I&amp;rsquo;ve done a lot of front-end development over the years, but I&amp;rsquo;ve only done a handful of game related projects. With that in mind, these aspects stood out to me:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Going with HTML and CSS for an interactive game works great for discrete implementations.&lt;/li&gt;
+&lt;li&gt;BFS gives an easy way to verify that a problem is solvable and has a minimum difficulty&lt;/li&gt;
+&lt;li&gt;Not having a seed-able PRNG wasn&amp;rsquo;t a problem, given that all the elements to create one are already present. If you&amp;rsquo;re interested in Javascript&amp;rsquo;s PRNG situation you can also check out &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random&#34;&gt;Mozilla&amp;rsquo;s docs&lt;/a&gt; for more details.&lt;/li&gt;
+&lt;li&gt;Writing this up took &lt;em&gt;way&lt;/em&gt; more time than I expected, probably because the time from implementation to documentation was so far apart.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Anyways, I hope you&amp;rsquo;ve enjoyed this read, and &lt;a href=&#34;https://www.uphouseworks.com/puzzles/p1/&#34;&gt;if you want to play the puzzle now you can try it out here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    
+    
+    <item>
+      <title>Writing a Resume in LaTeX</title>
+      <link>https://www.uphouseworks.com/posts/writing-a-resume-in-latex/</link>
+      <pubDate>Sun, 21 Nov 2021 16:02:32 +0100</pubDate>
+      
+      <guid>https://www.uphouseworks.com/posts/writing-a-resume-in-latex/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve recently been applying for careers, and have found myself exploring how I could best design my resume in LaTeX. I&amp;rsquo;ve had several years of experience writing technical documents in LaTeX, but none in writing a resume (or a CV for that matter). My first versions were not quite up to par, but it was through repeated iteration and exploration that I&amp;rsquo;ve begun to settle on a design that I&amp;rsquo;m happy with. Here are some points that I would like to share about writing a resume/CV in LaTeX. As a disclaimer my points are not perfect, and I&amp;rsquo;m still discovering new facets to keep in mind.&lt;/p&gt;
+&lt;h3 id=&#34;for-starters-why-would-you-want-to-write-your-resume-in-latex&#34;&gt;For starters, why would you want to write your resume in LaTeX?&lt;/h3&gt;
+&lt;p&gt;This is a great question to start with, as I don&amp;rsquo;t want to give the impression that LaTeX is somehow the only way to prepare your resume. Clearly, this is not the case, and there are an abundance of sensible alternatives out there to choose from. My personal rationale for picking LaTeX stems from how many other choices I&amp;rsquo;ve used and abandoned over the years. I&amp;rsquo;ve had to rewrite my resumes numerous times over the last 8 years, and everytime I somehow ended up using a different choice. Ranging from Word, Google Docs and even Libre Office. At the time I found these document editors were sufficient, but when I wanted to go back and track revisions it wasn&amp;rsquo;t so clear. Today most document editors should have some form of versioning, but what I was really looking for were notes &amp;amp; annotations. A resume can change widely based on the kind of job or career you&amp;rsquo;re applying for, and having notes to track changes is helpful. Document editors do have these features, but I always found myself wanting to keep the formatting &amp;amp; content notes separate from the final document. To this end, LaTeX fills the requirement nicely. Here are a few other points that come to mind.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.latex-project.org/get/&#34;&gt;Great platform support&lt;/a&gt;, and web support via &lt;a href=&#34;https://www.overleaf.com/&#34;&gt;Overleaf&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Ability to build a &lt;a href=&#34;https://www.overleaf.com/learn/latex/How_to_write_a_LaTeX_class_file_and_design_your_own_CV_(Part_1)&#34;&gt;reusable resume/CV class&lt;/a&gt; for usage down the road.&lt;/li&gt;
+&lt;li&gt;Can version control cleanly with your favorite VCS, probably &lt;a href=&#34;https://git-scm.com/&#34;&gt;git&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In addition, LaTeX offers a degree of control that is closer to how I write markdown or programs every day. When I work in LaTeX I feel that I can innately follow the notation in this fashion, but this is admittedly a personal bias. Based on what you daily drive for your work, it is likely you will find and cherish a very specific document editor for your uses.&lt;/p&gt;
+&lt;h3 id=&#34;what-can-i-use-to-get-started&#34;&gt;What can I use to get started?&lt;/h3&gt;
+&lt;p&gt;As mentioned above you can always hop on Overleaf to get started writing your resume. They have excellent documentation as well, in case your LaTeX is a little rusty or if you&amp;rsquo;re venturing out of your experienced area.&lt;/p&gt;
+&lt;p&gt;I daily drive on macOS, and have found that &lt;a href=&#34;https://pages.uoregon.edu/koch/texshop/&#34;&gt;TexShop&lt;/a&gt; works great locally. I even used it to write up my thesis earlier this year using a wonderful document class provided from Oregon State University.&lt;/p&gt;
+&lt;h3 id=&#34;what-should-i-watch-out-for&#34;&gt;What should I watch out for?&lt;/h3&gt;
+&lt;p&gt;This isn&amp;rsquo;t exhaustive, but here are some key elements that caught me while I was writing my resume in LaTeX.&lt;/p&gt;
+&lt;h4 id=&#34;make-sure-your-document-dimensions-are-formatted-correctly&#34;&gt;Make sure your document dimensions are formatted correctly.&lt;/h4&gt;
+&lt;p&gt;This may seem obvious, but I definitely missed this one the first time around while I was laser focused on content. In particular, &lt;strong&gt;make sure you maintain consistent margins on all sides&lt;/strong&gt;. In general, clean 1 inch margins on all sides is a good choice. However, if you find yourself wanting a little extra space, you can always go for 0.5 inch margins instead. Just be sure to make your choice clear and consistent. If your use case requires you to have a different margin size than either of these, that&amp;rsquo;s perfectly fine, but pay careful attention to making sure this is set correctly. A poorly formatted margin will immediately show up in comparison to other resumes.&lt;/p&gt;
+&lt;p&gt;This is where other document editors have an advantage, as most automatically set these margins correctly for you at the start. If you&amp;rsquo;re not sure, you can open up a quick document in Word or Google Docs to check what these default margins are set to. More often than not these tend be 1 inch margins.&lt;/p&gt;
+&lt;h4 id=&#34;watch-those-line-numbers&#34;&gt;Watch those line numbers!&lt;/h4&gt;
+&lt;p&gt;For a CV, line numbers are sensible, but make sure to &lt;strong&gt;drop the line numbers on your resume&lt;/strong&gt;. It&amp;rsquo;s a small &amp;lsquo;gotcha&amp;rsquo;, but if you&amp;rsquo;re sharing a LaTeX class for your resume and CV it&amp;rsquo;s easy to slip up. This quick mark can help right before your resume document start.&lt;/p&gt;
+&lt;code style=&#34;line-height:1.5em&#34;&gt;
+&lt;br/&gt;\pagenumbering{gobble}&lt;br/&gt;
+&lt;/code&gt;
+
+&lt;h4 id=&#34;choose-your-fonts-carefully&#34;&gt;Choose your font(s) carefully&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.creativelive.com/blog/how-much-does-fonts-matter/&#34;&gt;Picking your font is an important choice&lt;/a&gt;. For some this may be a matter of settling on the default font, but with piles of resumes it&amp;rsquo;s easy for yours to blend into the rest. Picking a good font, or pairing of fonts, can help improve the legibility and presentation of your resume. It can also make your resume stand out visually from others. LaTeX&amp;rsquo;s default font isn&amp;rsquo;t too bad, but I personally have found going with Times is simple and quick to read.&lt;/p&gt;
+&lt;code style=&#34;line-height:1.5em&#34;&gt;
+&lt;br/&gt;% If ptm is present, you can get Times this way&lt;br/&gt;\renewcommand{\rmdefault}{ptm}&lt;br/&gt;
+&lt;/code&gt;
+
+&lt;p&gt;The above can be added before your document start, and will change the serif font in your document to Times New Roman. You can find more detail about this at &lt;a href=&#34;https://www.sascha-frank.com/Fonts/Times_New_Roman.html&#34;&gt;Sacha Frank&amp;rsquo;s page on Times New Roman in LaTeX&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In addition, it&amp;rsquo;s a good idea to pick a pair of fonts that work well together. &lt;a href=&#34;https://www.canva.com/learn/the-ultimate-guide-to-font-pairing/&#34;&gt;There are a variety of pairings that you can use&lt;/a&gt;, but I tend to work with a clear sans-serif font for my headers and serif font for my content. In my recent resume and CV I have found that I have a preference for Helvetica and Times New Roman, but I have changed this many times already, and probably will continue to do so. As you may have noticed, my entire site uses Helvetica, so I am &lt;em&gt;definitely&lt;/em&gt; biased towards it.&lt;/p&gt;
+&lt;p&gt;Perhaps most of all, &lt;strong&gt;keep in mind the impression that your font choices create, and whether it matches the desired tone of your document&lt;/strong&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;abstract-repeated-definitions&#34;&gt;Abstract Repeated Definitions&lt;/h4&gt;
+&lt;p&gt;f you find a number of acronyms or names that you write frequently, you have the option of &lt;strong&gt;defining a new command in latex to abstract the implementation detail away&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Writing C++ in LaTeX is a great example. I missed it numerous times, but simply writing C$++$ drops the ++ slightly below the C, making it a bit awkward (evident here as well). Maybe this was a poor to begin with on my part, but after doing some looking around it appears this has been &lt;a href=&#34;https://tex.stackexchange.com/questions/4302/prettiest-way-to-typeset-c-cplusplus&#34;&gt;a pretty common problem with a variety of solutions&lt;/a&gt;. Regardless of your solution choice, it&amp;rsquo;s often best to implement it as a reusable command.&lt;/p&gt;
+&lt;code style=&#34;line-height:1.5em&#34;&gt;
+&lt;br/&gt;\newcommand{\cpp}{C\texttt{++}}&lt;br/&gt;...&lt;br/&gt;And did I mention I know \cpp{}?&lt;br/&gt;
+&lt;/code&gt;
+
+&lt;p&gt;Again, this was a small change, but I found it to be dramatically better looking on the final result.&lt;/p&gt;
+&lt;h4 id=&#34;keep-an-eye-on-your-space&#34;&gt;Keep an eye on your space&lt;/h4&gt;
+&lt;p&gt;When writing a resume, &lt;strong&gt;it&amp;rsquo;s in your best interest to take advantage of all the space you have on your page&lt;/strong&gt;. Especially when you have large margins, you want to make sure that you&amp;rsquo;re demonstrating your best self on the limited real estate that you have. To this end, take care about how much trailing space you&amp;rsquo;re leaving behind throughout your document. If you&amp;rsquo;re finding that most of your lines are only half or 3/4 of the available width, maybe it would be best to segment your resume into a new layout with side-by-side sections. Not only can this help fill out some of the extra space on your resume, but it can bring a bit of balance and style to your resume&amp;rsquo;s presentation.&lt;/p&gt;
+&lt;h4 id=&#34;dont-be-afraid-to-change-the-layout&#34;&gt;Don&amp;rsquo;t be afraid to change the layout&lt;/h4&gt;
+&lt;p&gt;This ties in closely with what was mentioned above, but really don&amp;rsquo;t be worried to push the boundaries of the layout on your resume. Not only is this a learning opportunity, but it&amp;rsquo;s also a chance to create a truly spectacular resume that is, at the same time, clean and clear to your personal identity. Your resume&amp;rsquo;s layout is as much about you as it&amp;rsquo;s content, so make sure to take equal care of it!&lt;/p&gt;
+&lt;p&gt;&amp;hellip;And that&amp;rsquo;s about it.&lt;/p&gt;
+&lt;p&gt;As a parting note, there are plenty of LaTeX resume/CV templates out there to explore. I&amp;rsquo;ve recently been working with a version of a template that itself was based off of &lt;a href=&#34;https://github.com/deedy/Deedy-Resume&#34;&gt;Deedy&amp;rsquo;s template on Github&lt;/a&gt;, a notably popular choice. As of writing this it hasn&amp;rsquo;t been touched since 2016, but it serves as a nice example for the kind of resume layouts you can build in LaTeX. That, and there&amp;rsquo;s no shortage of forks based on it.&lt;/p&gt;
+&lt;p&gt;If you have any questions, or concerns, you can reach me at &lt;a href=&#34;mailto:wilson.f.benjamin@gmail.com&#34;&gt;wilson.f.benjamin@gmail.com&lt;/a&gt;. I&amp;rsquo;m always happy to hear your thoughts, corrections, and suggestions to provide better content for readers like yourself.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Revising the Latria Programming Language</title>
+      <link>https://www.uphouseworks.com/posts/revising-the-latria-programming-language/</link>
+      <pubDate>Sat, 20 Nov 2021 16:02:32 +0100</pubDate>
+      
+      <guid>https://www.uphouseworks.com/posts/revising-the-latria-programming-language/</guid>
+      <description>&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;Latria is a very small scripting language that I started writing back in 2014, and finished up sometime in 2016. The goal was to see whether or not I could write my own language if I really put my mind to it. In addition, I had recently learned &lt;a href=&#34;https://www.lua.org/&#34;&gt;lua&lt;/a&gt;, and was inspired to write something in a similar vein. It was a vast undertaking at the time, as I had no formal experience writing languages at all (and no programming language theory experience either at that point). It taught me a considerable amount about writing cross platform applications, dealing with stealthy pointer-related bugs, and the fundamentals of garbage collection. Towards the end I pushed myself to write in a simplified regular expression parsing engine, which was sufficient enough to integrate into the parser as well.&lt;/p&gt;
+&lt;p&gt;Looking back at it now, it certainly hasn’t aged in the prettiest way. There was a lot I didn’t understand at the time. However, this has had an unexpected fruit to bear. It now provides a wonderful opportunity to go back and revise what I initially wrote to create a better language than before.&lt;/p&gt;
+&lt;h3 id=&#34;problems-from-the-old-design&#34;&gt;Problems from the Old Design&lt;/h3&gt;
+&lt;p&gt;The first question is, of course, how can I make it better? Well, having authored the language I was acutely aware of some glaring problems:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;no formal semantics&lt;/li&gt;
+&lt;li&gt;dynamic scoping instead of static scoping&lt;/li&gt;
+&lt;li&gt;problems with the regular expression parsing engine&lt;/li&gt;
+&lt;li&gt;inconsistent null comparisons&lt;/li&gt;
+&lt;li&gt;issues passing the results of function calls directly as arguments to other functions&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;really&lt;/em&gt; tightly coupled lexer and parser&lt;/li&gt;
+&lt;li&gt;and more&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;benefits-from-the-old-design&#34;&gt;Benefits from the Old Design&lt;/h3&gt;
+&lt;p&gt;Thankfully, there were also some benefits to the design that I went with all those years ago:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;minimal dependencies, making the same code base compile on systems 6 years later with no problems&lt;/li&gt;
+&lt;li&gt;minimal size, both of the code base and the produced binary, so there isn’t so much to look over&lt;/li&gt;
+&lt;li&gt;documented guide that describes the existing behavior at &lt;a href=&#34;http://latria.uphouseworks.com/Guide/&#34;&gt;latria.uphouseworks.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;integrated unit and functional tests&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;and-what-i-would-like-to-preserve&#34;&gt;And, What I Would Like to Preserve&lt;/h3&gt;
+&lt;p&gt;With these pros and cons in mind, there are some aspects I would like to preserve whilst making revisions to the language:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;keeping it in ANSI C as a singular codebase&lt;/li&gt;
+&lt;li&gt;maintaining cross platform support for modern Mac, Linux and Windows operating systems (not necessarily in that order)&lt;/li&gt;
+&lt;li&gt;retain about the same level of expressiveness, i.e. no adding of additional syntax that needs to have the semantics extended&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As an extra note about cross platform support, the goal with Latria is that it can be pulled down, quickly compiled, and rendered executable in a minute or less on most systems.&lt;/p&gt;
+&lt;h3 id=&#34;rework-outline&#34;&gt;Rework Outline&lt;/h3&gt;
+&lt;p&gt;With that last point, here is a general outline for the initial steps I will be taking in the rework of Latria.&lt;/p&gt;
+&lt;h4 id=&#34;re-familiarize-myself-with-the-codebase&#34;&gt;Re-familiarize myself with the codebase&lt;/h4&gt;
+&lt;p&gt;And to also document the general flow. Although I wrote this language myself, it’s been some years since I’ve worked on it, and my initial response is to simply dive in. However, it would be best to survey the general layout of the project again so I can be sure of what I’m working with (or was working with). This is particularly important for any software project. Being well informed about the architectural structure of your project before making changes can limit the number of unintended bugs that you introduce. For those that you do still introduce, it can help you understand why they occur and how they can be fixed.&lt;/p&gt;
+&lt;h4 id=&#34;formalize-the-existing-syntax-and-semantics&#34;&gt;Formalize the existing syntax and semantics&lt;/h4&gt;
+&lt;p&gt;This point is somewhat connected to the prior one, as it is also a way of understanding the existing codebase. However, formalizing the existing syntax and semantics will inevitably unveil discrepancies in the original language design. It will also give me an idea of what kinds of changes I want to make to the syntax and semantics to closer represent the language that I’m looking for.&lt;/p&gt;
+&lt;h4 id=&#34;fix-dynamic-scoping&#34;&gt;Fix dynamic scoping&lt;/h4&gt;
+&lt;p&gt;This is the first bug that I would like to tackle, and I would like to do so without revising everything. The purpose of doing this first, as opposed to rewriting the language first, is to get an idea of what it’s like to fix an integrated part of this project. If it’s easy, it could be indicative that it won’t be too bad to migrate things. If it’s difficult, it may suggest that it would be better to rebuild everything from scratch using parts of the old framework.&lt;/p&gt;
+&lt;p&gt;I haven’t planned too far past this point, since it will be a litmus test for what comes next. Regardless of how it goes, I will probably spend a bit more time working on other smaller bugs (like function issues) to gradually bite off larger and larger chunks of the language.&lt;/p&gt;
+&lt;h3 id=&#34;end-goals&#34;&gt;End Goals&lt;/h3&gt;
+&lt;p&gt;As mentioned before, once this whole rework is done, I would like to have both a new and a familiar language. Latria should retain the notions of the original language, whilst also having a more rigorous implementation. The known bugs that I’m dealing with should be factored out, and the new implementation should have a clear syntax &amp;amp; semantics defined for it. I also want to keep the language fast, since that was one of the original goals of Latria to begin with.&lt;/p&gt;
+&lt;p&gt;I also want to add in a few new items:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;function composition (inspired by my recent work with Haskell at Oregon State University)&lt;/li&gt;
+&lt;li&gt;a Web Assembly implementation, so that Latria can be operated in the browser, independent of a server environment&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ultimately I’m very excited to be looking back at this project again! It was originally a very exciting way to test my skills at the time, and I certainly expect it to be the same now; but on a more advanced level. As I start work on components I’ll add my progress to this site as separate posts periodically. Partly for my own reference, but also as resource for others that are interested in this kind of work.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    
+    
+    <item>
+      <title>Functional Domain-Specific Shader Language (FDSSL)</title>
+      <link>https://www.uphouseworks.com/posts/fdssl/</link>
+      <pubDate>Fri, 25 Jun 2021 13:56:27 +0200</pubDate>
+      
+      <guid>https://www.uphouseworks.com/posts/fdssl/</guid>
+      <description>&lt;p&gt;A coleague and myself have recently undertaken early work on a higher-level shader language that compiles to &lt;a href=&#34;https://www.khronos.org/opengl/wiki/OpenGL_Shading_Language&#34;&gt;OpenGL Shading Language (GLSL)&lt;/a&gt;.
+This effort comes from my own personal experience working with GLSL shaders, and witnessing the complexity that they often entail.&lt;/p&gt;
+&lt;p&gt;To be frank I thoroughly enjoy working with shaders because of this complexity and the customization it enables, but it is difficult to get new-comers to understand how to work with and debug shaders for the same reasons.
+To address this, we wanted to design a language with some simple goals:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a simplified syntax with regard to GLSL&lt;/li&gt;
+&lt;li&gt;a functional paradigm&lt;/li&gt;
+&lt;li&gt;support shader composition (effectful sequencing)&lt;/li&gt;
+&lt;li&gt;support function composition&lt;/li&gt;
+&lt;li&gt;unify vertex and fragment shader workflows into a single script&lt;/li&gt;
+&lt;li&gt;enforce strong typing and ensure type safety&lt;/li&gt;
+&lt;li&gt;compile to various GLSL versions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Our initial efforts produced a workable version of FDSSL, but we still have much we would like to do.
+Ultimately, we&amp;rsquo;re hoping that this language provides a way for general necomers to computer graphics (or newcomers from functional languages) to be able to ease into GLSL itself.
+If our efforts are effective, we would also like to see how FDSSL could work in practical applications.
+Upon completion, we are also thinking about making this tool available online as a &lt;a href=&#34;https://webassembly.org/&#34;&gt;Web Assembly&lt;/a&gt; module.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/montymxb/FDSSL#readme&#34;&gt;FDSSL on Github.&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>BoGL: The Board Game Language</title>
+      <link>https://www.uphouseworks.com/posts/bogl/</link>
+      <pubDate>Tue, 01 Jun 2021 16:02:32 +0100</pubDate>
+      
+      <guid>https://www.uphouseworks.com/posts/bogl/</guid>
+      <description>&lt;p&gt;While finishing up my undergrad at Oregon State University myself and a group of students were putting the finishing touches on the Board Game Language (BoGL).
+BoGL, our capstone project, is a functional domain-specific programming language geared towards teaching new CS students.
+Additionally, the language (as the name implies) is geared towards teaching these concepts through the lens of board games.
+This project started around August 2019 and continues today, and working on it has been a wonderful experience!&lt;/p&gt;
+&lt;p&gt;By June 2019 we had successfully finished implementing the base language for public use.
+However, the circumstances around the world had changed due to the COVID-19 pandemic.
+Our original plan was to reach students by deploying BoGL to iPads via a native app.
+This already added complexity, but we were also facing a situation where it was uncertain whether students would have access to any particular device to start with.
+To address this, and to encompass as many devices as possible, we switched into deploying BoGL through a web application.
+We were then able to provide BoGL to students regardless of whether they had access to a computer, tablet, phone, or something else.
+So long as they had a relatively recent browser on a web-capable device, they could program with BoGL.&lt;/p&gt;
+&lt;p&gt;We were (and still are) extremely proud of this accomplishment, and I was very happy to have been a part of it.
+To this day BoGL has been taught in summer camps, middle school classes, an introductory college course, and is likely to continue to expand to more venues in the future.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re interested in learning BoGL, you can follow this &lt;a href=&#34;https://bogl.engr.oregonstate.edu/tutorials/&#34;&gt;link to BoGL Online&lt;/a&gt;. This will take you to the tutorials page, where you get started learning about CS through our language.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re more interested in the development side of things, you can check out the &lt;a href=&#34;https://github.com/ChildsplayOSU/bogl&#34;&gt;BoGL source on Github&lt;/a&gt;. It&amp;rsquo;s written in Haskell, and utilizes several projects to form a singular stack that serves the language. &lt;em&gt;I&amp;rsquo;ll add more about this in a later post.&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Research: Program-Concept Classifications</title>
+      <link>https://www.uphouseworks.com/posts/program-concept-classifications/</link>
+      <pubDate>Tue, 01 Jun 2021 16:02:32 +0100</pubDate>
+      
+      <guid>https://www.uphouseworks.com/posts/program-concept-classifications/</guid>
+      <description>&lt;p&gt;My MS thesis, &lt;em&gt;Structuring Teachable Knowledge through Program-Concept Classifications&lt;/em&gt;, was finished and defended mid-June 2021.
+It was quite a difficult effort, but well worth the time and experience.
+I knew when I returned to Oregon State University in January 2018 that I wanted to finish not only my undergrad, but my MS as well.
+Earlier in the same year I never would have imagined that I would go back, but I am more than happy that I did.
+I already had acquired practical CS engineering experience in the 5 years before, but I was ready to challenge my understanding and to learn more about computer graphics, programming languages, and education.
+Having achieved an MS, it&amp;rsquo;s been nice to take some time to reflect back on my work and what I have learned.&lt;/p&gt;
+&lt;h3 id=&#34;background&#34;&gt;Background&lt;/h3&gt;
+&lt;p&gt;While working on my thesis I researched heavily into &lt;a href=&#34;https://en.wikipedia.org/wiki/Formal_concept_analysis&#34;&gt;Formal Concept Analysis (FCA)&lt;/a&gt;, a theory that allows describing and classifying objects and their attributes together.
+The resulting classifications can be related together in a complete lattice, which has properties that enable clear paths of exploration through those classifications.
+The theory itself is a tad dense, but it is sound and clear once understood.
+I found it to be effective given the fact we had programs and concepts we wanted to associate to each other, which correlated nicely with FCA&amp;rsquo;s notion of &lt;em&gt;objects&lt;/em&gt; and &lt;em&gt;attributes&lt;/em&gt;.
+We wanted to be able to guide the way programs were presented based on the concepts that they entailed.
+We also wanted to avoid oversimplifying with a linear order, and to instead provide a series of paths that account for the possible programs and concepts a learner already may understand.
+Using FCA was a natural solution to combining programs with their attributes, and it gave us a structure that facilitated multiple paths of exploration.&lt;/p&gt;
+&lt;p&gt;Since we were interested in building classifications for the sake of guiding which programs and concepts were presented in what order, Machine Learning techniques could also have been utilized instead of FCA.
+Using ML can produce classification systems that work just as well, or better, but they are often not easy to explain or customize.
+While ML is not unreasonable for this application, we wanted to produce work that was customizable for a given set of programs and concepts, and could be easily understood in terms of set &amp;amp; lattice theory.
+With FCA there are no decision boundaries or weights involved, simply a series of sub-set relations and a directly customizable set of programs and concepts, which better suited our constraints.
+With that being said further work on ordering programs through ML techniques is still worthwhile exploring.&lt;/p&gt;
+&lt;p&gt;There is much more to detail as to how this program-concept classification technique was developed from FCA, and the rationale as to why.
+If you&amp;rsquo;re interested you can read my thesis below, and feel free to jump towards the chapters that are particularly of interest.
+As one recommendation, it&amp;rsquo;s helpful to first familiarize yourself with the basics of FCA, as it forms the groundwork of the classification system used in the thesis.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://ir.library.oregonstate.edu/concern/graduate_thesis_or_dissertations/tq57nz829&#34;&gt;Thesis: Structuring Teachable Knowledge through Program-Concept Classifications.&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Banter</title>
+      <link>https://www.uphouseworks.com/posts/banter/</link>
+      <pubDate>Wed, 22 Apr 2020 16:02:32 +0100</pubDate>
+      
+      <guid>https://www.uphouseworks.com/posts/banter/</guid>
+      <description>&lt;p&gt;This version is the 5th iteration of a tool that I wrote back in 2014, and has come a long way since.
+I have always had an interest in visualizing problems, and in particular being able to visualize the way software is structured at rest, and while running.
+The general idea of Banter was to produce a mapping of raw data so that a visual understanding could be created in an otherwise opaque system.
+Specific categories of files (images, machine code, compressed data, tables, strings, etc.) can be seen and comprehended purely by visual pattern alone.&lt;/p&gt;
+&lt;p&gt;I always have fun popping open things to see how they work inside, and Banter was a way for me to perform this in a digital context.
+There are numerous interesting observations I have made over the years playing around with this tool, and it has helped to give me a better understanding of machine code per architecture, compressed archives, images, and other structural aspects.
+I believe I will come back to this concept later on, but apply it in a more specific context.
+Research into software and program visualization has been done in the past, and has had issues with weak adoption in practical applications.
+I believe there is something more to be discovered in this field, but I believe it will take more time, and a slightly different perspective.&lt;/p&gt;
+&lt;p&gt;You can checkout &lt;a href=&#34;https://github.com/montymxb/banter#readme&#34;&gt;Banter on Github&lt;/a&gt; for yourself if you&amp;rsquo;re interested.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Blind Search in Pacman</title>
+      <link>https://www.uphouseworks.com/posts/pacman/</link>
+      <pubDate>Mon, 30 Mar 2020 16:02:32 +0100</pubDate>
+      
+      <guid>https://www.uphouseworks.com/posts/pacman/</guid>
+      <description>&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;Various search algorithms that I implemented on a simple HTML5 implementation of Pacman.
+I was interested in seeing how various heuristic search techniques would compare against uninformed search approaches.
+What was interesting is how quickly a breadth first search can finish a level of Pacman, even if it runs through lives rather quickly.&lt;/p&gt;
+&lt;p&gt;Even if it doesn&amp;rsquo;t play as optimally as would be desired, it still plays better than most humans.
+In addition, there may be some interesting follow up research with regards to how longevity and survival can factor into using search on Pacman.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.uphouseworks.com/pacman-ai-demo/index.html&#34;&gt;Click here to see the demo of blind-search on pacman, hosted on this site&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For full disclosure I did &lt;em&gt;not&lt;/em&gt; write this implementation of Pacman. Instead, I modified &lt;a href=&#34;https://github.com/luciopanepinto/pacman&#34;&gt;Lucio Panepinto&amp;rsquo;s Pacman in HTML5&lt;/a&gt;, which was excellently done. I was able to take their existing implementation, and integrate an AI player instead of a human one. This took some time, but it was much easier than writing the original game from scratch.&lt;/p&gt;
+&lt;p&gt;The setup is intended for desktops, laptops, or other similarly sized screens. The CSS hasn&amp;rsquo;t been modified to behave well on mobile devices. Buttons to change the search technique are located on the left, as well heuristics that can be applied (only to A* and Minimax in this case). Clicking anywhere on the game will start it, and pacman will play without any input from the player. For data collection, there are some brief statistics that are gathered from each run and added to the textarea at the top-left. Admittedly this testing setup is &lt;em&gt;crude&lt;/em&gt;, but the point was to see if this would work, and indeed it does.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re interested in the source, you can check out &lt;a href=&#34;https://github.com/montymxb/pacman#readme&#34;&gt;Blind Search in Pacman on Github&lt;/a&gt; for implementation specific details.&lt;/p&gt;
+&lt;h3 id=&#34;details&#34;&gt;Details&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;This is, more or less, identical to the description on Github for this project.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The project contains a modified codebase for performing research on the domain of Pacman, with a focus on applying Blind and Heuristic search to attempt to produce solutions to levels in realtime.&lt;/p&gt;
+&lt;p&gt;Results indicate that BFS with sufficient depth performs well at solving single levels with 3 lives. Also strong indication that heuristics that prioritize distancing from ghosts greatly increase survivability (as to be expected). A* was also attempted as well.&lt;/p&gt;
+&lt;p&gt;This paper looks into generating some compound heuristics that combine individual heuristics to attempt to compensate for shortcomings of individual heuristic approaches. Also of interest was adding in heuristics into a compound mix that prioritize better positioning throughout the game, such as by avoiding the far edges of the map or maintaining close distance to the average center of all capsules remaining in the maze.&lt;/p&gt;
+&lt;p&gt;Findings can be found &lt;a href=&#34;https://github.com/montymxb/pacman/blob/master/final_project_ben_friedman_531.pdf&#34;&gt;in this course paper&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Working on Parse</title>
+      <link>https://www.uphouseworks.com/posts/parse-community/</link>
+      <pubDate>Wed, 08 Mar 2017 16:02:32 +0100</pubDate>
+      
+      <guid>https://www.uphouseworks.com/posts/parse-community/</guid>
+      <description>&lt;p&gt;After Parse went open source, we had already been using their PHP SDK for some time at Axolsoft, and we had to figure how to handle the migration.&lt;/p&gt;
+&lt;p&gt;Over time I ended up working more on the SDK itself, contributing to it, and eventually taking it on as a project of my own.
+It was definitely a lot of fun fixing bugs, introducing features, managing PRs, and bringing the test suite up to spec.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/parse-community/parse-php-sdk#readme&#34;&gt;Parse PHP SDK on Github.&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Hangman Azul, a Hangman-Style Android App</title>
+      <link>https://www.uphouseworks.com/posts/hangmanazul/</link>
+      <pubDate>Fri, 15 Jul 2016 16:02:32 +0100</pubDate>
+      
+      <guid>https://www.uphouseworks.com/posts/hangmanazul/</guid>
+      <description>&lt;p&gt;After Bit Shooter I wanted to see what it would be like to create an entire application interface purely in OpenGL.
+This was probably one of my favorite mobile applications that I built, one which created a fully dynamic interface for a Hangman game.&lt;/p&gt;
+&lt;p&gt;In addition, it gave me an excuse to play around with implementing some bluetooth networking code, and it ended up working out quite well.
+Creating the animation of the letter tray at the bottom was really pretty neat too.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <item>
+      <title>SiteCheck, an iOS App for Verifying SEO Metatags</title>
+      <link>https://www.uphouseworks.com/posts/sitecheck/</link>
+      <pubDate>Wed, 13 Jul 2016 16:02:32 +0100</pubDate>
+      
+      <guid>https://www.uphouseworks.com/posts/sitecheck/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Update: SiteCheck is no longer currently published on the App Store. This is purely due to me having to focus my time and efforts on other tasks at the moment. If you have questions or concerns about this tool, you can always contact me for more information.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The solution to your SEO needs is here! If you&amp;rsquo;re a fan of checking your site for compatibility with open graph, twitter tags and more, SiteCheck is the app for you.
+I&amp;rsquo;ve personally spent quite a lot of time looking for an easy way to validate whether or not my site has the tags I desire. Whether it be specifying an open graph image or making sure my sites show up as beautiful twitter cards with a large feature graphic.
+These are all controlled by changing the tags on your site.
+It&amp;rsquo;s a relatively straight forward process, but how do we verify we have everything we need?&lt;/p&gt;
+&lt;p&gt;This is where SiteCheck comes in.
+In a relatively simple fashion you simply enter your url, click a button and look at your results. It&amp;rsquo;s really that easy.
+When used with existing tools like &lt;a href=&#34;https://cards-dev.twitter.com/validator&#34;&gt;twitter validator&lt;/a&gt; or the &lt;a href=&#34;https://developers.facebook.com/tools/debug/&#34;&gt;facebook sharing debugger&lt;/a&gt; it works like dynamite.
+You can immediately narrow down to what is not present and quickly implement your missing tags.
+In this fashion you can quickly achieve compliance with markup across nearly &lt;em&gt;any&lt;/em&gt; site.&lt;/p&gt;
+&lt;p&gt;But what about that new standard that just popped up! Suddenly a fixed tool is a bit behind, and noone wants to wait for an app to update to check for new markup.
+In fact why not just let users check for &lt;!-- raw HTML omitted --&gt;any&lt;!-- raw HTML omitted --&gt; markup they want, even if it&amp;rsquo;s undocumented.
+SiteCheck lets users do just that. By providing your own tests, any user can simply update a test suite and immediately see the results on their next test.
+This is just a simple feature, but extremely powerful. Not only can you have multiple test suites that specifically target certain markup types, but you can also show others a targeted test result.
+This means, as an SEO or as a web developer, you can quickly show clients or you boss that you&amp;rsquo;re implementing what you was asked, no further questions!&lt;/p&gt;
+&lt;p&gt;Not only is this tool extremely effective, but it&amp;rsquo;s also free! Something that is this beneficial should be accessible to the public.
+Originally this tool was based off of &lt;a href=&#34;http://uphouseworks.com/Metatest&#34;&gt;Metatest&lt;/a&gt;, a browser based site checking tool from which SiteCheck originated.
+Metatest is free for public use as well, and so SiteCheck will adhere to that.&lt;/p&gt;
+&lt;p&gt;The final aspect of this tool is that it is intended for &lt;em&gt;all&lt;/em&gt; levels of users.
+Whether you&amp;rsquo;re a seasoned developer, a newcomer, or someone who doesn&amp;rsquo;t even know how to code! This tool is for everyone.
+Complexity is nonexistant, it is a simple enter and check system. Even the results are neatly spread out in a series of passes or fails.
+It is intended to both educate the uninformed and to help guide the veterans.
+Nothing beats a simple check and scan method that deterministically indicates whether you&amp;rsquo;ve achieved compliance with the tags you wish to implement.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Metatest, Verify HTML metatags</title>
+      <link>https://www.uphouseworks.com/posts/metatest-metatag-verifier/</link>
+      <pubDate>Fri, 01 Jul 2016 16:02:32 +0100</pubDate>
+      
+      <guid>https://www.uphouseworks.com/posts/metatest-metatag-verifier/</guid>
+      <description>&lt;p&gt;Verified and checked for proper integration of third party tags can greatly enhance posting and sharing on twitter and facebook.&lt;/p&gt;
+&lt;p&gt;Metatest was a tool designed to test to apply regular expressions to attempt to parse HTML, which being inherently irregular needed some programming around it to handle some odd cases. The result was an analysis tool that could determine what meta-tags were missing from your site.&lt;/p&gt;
+&lt;p&gt;Inadvertently, this also turned out to be a handy approach towards verifying the structure of an HTML document.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.uphouseworks.com/Metatest/&#34;&gt;You can find the original Metatest page here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>The Latria Scripting Language</title>
+      <link>https://www.uphouseworks.com/posts/latria/</link>
+      <pubDate>Sat, 28 Nov 2015 16:02:32 +0100</pubDate>
+      
+      <guid>https://www.uphouseworks.com/posts/latria/</guid>
+      <description>&lt;p&gt;Lately I have been focusing intently on finishing up a little scripting language of my own design, something called &lt;a href=&#34;http://latria.uphouseworks.com&#34;&gt;Latria&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;First, a little background on why I started this in the first place. Overall, I desired a lightweight, embeddable scripting language. Something with an emphasis on cross language meshing. There are quite a number of loose scripts, programs, etc. that I have written over the years and I desired a way to work with them collectively when I could. Usually this involved writing up bash scripts, batch scripts, lua scripts, or other scripts to mediate between one or more programs or scripts that I had written. Generally this involved capturing input and interpolating it into another program, which took a bit of work and was unsightly at times.&lt;/p&gt;
+&lt;p&gt;At one point I had a thought. Wouldn&amp;rsquo;t it be neat if I could just inline the desired functionality from another language, creating a sort of frankenstein script. Something that could execute itself, but could also run other lines of code in other languages. That was when I started writing up Latria over a year ago. Now, with the language nearing completion, I&amp;rsquo;m ready to test it&amp;rsquo;s mettle. It&amp;rsquo;s been a very long process, but here I&amp;rsquo;ll just cover some general goals of the language.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Execute multiple languages inline&lt;/li&gt;
+&lt;li&gt;Interpolate values to and from languages&lt;/li&gt;
+&lt;li&gt;Be relatively independent of the underlying system&lt;/li&gt;
+&lt;li&gt;Be lightweight enough not to be a nuisance to add to an existing project&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.uphouseworks.com/images/article_images/logo.png&#34; alt=&#34;Latria image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In order to achieve those goals I choose to write Latria in ANSI-C (following the C90 standard). It&amp;rsquo;s a bit outdated, but assures some reasonable reverse compatibility with older systems. To achieve cross language execution Latria uses a glorified piping mechanism, which allows embedding of source code from (just about) any another language. When embedding source code the syntax looks a bit like the following.&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    //assigns &#39;value&#39; to the result of what is run between ## and #&amp;amp;gt;
+    value##
+    language specification
+    code in another language to run
+    #&amp;amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Due to the number of variations from language to language source code is required to fit in-between the ## and #&amp;gt; sequences with nothing else on the line (excluding whitespace). The statement as a whole is effectively a multi-line system execute, but allows variables to interpolated via IN{var} in order to dynamically alter the code. The current setup does only allow system execution, but in the future I will most likely create a stronger tie to commonly used languages such as Java, PHP, Python, etc; but for now this syntax is fairly generic, allowing it to work for most of my needs.&lt;/p&gt;
+&lt;p&gt;Now during the course of building latria I had constructed a simple syntax-tree interpreter, slightly adhoc. This was slow, but worked. Eventually I migrated this syntax tree into what became the compiler, and created a standalone Virtual Machine to which bytecode could be fed into. The interpreter for the VM accepts Latria bytecode and embedded source code for other languages as plain text, which is executed on the system as mentioned before. The interpreter can also be coupled with the compiler, creating a standalone executable that is capable of both compiling and executing source code. To keep things simple this will be the default build when the language is released. However for embedded systems or size/time sensitive implementations the interpreter and compiler can be built separately. Requiring only that the Latria source code be compiled beforehand in order to run.&lt;/p&gt;
+&lt;p&gt;There is quite a lot that I&amp;rsquo;ve packed into this language, while still attempting to keep it simple. It supports basic types of Number (double,float,int), String, Array, File and Boolean values. There is a very basic DFA regex included that I wrote from scratch. It supports most of the basic quantifiers (no backtracking) and has capturing parentheses. It will also support networking for basic server/client systems. Overall the interpreter weighs in at under 100kb, while the interpreter and compiler together are around 150kb. Not too shabby, but this is still pretty fat and I expect some culling before the release will make it a more comfortable fit for embedded systems.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re interested (and when it&amp;rsquo;s released) you can check out the project and download the source code at &lt;a href=&#34;http://latria.uphouseworks.com&#34;&gt;latria.uphouseworks.com&lt;/a&gt;. There is still a lot to attend to but I expect to put up Latria sometime around December 10th. I intend on making Latria opensource for C programmers and others that are interested in enhancing the functionality of the language. Overall with a year&amp;rsquo;s worth of code in it I still expect to see large room for improvement at the least. Languages take years to mature before they are accepted for general use; so take Latria with the consideration that it is still young and has a ways to go. Hopefully it will be something we all can use!&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Axolsoft LLC</title>
+      <link>https://www.uphouseworks.com/posts/axolsoft/</link>
+      <pubDate>Thu, 01 Jan 2015 16:02:32 +0100</pubDate>
+      
+      <guid>https://www.uphouseworks.com/posts/axolsoft/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Last updated Feb. 22nd, 2022.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;At the beginning of 2015 I started working at a new LLC called Axolsoft as the Head Software Engineer. I co-founded it with partner and a good friend of mine. The idea was to take my experience building front-end systems, and to build a business around it. Not entirely a &lt;em&gt;novel&lt;/em&gt; idea, but we figured we would give it a shot. I learned quite a lot building a business, and even more about development practices to keep things going &amp;ndash; and customers happy.&lt;/p&gt;
+&lt;h2 id=&#34;what-i-did&#34;&gt;What I did&lt;/h2&gt;
+&lt;p&gt;The majority of my work at Axolsoft was designing and developing client and company software. Many of these tools were to manage client information, deploy and manage client services (full-stack deployments most often), and more. To do this I had to build several online portals, and when possible automating any standardized procedures. Most of the time I was developing systems with:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PHP/MySQL&lt;/li&gt;
+&lt;li&gt;HTML5/CSS/JS&lt;/li&gt;
+&lt;li&gt;NGINX&lt;/li&gt;
+&lt;li&gt;Stripe &amp;amp; Braintree payments&lt;/li&gt;
+&lt;li&gt;Mailing Systems leveraging SFP, DKIM, and DMARC for email security&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Although this is only a brief summary of my tasks that I handled. It goes without saying that when you co-run a company, even a small one, there&amp;rsquo;s a lot you have to do.&lt;/p&gt;
+&lt;h2 id=&#34;designing-the-logo&#34;&gt;Designing the Logo&lt;/h2&gt;
+&lt;p&gt;Not to mention that I &lt;em&gt;also designed the Axolsoft logo&lt;/em&gt;. I was &amp;ndash; and still am &amp;ndash; very happy with it. Originally we wanted a logo resembling an &lt;a href=&#34;https://en.wikipedia.org/wiki/Axolotl&#34;&gt;Axolotl&lt;/a&gt;, a fascinating salamander from Mexico. We believed that, like the rare Axolotl, we were creating something special. We of course wanted software as well, so we added on &amp;lsquo;soft&amp;rsquo; afterwards. To be honest, looking back at it (and based on what I&amp;rsquo;ve been told), it does tend to resemble an Eagle more than an Axolotl. Still, the imagery was well suited for our work, and for the boldness of starting a company by ourselves. It was also one of the first times I got to use &lt;em&gt;Inkscape&lt;/em&gt; in a professional capacity &amp;ndash; although I am definitely &lt;em&gt;not&lt;/em&gt; a graphic designer.&lt;/p&gt;
+&lt;h2 id=&#34;open-source-work&#34;&gt;Open Source Work&lt;/h2&gt;
+&lt;p&gt;Open source work was closely related to my company, since we often relied on open source tools &amp;amp; services. In particular, Braintree&amp;rsquo;s PHP payments integration, and the &lt;a href=&#34;https://docs.parseplatform.org/parse-server/guide/&#34;&gt;Parse BaaS&lt;/a&gt; SDKs. Both of these tools being available on Github. However, I had never personally gotten involved in open source projects on a large scale until we started using these tools.&lt;/p&gt;
+&lt;p&gt;Working on the Parse PHP SDK was a major part of my work, as we relied on it to build some of our early systems. I figured I would work on improving their tools to share the benefits with all developers who were relying on that SDK. My first contributions were small adjustments &amp;ndash; ones that we thought we needed and others could benefit from. However, when Parse went full open source I took charge of the Parse PHP SDK, which was passed down to me from the previous developer. This prior employee, and their entire team at Parse, had been integrated into Facebook, and due to their new obligations had no time to continue work on Parse. This was a very unique opportunity for me, and I was more than happy to take on the responsibility at the time. I managed that SDK for about a year until I started to transition into a full time student again.&lt;/p&gt;
+&lt;h2 id=&#34;system-administration&#34;&gt;System Administration&lt;/h2&gt;
+&lt;p&gt;What surprised me the most was just &lt;em&gt;how much work&lt;/em&gt; is involved managing systems, actual physical installations, not just deployments in the cloud. At Axolsoft a good part of our infrastructure was physical, meaning we had to oversee our servers on site. To be clear Axolsoft doesn&amp;rsquo;t do this anymore, but some years ago that was how we operated.&lt;/p&gt;
+&lt;p&gt;I learned how to handle some of the most ridiculous problems that you would encounter. I think one of my &lt;em&gt;fondest&lt;/em&gt; memories was having a battery blow up inside one of our servers. It was completely unexpected, and took a whole chunk of our system offline. What followed was 24 hours of going through our recovery procedure, only to find that parts of our recovery procedure were not working as expected.&lt;/p&gt;
+&lt;p&gt;That experience taught me a couple valuable lessons. First have a backup plan and &lt;em&gt;test&lt;/em&gt; your backup plan. Second, always double check your equipment and its associated parts on a schedule, and keep replacements on site &amp;ndash; you never know when you&amp;rsquo;ll need one. Once you have done that, test it again periodically. Verify that things are still capable of being recovered like you think they can be. Thankfully we had redundant data backups (which is a must), so we had no issues recovering the data. Still, the downtime was far from ideal, and it&amp;rsquo;s worth the extra investment against downtime.&lt;/p&gt;
+&lt;h2 id=&#34;thoughts-looking-back&#34;&gt;Thoughts Looking Back&lt;/h2&gt;
+&lt;p&gt;For me, what was most valuable from running a small company was the &lt;em&gt;experience&lt;/em&gt;. I really enjoyed my time at Axolsoft, and I have always thought about &lt;em&gt;maybe&lt;/em&gt; doing something similar again. What I learned has been invaluable to me over the years, and it has also allowed me to stay relaxed and focused in even the worst situations.&lt;/p&gt;
+&lt;p&gt;However, it also taught me something about what I enjoy doing, which is building things, exploring and learning. If I were to do something like Axolsoft again, I would definitely build up a larger group of people to help distribute the workload. The sheer volume of work I had to take care of at Axolsoft was overwhelming at times, and there were often no weekends. Every day was simply a work day, and that in turn has taught me the value of maintaining a healthy work-life balance. It really makes all the difference.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;ve considering doing something like this, or actively are, be prepared to give a lot in order to make things work, and be prepared to be &lt;em&gt;patient&lt;/em&gt;. Building up a service, a client-base, and a  reliable and dedicated team takes &lt;em&gt;time&lt;/em&gt;. A lot of time. If you can manage it, and you invest in your team as people you care about, the rewards are well worth it.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Floidia, a flowing soundbard app</title>
+      <link>https://www.uphouseworks.com/posts/floidia-soundboard/</link>
+      <pubDate>Wed, 01 Jan 2014 16:02:32 +0100</pubDate>
+      
+      <guid>https://www.uphouseworks.com/posts/floidia-soundboard/</guid>
+      <description>&lt;p&gt;A simple soundboard application, made up of the leftover components from developing BitShooter. Long since defunct now.&lt;/p&gt;
+&lt;p&gt;The original idea was to create a &lt;em&gt;flowing&lt;/em&gt; soundboard, one which allowed dynamic tuning of the sound bytes on the fly. Floidia achieved this by a dynamic OpenGL interface, where users could change the pitch and the volume by dragging a virtual audio stream on the screen. A change in color, and speed, would be shown to help the user associate the physical changes with the auditory ones.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.uphouseworks.com/Floidia/&#34;&gt;You can still see the original page for the application here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Bit Shooter</title>
+      <link>https://www.uphouseworks.com/posts/bitshooter/</link>
+      <pubDate>Tue, 01 Jan 2013 16:02:32 +0100</pubDate>
+      
+      <guid>https://www.uphouseworks.com/posts/bitshooter/</guid>
+      <description>&lt;p&gt;This was my first real foray into programming and developing any kind of application, and it was a really enjoyable one as well! I taught myself Java from near nothing, and flew into more advanced concepts such as OpenGL, OpenAL, and working with multi-threaded code to implement my own physics system.&lt;/p&gt;
+&lt;p&gt;After publishing the app on Android I wrote a second, identical version for iOS in Obj-C (before Swift existed). This version leveraged CoreData, OpenGL, and a few other advanced features I never thought I would get to try out. Both apps were on their respective stores for some years before I pulled them both down. This was done due to the lack of time I had to develop them further, to keep them up-to-date, and the notion that I was happy with the work I had done &amp;mdash; and I was ready to move on.&lt;/p&gt;
+&lt;p&gt;Notably the components that I wrote in Bit Shooter found their way into &lt;a href=&#34;https://www.uphouseworks.com/posts/hangmanazul/&#34;&gt;Hangman Azul&lt;/a&gt;, &lt;a href=&#34;https://www.uphouseworks.com/posts/floidia/&#34;&gt;Floidia&lt;/a&gt;, and another unpublished game about &lt;em&gt;ants&lt;/em&gt; &amp;mdash; but I&amp;rsquo;m pretty sure I lost the source code to that years ago (sadly).&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.uphouseworks.com/BitShooter/index.html&#34;&gt;You can see the original Bit Shooter app link here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    
+  </channel>
+</rss>

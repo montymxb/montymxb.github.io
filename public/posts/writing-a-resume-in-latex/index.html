@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns"><head>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-47712445-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script><meta charset="utf-8">
+    <meta name="robots" content="index,follow,noodp">
+    <title>Writing a Resume in LaTeX</title>
+    <meta name="description" content="Learning what to consider while building your resume in LaTeX.">
+    <meta name="author" content="Benjamin Friedman Wilson">
+    <meta name="date" content="2021-11-21T16:02:32+01:00" >
+    <meta name="keywords" content="Latex,Resume,Job,Typesetting">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <link rel="home" href="https://www.uphouseworks.com"/>
+    <link rel="canonical" href="https://www.uphouseworks.com/posts/writing-a-resume-in-latex/"/>
+    
+    <link rel="shortcut icon" href="https://www.uphouseworks.com/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="https://www.uphouseworks.com/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome/all.min.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/core.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/feed.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/article2021.min.css">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="https://www.uphouseworks.comimages/ms-tile.png">
+    <meta name="twitter:site" content="@uphouseworks">
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.uphouseworks.com/image/og_image.png"/>
+
+<meta name="twitter:title" content="Writing a Resume in LaTeX"/>
+<meta name="twitter:description" content="Learning what to consider while building your resume in LaTeX."/>
+
+    <meta itemprop="image" content="https://www.uphouseworks.comimages/uphw_white_greyBack.png">
+    <meta itemprop="url" content="https://www.uphouseworks.com/posts/writing-a-resume-in-latex/"><meta itemprop="name" content="Writing a Resume in LaTeX">
+<meta itemprop="description" content="Learning what to consider while building your resume in LaTeX."><meta itemprop="datePublished" content="2021-11-21T16:02:32+01:00" />
+<meta itemprop="dateModified" content="2021-11-21T16:02:32+01:00" />
+<meta itemprop="wordCount" content="1487"><meta itemprop="image" content="https://www.uphouseworks.com/image/og_image.png"/>
+<meta itemprop="keywords" content="Resume,Latex,Discussion,Analysis," />
+    <meta property="og:site_name" content="Uphouseworks"><meta property="og:title" content="Writing a Resume in LaTeX" />
+<meta property="og:description" content="Learning what to consider while building your resume in LaTeX." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.uphouseworks.com/posts/writing-a-resume-in-latex/" /><meta property="og:image" content="https://www.uphouseworks.com/image/og_image.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-11-21T16:02:32+01:00" />
+<meta property="article:modified_time" content="2021-11-21T16:02:32+01:00" />
+
+<link rel="apple-touch-icon" href="/images/apple1.png"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/apple2.png"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/apple3.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/apple4.png"/>
+    <link rel="apple-touch-startup-image" href="/images/startup.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Learning what to consider while building your resume in LaTeX.",
+    "name": "Writing a Resume in LaTeX",
+    "author": {
+      "@type": "Person",
+      "url": "https://www.uphouseworks.com/About/",
+      "name": "Benjamin Friedman Wilson"
+    },
+    "datePublished": "2021-11-21",
+    "description": "Learning what to consider while building your resume in LaTeX.",
+    "url": "https://www.uphouseworks.com/posts/writing-a-resume-in-latex/",
+    "image": "https://www.uphouseworks.com/images/uphw_white_greyBack.png",
+    "sameAs" : [
+      "https://www.facebook.com/uphouseworks",
+      "https://twitter.com/uphouseworks"
+    ]
+  }
+</script>
+</head>
+<body><header id="banner">
+  <nav class="navbar">
+    <a class="home" href="/"><span class="uphw-mini-logo"></span> Uphouseworks</a>
+    <div class="links">
+      <a class="link-item small-hidden" href="/"><span class="uphw-mini-logo"></span> Uphouseworks</a>
+      <a class="link-item" href="/About/">About</a>
+      <a class="link-item" href="/posts/">Posts</a>
+      <a class="link-item" href="https://www.linkedin.com/in/benwilsonfriedman/"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a class="link-item" href="https://github.com/montymxb"><i class="fab fa-github-square"></i> Github</a>
+      <a class="link-item" href="/contact/">Contact</a>
+    </div>
+
+    
+  </nav>
+  
+</header>
+<main id="content">
+<article class="feed">
+    <div class="entry" style="display:inherit">
+      <header id="post-header"><p><a href="/">Home</a> / <a href="/posts/">posts</a> / Writing a Resume in LaTeX</p><h1>Writing a Resume in LaTeX</h1><div id="cover-img" class="sqimg" style="width:100%;display:inline-block;background-image:url('/images/og_image.png');background-repeat:no-repeat;background-size:cover"></div><h2>Learning what to consider while building your resume in LaTeX.</h2>
+          <span class="date"> Reading Time: 7 mins </span>
+          <div>
+              <p class="date">by Benjamin Friedman Wilson, <time>November 21, 2021</time></p>
+              </div></header>
+<div class="tags">
+  
+   <a class="tag-item" href="/tags/resume">
+     <span>Resume</span></a>
+  
+   <a class="tag-item" href="/tags/latex">
+     <span>Latex</span></a>
+  
+   <a class="tag-item" href="/tags/discussion">
+     <span>Discussion</span></a>
+  
+   <a class="tag-item" href="/tags/analysis">
+     <span>Analysis</span></a>
+  
+</div>
+<aside>
+        <br/><br/>
+        <h3>Table of Contents</h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#for-starters-why-would-you-want-to-write-your-resume-in-latex">For starters, why would you want to write your resume in LaTeX?</a></li>
+        <li><a href="#what-can-i-use-to-get-started">What can I use to get started?</a></li>
+        <li><a href="#what-should-i-watch-out-for">What should I watch out for?</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        <br/>
+      </aside><p>I&rsquo;ve recently been applying for careers, and have found myself exploring how I could best design my resume in LaTeX. I&rsquo;ve had several years of experience writing technical documents in LaTeX, but none in writing a resume (or a CV for that matter). My first versions were not quite up to par, but it was through repeated iteration and exploration that I&rsquo;ve begun to settle on a design that I&rsquo;m happy with. Here are some points that I would like to share about writing a resume/CV in LaTeX. As a disclaimer my points are not perfect, and I&rsquo;m still discovering new facets to keep in mind.</p>
+<h3 id="for-starters-why-would-you-want-to-write-your-resume-in-latex">For starters, why would you want to write your resume in LaTeX?</h3>
+<p>This is a great question to start with, as I don&rsquo;t want to give the impression that LaTeX is somehow the only way to prepare your resume. Clearly, this is not the case, and there are an abundance of sensible alternatives out there to choose from. My personal rationale for picking LaTeX stems from how many other choices I&rsquo;ve used and abandoned over the years. I&rsquo;ve had to rewrite my resumes numerous times over the last 8 years, and everytime I somehow ended up using a different choice. Ranging from Word, Google Docs and even Libre Office. At the time I found these document editors were sufficient, but when I wanted to go back and track revisions it wasn&rsquo;t so clear. Today most document editors should have some form of versioning, but what I was really looking for were notes &amp; annotations. A resume can change widely based on the kind of job or career you&rsquo;re applying for, and having notes to track changes is helpful. Document editors do have these features, but I always found myself wanting to keep the formatting &amp; content notes separate from the final document. To this end, LaTeX fills the requirement nicely. Here are a few other points that come to mind.</p>
+<ul>
+<li><a href="https://www.latex-project.org/get/">Great platform support</a>, and web support via <a href="https://www.overleaf.com/">Overleaf</a>.</li>
+<li>Ability to build a <a href="https://www.overleaf.com/learn/latex/How_to_write_a_LaTeX_class_file_and_design_your_own_CV_(Part_1)">reusable resume/CV class</a> for usage down the road.</li>
+<li>Can version control cleanly with your favorite VCS, probably <a href="https://git-scm.com/">git</a>.</li>
+</ul>
+<p>In addition, LaTeX offers a degree of control that is closer to how I write markdown or programs every day. When I work in LaTeX I feel that I can innately follow the notation in this fashion, but this is admittedly a personal bias. Based on what you daily drive for your work, it is likely you will find and cherish a very specific document editor for your uses.</p>
+<h3 id="what-can-i-use-to-get-started">What can I use to get started?</h3>
+<p>As mentioned above you can always hop on Overleaf to get started writing your resume. They have excellent documentation as well, in case your LaTeX is a little rusty or if you&rsquo;re venturing out of your experienced area.</p>
+<p>I daily drive on macOS, and have found that <a href="https://pages.uoregon.edu/koch/texshop/">TexShop</a> works great locally. I even used it to write up my thesis earlier this year using a wonderful document class provided from Oregon State University.</p>
+<h3 id="what-should-i-watch-out-for">What should I watch out for?</h3>
+<p>This isn&rsquo;t exhaustive, but here are some key elements that caught me while I was writing my resume in LaTeX.</p>
+<h4 id="make-sure-your-document-dimensions-are-formatted-correctly">Make sure your document dimensions are formatted correctly.</h4>
+<p>This may seem obvious, but I definitely missed this one the first time around while I was laser focused on content. In particular, <strong>make sure you maintain consistent margins on all sides</strong>. In general, clean 1 inch margins on all sides is a good choice. However, if you find yourself wanting a little extra space, you can always go for 0.5 inch margins instead. Just be sure to make your choice clear and consistent. If your use case requires you to have a different margin size than either of these, that&rsquo;s perfectly fine, but pay careful attention to making sure this is set correctly. A poorly formatted margin will immediately show up in comparison to other resumes.</p>
+<p>This is where other document editors have an advantage, as most automatically set these margins correctly for you at the start. If you&rsquo;re not sure, you can open up a quick document in Word or Google Docs to check what these default margins are set to. More often than not these tend be 1 inch margins.</p>
+<h4 id="watch-those-line-numbers">Watch those line numbers!</h4>
+<p>For a CV, line numbers are sensible, but make sure to <strong>drop the line numbers on your resume</strong>. It&rsquo;s a small &lsquo;gotcha&rsquo;, but if you&rsquo;re sharing a LaTeX class for your resume and CV it&rsquo;s easy to slip up. This quick mark can help right before your resume document start.</p>
+<code style="line-height:1.5em">
+<br/>\pagenumbering{gobble}<br/>
+</code>
+
+<h4 id="choose-your-fonts-carefully">Choose your font(s) carefully</h4>
+<p><a href="https://www.creativelive.com/blog/how-much-does-fonts-matter/">Picking your font is an important choice</a>. For some this may be a matter of settling on the default font, but with piles of resumes it&rsquo;s easy for yours to blend into the rest. Picking a good font, or pairing of fonts, can help improve the legibility and presentation of your resume. It can also make your resume stand out visually from others. LaTeX&rsquo;s default font isn&rsquo;t too bad, but I personally have found going with Times is simple and quick to read.</p>
+<code style="line-height:1.5em">
+<br/>% If ptm is present, you can get Times this way<br/>\renewcommand{\rmdefault}{ptm}<br/>
+</code>
+
+<p>The above can be added before your document start, and will change the serif font in your document to Times New Roman. You can find more detail about this at <a href="https://www.sascha-frank.com/Fonts/Times_New_Roman.html">Sacha Frank&rsquo;s page on Times New Roman in LaTeX</a>.</p>
+<p>In addition, it&rsquo;s a good idea to pick a pair of fonts that work well together. <a href="https://www.canva.com/learn/the-ultimate-guide-to-font-pairing/">There are a variety of pairings that you can use</a>, but I tend to work with a clear sans-serif font for my headers and serif font for my content. In my recent resume and CV I have found that I have a preference for Helvetica and Times New Roman, but I have changed this many times already, and probably will continue to do so. As you may have noticed, my entire site uses Helvetica, so I am <em>definitely</em> biased towards it.</p>
+<p>Perhaps most of all, <strong>keep in mind the impression that your font choices create, and whether it matches the desired tone of your document</strong>.</p>
+<h4 id="abstract-repeated-definitions">Abstract Repeated Definitions</h4>
+<p>f you find a number of acronyms or names that you write frequently, you have the option of <strong>defining a new command in latex to abstract the implementation detail away</strong>.</p>
+<p>Writing C++ in LaTeX is a great example. I missed it numerous times, but simply writing C$++$ drops the ++ slightly below the C, making it a bit awkward (evident here as well). Maybe this was a poor to begin with on my part, but after doing some looking around it appears this has been <a href="https://tex.stackexchange.com/questions/4302/prettiest-way-to-typeset-c-cplusplus">a pretty common problem with a variety of solutions</a>. Regardless of your solution choice, it&rsquo;s often best to implement it as a reusable command.</p>
+<code style="line-height:1.5em">
+<br/>\newcommand{\cpp}{C\texttt{++}}<br/>...<br/>And did I mention I know \cpp{}?<br/>
+</code>
+
+<p>Again, this was a small change, but I found it to be dramatically better looking on the final result.</p>
+<h4 id="keep-an-eye-on-your-space">Keep an eye on your space</h4>
+<p>When writing a resume, <strong>it&rsquo;s in your best interest to take advantage of all the space you have on your page</strong>. Especially when you have large margins, you want to make sure that you&rsquo;re demonstrating your best self on the limited real estate that you have. To this end, take care about how much trailing space you&rsquo;re leaving behind throughout your document. If you&rsquo;re finding that most of your lines are only half or 3/4 of the available width, maybe it would be best to segment your resume into a new layout with side-by-side sections. Not only can this help fill out some of the extra space on your resume, but it can bring a bit of balance and style to your resume&rsquo;s presentation.</p>
+<h4 id="dont-be-afraid-to-change-the-layout">Don&rsquo;t be afraid to change the layout</h4>
+<p>This ties in closely with what was mentioned above, but really don&rsquo;t be worried to push the boundaries of the layout on your resume. Not only is this a learning opportunity, but it&rsquo;s also a chance to create a truly spectacular resume that is, at the same time, clean and clear to your personal identity. Your resume&rsquo;s layout is as much about you as it&rsquo;s content, so make sure to take equal care of it!</p>
+<p>&hellip;And that&rsquo;s about it.</p>
+<p>As a parting note, there are plenty of LaTeX resume/CV templates out there to explore. I&rsquo;ve recently been working with a version of a template that itself was based off of <a href="https://github.com/deedy/Deedy-Resume">Deedy&rsquo;s template on Github</a>, a notably popular choice. As of writing this it hasn&rsquo;t been touched since 2016, but it serves as a nice example for the kind of resume layouts you can build in LaTeX. That, and there&rsquo;s no shortage of forks based on it.</p>
+<p>If you have any questions, or concerns, you can reach me at <a href="mailto:wilson.f.benjamin@gmail.com">wilson.f.benjamin@gmail.com</a>. I&rsquo;m always happy to hear your thoughts, corrections, and suggestions to provide better content for readers like yourself.</p>
+<aside>
+
+
+
+<h3>See Also</h3>
+<ul>
+	
+  <div>
+    <div class="entry">
+  <span style="margin-right:8px"><img src="/images/bogl.ico" width="100"><div style="width:100px"></div></span>
+  <span>
+    <a href="https://www.uphouseworks.com/posts/bogl/" class="link">BoGL: The Board Game Language</a>
+    <p class="date">Jun 1, 2021</p>
+    <p class="text" style='margin:0'>A brief discussion about BoGL, a novel domain specific educational programming language that myself and a team developed at Oregon State University.</p>
+  </span>
+</div>
+
+  </div>
+	
+  <div>
+    <div class="entry">
+  <span style="margin-right:8px"><img src="/images/e1.png" width="100"><div style="width:100px"></div></span>
+  <span>
+    <a href="https://www.uphouseworks.com/posts/program-concept-classifications/" class="link">Research: Program-Concept Classifications</a>
+    <p class="date">Jun 1, 2021</p>
+    <p class="text" style='margin:0'>A brief discussion about my MS thesis research, focusing on using Formal Concept Analysis to identify and classify programs for education purposes.</p>
+  </span>
+</div>
+
+  </div>
+	
+  <div>
+    <div class="entry">
+  <span style="margin-right:8px"><img src="/images/b3.gif" width="100"><div style="width:100px"></div></span>
+  <span>
+    <a href="https://www.uphouseworks.com/posts/banter/" class="link">Banter</a>
+    <p class="date">Apr 22, 2020</p>
+    <p class="text" style='margin:0'>A data visualization tool for observing the underlying structure of files in a data agnostic fashion.</p>
+  </span>
+</div>
+
+  </div>
+	
+  <div>
+    <div class="entry">
+  <span style="margin-right:8px"><img src="/images/latria.png" width="100"><div style="width:100px"></div></span>
+  <span>
+    <a href="https://www.uphouseworks.com/posts/revising-the-latria-programming-language/" class="link">Revising the Latria Programming Language</a>
+    <p class="date">Nov 20, 2021</p>
+    <p class="text" style='margin:0'>Going back over and discussing how to revise the Latria programming language.</p>
+  </span>
+</div>
+
+  </div>
+	
+  <div>
+    <div class="entry">
+  <span style="margin-right:8px"><div style="width:100px"></div></span>
+  <span>
+    <a href="https://www.uphouseworks.com/posts/fdssl/" class="link">Functional Domain-Specific Shader Language (FDSSL)</a>
+    <p class="date">Jun 25, 2021</p>
+    <p class="text" style='margin:0'>A breakdown of the Function Domain-Specific Shader Language (FDSSL), which enables writing composable shaders for usage with OpenGL.</p>
+  </span>
+</div>
+
+  </div>
+	
+</ul>
+
+</aside>
+    </div>
+</article>
+
+        </main><footer id="footer">
+    <span>Copyright &copy; Benjamin Friedman Wilson 2021</span>
+    <br/>
+    <div class="fimg" style="background-image: url('/images/spatial_script_bw.png')"></div>
+    <br/>
+    <a href="https://www.linkedin.com/in/benwilsonfriedman/"><i class="fab fa-linkedin"></i> LinkedIn </a> •
+    <a href="/contact/"><i class="fas fa-envelope-square"></i> Contact</a> •
+		<a href="/Privacy/index.html"><i class="fas fa-user-lock"></i> Privacy</a> •
+		<a href="/Terms/index.html"><i class="fas fa-scroll"></i> Terms of Service</a> •
+    <a href="https://github.com/montymxb"><i class="fab fa-github-square"></i> Github</a>
+</footer>
+</body>
+</html>

@@ -1,0 +1,9 @@
+User-agent: googlebot
+Disallow: /vestiges/
+Disallow: /annas_bday/
+Disallow: /wedding/
+Disallow: /patchcalc/
+Disallow: /WebGL/
+Disallow: __popup.html
+Disallow: newlogo-test.html
+Disallow: rent-stream.html
