@@ -18,7 +18,7 @@
     <meta name="HandheldFriendly" content="true">
     <link rel="home" href="{{ .Site.BaseURL }}"/>
     <link rel="canonical" href="{{ .Page.Permalink }}"/>
-    {{ .Hugo.Generator -}}
+    {{/* .Hugo.Generator */}}
     {{ range .AlternativeOutputFormats -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
@@ -61,8 +61,6 @@
     <link rel="apple-touch-startup-image" href="/images/startup.png"/>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <script src="{{ resources.Get "js/Scroller.js" | js.Build | minify }}" type="application/javascript"></script>
-    <script src="{{ resources.Get "js/fontawesome/all.min.js" | js.Build }}" type="application/javascript"></script>
     {{- partial "jsonld.html" . -}}
 
 </head>
