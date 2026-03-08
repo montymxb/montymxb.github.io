@@ -27,5 +27,3 @@ The focus is on sharing his own work and experiences for others, with an emphasi
 [If you're interested in reaching out, you can visit this contact page](/contact/).
 
 - [Masters Thesis: Structuring Teachable Knowledge through Program-Concept Classifications](https://ir.library.oregonstate.edu/concern/graduate_thesis_or_dissertations/tq57nz829)
-- [Curriculum Vitae](/docs/CV_Ben_Wilson.pdf)
-- [Resume](/docs/Resume_Ben_Wilson.pdf)

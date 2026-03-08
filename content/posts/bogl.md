@@ -28,4 +28,4 @@ To this day BoGL has been taught in summer camps, middle school classes, an intr
 
 If you're interested in learning BoGL, you can follow this [link to BoGL Online](https://bogl.engr.oregonstate.edu/tutorials/). This will take you to the tutorials page, where you get started learning about CS through our language.
 
-If you're more interested in the development side of things, you can check out the [BoGL source on Github](https://github.com/ChildsplayOSU/bogl). It's written in Haskell, and utilizes several projects to form a singular stack that serves the language. *I'll add more about this in later post.*
+If you're more interested in the development side of things, you can check out the [BoGL source on Github](https://github.com/ChildsplayOSU/bogl). It's written in Haskell, and utilizes several projects to form a singular stack that serves the language. *I'll add more about this in a later post.*
