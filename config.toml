@@ -11,7 +11,7 @@ googleAnalytics = "UA-47712445-1"
 
 [params]
   mainSections = ["posts","OldArticles"]
-  copyright = "Copyright &copy; Benjamin Friedman Wilson 2021"
+  copyright = "Copyright &copy; Benjamin Friedman Wilson 2026"
   description = "Computer Science projects, research, and articles by Benjamin Friedman Wilson."
   author = "Benjamin Friedman Wilson"
   themeColor = "#ffffff"
