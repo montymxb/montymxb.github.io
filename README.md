@@ -6,7 +6,7 @@ Personal website and blog built with [Hugo](https://gohugo.io/) (v0.88.1).
 
 - [Nix](https://nixos.org/download/) package manager
 
-Alternatively, install [Hugo v0.88.1 extended](https://github.com/gohugoio/hugo/releases/tag/v0.88.1) manually.
+Alternatively, install [Hugo v0.88.1 extended](https://github.com/gohugoio/hugo/releases/tag/v0.88.1) manually, but generally it would be better to use the nix managed version.
 
 ## Setup
 
@@ -27,8 +27,10 @@ direnv allow
 Start the local dev server:
 
 ```sh
-hugo server -D
+hugo server
 ```
+
+For viewing drafts run `hugo server -D`.
 
 The site will be available at `http://localhost:1313/`.
 
