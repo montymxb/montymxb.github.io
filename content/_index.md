@@ -1,5 +1,6 @@
 ---
 title: "Uphouseworks"
+date: 2026-03-12T16:02:32+01:00
 description: "Computer Science projects, research, and articles by Benjamin Friedman Wilson."
 keywords: [benjamin,wilson,friedman,banter,latria,software,engineering]
 ---
